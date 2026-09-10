@@ -1,0 +1,13 @@
+# Custom 404 page
+ErrorDocument 404 /404.html
+
+# Don't expose directory listings (e.g. /images/, /icons/, /img_for_website/)
+Options -Indexes
+
+# Force HTTPS (uncomment once the domain is live on this site with a valid SSL cert)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Example pattern for future 301 redirects when URLs change:
+# Redirect 301 /old-path/ /new-path/

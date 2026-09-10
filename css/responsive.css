@@ -1,0 +1,106 @@
+/* ==========================================================================
+   BREAKPOINTS
+   sm: 640px · md: 900px · lg: 1100px
+   Base styles in styles.css are mobile-first; this file layers on
+   larger-screen layout changes only.
+   ========================================================================== */
+
+/* ---- sm: 640px -------------------------------------------------------- */
+@media (min-width: 640px) {
+  .hero-actions {
+    flex-wrap: nowrap;
+  }
+
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- md: 900px ---------------------------------------------------------
+   Desktop navigation takes over from the mobile menu.
+   ------------------------------------------------------------------------ */
+@media (min-width: 900px) {
+  .primary-nav {
+    display: block;
+  }
+
+  .header-cta {
+    display: inline-flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .hero .container {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .hero-portrait {
+    justify-self: end;
+  }
+
+  .hero-portrait img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-5);
+  }
+
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .split {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .split.split--reverse .split-content {
+    order: 2;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2) var(--space-5);
+  }
+
+  .why-item {
+    border-top: none;
+    padding-block: var(--space-2);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+
+  .review-card {
+    flex-basis: calc((100% - 2 * var(--space-3)) / 3);
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---- lg: 1100px --------------------------------------------------------- */
+@media (min-width: 1100px) {
+  .section {
+    padding-block: var(--space-7);
+  }
+}
