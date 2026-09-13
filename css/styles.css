@@ -436,6 +436,11 @@ input:focus-visible {
 /* ---- Services dropdown (desktop) + submenu (mobile) --------------------- */
 .nav-dropdown {
   position: relative;
+  /* Extends the hoverable area down to the dropdown menu without
+     shifting the nav row's visual height, so the hover state survives
+     the trip from the link to the menu instead of dropping in the gap. */
+  padding-bottom: 0.75rem;
+  margin-bottom: -0.75rem;
 }
 
 .nav-star {
@@ -477,7 +482,6 @@ input:focus-visible {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-top: 0.6rem;
   padding: 0.5rem;
   min-width: 230px;
   background-color: var(--color-white);
