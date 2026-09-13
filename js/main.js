@@ -136,3 +136,59 @@ if (contactForm) {
     }
   });
 }
+
+// ==========================================================================
+// Scroll reveal
+// Progressive enhancement: the .reveal class (and its initial hidden state)
+// is only ever added here, by JS. With JS off, or if IntersectionObserver
+// isn't supported, nothing is touched and every element stays visible as
+// plain HTML. Only applied to supplementary elements (cards, review cards,
+// process steps, diagram panels), never to primary body copy.
+// ==========================================================================
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll(
+  '.card, .work-card, .review-card, .process-step, .hero-diagram'
+);
+
+if (revealEls.length && 'IntersectionObserver' in window) {
+  revealEls.forEach((el, index) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = `${(index % 4) * 70}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+}
+
+// ==========================================================================
+// Hero diagram peek-label cycling
+// Static fallback (first label always shown) is set in CSS; this just
+// takes over and rotates through the rest when JS and motion are available.
+// ==========================================================================
+if (!prefersReducedMotion) {
+  document.querySelectorAll('.diagram-peeks').forEach((group) => {
+    const peeks = group.querySelectorAll('.diagram-peek');
+    if (peeks.length < 2) return;
+
+    group.classList.add('is-cycling');
+    let active = 0;
+    peeks[active].classList.add('is-active');
+
+    setInterval(() => {
+      peeks[active].classList.remove('is-active');
+      active = (active + 1) % peeks.length;
+      peeks[active].classList.add('is-active');
+    }, 2600);
+  });
+}

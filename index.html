@@ -95,9 +95,10 @@
 
     <nav class="primary-nav" aria-label="Primary">
       <ul>
-        <li><a href="services/digital-growth/">Services</a></li>
+        <li><a href="services/">Services</a></li>
         <li><a href="about/">About</a></li>
         <li><a href="work/">Work</a></li>
+        <li><a href="faq/">FAQ</a></li>
         <li><a href="contact/">Contact</a></li>
       </ul>
     </nav>
@@ -119,9 +120,10 @@
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
     <ul>
-      <li><a href="services/digital-growth/">Services</a></li>
+      <li><a href="services/">Services</a></li>
       <li><a href="about/">About</a></li>
       <li><a href="work/">Work</a></li>
+      <li><a href="faq/">FAQ</a></li>
       <li><a href="contact/">Contact</a></li>
       <li><a href="contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -139,7 +141,7 @@
         <p class="hero-text">I'm Samama Tahir, a full-stack web developer and digital growth specialist based in Porto, Portugal. I help businesses build fast websites, improve their visibility on Google, and turn more visitors into customers.</p>
         <div class="hero-actions">
           <a href="contact/" class="btn btn-primary">Let's talk about your project</a>
-          <a href="services/digital-growth/" class="btn btn-secondary">View my services</a>
+          <a href="services/" class="btn btn-secondary">View my services</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -177,28 +179,100 @@
         <span class="eyebrow">What I Can Help With</span>
         <h2 id="help-heading" class="text-balance">Three connected ways I work with businesses</h2>
       </div>
+      <div class="hero-diagram" aria-hidden="true" style="margin-bottom: var(--space-4);">
+        <svg class="diagram-wires" viewBox="0 0 600 300" preserveAspectRatio="none">
+          <path class="wire" d="M132,90 C210,90 230,140 300,150"></path>
+          <path class="wire" d="M468,90 C390,90 370,140 300,150"></path>
+          <path class="wire" d="M300,222 C300,195 300,180 300,150"></path>
+        </svg>
+        <div class="diagram-node diagram-node--a">
+          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <span class="diagram-node-label">Web Development</span>
+        </div>
+        <div class="diagram-node diagram-node--b">
+          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+          <span class="diagram-node-label">Marketing</span>
+        </div>
+        <div class="diagram-node diagram-node--c">
+          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></span>
+          <span class="diagram-node-label">AI &amp; Automation</span>
+        </div>
+        <div class="diagram-hub">
+          <span class="diagram-hub-icon">ST</span>
+        </div>
+        <div class="diagram-peeks">
+          <span class="diagram-peek">Built well</span>
+          <span class="diagram-peek">Found online</span>
+          <span class="diagram-peek">Runs itself</span>
+        </div>
+      </div>
       <div class="card-grid card-grid--3">
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </span>
-          <h3>Build</h3>
-          <p>Websites, e-commerce stores, and custom web applications built to be fast, secure, and easy to maintain.</p>
+        <article class="card card--illustrated">
+          <div class="card-visual card-visual--build" aria-hidden="true">
+            <svg class="visual-wires" viewBox="0 0 320 150" preserveAspectRatio="none">
+              <path class="wire" d="M78,42 C100,66 120,78 160,96"></path>
+              <path class="wire" d="M242,42 C220,66 200,78 160,96"></path>
+            </svg>
+            <span class="visual-pill" style="left: 14px; top: 22px;"><span class="visual-pill-dot" style="background-color: var(--color-green-light);"></span>WordPress</span>
+            <span class="visual-pill" style="right: 14px; top: 22px;"><span class="visual-pill-dot" style="background-color: var(--color-green);"></span>Shopify</span>
+            <span class="visual-pill" style="left: 50%; top: 100px; transform: translateX(-50%);"><span class="visual-pill-dot" style="background-color: var(--color-yellow);"></span>Your Site</span>
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3>Build</h3>
+            <p>Websites, e-commerce stores, and custom web applications built to be fast, secure, and easy to maintain.</p>
+            <a href="services/web-development/" class="link-more">Explore web development services</a>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-          <h3>Grow</h3>
-          <p>Getting found on Google: Google Business Profile, local SEO, and paid ads that bring the right people to your site.</p>
-          <a href="services/digital-growth/" class="link-more">Explore digital growth services</a>
+        <article class="card card--illustrated">
+          <div class="card-visual card-visual--grow" aria-hidden="true">
+            <div class="visual-stat-card">
+              <div class="visual-stat-row">
+                <span>Google Business Profile</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="visual-stat-row">
+                <span>Local SEO</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="visual-stat-row visual-stat-row--highlight">
+                <span>Ads &amp; Social</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <h3>Grow</h3>
+            <p>Getting found on Google: Google Business Profile, local SEO, and paid ads that bring the right people to your site.</p>
+            <a href="services/marketing/" class="link-more">Explore marketing services</a>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-          </span>
-          <h3>Improve</h3>
-          <p>Understanding your traffic, tracking what matters, and improving the experience that turns visitors into customers.</p>
+        <article class="card card--illustrated">
+          <div class="card-visual card-visual--improve" aria-hidden="true">
+            <div class="visual-toggle">
+              <span class="visual-toggle-pill">Before</span>
+              <span class="visual-toggle-pill visual-toggle-pill--active">After</span>
+            </div>
+            <div class="visual-bars">
+              <span style="height: 28%;"></span>
+              <span style="height: 42%;"></span>
+              <span style="height: 38%;"></span>
+              <span style="height: 66%;"></span>
+              <span style="height: 92%;"></span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </span>
+            <h3>Improve</h3>
+            <p>Understanding your traffic, tracking what matters, and improving the experience that turns visitors into customers.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -233,6 +307,7 @@
             Built with conversion in mind, not just appearance
           </li>
         </ul>
+        <a href="services/web-development/" class="link-more">Explore web development services</a>
       </div>
       <div class="split-panel split-panel--photo">
         <img src="images/samama-tahir-web-development-laptop.jpg" alt="Samama Tahir's laptop showing code in an editor, working on a web project" width="1400" height="933" loading="lazy" />
@@ -247,12 +322,12 @@
         <img src="images/samama-tahir-coding-cafe-porto.jpg" alt="Samama Tahir working on his laptop at a cafe in Porto" width="1400" height="933" loading="lazy" />
       </div>
       <div class="split-content">
-        <span class="eyebrow">Digital Growth</span>
+        <span class="eyebrow">Marketing</span>
         <h2 id="growth-heading" class="text-balance">Building the website is only part of the job</h2>
         <p>A business also needs to be discoverable on Google, understand where its visitors actually come from, track which of them turn into enquiries, and keep improving that journey over time.</p>
         <p style="margin-top: 1rem;">I work on Google Business Profile, local and technical SEO, Google Ads, Meta Ads, and the analytics setup (GA4, Google Tag Manager) that tells you which of it is actually working.</p>
         <div class="hero-actions" style="margin-top: 1.5rem;">
-          <a href="services/digital-growth/" class="btn btn-primary">See how digital growth works</a>
+          <a href="services/marketing/" class="btn btn-primary">See how marketing works</a>
         </div>
       </div>
     </div>
@@ -281,6 +356,82 @@
         <div class="why-item">
           <h3>Business focused</h3>
           <p>The goal isn't just something that looks good. It's helping the business generate visibility, enquiries, and sales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Questions -->
+  <section class="section" aria-labelledby="questions-heading">
+    <div class="container split">
+      <div class="split-content">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="questions-heading" class="text-balance">What's usually on your mind</h2>
+        <p style="margin-top: var(--space-2);">Before working together, most people are wondering about the same few things. Here's some of what comes up before we even get on a call.</p>
+        <div class="questions-trust">
+          <div class="questions-trust-item">
+            <span class="questions-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6V17h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"/></svg>
+            </span>
+            <div>
+              <h3>Straight answers</h3>
+              <p>Every question gets a plain, direct answer. If something isn't worth doing yet, I'll say so, even if it means less work for me.</p>
+            </div>
+          </div>
+          <div class="questions-trust-item">
+            <span class="questions-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div>
+              <h3>No obligation</h3>
+              <p>Asking a question doesn't commit you to anything. I'd rather you know what you're getting into before we start.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="contact/" class="btn btn-primary">Ask Me Anything</a>
+        </div>
+        <p style="margin-top: var(--space-2);"><a href="faq/" class="link-more">See all FAQs</a></p>
+      </div>
+      <div class="split-panel split-panel--marquee">
+        <div class="questions-marquee" aria-hidden="true">
+          <div class="questions-dots"></div>
+          <div class="questions-fade questions-fade--left"></div>
+          <div class="questions-fade questions-fade--right"></div>
+          <div class="questions-rows">
+            <div class="questions-row questions-row--left">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"How much does a website cost?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Do I need a new site or just marketing?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"How much does a website cost?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Do I need a new site or just marketing?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--right">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Can you fix my current website instead?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"How long does a project usually take?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Can you fix my current website instead?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"How long does a project usually take?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--left questions-row--slow">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Do you work with businesses outside Porto?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"What if I'm not sure what I need yet?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Do you work with businesses outside Porto?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"What if I'm not sure what I need yet?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--right questions-row--slow">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Is WordPress or Shopify right for me?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Can you help after the site goes live?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Is WordPress or Shopify right for me?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Can you help after the site goes live?"</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -526,9 +677,10 @@
         <p class="footer-heading">Navigate</p>
         <div class="footer-links">
           <a href="./">Home</a>
-          <a href="services/digital-growth/">Services</a>
+          <a href="services/">Services</a>
           <a href="about/">About</a>
           <a href="work/">Portfolio</a>
+          <a href="faq/">FAQ</a>
         </div>
       </div>
       <div>

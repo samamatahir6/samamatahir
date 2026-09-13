@@ -9,11 +9,32 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/services/digital-growth/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/digital-growth/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/digital-growth/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/digital-growth/" />
+    <loc>https://samamatahir.com/services/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/ai-automation/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
   </url>
   <url>
     <loc>https://samamatahir.com/about/</loc>
@@ -37,6 +58,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
   </url>
   <url>
+    <loc>https://samamatahir.com/faq/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/faq/" />
+  </url>
+  <url>
     <loc>https://samamatahir.com/pt/</loc>
     <lastmod>2026-08-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
@@ -44,11 +72,32 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/services/digital-growth/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/digital-growth/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/digital-growth/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/digital-growth/" />
+    <loc>https://samamatahir.com/pt/services/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/services/web-development/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/services/marketing/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/services/ai-automation/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
   </url>
   <url>
     <loc>https://samamatahir.com/pt/about/</loc>
@@ -70,5 +119,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/work/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/faq/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/faq/" />
   </url>
 </urlset>

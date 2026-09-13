@@ -36,12 +36,20 @@ index.html                            # Home page (EN)
 about/index.html                      # About page (EN)
 contact/index.html                    # Contact page (EN, Web3Forms contact form)
 work/index.html                       # Work / portfolio page (EN)
-services/digital-growth/index.html    # Digital Growth service page (EN)
+services/index.html                   # Services hub page (EN)
+services/web-development/index.html   # Web Development service page (EN)
+services/marketing/index.html         # Marketing service page (EN)
+services/ai-automation/index.html     # AI & Automation service page (EN)
+faq/index.html                        # FAQ page, FAQPage schema (EN)
 pt/index.html                         # Home page (PT)
 pt/about/index.html                   # About page (PT)
 pt/contact/index.html                 # Contact page (PT, Web3Forms contact form)
 pt/work/index.html                    # Work / portfolio page (PT)
-pt/services/digital-growth/index.html # Digital Growth service page (PT)
+pt/services/index.html                # Services hub page (PT)
+pt/services/web-development/index.html # Web Development service page (PT)
+pt/services/marketing/index.html      # Marketing service page (PT)
+pt/services/ai-automation/index.html  # AI & Automation service page (PT)
+pt/faq/index.html                     # FAQ page, FAQPage schema (PT)
 css/styles.css                        # Base styles: variables, reset, typography, components (sections 1-20)
 css/responsive.css                    # min-width media query overrides (640 / 900 / 1100px)
 js/main.js                            # Mobile menu, scroll shadow, footer year, reviews slider, contact form
@@ -59,11 +67,30 @@ sitemap.xml
 
 The site is EN-default at the root, with a full European Portuguese mirror under `/pt/`. This is the reverse of `marketing.samamatahir.com`, which is PT-default with an `/en/` mirror, since English is the primary language for this personal-brand domain.
 
-- **`/pt/` mirrors the EN folder structure exactly** (`pt/about/`, `pt/contact/`, `pt/work/`, `pt/services/digital-growth/`), so every internal same-language link inside a PT page (nav, footer, breadcrumbs, CTAs) resolves correctly using the *same relative path depth as the EN original* — only the shared asset paths (`css/`, `js/`, `icons/`, `images/`, which live once at the true project root, not duplicated under `pt/`) need one extra `../` prepended.
+- **`/pt/` mirrors the EN folder structure exactly** (`pt/about/`, `pt/contact/`, `pt/work/`, `pt/services/`, `pt/services/web-development/`, `pt/services/marketing/`, `pt/services/ai-automation/`), so every internal same-language link inside a PT page (nav, footer, breadcrumbs, CTAs) resolves correctly using the *same relative path depth as the EN original* — only the shared asset paths (`css/`, `js/`, `icons/`, `images/`, which live once at the true project root, not duplicated under `pt/`) need one extra `../` prepended.
 - Each page carries a `.lang-switch` in the header (desktop) and mirrored in `#mobile-nav` (mobile), linking to its counterpart in the other language, plus `hreflang` alternate tags (`en`, `pt-PT`, `x-default`) in `<head>` and matching `<xhtml:link>` entries in `sitemap.xml`.
 - `<html lang="...">`, canonical URL, OG/Twitter meta, and JSON-LD (`inLanguage`, `description`, `url`) are all translated/adjusted per language, not just the visible copy.
 - **To add another page later**: build the EN version first, then copy it into the matching `pt/` path, translate the body copy and metadata, and fix only the asset-path prefix (add one `../`) — leave the internal nav/footer/breadcrumb links as copied, since the mirrored structure already makes them resolve correctly.
 - **Real review quotes are kept in whichever language the client actually wrote them in** (all 10 have a real, verbatim Portuguese version reused from `marketing.samamatahir.com`, since these are the same real Google reviews for the same person). Where a real quote says "o Sam"/"Sam", that's the client's own words and is left as-is even though the rest of the site's copy says "Samama"/"Samama Tahir" per the branding decision below.
+
+## Services structure
+
+`services/` is a hub page (EN + PT) linking out to main service "pillars" — deliberately not one page per narrow skill or tool. Current pillars:
+
+- **`services/web-development/`** — WordPress, Shopify, custom web applications (React/Vue/Node/Laravel/CodeIgniter), and e-commerce, as sections within one page.
+- **`services/marketing/`** — Google Business Profile, local/technical SEO, Google Ads, Meta Ads, analytics and tracking, and conversion optimization. This was renamed from `services/digital-growth/` before go-live (no indexed URLs existed yet, so the rename was free). "Digital Growth Specialist" remains the job-title branding used elsewhere on the site; only the service page itself is called "Marketing".
+- **`services/ai-automation/`** — automated customer replies, quote-to-invoice workflows, and AI-generated reports/audits. Built only once real, specific examples were provided (an actual auto-reply system, an actual moving-quote-to-invoice pipeline, an actual AI SEO-audit tool), per the no-invented-capabilities rule below — not from a generic AI-services template.
+- A Hosting/Security/Infrastructure pillar was discussed and intentionally deferred to avoid over-niching the services list. Add it the same way if it's ever wanted: a card in both hub pages, a new `services/<slug>/` page pair, and a `sitemap.xml` entry.
+
+When adding a new pillar: add a card to both `services/index.html` and `pt/services/index.html`, build the EN page first following the pattern in the two existing service pages (intro, `.service-block` sections, process, CTA), then its `pt/` mirror, and add both URLs to `sitemap.xml`.
+
+## Common Questions marquee + FAQ page
+
+The home page and each of the three service pages carry a "Common Questions" section: a rotated, auto-scrolling marquee of real client questions (`.questions-marquee`, CSS-only animation, text always in plain HTML so nothing depends on JS or motion to be visible), styled from the brand palette, next to two honest trust points (`.questions-trust`) and an "Ask Me Anything" CTA. Questions are general on the home page and specific to that page's service on the service pages.
+
+`faq/` (EN) and `pt/faq/` (PT) collect every one of those questions in one place, grouped by category, as native `<details>/<summary>` accordions (no JS needed to reveal an answer, so nothing is hidden from a reader or a search engine). Each page carries a matching `FAQPage` JSON-LD schema whose `Question`/`acceptedAnswer` text is kept identical to the visible accordion content — if you edit an answer, update both. Both the home page and every service page link to `/faq/` from their Common Questions section, and every page's footer links to it too.
+
+When adding a new question anywhere (a marquee or the FAQ page), add it to the other place too so they stay in sync, and keep it a real question a client has actually asked, never a hypothetical written to fill space.
 
 ## Adding more pages later
 
@@ -108,13 +135,13 @@ A Portugal photo gallery was discussed but intentionally not built yet: it doesn
 ## SEO decisions made while building
 
 - **One `<h1>` per page**, logical `h2`/`h3` hierarchy, semantic `<header>/<nav>/<main>/<section>/<footer>` throughout. No div-soup.
-- **Unique `<title>`, meta description, canonical, and Open Graph tags** on all ten pages (five EN + five PT; titles roughly 51 to 80 characters, descriptions under 160 characters), each translated per language, not duplicated.
+- **Unique `<title>`, meta description, canonical, and Open Graph tags** on all eighteen pages (nine EN + nine PT; titles roughly 51 to 80 characters, descriptions under 160 characters), each translated per language, not duplicated.
 - **`hreflang` alternates** (`en`, `pt-PT`, `x-default`) in every page's `<head>` and in `sitemap.xml` via `<xhtml:link>`, so Google serves the right language version per searcher.
 - **JSON-LD structured data**: `Person` + `WebSite` + `ProfessionalService` (with a real `review` array of 10 Google reviews) on the home page, `Service` + `BreadcrumbList` on the service page, `BreadcrumbList` on About, `BreadcrumbList` on Work, `BreadcrumbList` + `ContactPage` on Contact, all duplicated and translated on the PT side with `/pt/` URLs and `inLanguage: "pt-PT"`. All fields reflect only real, stated information. No fabricated ratings, prices, or reviews beyond the real ones.
 - **Relative asset and internal-link paths** so the site works both from a real server and by opening files directly, with correct depth handling for nested pages (including the extra `/pt/` folder level).
 - **Minimal JavaScript**: menu toggle, scroll shadow, footer year, the reviews slider, and the contact-form fetch enhancement only. All page content is real HTML, not JS-rendered. The contact form works with JS disabled (plain POST to Web3Forms). Nothing meaningful is hidden behind JavaScript.
 - **Images**: one real photo, descriptive filename (`samama-tahir-web-developer-porto.jpg`), explicit `width`/`height` to avoid layout shift, meaningful `alt` text (not keyword-stuffed, translated on PT pages).
-- **`robots.txt` + `sitemap.xml`** (with `lastmod` and hreflang alternates) pointing at `https://samamatahir.com/`, listing all ten pages (five EN + five PT).
+- **`robots.txt` + `sitemap.xml`** (with `lastmod` and hreflang alternates) pointing at `https://samamatahir.com/`, listing all eighteen pages (nine EN + nine PT).
 - **Custom 404 page** wired up via `.htaccess` (`ErrorDocument 404 /404.html`), plus `Options -Indexes` and a commented pattern ready for future 301 redirects.
 - **Internal linking**: Home links to the Digital Growth service page from three separate places with descriptive anchor text, no "click here". Every page links to `/contact/` for the primary conversion action, and the footer shows real email/phone directly on every page. Work links back to the home reviews section.
 - **No keyword stuffing, no repeated "Porto" for its own sake.** Location appears where it's genuinely relevant.
@@ -124,7 +151,7 @@ A Portugal photo gallery was discussed but intentionally not built yet: it doesn
 None of this can be done from the codebase. It requires access to accounts or services this project doesn't have:
 
 1. **DNS / hosting**: connect the GitHub repo to Hostinger Business's Git integration so it deploys into `public_html` (replacing the current WordPress install), point `samamatahir.com` at that hosting, and confirm HTTPS is issued for the domain before uncommenting the force-HTTPS rule in `.htaccess`.
-2. **Google Search Console**: verify the domain, submit `sitemap.xml`, request indexing for all ten pages (EN + PT).
+2. **Google Search Console**: verify the domain, submit `sitemap.xml`, request indexing for all eighteen pages (EN + PT).
 3. **Bing Webmaster Tools**: same, separately. This matters for Copilot/ChatGPT's web search, which leans on Bing's index.
 4. **Analytics**: nothing is wired up yet (intentionally, since nothing was specified). If you want GA4 and/or Microsoft Clarity here too, that's a small addition once you have the property/tracking IDs. If you add Clarity, gate it behind a cookie-consent banner the same way it's done on `marketing.samamatahir.com`, not load it unconditionally.
 5. **Social links**: the footer now links to the real LinkedIn profile (`https://www.linkedin.com/in/samama-tahir/`) on every page. The Instagram/Facebook placeholders were removed rather than left as dead `#` links. Add them back (a footer `.footer-links` anchor in all 8 pages + 404 if you want it there) once real profile URLs exist.
