@@ -56,7 +56,17 @@
 
     <nav class="primary-nav" aria-label="Principal">
       <ul>
-        <li><a href="../services/" aria-current="page">Serviços</a></li>
+        <li class="nav-dropdown">
+          <a href="../services/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="../services/web-development/">Desenvolvimento Web</a></li>
+            <li><a href="../services/marketing/">Marketing</a></li>
+            <li><a href="../services/ai-automation/">IA e Automação</a></li>
+          </ul>
+        </li>
         <li><a href="../about/">Sobre</a></li>
         <li><a href="../work/">Portefólio</a></li>
         <li><a href="../faq/">FAQ</a></li>
@@ -81,7 +91,14 @@
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
-      <li><a href="../services/">Serviços</a></li>
+      <li class="mobile-nav-services">
+        <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu">
+          <li><a href="../services/web-development/">Desenvolvimento Web</a></li>
+          <li><a href="../services/marketing/">Marketing</a></li>
+          <li><a href="../services/ai-automation/">IA e Automação</a></li>
+        </ul>
+      </li>
       <li><a href="../about/">Sobre</a></li>
       <li><a href="../work/">Portefólio</a></li>
       <li><a href="../faq/">FAQ</a></li>
@@ -101,7 +118,7 @@
 
   <!-- Intro -->
   <section class="section" style="padding-top: var(--space-4);">
-    <div class="container" style="max-width: 46rem;">
+    <div class="container">
       <span class="eyebrow">Serviços</span>
       <h1 class="text-balance">Desenvolvimento web e marketing, feitos por uma só pessoa</h1>
       <p style="font-size: 1.15rem; margin-top: var(--space-2);">Um negócio precisa de um site que funcione e de uma forma de as pessoas o encontrarem de facto. Faço as duas coisas, para que nada se perca entre "quem construiu" e "quem devia promover".</p>
@@ -142,7 +159,7 @@
 
   <!-- Why both -->
   <section class="section section--alt" aria-labelledby="why-both-heading">
-    <div class="container" style="max-width: 46rem;">
+    <div class="container">
       <span class="eyebrow">Porquê os Três</span>
       <h2 id="why-both-heading" class="text-balance">O site, o tráfego, e o trabalho manual por trás deles</h2>
       <p style="margin-top: var(--space-2);">Um site rápido e bem construído sem ninguém a encontrá-lo não faz um negócio crescer, um orçamento de marketing apontado a um site lento ou com problemas também não, e nenhum dos dois poupa as horas perdidas a escrever a mesma resposta ou fatura à mão. Trabalho nas três frentes, para que estas decisões sejam tomadas pela mesma pessoa, e não divididas entre equipas separadas que nunca falam entre si.</p>

@@ -68,7 +68,17 @@
 
     <nav class="primary-nav" aria-label="Primary">
       <ul>
-        <li><a href="../../services/" aria-current="page">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="../../services/web-development/">Web Development</a></li>
+            <li><a href="../../services/marketing/">Marketing</a></li>
+            <li><a href="../../services/ai-automation/" aria-current="page">AI &amp; Automation</a></li>
+          </ul>
+        </li>
         <li><a href="../../about/">About</a></li>
         <li><a href="../../work/">Work</a></li>
         <li><a href="../../faq/">FAQ</a></li>
@@ -93,7 +103,14 @@
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
     <ul>
-      <li><a href="../../services/">Services</a></li>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu">
+          <li><a href="../../services/web-development/">Web Development</a></li>
+          <li><a href="../../services/marketing/">Marketing</a></li>
+          <li><a href="../../services/ai-automation/" aria-current="page">AI &amp; Automation</a></li>
+        </ul>
+      </li>
       <li><a href="../../about/">About</a></li>
       <li><a href="../../work/">Work</a></li>
       <li><a href="../../faq/">FAQ</a></li>

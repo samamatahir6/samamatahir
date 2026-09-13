@@ -433,6 +433,106 @@ input:focus-visible {
   font-size: 1.05rem;
 }
 
+/* ---- Services dropdown (desktop) + submenu (mobile) --------------------- */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-star {
+  display: inline-block;
+  margin-right: 0.3rem;
+  color: var(--color-yellow);
+  font-size: 0.9em;
+  vertical-align: middle;
+  animation: nav-star-twinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes nav-star-twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4) rotate(20deg);
+    opacity: 0.6;
+  }
+}
+
+.nav-caret {
+  width: 12px;
+  height: 12px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-caret,
+.nav-dropdown:focus-within .nav-caret {
+  transform: rotate(180deg);
+}
+
+.primary-nav .nav-dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 0.6rem;
+  padding: 0.5rem;
+  min-width: 230px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 32px rgba(11, 59, 42, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 60;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.nav-dropdown-menu a:not(.btn) {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:not(.btn)::after {
+  display: none;
+}
+
+.nav-dropdown-menu a:not(.btn):hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-green);
+}
+
+.mobile-nav .mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--color-border);
+}
+
+.mobile-nav-submenu a:not(.btn) {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
 /* ==========================================================================
    7. HERO
    ========================================================================== */
