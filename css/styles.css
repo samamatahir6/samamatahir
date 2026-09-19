@@ -1821,3 +1821,302 @@ input:focus-visible {
   color: var(--color-text-muted);
   font-size: 0.98rem;
 }
+
+/* ==========================================================================
+   26. HOMEPAGE (LIGHT / PHOTO-LED)
+   Scoped to body.home so inner pages keep their existing layout.
+   ========================================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.home {
+  background-color: var(--color-bg-alt);
+}
+
+.home .container {
+  max-width: 1120px;
+}
+
+.home .site-header {
+  background-color: rgba(247, 248, 247, 0.86);
+}
+
+.home .site-header .container {
+  height: 68px;
+}
+
+.home .logo {
+  font-size: 1.05rem;
+}
+
+.home .logo-mark {
+  display: none;
+}
+
+.home .primary-nav ul {
+  gap: 1.75rem;
+}
+
+.home .primary-nav a:not(.btn) {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.home .primary-nav a:not(.btn)::after {
+  display: none;
+}
+
+.home .primary-nav a:not(.btn):hover {
+  color: var(--color-green);
+}
+
+.home .lang-switch {
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.8rem;
+}
+
+.home .lang-switch a,
+.home .lang-switch span {
+  padding: 0.35rem 0.55rem;
+}
+
+.home .header-cta,
+.home .btn-primary {
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.home-hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.home-hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.home-hero-copy h1 {
+  font-size: clamp(2.125rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  max-width: 12ch;
+}
+
+.home-hero-copy p {
+  margin-top: 1.15rem;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.home-hero-copy .btn {
+  margin-top: 1.25rem;
+}
+
+.home-hero-photo {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 28px 50px -28px rgba(11, 59, 42, 0.35);
+}
+
+.home-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.home-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  padding: 1.25rem 1.5rem 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+}
+
+.home-section {
+  padding-block: 4.5rem;
+}
+
+.home-section--tight {
+  padding-block: 3.5rem;
+}
+
+.home-kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.home-services {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-service {
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 1.85rem 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-service h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.home-service p {
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.home-service:hover,
+.home-work-card:hover,
+.home-review:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 32px -24px rgba(11, 59, 42, 0.4);
+}
+
+.home-about {
+  display: grid;
+  gap: 0;
+  background-color: var(--color-white);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.home-about-copy {
+  padding: 2rem 1.75rem;
+}
+
+.home-about-copy h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.home-about-copy p {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 36rem;
+}
+
+.home-about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.home-work {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 0.85rem 0.85rem 1.1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-work-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: var(--color-bg-alt);
+}
+
+.home-work-card span {
+  padding-inline: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.home-reviews {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-review {
+  margin: 0;
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 1.75rem 1.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-review p {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-review footer {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-green);
+}
+
+.home-cta-band {
+  background-color: var(--color-green);
+  padding: 2.25rem 0;
+}
+
+.home-cta-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.home-cta-band h2 {
+  color: var(--color-white);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  max-width: 28rem;
+}
+
+.home-cta-band .btn-primary {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-service,
+  .home-work-card,
+  .home-review {
+    transition: none;
+  }
+
+  .home-service:hover,
+  .home-work-card:hover,
+  .home-review:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

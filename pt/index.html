@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_PT" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-working-porto.jpg" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Desenvolvedor Web Full-Stack e Especialista em Crescimento Digital no Porto | Samama Tahir" />
 <meta name="twitter:description" content="Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto, Portugal. Construo sites rápidos e ajudo empresas a crescer online." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-working-porto.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +39,7 @@
   "jobTitle": "Desenvolvedor Web Full-Stack e Especialista em Crescimento Digital",
   "description": "Desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal, ajudando empresas a construir sites e melhorar a sua visibilidade online.",
   "url": "https://samamatahir.com/pt/",
-  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
+  "image": "https://samamatahir.com/images/samama-tahir-working-porto.jpg",
   "email": "hello@samamatahir.com",
   "telephone": "+351932426753",
   "address": { "@type": "PostalAddress", "addressRegion": "Porto", "addressCountry": "PT" },
@@ -82,38 +82,23 @@
 </script>
 </head>
 
-<body>
+<body class="home">
 
 <a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
 
 <header class="site-header" id="site-header">
   <div class="container">
-    <a href="./" class="logo">
-      <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
-    </a>
+    <a href="./" class="logo">Samama Tahir</a>
 
     <nav class="primary-nav" aria-label="Principal">
       <ul>
-        <li class="nav-dropdown">
-          <a href="services/">
-            <span class="nav-star" aria-hidden="true">✦</span>Serviços
-            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="services/web-development/">Desenvolvimento Web</a></li>
-            <li><a href="services/marketing/">Marketing</a></li>
-            <li><a href="services/ai-automation/">IA e Automação</a></li>
-          </ul>
-        </li>
-        <li><a href="about/">Sobre</a></li>
         <li><a href="work/">Portefólio</a></li>
-        <li><a href="faq/">FAQ</a></li>
-        <li><a href="contact/">Contacto</a></li>
+        <li><a href="services/">Serviços</a></li>
+        <li><a href="about/">Sobre</a></li>
       </ul>
     </nav>
 
-    <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <div class="header-actions">
       <div class="lang-switch">
         <a href="../" hreflang="en">EN</a>
         <span class="is-active" aria-current="page">PT</span>
@@ -130,18 +115,10 @@
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
-      <li class="mobile-nav-services">
-        <a href="services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="services/web-development/">Desenvolvimento Web</a></li>
-          <li><a href="services/marketing/">Marketing</a></li>
-          <li><a href="services/ai-automation/">IA e Automação</a></li>
-        </ul>
-      </li>
-      <li><a href="about/">Sobre</a></li>
       <li><a href="work/">Portefólio</a></li>
+      <li><a href="services/">Serviços</a></li>
+      <li><a href="about/">Sobre</a></li>
       <li><a href="faq/">FAQ</a></li>
-      <li><a href="contact/">Contacto</a></li>
       <li><a href="contact/" class="btn btn-primary btn-block">Vamos falar</a></li>
     </ul>
   </nav>
@@ -149,534 +126,130 @@
 
 <main id="main-content">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div>
-        <span class="hero-badge">Porto, Portugal</span>
-        <h1 class="text-balance">Construo sites e sistemas digitais que ajudam empresas a crescer online.</h1>
-        <p class="hero-text">Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Ajudo empresas a construir sites rápidos, melhorar a sua visibilidade no Google e transformar mais visitantes em clientes.</p>
-        <div class="hero-actions">
-          <a href="contact/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
-          <a href="services/" class="btn btn-secondary">Ver os meus serviços</a>
-        </div>
+  <section class="home-hero">
+    <div class="container home-hero-grid">
+      <div class="home-hero-copy">
+        <h1>Desenvolvedor web no Porto.</h1>
+        <p>Construo sites limpos e rápidos que ajudam empresas a crescer online.</p>
+        <a href="contact/" class="btn btn-primary">Vamos trabalhar juntos <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero-portrait">
-        <img src="../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto" width="320" height="320" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust / Experience -->
-  <section class="section" aria-labelledby="experience-heading">
-    <div class="container experience-grid">
-      <div class="experience-stat">
-        8+<span>anos a construir para a web</span>
-      </div>
-      <div>
-        <h2 id="experience-heading" class="text-balance">Experiência real em toda a stack</h2>
-        <p>Nos últimos 8+ anos trabalhei com WordPress, Shopify, React e aplicações web totalmente personalizadas, desenhando, construindo e mantendo lojas de e-commerce, APIs e integrações com terceiros, além de trabalho de SEO e analítica para ajudar esses sites a serem realmente utilizados.</p>
-        <div class="tag-list">
-          <span class="tag">WordPress</span>
-          <span class="tag">Shopify</span>
-          <span class="tag">React</span>
-          <span class="tag">E-commerce</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">SEO</span>
-          <span class="tag">Analítica</span>
-        </div>
+      <div class="home-hero-photo">
+        <img
+          src="../images/samama-tahir-working-porto.jpg"
+          alt="Samama Tahir a trabalhar no portátil num café no Porto"
+          width="1600"
+          height="1200"
+        />
       </div>
     </div>
   </section>
 
-  <!-- What I Can Help With -->
-  <section class="section section--alt" aria-labelledby="help-heading">
+  <p class="home-trust">
+    <span>8+ anos</span>
+    <span aria-hidden="true">·</span>
+    <span>10 avaliações no Google</span>
+    <span aria-hidden="true">·</span>
+    <span>Porto e Gaia</span>
+  </p>
+
+  <section class="home-section" aria-labelledby="help-heading">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Como Posso Ajudar</span>
-        <h2 id="help-heading" class="text-balance">Três formas complementares de trabalhar com empresas</h2>
-      </div>
-      <div class="hero-diagram" aria-hidden="true" style="margin-bottom: var(--space-4);">
-        <svg class="diagram-wires" viewBox="0 0 600 300" preserveAspectRatio="none">
-          <path class="wire" d="M132,90 C210,90 230,140 300,150"></path>
-          <path class="wire" d="M468,90 C390,90 370,140 300,150"></path>
-          <path class="wire" d="M300,222 C300,195 300,180 300,150"></path>
-        </svg>
-        <div class="diagram-node diagram-node--a">
-          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-          <span class="diagram-node-label">Desenvolvimento Web</span>
-        </div>
-        <div class="diagram-node diagram-node--b">
-          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-          <span class="diagram-node-label">Marketing</span>
-        </div>
-        <div class="diagram-node diagram-node--c">
-          <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></span>
-          <span class="diagram-node-label">IA e Automação</span>
-        </div>
-        <div class="diagram-hub">
-          <span class="diagram-hub-icon">ST</span>
-        </div>
-        <div class="diagram-peeks">
-          <span class="diagram-peek">Bem construído</span>
-          <span class="diagram-peek">Encontrado online</span>
-          <span class="diagram-peek">Funciona sozinho</span>
-        </div>
-      </div>
-      <div class="card-grid card-grid--3">
-        <article class="card card--illustrated">
-          <div class="card-visual card-visual--build" aria-hidden="true">
-            <svg class="visual-wires" viewBox="0 0 320 150" preserveAspectRatio="none">
-              <path class="wire" d="M78,42 C100,66 120,78 160,96"></path>
-              <path class="wire" d="M242,42 C220,66 200,78 160,96"></path>
-            </svg>
-            <span class="visual-pill" style="left: 14px; top: 22px;"><span class="visual-pill-dot" style="background-color: var(--color-green-light);"></span>WordPress</span>
-            <span class="visual-pill" style="right: 14px; top: 22px;"><span class="visual-pill-dot" style="background-color: var(--color-green);"></span>Shopify</span>
-            <span class="visual-pill" style="left: 50%; top: 100px; transform: translateX(-50%);"><span class="visual-pill-dot" style="background-color: var(--color-yellow);"></span>O Seu Site</span>
-          </div>
-          <div class="card-body">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </span>
-            <h3>Construir</h3>
-            <p>Sites, lojas de e-commerce e aplicações web personalizadas, construídos para serem rápidos, seguros e fáceis de manter.</p>
-            <a href="services/web-development/" class="link-more">Explorar serviços de desenvolvimento web</a>
-          </div>
+      <h2 id="help-heading" class="sr-only">Como posso ajudar</h2>
+      <div class="home-services">
+        <article class="home-service">
+          <h3>Construir</h3>
+          <p>Sites rápidos e modernos, fáceis de usar.</p>
         </article>
-        <article class="card card--illustrated">
-          <div class="card-visual card-visual--grow" aria-hidden="true">
-            <div class="visual-stat-card">
-              <div class="visual-stat-row">
-                <span>Perfil de Empresa Google</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="visual-stat-row">
-                <span>SEO Local</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="visual-stat-row visual-stat-row--highlight">
-                <span>Ads e Social</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <h3>Crescer</h3>
-            <p>Ser encontrado no Google: Perfil de Empresa no Google, SEO local e anúncios pagos que trazem as pessoas certas até ao seu site.</p>
-            <a href="services/marketing/" class="link-more">Explorar serviços de marketing</a>
-          </div>
+        <article class="home-service">
+          <h3>Crescer</h3>
+          <p>Seja encontrado no Google por quem precisa de si.</p>
         </article>
-        <article class="card card--illustrated">
-          <div class="card-visual card-visual--improve" aria-hidden="true">
-            <div class="visual-toggle">
-              <span class="visual-toggle-pill">Antes</span>
-              <span class="visual-toggle-pill visual-toggle-pill--active">Depois</span>
-            </div>
-            <div class="visual-bars">
-              <span style="height: 28%;"></span>
-              <span style="height: 42%;"></span>
-              <span style="height: 38%;"></span>
-              <span style="height: 66%;"></span>
-              <span style="height: 92%;"></span>
-            </div>
-          </div>
-          <div class="card-body">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-            </span>
-            <h3>Melhorar</h3>
-            <p>Perceber o seu tráfego, acompanhar o que importa, e melhorar a experiência que transforma visitantes em clientes.</p>
-          </div>
+        <article class="home-service">
+          <h3>Melhorar</h3>
+          <p>Performance, SEO e detalhes que fazem a diferença.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Web Development -->
-  <section class="section" aria-labelledby="webdev-heading">
-    <div class="container split">
-      <div class="split-content">
-        <span class="eyebrow">Desenvolvimento Web</span>
-        <h2 id="webdev-heading" class="text-balance">Sites e produtos digitais, construídos como deve ser</h2>
-        <p>Trabalho com sites WordPress, lojas Shopify, aplicações React e sites totalmente personalizados, incluindo e-commerce, integrações de API REST e a ligação das ferramentas de terceiros que uma empresa já utiliza.</p>
-        <ul>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Performance e segurança desde a base
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Design responsivo que funciona em qualquer dispositivo
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Código fácil de manter, não apenas lançado e esquecido
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Otimizado para SEO por definição, não acrescentado depois
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Construído a pensar na conversão, não apenas na aparência
-          </li>
-        </ul>
-        <a href="services/web-development/" class="link-more">Explorar serviços de desenvolvimento web</a>
-      </div>
-      <div class="split-panel split-panel--photo">
-        <img src="../images/samama-tahir-web-development-laptop.jpg" alt="Portátil do Samama Tahir a mostrar código num editor, a trabalhar num projeto web" width="1400" height="933" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Digital Growth -->
-  <section class="section section--dark" aria-labelledby="growth-heading">
-    <div class="container split split--reverse">
-      <div class="split-panel split-panel--photo">
-        <img src="../images/samama-tahir-coding-cafe-porto.jpg" alt="Samama Tahir a trabalhar no seu portátil num café no Porto" width="1400" height="933" loading="lazy" />
-      </div>
-      <div class="split-content">
-        <span class="eyebrow">Marketing</span>
-        <h2 id="growth-heading" class="text-balance">Construir o site é apenas parte do trabalho</h2>
-        <p>Uma empresa também precisa de ser encontrada no Google, perceber de onde vêm realmente os seus visitantes, acompanhar quais se transformam em pedidos de contacto, e continuar a melhorar esse percurso ao longo do tempo.</p>
-        <p style="margin-top: 1rem;">Trabalho o Perfil de Empresa no Google, SEO local e técnico, Google Ads, Meta Ads, e a configuração de analítica (GA4, Google Tag Manager) que mostra o que está realmente a funcionar.</p>
-        <div class="hero-actions" style="margin-top: 1.5rem;">
-          <a href="services/marketing/" class="btn btn-primary">Ver como funciona o marketing</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Work With Me -->
-  <section class="section" aria-labelledby="why-heading">
+  <section class="home-section home-section--tight" aria-labelledby="about-heading">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Porque Trabalhar Comigo</span>
-        <h2 id="why-heading" class="text-balance">Uma pessoa, não uma equipa a quem o projeto é passado</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-item">
-          <h3>Comunicação direta</h3>
-          <p>Trabalha diretamente com a pessoa que está de facto a construir e a melhorar o seu site. Não há gestores de conta pelo meio.</p>
+      <div class="home-about">
+        <div class="home-about-copy">
+          <h2 id="about-heading">Sobre mim</h2>
+          <p>Estou no Porto e trabalho com empresas aqui, em Gaia, e à distância. Importo-me com código limpo e sites calmos e eficazes. Trabalha diretamente comigo.</p>
         </div>
-        <div class="why-item">
-          <h3>Pensamento técnico e de marketing</h3>
-          <p>Percebo tanto o código por trás de um site como aquilo que esse site precisa de alcançar para o negócio.</p>
-        </div>
-        <div class="why-item">
-          <h3>Foco em performance</h3>
-          <p>Carregamento rápido, código limpo, design responsivo e bases técnicas sólidas desde o primeiro dia.</p>
-        </div>
-        <div class="why-item">
-          <h3>Foco no negócio</h3>
-          <p>O objetivo não é apenas algo com bom aspeto. É ajudar o negócio a gerar visibilidade, pedidos de contacto e vendas.</p>
+        <div class="home-about-photo">
+          <img
+            src="../images/samama-tahir-laptop-desk.jpg"
+            alt="Portátil numa secretária a mostrar código de um projeto web"
+            width="1400"
+            height="933"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Common Questions -->
-  <section class="section" aria-labelledby="questions-heading">
-    <div class="container split">
-      <div class="split-content">
-        <span class="eyebrow">Perguntas Frequentes</span>
-        <h2 id="questions-heading" class="text-balance">O que normalmente passa pela sua cabeça</h2>
-        <p style="margin-top: var(--space-2);">Antes de trabalharmos juntos, a maioria das pessoas tem as mesmas dúvidas. Aqui estão algumas das perguntas que surgem antes de sequer marcarmos uma chamada.</p>
-        <div class="questions-trust">
-          <div class="questions-trust-item">
-            <span class="questions-trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6V17h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"/></svg>
-            </span>
-            <div>
-              <h3>Respostas diretas</h3>
-              <p>Cada pergunta recebe uma resposta clara e direta. Se algo ainda não vale a pena fazer, digo-o, mesmo que signifique menos trabalho para mim.</p>
-            </div>
-          </div>
-          <div class="questions-trust-item">
-            <span class="questions-trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </span>
-            <div>
-              <h3>Sem compromisso</h3>
-              <p>Fazer uma pergunta não o compromete a nada. Prefiro que saiba no que está a entrar antes de começarmos.</p>
-            </div>
-          </div>
-        </div>
-        <div class="hero-actions" style="margin-top: var(--space-3);">
-          <a href="contact/" class="btn btn-primary">Pergunte-me o que Quiser</a>
-        </div>
-        <p style="margin-top: var(--space-2);"><a href="faq/" class="link-more">Ver todas as perguntas</a></p>
-      </div>
-      <div class="split-panel split-panel--marquee">
-        <div class="questions-marquee" aria-hidden="true">
-          <div class="questions-dots"></div>
-          <div class="questions-fade questions-fade--left"></div>
-          <div class="questions-fade questions-fade--right"></div>
-          <div class="questions-rows">
-            <div class="questions-row questions-row--left">
-              <div class="questions-track">
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto custa um website?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Preciso de um novo site ou só de marketing?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto custa um website?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Preciso de um novo site ou só de marketing?"</span>
-              </div>
-            </div>
-            <div class="questions-row questions-row--right">
-              <div class="questions-track">
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode arranjar o meu website atual?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto tempo demora um projeto?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode arranjar o meu website atual?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto tempo demora um projeto?"</span>
-              </div>
-            </div>
-            <div class="questions-row questions-row--left questions-row--slow">
-              <div class="questions-track">
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Trabalha com empresas fora do Porto?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"E se ainda não souber bem o que preciso?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Trabalha com empresas fora do Porto?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"E se ainda não souber bem o que preciso?"</span>
-              </div>
-            </div>
-            <div class="questions-row questions-row--right questions-row--slow">
-              <div class="questions-track">
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"WordPress ou Shopify, qual é melhor para mim?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode ajudar depois do site estar no ar?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"WordPress ou Shopify, qual é melhor para mim?"</span>
-                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode ajudar depois do site estar no ar?"</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section class="section section--alt" aria-labelledby="reviews-heading">
+  <section class="home-section" aria-labelledby="work-heading">
     <div class="container">
-      <div class="section-head" style="text-align: center; margin-inline: auto;">
-        <span class="eyebrow">Avaliações</span>
-        <h2 id="reviews-heading" class="text-balance">O que dizem os clientes</h2>
-        <p>Avaliações reais de clientes no Porto e em Vila Nova de Gaia.</p>
-      </div>
-
-      <div class="reviews-track" id="reviews-track" role="region" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green);">J</span>
-              <div>
-                <p class="review-name">João Martins</p>
-                <p class="review-role">Proprietário de Restaurante, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O Sam ajudou-nos a melhorar bastante a nossa presença no Google. Otimizou o nosso Google Business Profile, trabalhou o SEO local e melhorou a nossa presença no Google Maps. Hoje é muito mais fácil para novos clientes encontrarem o nosso negócio."</p>
-          <span class="review-tag">Perfil de Empresa no Google</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-red);">A</span>
-              <div>
-                <p class="review-name">Ana Rodrigues</p>
-                <p class="review-role">Proprietária de Salão de Beleza, Vila Nova de Gaia</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"Precisávamos de um website mais profissional e de uma presença online mais forte. O Sam criou um site moderno, rápido e adaptado ao telemóvel, além de melhorar o nosso Google Business. Foi muito profissional durante todo o projeto."</p>
-          <span class="review-tag">Websites</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">M</span>
-              <div>
-                <p class="review-name">Miguel Silva</p>
-                <p class="review-role">Proprietário de Barbearia, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O Sam fez um excelente trabalho com o nosso Google Business Profile e SEO local. Também nos ajudou a perceber como os clientes procuram serviços como o nosso no Google. Temos agora uma presença online muito mais profissional."</p>
-          <span class="review-tag">SEO Local</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar review-avatar--yellow">S</span>
-              <div>
-                <p class="review-name">Sofia Costa</p>
-                <p class="review-role">Proprietária de Pequeno Negócio, Gaia</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"Recomendo o trabalho do Sam. Ajudou-nos com o desenvolvimento do website, marketing digital, SEO e Google Ads. Também nos deu algumas ideias para campanhas de Facebook e Instagram que fizeram bastante sentido para o nosso negócio."</p>
-          <span class="review-tag">Google Ads</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-dark);">R</span>
-              <div>
-                <p class="review-name">Ricardo Fernandes</p>
-                <p class="review-role">Proprietário de Loja Online, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O nosso website precisava de uma atualização completa. O Sam criou uma solução moderna e muito mais fácil de utilizar. Além do desenvolvimento web, ajudou-nos com SEO, Google Business e estratégia de marketing digital."</p>
-          <span class="review-tag">Websites</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-red);">M</span>
-              <div>
-                <p class="review-name">Mariana Oliveira</p>
-                <p class="review-role">Proprietária de Negócio, Vila Nova de Gaia</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"Estávamos a ter dificuldade em aparecer nas pesquisas locais. O Sam trabalhou o nosso Google Business Profile, serviços, categorias e SEO local. Explicou tudo de forma simples e deu-nos uma estratégia clara para melhorar a nossa visibilidade online."</p>
-          <span class="review-tag">Perfil de Empresa no Google</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green);">P</span>
-              <div>
-                <p class="review-name">Pedro Santos</p>
-                <p class="review-role">Proprietário de Ginásio, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O Sam ajudou-nos a melhorar a nossa presença digital desde o website até ao marketing online. Trabalhámos SEO local, Google Ads e Meta Ads, e também recebemos ótimas sugestões para melhorar a forma como apresentamos os nossos serviços online."</p>
-          <span class="review-tag">Meta Ads</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">D</span>
-              <div>
-                <p class="review-name">Daniel Thompson</p>
-                <p class="review-role">Proprietário de Negócio, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O Sam ajudou-nos a melhorar o nosso Perfil de Empresa no Google e o SEO local. O nosso negócio agora tem um aspeto muito mais profissional no Google Maps, e também nos deu conselhos práticos sobre marketing digital e como atrair mais clientes locais."</p>
-          <span class="review-tag">SEO Local</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar review-avatar--yellow">E</span>
-              <div>
-                <p class="review-name">Emma Wilson</p>
-                <p class="review-role">Gestora de Marketing, Vila Nova de Gaia</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"Contratámos o Sam para redesenhar o nosso website e melhorar a nossa presença online. Ele criou um website moderno e adaptado ao telemóvel, e também nos ajudou com SEO, Google Ads e anúncios no Facebook. A comunicação foi excelente durante todo o projeto."</p>
-          <span class="review-tag">Websites</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card-head">
-            <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-dark);">J</span>
-              <div>
-                <p class="review-name">James Anderson</p>
-                <p class="review-role">Diretor de Empresa, Porto</p>
-              </div>
-            </div>
-            <svg class="review-google-icon" viewBox="0 0 48 48" role="img" aria-label="Avaliação no Google"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-          </div>
-          <div class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-          </div>
-          <p class="review-quote">"O Sam combina muito bem o desenvolvimento web com o marketing digital. Ajudou-nos com o nosso website, Perfil de Empresa no Google, SEO e publicidade online. O que mais gostei foi o foco dele em gerar pedidos de contacto, e não apenas em fazer o website parecer bonito."</p>
-          <span class="review-tag">Estratégia de Crescimento Digital</span>
-        </div>
-
-      </div>
-
-      <div class="reviews-controls">
-        <button id="reviews-prev" type="button" class="reviews-arrow" aria-label="Avaliações anteriores">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button id="reviews-next" type="button" class="reviews-arrow" aria-label="Próximas avaliações">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+      <h2 id="work-heading" class="home-kicker">Trabalhos selecionados</h2>
+      <div class="home-work">
+        <a href="work/" class="home-work-card">
+          <img
+            src="../images/samama-tahir-web-development-laptop.jpg"
+            alt=""
+            width="1400"
+            height="933"
+            loading="lazy"
+          />
+          <span>Website</span>
+        </a>
+        <a href="work/" class="home-work-card">
+          <img
+            src="../images/samama-tahir-laptop-workspace.jpg"
+            alt=""
+            width="1200"
+            height="800"
+            loading="lazy"
+          />
+          <span>E-commerce</span>
+        </a>
+        <a href="work/" class="home-work-card">
+          <img
+            src="../images/samama-tahir-laptop-detail.jpg"
+            alt=""
+            width="1200"
+            height="800"
+            loading="lazy"
+          />
+          <span>Pesquisa local</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Porto / Portugal -->
-  <section class="section" aria-labelledby="location-heading">
-    <div class="container" style="max-width: 46rem;">
-      <span class="eyebrow">Baseado no Porto, Portugal</span>
-      <h2 id="location-heading" class="text-balance">A trabalhar localmente no Porto, e remotamente onde estiver</h2>
-      <p>Estou baseado no Porto e trabalho com empresas aqui e em Vila Nova de Gaia que procuram uma perspetiva local, bem como com clientes por todo Portugal e empresas internacionais com quem trabalho remotamente. Onde quer que esteja, a abordagem é a mesma: perceber primeiro o negócio, e depois construir e melhorar em torno dele.</p>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="section section--dark final-cta" aria-labelledby="final-cta-heading">
+  <section class="home-section home-section--tight" aria-labelledby="reviews-heading">
     <div class="container">
-      <div class="section-head">
-        <h2 id="final-cta-heading" class="text-balance">Tem um projeto de site ou de crescimento digital em mente?</h2>
-        <p>Diga-me o que está a tentar construir, melhorar ou fazer crescer. Vou dar uma vista de olhos e dizer-lhe honestamente onde posso ajudar.</p>
+      <h2 id="reviews-heading" class="home-kicker">Avaliações no Google</h2>
+      <div class="home-reviews">
+        <blockquote class="home-review">
+          <p>“O Sam ajudou-nos a melhorar bastante a nossa presença no Google. Otimizou o nosso Google Business Profile, trabalhou o SEO local e melhorou a nossa presença no Google Maps. Hoje é muito mais fácil para novos clientes encontrarem o nosso negócio.”</p>
+          <footer>João Martins</footer>
+        </blockquote>
+        <blockquote class="home-review">
+          <p>“Precisávamos de um website mais profissional e de uma presença online mais forte. O Sam criou um site moderno, rápido e adaptado ao telemóvel, além de melhorar o nosso Google Business. Foi muito profissional durante todo o projeto.”</p>
+          <footer>Ana Rodrigues</footer>
+        </blockquote>
       </div>
-      <div class="hero-actions">
-        <a href="contact/" class="btn btn-primary">Iniciar uma conversa</a>
-      </div>
+    </div>
+  </section>
+
+  <section class="home-cta-band" aria-labelledby="final-cta-heading">
+    <div class="container home-cta-band-inner">
+      <h2 id="final-cta-heading">Estou disponível para novos projetos no Porto e à distância.</h2>
+      <a href="contact/" class="btn btn-primary">Vamos falar <span aria-hidden="true">→</span></a>
     </div>
   </section>
 

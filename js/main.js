@@ -147,7 +147,7 @@ if (contactForm) {
 // ==========================================================================
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealEls = document.querySelectorAll(
-  '.card, .work-card, .review-card, .process-step, .hero-diagram'
+  '.card, .work-card, .review-card, .process-step, .hero-diagram, .home-service, .home-work-card, .home-review, .home-about, .home-hero-photo'
 );
 
 if (revealEls.length && 'IntersectionObserver' in window) {
