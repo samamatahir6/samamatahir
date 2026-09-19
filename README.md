@@ -128,6 +128,18 @@ The home page (both languages) includes a "What clients say" / "O que dizem os c
 
 To add a real named project later (with the client's OK), add a `.work-card` to both pages. If you want screenshots, add them under `images/` with descriptive filenames and explicit `width`/`height`, and drop them into the card above the quote. Keep the "described by outcome" framing so confidential work still fits.
 
+## Video testimonials
+
+The home page (both languages) has a "Video Testimonials" section, right after the text Reviews section: `.video-testimonials-grid` of `.video-testimonial-card` elements, each a native `<video controls preload="none">` (no poster, no JS) so nothing downloads until the visitor presses play, and it works identically with JavaScript disabled.
+
+**Current state is a placeholder.** The real first testimonial is `videos/Waggyy - Sam testimonial.mp4` (158MB, 720p, 2:43) sitting locally in the project folder, git-ignored/untracked on purpose: GitHub hard-rejects any file over 100MB, and 158MB is far too heavy to self-host on a page anyway. It's being uploaded to YouTube as unlisted instead. Until that link exists, both `index.html` and `pt/index.html` point their `<source>` at a small, freely-licensed MDN sample clip (`interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4`) purely so the section's layout can be seen and tested. **This is not a real testimonial and must not ship to production as-is.**
+
+To finish this once the real YouTube link exists:
+- Either keep the native `<video>` and point `<source src>` at a properly web-compressed export of the real file (re-encode with `ffmpeg` to roughly 10-20MB at 720p, not the original 158MB export), or
+- Replace the `<video>` block with a click-to-load YouTube embed (`youtube-nocookie.com/embed/<id>`) so nothing loads until clicked, matching the same "no JS required, nothing loads unasked" approach.
+
+To add more real client videos later: add another `.video-testimonial-card` to both pages' `.video-testimonials-grid`, using the real client's name only (no invented role, quote, or location unless supplied), per the no-invented-testimonials rule below.
+
 ## Gallery (deferred, not built)
 
 A Portugal photo gallery was discussed but intentionally not built yet: it doesn't serve this site's lead-generation purpose (unlike the Reviews section, which builds trust directly) and was judged likely scope creep for a first version. Easy to add later as `/gallery/` (+ `/pt/gallery/`) following the same page-creation steps above, once real Portugal photos are supplied.

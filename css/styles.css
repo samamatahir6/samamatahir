@@ -1762,6 +1762,39 @@ input:focus-visible {
   margin-bottom: 0;
 }
 
+/* ==========================================================================
+   26. VIDEO TESTIMONIALS
+   Native <video controls preload="none">: nothing downloads until the
+   visitor presses play, and it works identically with JS disabled.
+   ========================================================================== */
+.video-testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.video-testimonial-card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.video-testimonial-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  background-color: var(--color-green-dark);
+}
+
+.video-testimonial-name {
+  margin-top: var(--space-2);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 .faq-category h2 {
   margin-bottom: var(--space-3);
 }
