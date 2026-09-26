@@ -126,6 +126,13 @@ h2 {
   font-size: clamp(1.6rem, 3vw + 1rem, 2.4rem);
 }
 
+/* One gap between a section heading and the paragraph under it, site-wide.
+   Classed paragraphs like .hero-text keep their own spacing. */
+h1 + p,
+h2 + p {
+  margin-top: var(--space-2);
+}
+
 h3 {
   font-size: 1.25rem;
 }
@@ -208,6 +215,12 @@ input:focus-visible {
   color: var(--color-white);
 }
 
+/* Dark intro block at the top of inner pages: same padding as the home and
+   about heroes, top and bottom. */
+.section.page-intro {
+  padding-block: var(--space-6);
+}
+
 .section--dark p {
   color: rgba(255, 255, 255, 0.82);
 }
@@ -240,6 +253,9 @@ input:focus-visible {
    5. BUTTONS
    ========================================================================== */
 .btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -248,16 +264,60 @@ input:focus-visible {
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-size: 1rem;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid transparent;
 }
 
-.btn:hover {
+/* Same hover language as the Upwork/Fiverr pills in the hero: an arrow
+   that nudges forward, a lift, a soft yellow glow and a light sweep.
+   ::before is the arrow (drawn with a mask so it takes the text colour and
+   placed after the label with order), ::after is the sweep. */
+.btn::before {
+  content: "";
+  order: 2;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 50%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(244, 197, 66, 0.65);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+  left: 120%;
 }
 
 .btn:active {
-  transform: scale(0.97);
+  transform: translateY(0) scale(0.97);
 }
 
 .btn-primary {
@@ -265,8 +325,9 @@ input:focus-visible {
   color: var(--color-green);
 }
 
-.btn-primary:hover {
-  background-color: #f0ba30;
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: #f7cf5c;
 }
 
 .btn-secondary {
@@ -275,22 +336,40 @@ input:focus-visible {
   border-color: var(--color-border);
 }
 
-.btn-secondary:hover {
-  border-color: var(--color-green);
-}
-
 .section--dark .btn-secondary {
   background-color: transparent;
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-.section--dark .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+/* Secondary and green buttons all turn yellow on hover, like the pills. */
+.btn-secondary:hover,
+.btn-secondary:focus-visible,
+.section--dark .btn-secondary:hover,
+.section--dark .btn-secondary:focus-visible {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-green);
 }
 
 .btn-block {
   width: 100%;
+  border-radius: 999px;
+}
+
+.header-cta,
+.btn-block {
+  border-radius: 999px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.header-cta:hover,
+.header-cta:focus-visible,
+.btn-block:hover,
+.btn-block:focus-visible {
+  background-color: var(--color-yellow);
+  color: var(--color-green);
 }
 
 /* ==========================================================================
@@ -302,12 +381,11 @@ input:focus-visible {
   z-index: 50;
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow 0.2s ease;
 }
 
 .site-header.is-scrolled {
-  border-bottom-color: var(--color-border);
   box-shadow: 0 1px 0 0 rgba(11, 59, 42, 0.05);
 }
 
@@ -340,6 +418,10 @@ input:focus-visible {
   font-size: 1rem;
 }
 
+.logo-name {
+  white-space: nowrap;
+}
+
 .logo .accent {
   color: var(--color-green-light);
 }
@@ -358,8 +440,14 @@ input:focus-visible {
   position: relative;
   display: inline-block;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   transition: color 0.2s ease;
+}
+
+.primary-nav a[aria-current='page'],
+.mobile-nav a[aria-current='page']:not(.btn) {
+  color: var(--color-green);
+  font-weight: 800;
 }
 
 .primary-nav a:not(.btn)::after {
@@ -444,24 +532,32 @@ input:focus-visible {
 }
 
 .nav-star {
-  display: inline-block;
-  margin-right: 0.3rem;
-  color: var(--color-yellow);
-  font-size: 0.9em;
-  vertical-align: middle;
-  animation: nav-star-twinkle 1.8s ease-in-out infinite;
+  display: none;
 }
 
-@keyframes nav-star-twinkle {
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4) rotate(20deg);
-    opacity: 0.6;
-  }
+.nav-dropdown > a {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(244, 197, 66, 0.18);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown > a::after {
+  display: none;
+}
+
+.nav-dropdown > a:hover,
+.nav-dropdown:focus-within > a {
+  background-color: rgba(244, 197, 66, 0.34);
+  color: var(--color-green);
+}
+
+.mobile-nav-services > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(244, 197, 66, 0.18);
 }
 
 .nav-caret {
@@ -505,12 +601,22 @@ input:focus-visible {
 }
 
 .nav-dropdown-menu a:not(.btn) {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.6rem 0.75rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.95rem;
   white-space: nowrap;
+}
+
+.nav-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.55rem;
+  flex-shrink: 0;
 }
 
 .nav-dropdown-menu a:not(.btn)::after {
@@ -532,6 +638,8 @@ input:focus-visible {
 }
 
 .mobile-nav-submenu a:not(.btn) {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--color-text-muted);
@@ -544,6 +652,9 @@ input:focus-visible {
   background-color: var(--color-green);
   color: var(--color-white);
   padding-block: var(--space-6) var(--space-6);
+  /* The photo blob and badge cards poke out past the edge at laptop widths;
+     clip them here instead of letting the page scroll sideways. */
+  overflow-x: clip;
 }
 
 .hero .container {
@@ -583,15 +694,352 @@ input:focus-visible {
 }
 
 .hero-portrait {
+  position: relative;
   justify-self: center;
+  width: 260px;
+  height: 260px;
 }
 
-.hero-portrait img {
+.hero-photo-blob {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 240px;
+  height: 240px;
+  border-radius: 58% 42% 63% 37% / 44% 52% 48% 56%;
+  background-color: var(--color-yellow);
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  display: block;
   width: 260px;
   height: 260px;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  border-radius: 58% 42% 63% 37% / 44% 52% 48% 56%;
   border: 4px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Home hero variant (.hero--cutout): a large transparent-background
+   cutout inside the same organic blob frame (border-radius + faint border
+   from .hero-photo) as the About page, with a soft yellow glow behind it.
+   Vertically centred so the space above and below it is equal. */
+.hero-portrait--cutout {
+  align-self: center;
+  width: min(100%, 340px);
+  height: auto;
+  aspect-ratio: 760 / 920;
+}
+
+.hero-portrait--cutout .hero-photo-blob {
+  top: 4%;
+  right: auto;
+  left: 50%;
+  width: 115%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 197, 66, 0.34) 0%, rgba(244, 197, 66, 0.12) 42%, rgba(244, 197, 66, 0) 68%);
+  transform: translateX(-50%);
+}
+
+.hero-portrait--cutout .hero-photo {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-portrait--cutout .hero-badge-card--a {
+  top: 30%;
+  left: -12px;
+}
+
+.hero-portrait--cutout .hero-badge-card--b {
+  bottom: 24%;
+  right: -12px;
+}
+
+.hero-badge-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 190px;
+  background-color: var(--color-white);
+  color: var(--color-green);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  box-shadow: 0 18px 32px -16px rgba(0, 0, 0, 0.45);
+}
+
+.hero-badge-card svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--color-green-text);
+}
+
+.hero-badge-card strong {
+  display: block;
+  font-size: 0.85rem;
+  line-height: 1.15;
+}
+
+.hero-badge-card span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+.hero-badge-card--a {
+  top: -12px;
+  left: -12px;
+}
+
+.hero-badge-card--b {
+  bottom: -12px;
+  right: -12px;
+}
+
+.hero-trust-row {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: var(--space-3);
+  padding: 0.75rem 1.1rem 0.75rem 0.75rem;
+  border-radius: 20px;
+  animation: trust-glow 3.2s ease-in-out infinite;
+}
+
+/* Rotating yellow/green border: ::before is the gradient ring, ::after
+   is the fill that sits 2px inside it so only the edge shows. */
+.hero-trust-row::before,
+.hero-trust-row::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-trust-row::before {
+  inset: 0;
+  z-index: -2;
+  background: conic-gradient(
+    from var(--trust-angle),
+    rgba(244, 197, 66, 0.15) 0deg,
+    var(--color-yellow) 70deg,
+    var(--color-green-light) 150deg,
+    rgba(244, 197, 66, 0.15) 220deg,
+    rgba(244, 197, 66, 0.15) 360deg
+  );
+  animation: trust-spin 4.5s linear infinite;
+}
+
+.hero-trust-row::after {
+  inset: 2px;
+  z-index: -1;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #124a36 0%, var(--color-green-dark) 100%);
+}
+
+@property --trust-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes trust-spin {
+  to {
+    --trust-angle: 360deg;
+  }
+}
+
+@keyframes trust-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 197, 66, 0), 0 10px 30px -12px rgba(244, 197, 66, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 22px 2px rgba(244, 197, 66, 0.28), 0 10px 36px -8px rgba(47, 158, 94, 0.55);
+  }
+}
+
+.hero-trust-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-green);
+  flex-shrink: 0;
+}
+
+/* Expanding ring that pulses out from the shield. */
+.hero-trust-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-yellow);
+  animation: trust-ping 2.4s ease-out infinite;
+}
+
+@keyframes trust-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  80%,
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.hero-trust-badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-trust-stat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.hero-trust-item {
+  white-space: nowrap;
+}
+
+.hero-trust-num {
+  font-weight: 800;
+  color: var(--color-yellow);
+}
+
+.hero-trust-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  margin-inline: 0.2rem;
+}
+
+/* On narrow screens the two stats stack, so the separator would dangle. */
+@media (max-width: 480px) {
+  .hero-trust-stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .hero-trust-dot {
+    display: none;
+  }
+}
+
+.hero-trust-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.hero-trust-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-white);
+  padding: 0.35rem 0.8rem 0.35rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-trust-link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.hero-trust-link svg.hero-trust-arrow {
+  width: 11px;
+  height: 11px;
+  margin-left: -0.05rem;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-trust-link:hover .hero-trust-arrow,
+.hero-trust-link:focus-visible .hero-trust-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.hero-trust-mono {
+  fill: var(--color-green);
+  transition: fill 0.2s ease;
+}
+
+.hero-trust-link:hover .hero-trust-mono,
+.hero-trust-link:focus-visible .hero-trust-mono {
+  fill: var(--color-yellow);
+}
+
+/* Light sweep that crosses the pill on hover. */
+.hero-trust-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 50%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+
+.hero-trust-link:hover,
+.hero-trust-link:focus-visible {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(244, 197, 66, 0.6);
+}
+
+.hero-trust-link:hover::after,
+.hero-trust-link:focus-visible::after {
+  left: 120%;
+}
+
+/* Work page intro: text on the left, the glowing trust badge on the right
+   from tablet width up; stacked on phones. */
+@media (min-width: 900px) {
+  .work-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--space-5);
+  }
+
+  .work-hero .hero-trust-row {
+    margin-top: 0;
+  }
 }
 
 /* ==========================================================================
@@ -627,6 +1075,24 @@ input:focus-visible {
   font-size: 0.92rem;
   padding: 0.5rem 1rem;
   border-radius: 999px;
+}
+
+.tag--yellow {
+  border-color: transparent;
+  background-color: rgba(244, 197, 66, 0.22);
+  color: #8a6d16;
+}
+
+.tag--red {
+  border-color: transparent;
+  background-color: rgba(216, 35, 42, 0.08);
+  color: var(--color-red);
+}
+
+.tag--green-light {
+  border-color: transparent;
+  background-color: rgba(47, 158, 94, 0.12);
+  color: var(--color-green-text);
 }
 
 .experience-grid {
@@ -672,6 +1138,16 @@ input:focus-visible {
 .card-icon svg {
   width: 26px;
   height: 26px;
+}
+
+.card-icon--yellow {
+  background-color: rgba(244, 197, 66, 0.22);
+  color: #8a6d16;
+}
+
+.card-icon--red {
+  background-color: rgba(216, 35, 42, 0.08);
+  color: var(--color-red);
 }
 
 .card h3 {
@@ -811,8 +1287,15 @@ input:focus-visible {
    ========================================================================== */
 .site-footer {
   background-color: var(--color-green-dark);
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-white);
   padding-block: var(--space-5) var(--space-4);
+}
+
+/* The global p colour is a muted grey meant for light backgrounds, so the
+   footer sets its own. */
+.site-footer p,
+.site-footer a {
+  color: var(--color-white);
 }
 
 .footer-grid {
@@ -840,8 +1323,12 @@ input:focus-visible {
   gap: 0.6rem;
 }
 
+.footer-links a {
+  transition: color 0.15s ease;
+}
+
 .footer-links a:hover {
-  color: var(--color-white);
+  color: var(--color-yellow);
 }
 
 .footer-bottom {
@@ -853,20 +1340,59 @@ input:focus-visible {
 
 /* ==========================================================================
    14. BREADCRUMBS
+   Home keeps a small house icon; middle crumbs are plain muted links; the
+   current page renders as a tinted pill using the same accent system as
+   .pillar-card (green default, yellow/red modifiers for service pages).
    ========================================================================== */
 .breadcrumbs {
   padding-block: var(--space-3);
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
-.breadcrumbs a {
-  color: var(--color-green);
+.breadcrumbs .container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbs a:not(.breadcrumb-current) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text-muted);
   font-weight: 600;
 }
 
-.breadcrumbs a:hover {
-  text-decoration: underline;
+.breadcrumbs a:not(.breadcrumb-current):hover {
+  color: var(--color-green);
+}
+
+.breadcrumb-home-icon {
+  flex-shrink: 0;
+}
+
+.breadcrumb-sep {
+  flex-shrink: 0;
+  color: #9fb3a8;
+}
+
+.breadcrumb-current {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background-color: var(--breadcrumb-tint, rgba(11, 59, 42, 0.08));
+  color: var(--breadcrumb-accent, var(--color-green));
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.breadcrumb-current--yellow {
+  --breadcrumb-accent: var(--color-green);
+  --breadcrumb-tint: rgba(244, 197, 66, 0.22);
+}
+
+.breadcrumb-current--red {
+  --breadcrumb-accent: var(--color-red);
+  --breadcrumb-tint: rgba(216, 35, 42, 0.08);
 }
 
 /* ==========================================================================
@@ -882,6 +1408,13 @@ input:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-green-light);
+  box-shadow: 0 20px 36px -24px rgba(11, 59, 42, 0.45);
 }
 
 .process-step .step-number {
@@ -898,53 +1431,84 @@ input:focus-visible {
 }
 
 /* ==========================================================================
-   16. SERVICE PAGE SECTIONS
+   16. ABOUT PAGE (experience/education columns, education list, location badges)
    ========================================================================== */
-.service-block {
-  padding-block: var(--space-5);
+.about-columns {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.edu-list {
+  margin-top: var(--space-3);
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-block: var(--space-2);
   border-top: 1px solid var(--color-border);
 }
 
-.service-block:first-of-type {
+.edu-item:first-child {
   border-top: none;
 }
 
-.service-block-head {
-  display: grid;
-  gap: var(--space-2);
-  margin-bottom: var(--space-3);
-}
-
-.service-block ul {
-  display: grid;
-  gap: 0.6rem;
-  margin-top: var(--space-2);
-}
-
-.service-block li {
+.edu-icon {
   display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 1.02rem;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-green);
+  flex-shrink: 0;
+}
+
+.edu-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.edu-item strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.edu-item span {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+.location-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--space-3);
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  font-weight: 700;
+  font-size: 0.85rem;
   color: var(--color-text);
 }
 
-.service-block li svg {
+.location-badge svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-green-text);
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  margin-top: 0.25rem;
-  color: var(--color-green-light);
-}
-
-.outcome-note {
-  margin-top: var(--space-3);
-  padding: var(--space-3);
-  background-color: var(--color-bg-alt);
-  border-left: 4px solid var(--color-green-light);
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  color: var(--color-green);
 }
 
 /* ==========================================================================
@@ -1083,6 +1647,10 @@ input:focus-visible {
   margin-top: var(--space-3);
 }
 
+.reviews-controls[hidden] {
+  display: none;
+}
+
 .reviews-arrow {
   display: flex;
   align-items: center;
@@ -1107,6 +1675,14 @@ input:focus-visible {
   display: grid;
   gap: var(--space-3);
   margin-top: var(--space-4);
+}
+
+.contact-form--card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: 0 20px 36px -28px rgba(11, 59, 42, 0.35);
 }
 
 .contact-form-botcheck {
@@ -1182,40 +1758,16 @@ input:focus-visible {
 
 /* ==========================================================================
    20. WORK / CASE CARDS
+   Text pieces shared by the Work page's featured case studies and its
+   "More Work" grid (the grid cards combine these with .card .pillar-card
+   .work-more-card, so they carry no container styling of their own).
    ========================================================================== */
-.work-grid {
-  display: grid;
-  gap: var(--space-3);
-  margin-top: var(--space-5);
-}
-
-.work-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-green-light);
-  box-shadow: 0 20px 36px -24px rgba(11, 59, 42, 0.45);
-}
-
 .work-card-type {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-green-text);
-}
-
-.work-card h3 {
-  font-size: 1.15rem;
 }
 
 .work-card-did {
@@ -1238,11 +1790,6 @@ input:focus-visible {
   width: 18px;
   height: 18px;
   margin-top: 0.2rem;
-}
-
-.work-card .review-tag {
-  margin-top: auto;
-  align-self: flex-start;
 }
 
 /* ==========================================================================
@@ -1762,39 +2309,6 @@ input:focus-visible {
   margin-bottom: 0;
 }
 
-/* ==========================================================================
-   26. VIDEO TESTIMONIALS
-   Native <video controls preload="none">: nothing downloads until the
-   visitor presses play, and it works identically with JS disabled.
-   ========================================================================== */
-.video-testimonials-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-4);
-  margin-top: var(--space-5);
-}
-
-.video-testimonial-card {
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-}
-
-.video-testimonial-player {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
-  background-color: var(--color-green-dark);
-}
-
-.video-testimonial-name {
-  margin-top: var(--space-2);
-  font-weight: 700;
-  color: var(--color-text);
-}
-
 .faq-category h2 {
   margin-bottom: var(--space-3);
 }
@@ -1853,4 +2367,819 @@ input:focus-visible {
   margin-top: 0.75rem;
   color: var(--color-text-muted);
   font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   26. VIDEO TESTIMONIALS
+   Each card is a YouTube thumbnail link (.video-embed). With JS, a click
+   opens the video in the .video-modal popup (see main.js), so no player
+   loads until asked; without JS it opens the video on YouTube.
+   The track/arrow scroll-snap slider mirrors the Reviews slider (18) so
+   both share one JS implementation (see initCardSlider in main.js).
+   ========================================================================== */
+.video-testimonials-track {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  margin-top: var(--space-5);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.video-testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+.video-testimonial-card {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.video-testimonial-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-green-dark);
+}
+
+.video-embed {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-embed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.video-embed-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(11, 59, 42, 0.18);
+  transition: background-color 0.25s ease;
+}
+
+.video-embed-play svg {
+  width: 68px;
+  height: 48px;
+  filter: drop-shadow(0 6px 14px rgba(11, 59, 42, 0.35));
+  transition: transform 0.25s ease;
+}
+
+.video-embed-play-bg {
+  fill: var(--color-yellow);
+}
+
+.video-embed-play-icon {
+  fill: var(--color-green);
+}
+
+.video-embed:hover img {
+  transform: scale(1.03);
+}
+
+.video-embed:hover .video-embed-play {
+  background-color: rgba(11, 59, 42, 0.05);
+}
+
+.video-embed:hover .video-embed-play svg {
+  transform: scale(1.08);
+}
+
+/* Intro video ("Meet Samama", home page right after the hero). Same
+   click-to-load .video-embed as the testimonials, just larger and framed. */
+.intro-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-green-dark);
+  box-shadow: 0 24px 48px -24px rgba(11, 59, 42, 0.45);
+}
+
+.intro-video .video-embed-play svg {
+  width: 84px;
+  height: 59px;
+}
+
+.hero-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-3);
+  font-weight: 700;
+  color: var(--color-yellow);
+}
+
+.hero-video-link svg {
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-green);
+  transition: transform 0.15s ease;
+}
+
+.hero-video-link:hover svg {
+  transform: scale(1.1);
+}
+
+.hero-video-link-note {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Video popup: a native <dialog> built by main.js. Sized to the smaller of
+   the viewport width and height so a 16:9 video always fits, including
+   phones in landscape. */
+.video-modal {
+  width: min(1100px, calc(100vw - 2rem), calc((100vh - 7rem) * 16 / 9));
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  animation: video-modal-in 0.25s ease;
+}
+
+.video-modal::backdrop {
+  background-color: rgba(8, 43, 31, 0.88);
+  backdrop-filter: blur(4px);
+}
+
+.video-modal-frame {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #000;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.video-modal-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -3.25rem;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-green);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.video-modal-close:hover {
+  background-color: #f0ba30;
+  transform: scale(1.08);
+}
+
+.video-modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Screenshot popup for the Work page sliders (built by main.js). Fills the
+   screen; the image keeps its own shape and is never cropped. */
+.image-modal {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.image-modal[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: video-modal-in 0.25s ease;
+}
+
+.image-modal::backdrop {
+  background-color: rgba(8, 43, 31, 0.94);
+  backdrop-filter: blur(4px);
+}
+
+.image-modal-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 4.5rem 1rem 1.25rem;
+}
+
+.image-modal-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100% - 2rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  background-color: var(--color-white);
+}
+
+.image-modal-caption {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.image-modal-close,
+.image-modal-arrow {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.image-modal-close {
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-yellow);
+  color: var(--color-green);
+}
+
+.image-modal-close:hover {
+  background-color: #f0ba30;
+  transform: scale(1.08);
+}
+
+.image-modal-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--color-white);
+}
+
+.image-modal-arrow:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-green);
+}
+
+.image-modal-arrow--prev {
+  left: 1rem;
+}
+
+.image-modal-arrow--next {
+  right: 1rem;
+}
+
+.image-modal-close svg,
+.image-modal-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.image-modal.is-single .image-modal-arrow,
+.image-modal.is-single .image-modal-caption {
+  display: none;
+}
+
+/* On desktop the arrows sit beside the picture, not over it. */
+@media (min-width: 768px) {
+  .image-modal-figure {
+    padding: 4.5rem 5.5rem 1.5rem;
+  }
+}
+
+.has-image-modal {
+  overflow: hidden;
+}
+
+.has-video-modal {
+  overflow: hidden;
+}
+
+@keyframes video-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.video-testimonial-name {
+  margin-top: var(--space-2);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.video-testimonial-meta {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   27. HELP CARDS (Build / Grow / Improve) + PHOTO PLACEHOLDER
+   .help-card extends the shared .card component (background/border/hover)
+   with a centered layout. .photo-placeholder is a reusable dummy-photo
+   slot: dashed box + icon + label, dropped into any existing photo
+   container (e.g. .split-panel--photo) until a real image replaces it.
+   ========================================================================== */
+.help-card {
+  text-align: center;
+}
+
+.help-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-green);
+  margin-bottom: 0;
+}
+
+.help-card p {
+  margin-top: 0.5rem;
+}
+
+.help-card .link-more {
+  margin-top: var(--space-2);
+}
+
+/* Two-photo collage beside the "I combine web development and digital
+   marketing" quote: a main photo with a smaller one overlapping its corner. */
+.help-collage {
+  position: relative;
+  padding: 0 0 14% 0;
+  background-color: transparent;
+}
+
+.help-collage img {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.help-collage-main {
+  width: 84%;
+  border-radius: var(--radius-lg);
+}
+
+.help-collage-accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  border: 6px solid var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 40px -20px rgba(11, 59, 42, 0.45);
+}
+
+.help-gallery-item {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+}
+
+img.help-gallery-item {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.help-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-3);
+}
+
+.help-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.help-dot--active {
+  width: 16px;
+  border-radius: 4px;
+  background-color: var(--color-green);
+}
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: #e2e7e4;
+  border: 2px dashed #9fb3a8;
+  color: #4c5a53;
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.photo-placeholder svg {
+  width: 30px;
+  height: 30px;
+}
+
+.photo-placeholder strong {
+  font-size: 0.85rem;
+}
+
+.photo-placeholder span {
+  font-size: 0.75rem;
+}
+
+.split-panel--photo img {
+  transition: transform 0.35s ease;
+}
+
+.split-panel--photo:hover img {
+  transform: scale(1.04);
+}
+
+.photo-placeholder--dark {
+  background-color: #124331;
+  border-color: rgba(244, 197, 66, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.photo-placeholder--dark strong {
+  color: var(--color-white);
+}
+
+.photo-placeholder--dark svg {
+  color: var(--color-yellow);
+}
+
+.section--dark h1 {
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   28. SERVICE PILLAR CARDS
+   Stronger-color variant of .card for service detail pages: a tinted
+   background, a bold top edge, and a solid (not tinted) icon badge, in one
+   of the brand accents. Default is green; add a modifier for the others.
+   ========================================================================== */
+.pillar-card {
+  border: 1px solid transparent;
+  border-top: 5px solid var(--pillar-accent, var(--color-green));
+  background-color: var(--pillar-tint, rgba(11, 59, 42, 0.05));
+}
+
+.pillar-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background-color: var(--pillar-accent, var(--color-green));
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.pillar-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pillar-card--yellow {
+  --pillar-accent: var(--color-yellow);
+  --pillar-tint: rgba(244, 197, 66, 0.14);
+}
+
+.pillar-card--yellow .pillar-card-icon {
+  color: var(--color-green);
+}
+
+.pillar-card--red {
+  --pillar-accent: var(--color-red);
+  --pillar-tint: rgba(216, 35, 42, 0.06);
+}
+
+.pillar-card--green-light {
+  --pillar-accent: var(--color-green-light);
+  --pillar-tint: rgba(47, 158, 94, 0.08);
+}
+
+.pillar-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.pillar-check svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  color: var(--color-green-text);
+}
+
+.pillar-note {
+  margin-top: var(--space-2);
+  padding: 0.75rem 1rem;
+  background-color: var(--color-white);
+  border: 1px solid rgba(11, 59, 42, 0.15);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-green);
+}
+
+.pillar-card--red .pillar-note {
+  border-color: rgba(216, 35, 42, 0.18);
+}
+
+/* ==========================================================================
+   29. WORK PAGE CASE STUDIES
+   The featured case studies (sidebar + main column with a screenshot
+   slider), and the "More Work" grid. Slider colors and the sidebar accent
+   are set per case via --case-accent/--case-accent-ink custom properties
+   on inline style, so this stays a single reusable set of rules instead
+   of one variant per accent color.
+   ========================================================================== */
+.work-case-list {
+  margin-top: var(--space-5);
+}
+
+.work-case {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+}
+
+.work-case:first-child {
+  padding-top: 0;
+}
+
+.work-case:not(:first-child) {
+  border-top: 1px solid var(--color-border);
+}
+
+.work-case-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work-case-category {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-top: var(--space-2);
+}
+
+.work-case-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.work-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--space-3);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-green-text);
+}
+
+.work-verified-badge svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.work-case-title {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.work-case-main .work-card-did {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-top: 0.9rem;
+}
+
+.work-slide {
+  position: relative;
+  margin-top: var(--space-4);
+}
+
+.work-slide-track {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 50px -24px rgba(11, 59, 42, 0.28);
+}
+
+.work-slide-item {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.work-slide-item.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.work-slide-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Real screenshots: match their ~16:10 shape and never crop them. */
+.work-slide--screens .work-slide-track {
+  aspect-ratio: 16 / 10;
+  background-color: var(--color-white);
+}
+
+.work-slide--screens .work-slide-item img {
+  object-fit: contain;
+}
+
+.work-tech {
+  margin-top: var(--space-3);
+  width: 100%;
+}
+
+.work-tech-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.work-tech-list + .work-tech-title {
+  margin-top: var(--space-3);
+}
+
+.work-tech-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.work-tech-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem 0.4rem 0.5rem;
+  border-radius: 999px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.work-tech-list img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.work-slide-item img {
+  cursor: zoom-in;
+}
+
+.work-slide-item img:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 3px;
+}
+
+/* Small "expand" hint in the corner of the active screenshot. */
+.work-slide-item::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(11, 59, 42, 0.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f4c542' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cpolyline points='9 21 3 21 3 15'/%3E%3Cline x1='21' y1='3' x2='14' y2='10'/%3E%3Cline x1='3' y1='21' x2='10' y2='14'/%3E%3C/svg%3E") center / 18px no-repeat;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.work-slide-track:hover .work-slide-item.is-active::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.work-slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.25);
+}
+
+.work-slide-arrow--prev {
+  left: -18px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  color: var(--case-accent, var(--color-green));
+}
+
+.work-slide-arrow--next {
+  right: -18px;
+  background-color: var(--case-accent, var(--color-green));
+  color: var(--case-accent-ink, var(--color-white));
+}
+
+.work-slide-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.work-slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-3);
+}
+
+.work-slide-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-border);
+  cursor: pointer;
+}
+
+.work-slide-dot.is-active {
+  background-color: var(--case-accent, var(--color-green));
+}
+
+.work-more-card h3 {
+  font-size: 1.15rem;
+}
+
+.work-more-card > * + * {
+  margin-top: 0.6rem;
 }

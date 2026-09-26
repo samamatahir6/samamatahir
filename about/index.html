@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="../css/styles.css" />
-<link rel="stylesheet" href="../css/responsive.css" />
+<link rel="stylesheet" href="../css/styles.css?v=20260926a" />
+<link rel="stylesheet" href="../css/responsive.css?v=20260926a" />
 
 <script type="application/ld+json">
 {
@@ -51,7 +51,7 @@
   <div class="container">
     <a href="../" class="logo">
       <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
@@ -62,9 +62,9 @@
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/">Web Development</a></li>
-            <li><a href="../services/marketing/">Marketing</a></li>
-            <li><a href="../services/ai-automation/">AI &amp; Automation</a></li>
+            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
           </ul>
         </li>
         <li><a href="../about/" aria-current="page">About</a></li>
@@ -94,9 +94,9 @@
       <li class="mobile-nav-services">
         <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
         <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/">Web Development</a></li>
-          <li><a href="../services/marketing/">Marketing</a></li>
-          <li><a href="../services/ai-automation/">AI &amp; Automation</a></li>
+          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
         </ul>
       </li>
       <li><a href="../about/" aria-current="page">About</a></li>
@@ -112,64 +112,153 @@
 
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
-      <a href="../">Home</a> / <span>About</span>
+      <a href="../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">About</span>
     </div>
   </nav>
 
-  <!-- Intro -->
-  <section class="section" style="padding-top: var(--space-4);">
-    <div class="container" style="max-width: 46rem;">
-      <span class="eyebrow">About</span>
-      <h1 class="text-balance">About Samama Tahir</h1>
-      <p style="font-size: 1.15rem; margin-top: var(--space-2);">I'm a full-stack web developer and digital growth specialist based in Porto, Portugal. I build websites and digital systems, then help the businesses behind them get found online and turn that traffic into customers.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="hero-badge">About</span>
+        <h1 class="text-balance">About Samama Tahir</h1>
+        <p class="hero-text">I'm a full-stack web developer and digital growth specialist based in Porto, Portugal. I build websites and digital systems, then help the businesses behind them get found online and turn that traffic into customers.</p>
+      </div>
+      <div class="hero-portrait">
+        <div class="hero-photo-blob" aria-hidden="true"></div>
+        <img class="hero-photo" src="../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, full-stack web developer and digital growth specialist in Porto" width="320" height="320" />
+        <div class="hero-badge-card hero-badge-card--a">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+          <div><strong>8+ Years</strong><span>building on the web</span></div>
+        </div>
+        <div class="hero-badge-card hero-badge-card--b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><strong>Based in Porto</strong><span>clients across the world</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Why I do both -->
-  <section class="service-block">
-    <div class="container" style="max-width: 46rem;">
-      <div class="service-block-head">
-        <h2>Why I work across both sides</h2>
+  <section class="section" aria-labelledby="why-both-heading">
+    <div class="container split split--reverse">
+      <div class="split-panel split-panel--photo">
+        <img src="../images/coworking-desk-laptop-analytics-dashboard.webp" alt="Laptop showing an analytics dashboard beside a coffee in a coworking space" width="1050" height="822" loading="lazy" />
+      </div>
+      <div class="split-content">
+        <span class="eyebrow">Why I Do Both</span>
+        <h2 id="why-both-heading" class="text-balance">Why I work across both sides</h2>
         <p>Most developers stop once a website is live. Most marketers never touch the code. I've spent 8+ years doing both, and in practice they're rarely separate problems: a slow, poorly structured site undermines the SEO work, and good SEO with no clear path to conversion just brings visitors who leave. Building the site and growing its visibility properly needs the same person thinking about both at once.</p>
       </div>
     </div>
   </section>
 
-  <!-- What I work with -->
+  <!-- Experience + Education -->
   <section class="section section--alt" aria-labelledby="stack-heading">
-    <div class="container" style="max-width: 46rem;">
-      <span class="eyebrow">Experience</span>
-      <h2 id="stack-heading" class="text-balance">8+ years across the full stack</h2>
-      <p>I've built and maintained WordPress websites, Shopify stores, React applications, and fully custom web apps, along with the e-commerce, REST API, and third-party integration work that goes with them. Alongside that, I work on local SEO, Google Business Profile, Google Ads, Meta Ads, and the analytics setup that shows what's actually working.</p>
-      <div class="tag-list">
-        <span class="tag">WordPress</span>
-        <span class="tag">Shopify</span>
-        <span class="tag">React</span>
-        <span class="tag">E-commerce</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">Local SEO</span>
-        <span class="tag">Google Ads</span>
-        <span class="tag">GA4</span>
+    <div class="container about-columns">
+      <div>
+        <span class="eyebrow">Experience</span>
+        <h2 id="stack-heading" class="text-balance">8+ years across the full stack</h2>
+        <p>I've built and maintained WordPress websites, Shopify stores, React applications, and fully custom web apps, along with the e-commerce, REST API, and third-party integration work that goes with them. Alongside that, I work on local SEO, Google Business Profile, Google Ads, Meta Ads, and the analytics setup that shows what's actually working.</p>
+        <div class="tag-list">
+          <span class="tag">WordPress</span>
+          <span class="tag tag--yellow">Shopify</span>
+          <span class="tag tag--red">React</span>
+          <span class="tag tag--green-light">E-commerce</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag tag--yellow">Local SEO</span>
+          <span class="tag tag--red">Google Ads</span>
+          <span class="tag tag--green-light">GA4</span>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Education</span>
+        <h2 class="text-balance" style="font-size: 1.6rem;">Academic background</h2>
+        <div class="edu-list">
+          <div class="edu-item">
+            <span class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            </span>
+            <span>
+              <strong>Engineering Degree, Computer Engineering</strong>
+              <span>2013 &ndash; 2017</span>
+            </span>
+          </div>
+          <div class="edu-item">
+            <span class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            </span>
+            <span>
+              <strong>Master's Degree, Computer Engineering &mdash; Digital System Design</strong>
+              <span>2018 &ndash; 2021</span>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- How I work -->
-  <section class="service-block">
-    <div class="container" style="max-width: 46rem;">
-      <div class="service-block-head">
-        <h2>How I like to work</h2>
-        <p>You deal directly with me, not an account manager passing your project along to someone else. I explain things in plain language, without jargon, and I'll tell you honestly if something isn't worth doing rather than selling it to you anyway. The measure of the work isn't how it looks. It's whether it actually helps the business get more enquiries and sales.</p>
+  <section class="section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How I Work</span>
+        <h2 id="how-heading" class="text-balance">How I like to work with clients</h2>
+      </div>
+      <div class="card-grid card-grid--2" style="margin-top: var(--space-4);">
+        <article class="card pillar-card">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </span>
+          <h3>Direct access</h3>
+          <p>You work with me directly, not an account manager passing your project along to someone else.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3>Plain language</h3>
+          <p>No jargon. Everything is explained simply, so you always know what's happening and why.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <h3>Honest advice</h3>
+          <p>If something isn't worth doing, I'll tell you honestly rather than sell it to you anyway.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+          </span>
+          <h3>Results over looks</h3>
+          <p>The measure of the work is whether it helps the business get more enquiries and sales.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Location -->
   <section class="section section--alt" aria-labelledby="location-heading">
-    <div class="container" style="max-width: 46rem;">
+    <div class="container">
       <span class="eyebrow">Based in Porto</span>
       <h2 id="location-heading" class="text-balance">Porto, Vila Nova de Gaia, and clients further afield</h2>
-      <p>I'm based in Porto and know the local business landscape here and across the river in Vila Nova de Gaia well. I also work remotely with clients across Portugal and internationally, using the same process either way.</p>
+      <p style="max-width: 42rem;">I'm based in Porto and know the local business landscape here and across the river in Vila Nova de Gaia well. I also work remotely with clients across Portugal and internationally, using the same process either way.</p>
+      <div class="location-badges">
+        <span class="location-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Porto &amp; Vila Nova de Gaia
+        </span>
+        <span class="location-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+          Remote &mdash; Portugal &amp; Worldwide
+        </span>
+      </div>
     </div>
   </section>
 
@@ -226,6 +315,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=20260925c"></script>
 </body>
 </html>

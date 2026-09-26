@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="../../css/styles.css" />
-<link rel="stylesheet" href="../../css/responsive.css" />
+<link rel="stylesheet" href="../../css/styles.css?v=20260926a" />
+<link rel="stylesheet" href="../../css/responsive.css?v=20260926a" />
 
 <script type="application/ld+json">
 {
@@ -63,20 +63,20 @@
   <div class="container">
     <a href="../../" class="logo">
       <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
       <ul>
         <li class="nav-dropdown">
-          <a href="../../services/">
+          <a href="../../services/" aria-current="page">
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="../../services/web-development/">Web Development</a></li>
-            <li><a href="../../services/marketing/" aria-current="page">Marketing</a></li>
-            <li><a href="../../services/ai-automation/">AI &amp; Automation</a></li>
+            <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+            <li><a href="../../services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+            <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
           </ul>
         </li>
         <li><a href="../../about/">About</a></li>
@@ -104,11 +104,11 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <a href="../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
         <ul class="mobile-nav-submenu">
-          <li><a href="../../services/web-development/">Web Development</a></li>
-          <li><a href="../../services/marketing/" aria-current="page">Marketing</a></li>
-          <li><a href="../../services/ai-automation/">AI &amp; Automation</a></li>
+          <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+          <li><a href="../../services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+          <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
         </ul>
       </li>
       <li><a href="../../about/">About</a></li>
@@ -124,17 +124,24 @@
 
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
-      <a href="../../">Home</a> / <a href="../../services/">Services</a> / <span>Marketing</span>
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../services/">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current breadcrumb-current--yellow" aria-current="page">Marketing</span>
     </div>
   </nav>
 
   <!-- Intro -->
-  <section class="section" style="padding-top: var(--space-4);">
+  <section class="section section--dark page-intro">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow">Marketing</span>
+        <span class="hero-badge">Marketing</span>
         <h1 class="text-balance">Marketing Services for Businesses in Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-2);">I help businesses improve their visibility on Google, understand their website traffic, and turn more visitors into enquiries and customers.</p>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I help businesses improve their visibility on Google, understand their website traffic, and turn more visitors into enquiries and customers.</p>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -168,103 +175,115 @@
     </div>
   </section>
 
-  <!-- Google Business Profile -->
-  <section class="service-block" id="google-business-profile">
+  <!-- Service pillars -->
+  <section class="section">
     <div class="container">
-      <div class="service-block-head">
-        <h2>Google Business Profile</h2>
-        <p>For most local businesses, your Google Business Profile is seen more than your website. I optimize it properly: categories, business information, services, photos, and the review setup, so it works for you.</p>
+      <div class="card-grid card-grid--2">
+
+        <article class="card pillar-card" id="google-business-profile">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </span>
+          <h3>Google Business Profile</h3>
+          <p>For most local businesses, your Google Business Profile is seen more than your website. I optimize it properly: categories, business information, services, photos, and the review setup, so it works for you.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Profile optimization and accurate business information</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Correct categories and service listings</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Photos that represent the business well</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>A working process for collecting reviews</div>
+          </div>
+          <p class="pillar-note">Help local customers find your business when they search on Google and Google Maps.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="local-seo">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <h3>Local &amp; Technical SEO</h3>
+          <p>Local SEO is a combination of technical foundations, on-page content, and relevance signals that tell Google your business genuinely serves a given area. I work on all three, not just one.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Technical SEO foundations: site speed, crawlability, indexing, Core Web Vitals</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>On-page SEO and local relevance</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Internal linking and structured data (schema.org)</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Content that matches what your customers actually search for</div>
+          </div>
+          <p class="pillar-note">The goal is durable search visibility. I won't promise a guaranteed #1 ranking, because no one honestly can.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--red" id="google-ads">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </span>
+          <h3>Google Ads</h3>
+          <p>Search campaigns built around the keywords people actually use when they're ready to buy or enquire, with conversion tracking in place from day one so you know what a click is actually worth.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Search campaign setup and keyword targeting</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Conversion tracking configured before launch</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages built to convert that traffic</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ongoing performance measurement, not "set and forget"</div>
+          </div>
+          <p class="pillar-note">The focus is qualified traffic that's likely to convert, not just a higher click count.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--green-light" id="meta-ads">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </span>
+          <h3>Meta Ads &amp; Social Media Marketing</h3>
+          <p>Facebook and Instagram campaigns built around a specific audience and a landing page designed for that audience, with conversion tracking so results are actually measurable.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Audience targeting on Facebook and Instagram</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Creative testing to see what actually resonates</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages matched to the campaign</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel and conversion tracking across the funnel</div>
+          </div>
+        </article>
+
+        <article class="card pillar-card" id="analytics-tracking">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </span>
+          <h3>Analytics &amp; Tracking</h3>
+          <p>You should know which channels and actions are actually generating enquiries, not guess. I set up Google Analytics 4 and Google Tag Manager properly, with a clean dataLayer and event and conversion tracking that reflects what actually matters to your business.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics 4 setup and configuration</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Tag Manager and dataLayer implementation for clean, maintainable tracking</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel setup alongside Google's tracking</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Event and conversion tracking tied to real business actions</div>
+          </div>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="conversion-optimization">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>
+          </span>
+          <h3>Conversion Optimization</h3>
+          <p>Getting more traffic matters less if the site doesn't convert it. I look at clarity of CTAs, the landing page and user journey, forms, mobile experience, and trust signals, then test changes rather than guessing.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Clearer calls to action and landing pages</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Simplified user journeys and forms</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile experience and trust signals</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testing changes instead of guessing</div>
+          </div>
+          <p class="pillar-note">The focus is converting the traffic you already have, not just chasing more of it.</p>
+        </article>
+
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Profile optimization and accurate business information</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Correct categories and service listings</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Photos that represent the business well</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>A working process for collecting reviews</li>
-      </ul>
-      <p class="outcome-note">Help local customers find your business when they search on Google and Google Maps.</p>
     </div>
   </section>
 
-  <!-- Local SEO -->
-  <section class="service-block" id="local-seo">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Local &amp; Technical SEO</h2>
-        <p>Local SEO is a combination of technical foundations, on-page content, and relevance signals that tell Google your business genuinely serves a given area. I work on all three, not just one.</p>
+  <!-- Photo + quote -->
+  <section class="section section--dark">
+    <div class="container split">
+      <div class="split-panel split-panel--photo photo-placeholder photo-placeholder--dark" role="img" aria-label="Placeholder photo of Samama Tahir reviewing analytics or ads dashboards, to be replaced with a real photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Photo coming soon</strong>
+        <span>Samama reviewing analytics/ads dashboards</span>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Technical SEO foundations: site speed, crawlability, indexing, Core Web Vitals</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>On-page SEO and local relevance</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Internal linking and structured data (schema.org)</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Content that matches what your customers actually search for</li>
-      </ul>
-      <p class="outcome-note">The goal is durable search visibility. I won't promise a guaranteed #1 ranking, because no one honestly can.</p>
-    </div>
-  </section>
-
-  <!-- Google Ads -->
-  <section class="service-block" id="google-ads">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Google Ads</h2>
-        <p>Search campaigns built around the keywords people actually use when they're ready to buy or enquire, with conversion tracking in place from day one so you know what a click is actually worth.</p>
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.2rem; line-height: 1.5;">I don't guess what's working. Every campaign and every page change gets tracked, so we know within weeks, not months, whether it actually moved the needle.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Search campaign setup and keyword targeting</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Conversion tracking configured before launch</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages built to convert that traffic</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ongoing performance measurement, not "set and forget"</li>
-      </ul>
-      <p class="outcome-note">The focus is qualified traffic that's likely to convert, not just a higher click count.</p>
-    </div>
-  </section>
-
-  <!-- Meta Ads -->
-  <section class="service-block" id="meta-ads">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Meta Ads &amp; Social Media Marketing</h2>
-        <p>Facebook and Instagram campaigns built around a specific audience and a landing page designed for that audience, with conversion tracking so results are actually measurable.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Audience targeting on Facebook and Instagram</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Creative testing to see what actually resonates</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages matched to the campaign</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel and conversion tracking across the funnel</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Analytics & Tracking -->
-  <section class="service-block" id="analytics-tracking">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Analytics &amp; Tracking</h2>
-        <p>You should know which channels and actions are actually generating enquiries, not guess. I set up Google Analytics 4 and Google Tag Manager properly, with a clean dataLayer and event and conversion tracking that reflects what actually matters to your business.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics 4 setup and configuration</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Tag Manager and dataLayer implementation for clean, maintainable tracking</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel setup alongside Google's tracking</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Event and conversion tracking tied to real business actions</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Conversion Optimization -->
-  <section class="service-block" id="conversion-optimization">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Conversion Optimization</h2>
-        <p>Getting more traffic matters less if the site doesn't convert it. I look at clarity of CTAs, the landing page and user journey, forms, mobile experience, and trust signals, then test changes rather than guessing.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Clearer calls to action and landing pages</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Simplified user journeys and forms</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile experience and trust signals</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testing changes instead of guessing</li>
-      </ul>
-      <p class="outcome-note">The focus is converting the traffic you already have, not just chasing more of it.</p>
     </div>
   </section>
 
@@ -403,7 +422,7 @@
         <p class="footer-heading">Navigate</p>
         <div class="footer-links">
           <a href="../../">Home</a>
-          <a href="../../services/">Services</a>
+          <a href="../../services/" aria-current="page">Services</a>
           <a href="../../about/">About</a>
           <a href="../../work/">Portfolio</a>
           <a href="../../faq/">FAQ</a>
@@ -429,6 +448,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js"></script>
+<script src="../../js/main.js?v=20260925c"></script>
 </body>
 </html>

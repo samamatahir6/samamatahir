@@ -14,10 +14,6 @@
   .card-grid--2 {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* ---- md: 900px ---------------------------------------------------------
@@ -46,11 +42,76 @@
 
   .hero-portrait {
     justify-self: end;
-  }
-
-  .hero-portrait img {
     width: 320px;
     height: 320px;
+  }
+
+  .hero-photo-blob {
+    top: 12px;
+    right: -12px;
+    width: 296px;
+    height: 296px;
+  }
+
+  .hero-photo {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-badge-card--a {
+    top: -14px;
+    left: -30px;
+  }
+
+  .hero-badge-card--b {
+    bottom: -14px;
+    right: -30px;
+  }
+
+  .hero--cutout .container {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: var(--space-3);
+  }
+
+  .hero--cutout h1 {
+    font-size: clamp(2.3rem, 2.4vw + 1rem, 3.2rem);
+  }
+
+  .hero--cutout .hero-text {
+    font-size: 1.08rem;
+  }
+
+  .hero-portrait--cutout {
+    justify-self: end;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .hero-portrait--cutout .hero-photo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero--cutout .hero-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero--cutout .hero-actions .btn {
+    padding-inline: 1.1rem;
+    font-size: 0.96rem;
+    white-space: nowrap;
+  }
+
+  .hero-portrait--cutout .hero-badge-card--a {
+    top: 32%;
+    left: 4%;
+  }
+
+  .hero-portrait--cutout .hero-badge-card--b {
+    bottom: 22%;
+    right: -8px;
   }
 
   .experience-grid {
@@ -69,6 +130,16 @@
 
   .split.split--reverse .split-content {
     order: 2;
+  }
+
+  .split--contact {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+  }
+
+  .about-columns {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
   }
 
   .why-grid {
@@ -93,8 +164,13 @@
     flex-basis: calc((100% - 2 * var(--space-3)) / 3);
   }
 
-  .work-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .video-testimonial-card {
+    flex-basis: calc((100% - var(--space-3)) / 2);
+  }
+
+  .work-case {
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-5);
   }
 }
 

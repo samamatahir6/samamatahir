@@ -27,7 +27,7 @@ This is a static site, so "deploy" just means getting these files onto the web r
 - **Method**: push to GitHub, and Hostinger Business auto-deploys via its Git integration (Hostinger hPanel → Advanced → GIT), pulling the repo into `public_html` on each push to the deploy branch.
 - **`.htaccess` works** on Hostinger (LiteSpeed reads it), so the custom 404, `Options -Indexes`, and the future force-HTTPS / 301 rules all apply as written.
 - **After the first deploy**: confirm the domain still resolves and HTTPS is valid, then uncomment the force-HTTPS block in `.htaccess` and push again.
-- **Repo hygiene**: `.DS_Store` is git-ignored. `img_for_website/` holds unused source photos (staging material for a future gallery / richer work page); it is committed but will be publicly reachable once deployed. Move it out of the repo if you'd rather it not ship.
+- **Repo hygiene**: `.DS_Store` is git-ignored. `images/` only holds files the site uses, all WebP/JPG and resized for the web; keep original PNG screenshots out of the repo. The unused source photos that used to live in `img_for_website/` were removed and can be restored from git history.
 
 ## Project structure
 
@@ -53,14 +53,25 @@ pt/faq/index.html                     # FAQ page, FAQPage schema (PT)
 css/styles.css                        # Base styles: variables, reset, typography, components (sections 1-20)
 css/responsive.css                    # min-width media query overrides (640 / 900 / 1100px)
 js/main.js                            # Mobile menu, scroll shadow, footer year, reviews slider, contact form
-images/                               # Real photo only, no stock or placeholder images
-img_for_website/                      # Unused source photos, staging material (see Deployment note)
+images/                               # Real photos only, no stock. SEO-named, e.g.:
+                                      #   samama-tahir-full-stack-web-developer.webp (home hero cutout, transparent)
+                                      #   samama-tahir-web-development-workspace.webp + samama-tahir-desk-laptop-notebook-coffee.webp (home quote collage)
+                                      #   samama-tahir-coding-setup-laptop-coffee.webp, -working-on-laptop.webp, -laptop-on-desk-by-window.webp (home gallery row, 960x720)
+                                      #   samama-tahir-working-remotely-laptop.webp (home Marketing section)
 icons/favicon.svg                     # "ST" monogram, matches the marketing subdomain's brand palette
 robots.txt
 sitemap.xml
 404.html                              # Custom not-found page
 .htaccess                             # 404 + Options -Indexes; commented force-HTTPS / 301 patterns
 .gitignore
+```
+
+## Cache busting (CSS / JS versions)
+
+Every page links its stylesheets and script with a version query, e.g. `css/styles.css?v=20260924f`. Browsers cache these files, so **whenever you change `css/styles.css`, `css/responsive.css`, or `js/main.js`, bump the version on every page** (same value everywhere), or returning visitors (and your own browser) may keep seeing the old styles. One command does it:
+
+```
+grep -rl '?v=OLD' --include='*.html' . | xargs sed -i '' 's/?v=OLD"/?v=NEW"/g'
 ```
 
 ## Bilingual structure (EN / PT)
@@ -104,6 +115,86 @@ Every nav/footer link now resolves to a real page. `work/` and `pt/work/` were t
 
 Do not create a new CSS file per page. Extend `css/styles.css` / `css/responsive.css` with new component classes as needed, following the existing naming pattern.
 
+## Brand guidelines
+
+All tokens live in `:root` at the top of `css/styles.css`. Always use the `var(--...)` token, never re-type the hex value. The palette matches the `marketing.samamatahir.com` sub-brand.
+
+### Core palette
+
+| Token | Hex | Role |
+|---|---|---|
+| `--color-green` | `#0B3B2A` | Primary brand color. Headings, dark sections (`.section--dark`), logo mark background, header CTA, secondary button text |
+| `--color-green-dark` | `#082B1F` | Hover state for green buttons, footer / deepest backgrounds |
+| `--color-green-light` | `#2F9E5E` | Icons, strokes, focus outlines, card hover borders, "Tahir" in the logo. **Decoration only**: 3.4:1 on white fails WCAG AA for text |
+| `--color-green-text` | `#217A48` | Readable green text on white: eyebrows, links, tag text. Use this instead of green-light whenever it's text |
+| `--color-yellow` | `#F4C542` | Main accent. Primary buttons, "ST" in the logo mark, eyebrows on dark sections, text selection, highlights |
+| `--color-red` | `#D8232A` | Third accent, used sparingly: red tags, red pillar cards, red breadcrumb pill |
+| `--color-text` | `#1A1A1A` | Body text base |
+| `--color-text-muted` | `#52605C` | Paragraph text (all `<p>` default to this) |
+| `--color-border` | `#E6E8E7` | Card and input borders, secondary button border |
+| `--color-bg-alt` | `#F7F8F7` | Alternating section background (`.section--alt`) |
+| `--color-white` | `#FFFFFF` | Page background, text on dark sections |
+
+### One-off shades (not tokens, kept consistent)
+
+| Value | Where |
+|---|---|
+| `#F0BA30` | Primary (yellow) button hover |
+| `#8A6D16` | Text on yellow tints (yellow tags), since yellow itself is unreadable as text on white |
+| `#F5A623` | Review stars |
+| `#9FB3A8` | Muted text in the footer on dark green |
+| `rgba(255,255,255,0.82)` | Paragraph text on dark green sections |
+
+### Tints (accent at low opacity as a background)
+
+- Yellow: `rgba(244,197,66, 0.15–0.22)` for tags and pills, with `#8A6D16` or green text.
+- Red: `rgba(216,35,42, 0.06–0.08)`, with red text.
+- Light green: `rgba(47,158,94, 0.08–0.12)`, with `--color-green-text`.
+- Green: `rgba(11,59,42, 0.08)` for neutral pills and breadcrumbs.
+- Shadows are always green-tinted, never grey: `rgba(11,59,42, 0.05–0.45)`.
+
+### Accent system
+
+Components that come in color variants use a modifier class that sets a local custom property instead of duplicating CSS: `.tag--yellow|red|green-light`, `.pillar-card--yellow|red|green-light` (`--pillar-accent`, `--pillar-tint`), `.breadcrumb-current--yellow|red` (`--breadcrumb-accent`, `--breadcrumb-tint`), and case-study cards (`--case-accent`, `--case-accent-ink`). Default is always green. On service pages, the three pillar cards run in the order yellow, red, green-light.
+
+### Color pairing rules
+
+- On white: headings in green, body in text-muted, green text in `--color-green-text`. Never put yellow or green-light text on white.
+- On dark green: headings and text in white (paragraphs at 82% white), eyebrows in yellow, secondary buttons turn transparent with a 35% white border.
+- The primary CTA is always yellow with green text. The header CTA and full-width form buttons are green pills with white text.
+- Red is an accent, not an error or warning color. Use it in small doses.
+
+### Typography
+
+- **Font**: Manrope (Google Fonts, weights 400/500/600/700/800), fallback `system-ui, -apple-system, 'Segoe UI', sans-serif`.
+- **Body**: 17px, line-height 1.65, antialiased.
+- **Headings (h1–h3)**: weight 800, line-height 1.15, letter-spacing -0.01em, green.
+  - h1: `clamp(2.1rem, 5vw + 1rem, 3.4rem)`
+  - h2: `clamp(1.6rem, 3vw + 1rem, 2.4rem)`
+  - h3: `1.25rem`
+- **Eyebrow** (`.eyebrow`, small label above headings): 0.85rem, weight 700, uppercase, letter-spacing 0.08em.
+- **Buttons**: weight 700, 1rem.
+- Headings use `.text-balance` (`text-wrap: balance`).
+
+### Logo
+
+- "ST" monogram: green (`#0B3B2A`) rounded square with yellow (`#F4C542`) "ST" in Manrope 800. Same art as `icons/favicon.svg`.
+- Wordmark: "Samama" in the heading green, "Tahir" in `--color-green-light` (`.logo .accent`).
+
+### Shape, spacing, layout
+
+- **Radius**: `--radius-sm` 8px (buttons, inputs, logo mark), `--radius-md` 14px (cards), `--radius-lg` 22px (large panels, images). Pills use `999px`.
+- **Spacing scale**: `--space-1` 0.5rem, `-2` 1rem, `-3` 1.5rem, `-4` 2rem, `-5` 3rem, `-6` 4.5rem, `-7` 6rem.
+- **Container**: max-width 1180px.
+- **Breakpoints** (mobile-first, `min-width` in `css/responsive.css`): 640px, 900px, 1100px.
+
+### Motion and accessibility
+
+- Buttons lift `-2px` on hover and scale to `0.97` on press. Transitions are 0.15–0.25s ease.
+- Focus ring: 2px solid green-light, 3px offset, on every link, button and input.
+- `prefers-reduced-motion` turns off every animation and smooth scroll, including the marquee.
+- Text selection: yellow background, dark text.
+
 ## Content rules (carried over into any future pages)
 
 - First-person voice only ("I", "my"), never "we" / "our team" / agency language.
@@ -128,17 +219,25 @@ The home page (both languages) includes a "What clients say" / "O que dizem os c
 
 To add a real named project later (with the client's OK), add a `.work-card` to both pages. If you want screenshots, add them under `images/` with descriptive filenames and explicit `width`/`height`, and drop them into the card above the quote. Keep the "described by outcome" framing so confidential work still fits.
 
+## Intro video ("Meet Samama")
+
+The home page (both languages) has a "Meet Samama" section right after the hero (`#intro-video`, `.split.split--reverse` layout): Samama's own video explaining the services (YouTube `VsIfhwxvdvU`, English only), next to a short intro and the "Let's talk" CTA. A small "Watch my intro video" link under the hero buttons (`.hero-video-link`) jumps to it. The video is English only, so the PT page says "(em inglês)" in both the hero link and the section text. It uses the same `.video-embed` link and popup player as the testimonials below, styled larger via `.intro-video`. It is on the home page only, by choice.
+
+**Local preview note:** YouTube refuses embeds from a page with no referrer (Error 153, "video player configuration error"), which is what you get when opening `index.html` straight from disk (`file://`). So on `file://` the JS skips the popup and leaves the videos as plain links that open on YouTube in a new tab. To see the popup player locally, use `python3 -m http.server 8000`. On the live site (https) it works normally.
+
 ## Video testimonials
 
-The home page (both languages) has a "Video Testimonials" section, right after the text Reviews section: `.video-testimonials-grid` of `.video-testimonial-card` elements, each a native `<video controls preload="none">` (no poster, no JS) so nothing downloads until the visitor presses play, and it works identically with JavaScript disabled.
+The home page (both languages) has a "Video Testimonials" section, right after the text Reviews section: `.video-testimonials-track` (a scroll-snap slider with prev/next arrows, same `initCardSlider` JS as the Reviews slider) of `.video-testimonial-card` elements. The arrows hide themselves automatically when every card already fits (e.g. 2 videos on desktop).
 
-**Current state is a placeholder.** The real first testimonial is `videos/Waggyy - Sam testimonial.mp4` (158MB, 720p, 2:43) sitting locally in the project folder, git-ignored/untracked on purpose: GitHub hard-rejects any file over 100MB, and 158MB is far too heavy to self-host on a page anyway. It's being uploaded to YouTube as unlisted instead. Until that link exists, both `index.html` and `pt/index.html` point their `<source>` at a small, freely-licensed MDN sample clip (`interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4`) purely so the section's layout can be seen and tested. **This is not a real testimonial and must not ship to production as-is.**
+Videos are hosted on YouTube (channel `@samitahir1456`), not in the repo. Each card is a click-to-load embed: a plain link to the YouTube video showing its thumbnail (`i.ytimg.com/vi/<id>/maxresdefault.jpg`) and a brand yellow/green play button. With JS, a click opens the video in a popup: a native `<dialog class="video-modal">` built by `js/main.js`, holding a privacy-enhanced `youtube-nocookie.com/embed/<id>` iframe that autoplays. Esc, a backdrop click, or the yellow close button shut it, and closing removes the iframe so the video stops. The popup sizes itself to fit both the viewport width and height (so it works on landscape phones), and page scroll is locked while it is open. No YouTube player loads until the visitor presses play. Without JS, the card opens the video on YouTube.
 
-To finish this once the real YouTube link exists:
-- Either keep the native `<video>` and point `<source src>` at a properly web-compressed export of the real file (re-encode with `ffmpeg` to roughly 10-20MB at 720p, not the original 158MB export), or
-- Replace the `<video>` block with a click-to-load YouTube embed (`youtube-nocookie.com/embed/<id>`) so nothing loads until clicked, matching the same "no JS required, nothing loads unasked" approach.
+Current videos (real clients, real names):
+- **Dr. Osako Marie Djemo**: `LF6-CKyWXdQ`
+- **Waggy**: `RX8k6RozVqE` (Shopify landing page and custom code)
 
-To add more real client videos later: add another `.video-testimonial-card` to both pages' `.video-testimonials-grid`, using the real client's name only (no invented role, quote, or location unless supplied), per the no-invented-testimonials rule below.
+To add another real client video: copy a `.video-testimonial-card` in both `index.html` and `pt/index.html`, change the video ID in `href`, `data-youtube-id` and the thumbnail URL, and use the client's real name only (no invented role, quote, or location unless supplied). The optional `.video-testimonial-meta` line should only state what the client or video title actually says.
+
+Local source files (`videos/`, and the `part 1-4 - final.mov` clips in `~/Downloads/`) are not committed. They're too large for GitHub (100MB limit) and aren't needed now that the videos live on YouTube.
 
 ## Gallery (deferred, not built)
 

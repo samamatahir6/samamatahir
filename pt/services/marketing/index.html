@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="../../../css/styles.css" />
-<link rel="stylesheet" href="../../../css/responsive.css" />
+<link rel="stylesheet" href="../../../css/styles.css?v=20260926a" />
+<link rel="stylesheet" href="../../../css/responsive.css?v=20260926a" />
 
 <script type="application/ld+json">
 {
@@ -63,20 +63,20 @@
   <div class="container">
     <a href="../../../pt/" class="logo">
       <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
     </a>
 
     <nav class="primary-nav" aria-label="Principal">
       <ul>
         <li class="nav-dropdown">
-          <a href="../../../pt/services/">
+          <a href="../../../pt/services/" aria-current="page">
             <span class="nav-star" aria-hidden="true">✦</span>Serviços
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="../../../pt/services/web-development/">Desenvolvimento Web</a></li>
-            <li><a href="../../../pt/services/marketing/" aria-current="page">Marketing</a></li>
-            <li><a href="../../../pt/services/ai-automation/">IA e Automação</a></li>
+            <li><a href="../../../pt/services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
+            <li><a href="../../../pt/services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+            <li><a href="../../../pt/services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
           </ul>
         </li>
         <li><a href="../../../pt/about/">Sobre</a></li>
@@ -104,11 +104,11 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../../../pt/services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <a href="../../../pt/services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
         <ul class="mobile-nav-submenu">
-          <li><a href="../../../pt/services/web-development/">Desenvolvimento Web</a></li>
-          <li><a href="../../../pt/services/marketing/" aria-current="page">Marketing</a></li>
-          <li><a href="../../../pt/services/ai-automation/">IA e Automação</a></li>
+          <li><a href="../../../pt/services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
+          <li><a href="../../../pt/services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+          <li><a href="../../../pt/services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
         </ul>
       </li>
       <li><a href="../../../pt/about/">Sobre</a></li>
@@ -124,17 +124,24 @@
 
   <nav class="breadcrumbs" aria-label="Localização">
     <div class="container">
-      <a href="../../../pt/">Início</a> / <a href="../../../pt/services/">Serviços</a> / <span>Marketing</span>
+      <a href="../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../pt/services/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current breadcrumb-current--yellow" aria-current="page">Marketing</span>
     </div>
   </nav>
 
   <!-- Intro -->
-  <section class="section" style="padding-top: var(--space-4);">
+  <section class="section section--dark page-intro">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow">Marketing</span>
+        <span class="hero-badge">Marketing</span>
         <h1 class="text-balance">Serviços de Marketing para Empresas no Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-2);">Ajudo empresas a melhorar a sua visibilidade no Google, a perceber o tráfego do seu website, e a transformar mais visitantes em pedidos de contacto e clientes.</p>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Ajudo empresas a melhorar a sua visibilidade no Google, a perceber o tráfego do seu website, e a transformar mais visitantes em pedidos de contacto e clientes.</p>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -168,103 +175,115 @@
     </div>
   </section>
 
-  <!-- Google Business Profile -->
-  <section class="service-block" id="google-business-profile">
+  <!-- Service pillars -->
+  <section class="section">
     <div class="container">
-      <div class="service-block-head">
-        <h2>Perfil de Empresa no Google</h2>
-        <p>Para a maioria dos negócios locais, o seu Perfil de Empresa no Google é visto mais do que o seu website. Otimizo-o corretamente: categorias, informação da empresa, serviços, fotos, e a configuração de avaliações, para que trabalhe a seu favor.</p>
+      <div class="card-grid card-grid--2">
+
+        <article class="card pillar-card" id="google-business-profile">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </span>
+          <h3>Perfil de Empresa no Google</h3>
+          <p>Para a maioria dos negócios locais, o seu Perfil de Empresa no Google é visto mais do que o seu website. Otimizo-o corretamente: categorias, informação da empresa, serviços, fotos, e a configuração de avaliações.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Otimização do perfil e informação de empresa precisa</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Categorias corretas e listagem de serviços</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Fotos que representam bem o negócio</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Um processo eficaz para recolher avaliações</div>
+          </div>
+          <p class="pillar-note">Ajude os clientes locais a encontrar o seu negócio quando pesquisam no Google e no Google Maps.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="local-seo">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <h3>SEO Local e Técnico</h3>
+          <p>O SEO local é uma combinação de bases técnicas, conteúdo on-page, e sinais de relevância que dizem ao Google que o seu negócio serve genuinamente uma determinada área. Trabalho os três, não apenas um.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Bases técnicas de SEO: velocidade do site, rastreabilidade, indexação, Core Web Vitals</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>SEO on-page e relevância local</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ligações internas e dados estruturados (schema.org)</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Conteúdo que corresponde ao que os seus clientes realmente pesquisam</div>
+          </div>
+          <p class="pillar-note">O objetivo é visibilidade de pesquisa duradoura. Não prometo um primeiro lugar garantido, porque ninguém o pode fazer honestamente.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--red" id="google-ads">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </span>
+          <h3>Google Ads</h3>
+          <p>Campanhas de pesquisa construídas em torno das palavras-chave que as pessoas realmente usam quando estão prontas para comprar ou pedir informações, com o acompanhamento de conversões configurado desde o primeiro dia.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração de campanhas de pesquisa e segmentação de palavras-chave</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento de conversões configurado antes do lançamento</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages construídas para converter esse tráfego</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Medição contínua de desempenho, não "configurar e esquecer"</div>
+          </div>
+          <p class="pillar-note">O foco é tráfego qualificado com boa probabilidade de conversão, não apenas mais cliques.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--green-light" id="meta-ads">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </span>
+          <h3>Meta Ads e Marketing em Redes Sociais</h3>
+          <p>Campanhas no Facebook e Instagram construídas em torno de um público específico e de uma landing page desenhada para esse público, com acompanhamento de conversões para que os resultados sejam de facto mensuráveis.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Segmentação de público no Facebook e Instagram</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testes de criativos para ver o que realmente resulta</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages alinhadas com a campanha</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel e acompanhamento de conversões ao longo do funil</div>
+          </div>
+        </article>
+
+        <article class="card pillar-card" id="analytics-tracking">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </span>
+          <h3>Analítica e Monitorização</h3>
+          <p>Deve saber quais canais e ações estão realmente a gerar pedidos de contacto, não adivinhar. Configuro corretamente o Google Analytics 4 e o Google Tag Manager, com um dataLayer limpo.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração e definição do Google Analytics 4</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Tag Manager e implementação de dataLayer</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração do Meta Pixel a par da monitorização da Google</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento de eventos e conversões ligado a ações reais do negócio</div>
+          </div>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="conversion-optimization">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>
+          </span>
+          <h3>Otimização de Conversão</h3>
+          <p>Ter mais tráfego importa menos se o site não o converte. Analiso a clareza das chamadas para ação, a landing page, os formulários, a experiência móvel, e os sinais de confiança, e depois testo alterações em vez de adivinhar.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Chamadas para ação e landing pages mais claras</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Percursos de utilizador e formulários simplificados</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Experiência móvel e sinais de confiança</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testar alterações em vez de adivinhar</div>
+          </div>
+          <p class="pillar-note">O foco é converter o tráfego que já tem, não apenas perseguir mais.</p>
+        </article>
+
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Otimização do perfil e informação de empresa precisa</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Categorias corretas e listagem de serviços</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Fotos que representam bem o negócio</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Um processo eficaz para recolher avaliações</li>
-      </ul>
-      <p class="outcome-note">Ajude os clientes locais a encontrar o seu negócio quando pesquisam no Google e no Google Maps.</p>
     </div>
   </section>
 
-  <!-- Local SEO -->
-  <section class="service-block" id="local-seo">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>SEO Local e Técnico</h2>
-        <p>O SEO local é uma combinação de bases técnicas, conteúdo on-page, e sinais de relevância que dizem ao Google que o seu negócio serve genuinamente uma determinada área. Trabalho os três, não apenas um.</p>
+  <!-- Photo + quote -->
+  <section class="section section--dark">
+    <div class="container split">
+      <div class="split-panel split-panel--photo photo-placeholder photo-placeholder--dark" role="img" aria-label="Foto provisória do Samama Tahir a rever dashboards de analítica ou anúncios, a substituir por uma foto real">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Foto brevemente</strong>
+        <span>Samama a rever dashboards de analítica/anúncios</span>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Bases técnicas de SEO: velocidade do site, rastreabilidade, indexação, Core Web Vitals</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>SEO on-page e relevância local</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ligações internas e dados estruturados (schema.org)</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Conteúdo que corresponde ao que os seus clientes realmente pesquisam</li>
-      </ul>
-      <p class="outcome-note">O objetivo é visibilidade de pesquisa duradoura. Não prometo um primeiro lugar garantido, porque ninguém o pode fazer honestamente.</p>
-    </div>
-  </section>
-
-  <!-- Google Ads -->
-  <section class="service-block" id="google-ads">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Google Ads</h2>
-        <p>Campanhas de pesquisa construídas em torno das palavras-chave que as pessoas realmente usam quando estão prontas para comprar ou pedir informações, com o acompanhamento de conversões configurado desde o primeiro dia para saber quanto vale de facto um clique.</p>
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.2rem; line-height: 1.5;">Não adivinho o que está a funcionar. Cada campanha e cada alteração numa página é monitorizada, para sabermos em semanas, não meses, se realmente fez diferença.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração de campanhas de pesquisa e segmentação de palavras-chave</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento de conversões configurado antes do lançamento</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages construídas para converter esse tráfego</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Medição contínua de desempenho, não "configurar e esquecer"</li>
-      </ul>
-      <p class="outcome-note">O foco é tráfego qualificado com boa probabilidade de conversão, não apenas mais cliques.</p>
-    </div>
-  </section>
-
-  <!-- Meta Ads -->
-  <section class="service-block" id="meta-ads">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Meta Ads e Marketing em Redes Sociais</h2>
-        <p>Campanhas no Facebook e Instagram construídas em torno de um público específico e de uma landing page desenhada para esse público, com acompanhamento de conversões para que os resultados sejam de facto mensuráveis.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Segmentação de público no Facebook e Instagram</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testes de criativos para ver o que realmente resulta</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages alinhadas com a campanha</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel e acompanhamento de conversões ao longo do funil</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Analytics & Tracking -->
-  <section class="service-block" id="analytics-tracking">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Analítica e Monitorização</h2>
-        <p>Deve saber quais canais e ações estão realmente a gerar pedidos de contacto, não adivinhar. Configuro corretamente o Google Analytics 4 e o Google Tag Manager, com um dataLayer limpo e acompanhamento de eventos e conversões que reflete o que realmente importa para o seu negócio.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração e definição do Google Analytics 4</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Google Tag Manager e implementação de dataLayer para uma monitorização limpa e fácil de manter</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Configuração do Meta Pixel a par da monitorização da Google</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento de eventos e conversões ligado a ações reais do negócio</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Conversion Optimization -->
-  <section class="service-block" id="conversion-optimization">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Otimização de Conversão</h2>
-        <p>Ter mais tráfego importa menos se o site não o converte. Analiso a clareza das chamadas para ação, a landing page e o percurso do utilizador, os formulários, a experiência móvel, e os sinais de confiança, e depois testo alterações em vez de adivinhar.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Chamadas para ação e landing pages mais claras</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Percursos de utilizador e formulários simplificados</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Experiência móvel e sinais de confiança</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Testar alterações em vez de adivinhar</li>
-      </ul>
-      <p class="outcome-note">O foco é converter o tráfego que já tem, não apenas perseguir mais.</p>
     </div>
   </section>
 
@@ -403,7 +422,7 @@
         <p class="footer-heading">Navegação</p>
         <div class="footer-links">
           <a href="../../../pt/">Início</a>
-          <a href="../../../pt/services/">Serviços</a>
+          <a href="../../../pt/services/" aria-current="page">Serviços</a>
           <a href="../../../pt/about/">Sobre</a>
           <a href="../../../pt/work/">Portefólio</a>
           <a href="../../../pt/faq/">FAQ</a>
@@ -429,6 +448,6 @@
   </div>
 </footer>
 
-<script src="../../../js/main.js"></script>
+<script src="../../../js/main.js?v=20260925c"></script>
 </body>
 </html>

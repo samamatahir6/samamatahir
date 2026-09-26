@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="../../../css/styles.css" />
-<link rel="stylesheet" href="../../../css/responsive.css" />
+<link rel="stylesheet" href="../../../css/styles.css?v=20260926a" />
+<link rel="stylesheet" href="../../../css/responsive.css?v=20260926a" />
 
 <script type="application/ld+json">
 {
@@ -63,20 +63,20 @@
   <div class="container">
     <a href="../../../pt/" class="logo">
       <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
     </a>
 
     <nav class="primary-nav" aria-label="Principal">
       <ul>
         <li class="nav-dropdown">
-          <a href="../../../pt/services/">
+          <a href="../../../pt/services/" aria-current="page">
             <span class="nav-star" aria-hidden="true">✦</span>Serviços
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="../../../pt/services/web-development/" aria-current="page">Desenvolvimento Web</a></li>
-            <li><a href="../../../pt/services/marketing/">Marketing</a></li>
-            <li><a href="../../../pt/services/ai-automation/">IA e Automação</a></li>
+            <li><a href="../../../pt/services/web-development/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
+            <li><a href="../../../pt/services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+            <li><a href="../../../pt/services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
           </ul>
         </li>
         <li><a href="../../../pt/about/">Sobre</a></li>
@@ -104,11 +104,11 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../../../pt/services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <a href="../../../pt/services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
         <ul class="mobile-nav-submenu">
-          <li><a href="../../../pt/services/web-development/" aria-current="page">Desenvolvimento Web</a></li>
-          <li><a href="../../../pt/services/marketing/">Marketing</a></li>
-          <li><a href="../../../pt/services/ai-automation/">IA e Automação</a></li>
+          <li><a href="../../../pt/services/web-development/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
+          <li><a href="../../../pt/services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+          <li><a href="../../../pt/services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
         </ul>
       </li>
       <li><a href="../../../pt/about/">Sobre</a></li>
@@ -124,17 +124,24 @@
 
   <nav class="breadcrumbs" aria-label="Localização">
     <div class="container">
-      <a href="../../../pt/">Início</a> / <a href="../../../pt/services/">Serviços</a> / <span>Desenvolvimento Web</span>
+      <a href="../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../pt/services/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Desenvolvimento Web</span>
     </div>
   </nav>
 
   <!-- Intro -->
-  <section class="section" style="padding-top: var(--space-4);">
+  <section class="section section--dark page-intro">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow">Desenvolvimento Web</span>
+        <span class="hero-badge">Desenvolvimento Web</span>
         <h1 class="text-balance">Serviços de Desenvolvimento Web para Empresas no Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-2);">Desenho, construo, e mantenho websites em WordPress, lojas Shopify, e aplicações web personalizadas, para que o site por trás do seu negócio seja rápido, seguro, e realmente fácil de manter.</p>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Desenho, construo, e mantenho websites em WordPress, lojas Shopify, e aplicações web personalizadas, para que o site por trás do seu negócio seja rápido, seguro, e realmente fácil de manter.</p>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -168,70 +175,86 @@
     </div>
   </section>
 
-  <!-- WordPress -->
-  <section class="service-block" id="wordpress-development">
+  <!-- Service pillars -->
+  <section class="section">
     <div class="container">
-      <div class="service-block-head">
-        <h2>Desenvolvimento WordPress</h2>
-        <p>Desenvolvimento WordPress personalizado e customização de temas, não uma pilha de plugins montada às pressas. Trabalho com Elementor, Divi, Bricks, WPBakery, e Oxygen conforme o que cada projeto realmente precisa, além de temas totalmente personalizados quando não se encaixam num construtor.</p>
+      <div class="card-grid card-grid--2">
+
+        <article class="card pillar-card" id="wordpress-development">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </span>
+          <h3>Desenvolvimento WordPress</h3>
+          <p>Desenvolvimento WordPress personalizado e customização de temas, não uma pilha de plugins montada às pressas. Trabalho com Elementor, Divi, Bricks, WPBakery, e Oxygen conforme o que cada projeto realmente precisa, além de temas totalmente personalizados quando não se encaixam num construtor.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Temas personalizados, e customização em Elementor, Divi, Bricks, WPBakery, e Oxygen</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Advanced Custom Fields, Custom Post Types, e blocos Gutenberg</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>WooCommerce, Gravity Forms, JetEngine, e desenvolvimentos com Crocoblock</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Otimização de desempenho, reforço de segurança, e limpeza de plugins/temas</div>
+          </div>
+          <p class="pillar-note">Um site WordPress que se mantém rápido e seguro à medida que cresce, não um que abranda a cada novo plugin.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="shopify-development">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </span>
+          <h3>Desenvolvimento Shopify</h3>
+          <p>Construção de lojas Shopify e customização de temas em Liquid, incluindo o tema Dawn, com as integrações de aplicações de que uma loja em crescimento realmente precisa.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de temas em Liquid, incluindo o tema Dawn</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Trabalho com a Storefront API e Admin API para funcionalidades personalizadas</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de aplicações, incluindo Appstle e Recharge para subscrições</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização da loja construída à volta de como os clientes realmente compram</div>
+          </div>
+        </article>
+
+        <article class="card pillar-card pillar-card--red" id="custom-web-applications">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+          <h3>Aplicações Web Personalizadas</h3>
+          <p>Quando um negócio precisa de algo além de WordPress ou Shopify, construo diretamente: React ou Vue no frontend, PHP (Laravel, CodeIgniter) ou Node.js/Express no backend, com uma base de dados real por trás.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Frontends em React e Vue.js, responsivos desde o início</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Backends em Laravel, CodeIgniter, e Node.js/Express</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>MySQL, MongoDB, e PostgreSQL para aplicações orientadas a dados</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>APIs REST, autenticação JWT e OAuth, e webhooks para integrações com terceiros</div>
+          </div>
+          <p class="pillar-note">Construído à medida de como o negócio realmente funciona, não forçado num modelo de que não precisa.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--green-light" id="ecommerce">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
+          <h3>E-Commerce</h3>
+          <p>Lojas online em WooCommerce ou Shopify, construídas à volta de um checkout que realmente converte: fluxos de pagamento claros, sistemas de subscrição a funcionar, e configuração de produtos que não luta contra a plataforma.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construção e customização de lojas WooCommerce e Shopify</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de pagamento e fluxos de checkout</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sistemas de subscrição, incluindo Recharge e Appstle</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de produtos e loja orientada para conversão, não apenas aparência</div>
+          </div>
+          <a href="../marketing/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Veja como isto se liga ao trabalho de marketing e conversão</a>
+        </article>
+
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Temas personalizados, e customização em Elementor, Divi, Bricks, WPBakery, e Oxygen</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Advanced Custom Fields, Custom Post Types, e blocos Gutenberg</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>WooCommerce, Gravity Forms, JetEngine, e desenvolvimentos com Crocoblock</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Otimização de desempenho, reforço de segurança, e limpeza de plugins/temas</li>
-      </ul>
-      <p class="outcome-note">Um site WordPress que se mantém rápido e seguro à medida que cresce, não um que abranda a cada novo plugin.</p>
     </div>
   </section>
 
-  <!-- Shopify -->
-  <section class="service-block" id="shopify-development">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Desenvolvimento Shopify</h2>
-        <p>Construção de lojas Shopify e customização de temas em Liquid, incluindo o tema Dawn, com as integrações de aplicações de que uma loja em crescimento realmente precisa.</p>
+  <!-- Photo + quote -->
+  <section class="section section--dark">
+    <div class="container split">
+      <div class="split-panel split-panel--photo photo-placeholder photo-placeholder--dark" role="img" aria-label="Foto provisória do Samama Tahir a programar ou a rever código, a substituir por uma foto real">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Foto brevemente</strong>
+        <span>Samama a programar/a rever código</span>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de temas em Liquid, incluindo o tema Dawn</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Trabalho com a Storefront API e Admin API para funcionalidades personalizadas</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de aplicações, incluindo Appstle e Recharge para subscrições</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização da loja construída à volta de como os clientes realmente compram</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Custom Web Applications -->
-  <section class="service-block" id="custom-web-applications">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Aplicações Web Personalizadas</h2>
-        <p>Quando um negócio precisa de algo além de WordPress ou Shopify, construo diretamente: React ou Vue no frontend, PHP (Laravel, CodeIgniter) ou Node.js/Express no backend, com uma base de dados real por trás.</p>
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.2rem; line-height: 1.5;">Escrevo o código eu próprio, em todos os projetos. Sem passar para um developer júnior depois de o contrato ser assinado, e sem um modelo pronto disfarçado de trabalho personalizado.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Frontends em React e Vue.js, responsivos desde o início</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Backends em Laravel, CodeIgniter, e Node.js/Express</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>MySQL, MongoDB, e PostgreSQL para aplicações orientadas a dados</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>APIs REST, autenticação JWT e OAuth, e webhooks para integrações com terceiros</li>
-      </ul>
-      <p class="outcome-note">Construído à medida de como o negócio realmente funciona, não forçado num modelo de que não precisa.</p>
-    </div>
-  </section>
-
-  <!-- E-Commerce -->
-  <section class="service-block" id="ecommerce">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>E-Commerce</h2>
-        <p>Lojas online em WooCommerce ou Shopify, construídas à volta de um checkout que realmente converte: fluxos de pagamento claros, sistemas de subscrição a funcionar, e configuração de produtos que não luta contra a plataforma.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construção e customização de lojas WooCommerce e Shopify</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de pagamento e fluxos de checkout</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sistemas de subscrição, incluindo Recharge e Appstle</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de produtos e loja orientada para conversão, não apenas aparência</li>
-      </ul>
-      <a href="../marketing/" class="link-more">Veja como isto se liga ao trabalho de marketing e conversão</a>
     </div>
   </section>
 
@@ -370,7 +393,7 @@
         <p class="footer-heading">Navegação</p>
         <div class="footer-links">
           <a href="../../../pt/">Início</a>
-          <a href="../../../pt/services/">Serviços</a>
+          <a href="../../../pt/services/" aria-current="page">Serviços</a>
           <a href="../../../pt/about/">Sobre</a>
           <a href="../../../pt/work/">Portefólio</a>
           <a href="../../../pt/faq/">FAQ</a>
@@ -396,6 +419,6 @@
   </div>
 </footer>
 
-<script src="../../../js/main.js"></script>
+<script src="../../../js/main.js?v=20260925c"></script>
 </body>
 </html>

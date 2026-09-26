@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="../../css/styles.css" />
-<link rel="stylesheet" href="../../css/responsive.css" />
+<link rel="stylesheet" href="../../css/styles.css?v=20260926a" />
+<link rel="stylesheet" href="../../css/responsive.css?v=20260926a" />
 
 <script type="application/ld+json">
 {
@@ -63,20 +63,20 @@
   <div class="container">
     <a href="../../" class="logo">
       <span class="logo-mark" aria-hidden="true">ST</span>
-      Samama<span class="accent">&nbsp;Tahir</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
       <ul>
         <li class="nav-dropdown">
-          <a href="../../services/">
+          <a href="../../services/" aria-current="page">
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="../../services/web-development/">Web Development</a></li>
-            <li><a href="../../services/marketing/">Marketing</a></li>
-            <li><a href="../../services/ai-automation/" aria-current="page">AI &amp; Automation</a></li>
+            <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+            <li><a href="../../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+            <li><a href="../../services/ai-automation/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
           </ul>
         </li>
         <li><a href="../../about/">About</a></li>
@@ -104,11 +104,11 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <a href="../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
         <ul class="mobile-nav-submenu">
-          <li><a href="../../services/web-development/">Web Development</a></li>
-          <li><a href="../../services/marketing/">Marketing</a></li>
-          <li><a href="../../services/ai-automation/" aria-current="page">AI &amp; Automation</a></li>
+          <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
+          <li><a href="../../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
+          <li><a href="../../services/ai-automation/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
         </ul>
       </li>
       <li><a href="../../about/">About</a></li>
@@ -124,17 +124,24 @@
 
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
-      <a href="../../">Home</a> / <a href="../../services/">Services</a> / <span>AI &amp; Automation</span>
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../services/">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current breadcrumb-current--red" aria-current="page">AI &amp; Automation</span>
     </div>
   </nav>
 
   <!-- Intro -->
-  <section class="section" style="padding-top: var(--space-4);">
+  <section class="section section--dark page-intro">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow">AI &amp; Automation</span>
+        <span class="hero-badge">AI &amp; Automation</span>
         <h1 class="text-balance">AI &amp; Automation Services for Businesses in Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-2);">A lot of what a business does by hand every day, replying to enquiries, working out a quote, checking a website, follows the same steps every time. I build systems that do those steps automatically, so they happen in seconds instead of sitting in an inbox.</p>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">A lot of what a business does by hand every day, replying to enquiries, working out a quote, checking a website, follows the same steps every time. I build systems that do those steps automatically, so they happen in seconds instead of sitting in an inbox.</p>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -168,68 +175,84 @@
     </div>
   </section>
 
-  <!-- AI Chatbots & Automated Replies -->
-  <section class="service-block" id="ai-chatbots">
+  <!-- Service pillars -->
+  <section class="section">
     <div class="container">
-      <div class="service-block-head">
-        <h2>AI Chatbots &amp; Automated Replies</h2>
-        <p>Systems that read an incoming message, whether it's a contact-form submission, an email, or a chat widget, and reply automatically in a natural, human-sounding way, instead of it sitting unanswered until someone has time.</p>
+      <div class="card-grid card-grid--2">
+
+        <article class="card pillar-card" id="ai-chatbots">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3>AI Chatbots &amp; Automated Replies</h3>
+          <p>Systems that read an incoming message, whether it's a contact-form submission, an email, or a chat widget, and reply automatically in a natural, human-sounding way, instead of it sitting unanswered until someone has time.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Reads and understands incoming form, email, or chat messages</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Drafts a natural, on-topic reply, matched to the business's own tone</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sends the reply immediately, any hour, with no manual copy-pasting</div>
+          </div>
+          <p class="pillar-note">Every enquiry gets an immediate, human-sounding response, without someone at a desk typing it.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="workflow-automation">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+          </span>
+          <h3>Workflow &amp; Business Process Automation</h3>
+          <p>A lot of business tasks, working out a quote, applying the right rate, generating an invoice, follow the exact same steps every time. I build workflows that do those steps automatically, using the pricing and rules a business already works from.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Extracts the relevant details from an incoming form or email automatically</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Looks up rates or pricing from an existing spreadsheet or system</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Calculates totals, taxes, or other business logic automatically</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Generates and sends the resulting document, a quote or an invoice, without manual work</div>
+          </div>
+          <p class="pillar-note">A multi-step manual process turns into something that runs in the background, in minutes.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--red" id="ai-reports">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </span>
+          <h3>AI-Powered Reports &amp; Audits</h3>
+          <p>Tools that take an input, a website, a document, a dataset, analyze it automatically, and use AI to turn that analysis into a clear report someone can actually read and act on.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Collects an input, like a website or document, through a simple form</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Analyzes the content or structure automatically on the backend</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Uses AI to turn that raw analysis into a clear, readable report</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Delivers the finished report back automatically, by email or on-screen</div>
+          </div>
+          <p class="pillar-note">Turns raw data into something a person can actually read and act on, without anyone writing it by hand.</p>
+        </article>
+
+        <article class="card pillar-card pillar-card--green-light" id="integrations">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          </span>
+          <h3>API Integrations &amp; Connected Systems</h3>
+          <p>None of the above works if the tools a business already uses don't talk to each other. I connect forms, inboxes, spreadsheets, and other software through their APIs, so information moves between them without anyone copying it by hand.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>API-based integrations between forms, email, spreadsheets, and other business tools</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Keeping data in sync automatically between systems that don't connect out of the box</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Custom middleware when two tools need to work together but weren't built to</div>
+          </div>
+        </article>
+
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Reads and understands incoming form, email, or chat messages</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Drafts a natural, on-topic reply, matched to the business's own tone</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sends the reply immediately, any hour, with no manual copy-pasting</li>
-      </ul>
-      <p class="outcome-note">Every enquiry gets an immediate, human-sounding response, without someone at a desk typing it.</p>
     </div>
   </section>
 
-  <!-- Workflow & Business Process Automation -->
-  <section class="service-block" id="workflow-automation">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>Workflow &amp; Business Process Automation</h2>
-        <p>A lot of business tasks, working out a quote, applying the right rate, generating an invoice, follow the exact same steps every time. I build workflows that do those steps automatically, using the pricing and rules a business already works from.</p>
+  <!-- Photo + quote -->
+  <section class="section section--dark">
+    <div class="container split">
+      <div class="split-panel split-panel--photo photo-placeholder photo-placeholder--dark" role="img" aria-label="Placeholder photo of Samama Tahir building an automation workflow, to be replaced with a real photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Photo coming soon</strong>
+        <span>Samama building an automation workflow</span>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Extracts the relevant details from an incoming form or email automatically</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Looks up rates or pricing from an existing spreadsheet or system</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Calculates totals, taxes, or other business logic automatically</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Generates and sends the resulting document, a quote or an invoice, without manual work</li>
-      </ul>
-      <p class="outcome-note">A multi-step manual process turns into something that runs in the background, in minutes.</p>
-    </div>
-  </section>
-
-  <!-- AI-Powered Reports -->
-  <section class="service-block" id="ai-reports">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>AI-Powered Reports &amp; Audits</h2>
-        <p>Tools that take an input, a website, a document, a dataset, analyze it automatically, and use AI to turn that analysis into a clear report someone can actually read and act on.</p>
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.2rem; line-height: 1.5;">The goal isn't to replace a person, it's to remove the part of their day that's just retyping the same information from one place to another.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
       </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Collects an input, like a website or document, through a simple form</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Analyzes the content or structure automatically on the backend</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Uses AI to turn that raw analysis into a clear, readable report</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Delivers the finished report back automatically, by email or on-screen</li>
-      </ul>
-      <p class="outcome-note">Turns raw data into something a person can actually read and act on, without anyone writing it by hand.</p>
-    </div>
-  </section>
-
-  <!-- API Integrations -->
-  <section class="service-block" id="integrations">
-    <div class="container">
-      <div class="service-block-head">
-        <h2>API Integrations &amp; Connected Systems</h2>
-        <p>None of the above works if the tools a business already uses don't talk to each other. I connect forms, inboxes, spreadsheets, and other software through their APIs, so information moves between them without anyone copying it by hand.</p>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>API-based integrations between forms, email, spreadsheets, and other business tools</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Keeping data in sync automatically between systems that don't connect out of the box</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Custom middleware when two tools need to work together but weren't built to</li>
-      </ul>
     </div>
   </section>
 
@@ -368,7 +391,7 @@
         <p class="footer-heading">Navigate</p>
         <div class="footer-links">
           <a href="../../">Home</a>
-          <a href="../../services/">Services</a>
+          <a href="../../services/" aria-current="page">Services</a>
           <a href="../../about/">About</a>
           <a href="../../work/">Portfolio</a>
           <a href="../../faq/">FAQ</a>
@@ -394,6 +417,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js"></script>
+<script src="../../js/main.js?v=20260925c"></script>
 </body>
 </html>
