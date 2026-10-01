@@ -29,7 +29,12 @@ Redirect 301 /wp-bakery-meets-shopify-checkout-extensibility-a-new-era-of-custom
 Redirect 301 /how-to-display-related-products-posts-using-jetengine-query-builder-crocoblock/ /services/web-development/
 Redirect 301 /maximize-performance-with-image-optimization-in-wordpress/ /services/web-development/
 Redirect 301 /unlock-the-power-of-elementor-ai-for-smarter-website-design/ /services/web-development/
-RedirectMatch 301 ^/(category|tag|author)/.* /
+Redirect 301 /streamline-discussions-with-elementors-new-comment-feature/ /services/web-development/
+Redirect 301 /how-to-connect-shipstation-with-wordpress-and-fix-the-502-bad-gateway-error/ /services/web-development/
+Redirect 301 /auto-add-free-products-to-shopify-cart/ /work/
+# Old WordPress tag and category archives were all WordPress/Shopify dev topics
+RedirectMatch 301 ^/(category|tag)/.* /services/web-development/
+RedirectMatch 301 ^/author/.* /about/
 RedirectMatch 301 ^/feed/?$ /
 # Add more old URLs here as they show up in Search Console (Pages -> Not found):
 # Redirect 301 /old-path/ /new-path/
