@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
 <script>
@@ -14,32 +28,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
 <title>FAQ | Samama Tahir, Desenvolvimento Web &amp; Marketing no Porto</title>
-<meta name="description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, desenvolvedor full-stack no Porto." />
+<meta name="description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, programador full-stack no Porto." />
 <link rel="canonical" href="https://samamatahir.com/pt/faq/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/faq/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/faq/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/faq/" />
 <link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
 
 <meta property="og:title" content="FAQ | Samama Tahir, Desenvolvimento Web & Marketing no Porto" />
-<meta property="og:description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, desenvolvedor full-stack no Porto." />
+<meta property="og:description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, programador full-stack no Porto." />
 <meta property="og:url" content="https://samamatahir.com/pt/faq/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_PT" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="FAQ | Samama Tahir, Desenvolvimento Web & Marketing no Porto" />
-<meta name="twitter:description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, desenvolvedor full-stack no Porto." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, programador full-stack no Porto." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20260926a" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20260926a" />
+<link rel="stylesheet" href="../../css/styles.css?v=20261001c" />
+<link rel="stylesheet" href="../../css/responsive.css?v=20261001c" />
 
 <script type="application/ld+json">
 {
@@ -194,7 +215,7 @@
     {
       "@type": "Question",
       "name": "Preciso de saber programar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Você só a usa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la." }
     },
     {
       "@type": "Question",
@@ -203,14 +224,6 @@
     }
   ]
 }
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t42b3vk2m8");
 </script>
 </head>
 
@@ -458,7 +471,7 @@
           </details>
           <details class="faq-item">
             <summary>Preciso de saber programar?</summary>
-            <p>Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Você só a usa.</p>
+            <p>Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la.</p>
           </details>
           <details class="faq-item">
             <summary>Consegue gerar relatórios sozinho?</summary>
@@ -491,7 +504,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <p>Samama Tahir</p>
-        <p style="margin-top: 0.5rem;">Desenvolvedor Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
         <p style="margin-top: 0.5rem;">Porto, Portugal</p>
       </div>
       <div>
@@ -502,6 +515,15 @@
           <a href="../about/">Sobre</a>
           <a href="../work/">Portefólio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Serviços</p>
+        <div class="footer-links">
+          <a href="../services/web-development/">Desenvolvimento Web</a>
+          <a href="../services/marketing/">Marketing</a>
+          <a href="../services/ai-automation/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -519,11 +541,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20260925c"></script>
+<script src="../../js/main.js?v=20261001a" defer></script>
 </body>
 </html>

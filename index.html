@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
 <script>
@@ -20,6 +34,10 @@
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
 <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
 
 <meta property="og:title" content="Web Developer & Growth Specialist in Porto | Samama Tahir" />
 <meta property="og:description" content="I'm Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal. I build fast websites and help businesses grow online." />
@@ -27,19 +45,22 @@
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Web Developer & Growth Specialist in Porto | Samama Tahir" />
 <meta name="twitter:description" content="I'm Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal. I build fast websites and help businesses grow online." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="css/styles.css?v=20260926a" />
-<link rel="stylesheet" href="css/responsive.css?v=20260926a" />
+<link rel="stylesheet" href="css/styles.css?v=20261001c" />
+<link rel="stylesheet" href="css/responsive.css?v=20261001c" />
 
 <script type="application/ld+json">
 {
@@ -56,7 +77,8 @@
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Porto",
-    "addressCountry": "PT"
+    "addressCountry": "PT",
+    "addressLocality": "Porto"
   },
   "knowsAbout": [
     "WordPress",
@@ -78,11 +100,28 @@
     "https://www.linkedin.com/in/samama-tahir/",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456"
+    "https://www.youtube.com/@samitahir1456",
+    "https://scholar.google.com/citations?user=tdhBV4QAAAAJ"
   ],
   "worksFor": {
     "@id": "https://samamatahir.com/#business"
-  }
+  },
+  "alternateName": [
+    "Sam Tahir",
+    "Sami Tahir"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Engineering Degree, Computer Engineering"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Master's Degree, Computer Engineering (Digital System Design)"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -130,7 +169,8 @@
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Porto",
-    "addressCountry": "PT"
+    "addressCountry": "PT",
+    "addressLocality": "Porto"
   },
   "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
   "founder": {
@@ -190,148 +230,8 @@
         }
       }
     ]
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "João Martins"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Sam helped us greatly improve our presence on Google. He optimized our Google Business Profile, worked on local SEO, and improved our visibility on Google Maps. Today it's much easier for new customers to find our business."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ana Rodrigues"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "We needed a more professional website and a stronger online presence. Sam built a modern, fast, mobile-friendly site and also improved our Google Business profile. He was very professional throughout the whole project."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Miguel Silva"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Sam did excellent work on our Google Business Profile and local SEO. He also helped us understand how customers search for services like ours on Google. We now have a much more professional online presence."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Sofia Costa"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "I recommend Sam's work. He helped us with website development, digital marketing, SEO, and Google Ads. He also gave us some Facebook and Instagram campaign ideas that made a lot of sense for our business."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ricardo Fernandes"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Our website needed a complete overhaul. Sam built a modern, much easier-to-use solution. Beyond web development, he helped us with SEO, Google Business, and digital marketing strategy."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Mariana Oliveira"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "We were struggling to show up in local searches. Sam worked on our Google Business Profile, services, categories, and local SEO. He explained everything simply and gave us a clear strategy to improve our online visibility."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Pedro Santos"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Sam helped us improve our digital presence, from the website to online marketing. We worked on local SEO, Google Ads, and Meta Ads, and also got great suggestions for how to present our services online."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Daniel Thompson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Sam helped us improve our Google Business Profile and local SEO. Our business now looks much more professional on Google Maps, and he also gave us practical advice on digital marketing and attracting more local customers."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Emma Wilson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "We hired Sam to redesign our website and improve our online presence. He built a modern, mobile-friendly website and also helped us with SEO, Google Ads and Facebook Ads. Communication was excellent throughout the project."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "James Anderson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Sam combines web development and digital marketing really well. He helped us with our website, Google Business Profile, SEO and online advertising. What I liked most was his focus on generating enquiries rather than simply making the website look good."
-    }
-  ]
+  }
 }
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t42b3vk2m8");
 </script>
 </head>
 
@@ -458,7 +358,7 @@
       </div>
       <div>
         <a class="intro-video video-embed" href="https://www.youtube.com/watch?v=VsIfhwxvdvU" data-youtube-id="VsIfhwxvdvU" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/VsIfhwxvdvU/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+          <img src="https://i.ytimg.com/vi_webp/VsIfhwxvdvU/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
           <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
           <span class="sr-only">Play intro video: Samama Tahir explains the services on offer (YouTube)</span>
         </a>
@@ -569,7 +469,7 @@
         <a href="services/web-development/" class="link-more">Explore web development services</a>
       </div>
       <div class="split-panel split-panel--photo">
-        <img src="images/samama-tahir-web-development-laptop.jpg" alt="Samama Tahir's laptop showing code in an editor, working on a web project" width="1400" height="933" loading="lazy" />
+        <img src="images/samama-tahir-web-development-laptop.webp" alt="Samama Tahir's laptop showing code in an editor, working on a web project" width="1400" height="933" loading="lazy" />
       </div>
     </div>
   </section>
@@ -705,7 +605,7 @@
         <p>Real reviews from clients in Porto and Vila Nova de Gaia.</p>
       </div>
 
-      <div class="reviews-track" id="reviews-track" role="region" aria-roledescription="carousel" aria-label="Client reviews">
+      <div class="reviews-track" id="reviews-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Client reviews">
 
         <div class="review-card">
           <div class="review-card-head">
@@ -746,7 +646,7 @@
         <div class="review-card">
           <div class="review-card-head">
             <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">M</span>
+              <span class="review-avatar" style="background-color: var(--color-green-text);">M</span>
               <div>
                 <p class="review-name">Miguel Silva</p>
                 <p class="review-role">Barber Shop Owner, Porto</p>
@@ -836,7 +736,7 @@
         <div class="review-card">
           <div class="review-card-head">
             <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">D</span>
+              <span class="review-avatar" style="background-color: var(--color-green-text);">D</span>
               <div>
                 <p class="review-name">Daniel Thompson</p>
                 <p class="review-role">Business Owner, Porto</p>
@@ -920,7 +820,7 @@
       <div class="video-testimonials-track" id="video-testimonials-track" role="region" aria-roledescription="carousel" aria-label="Video testimonials">
         <div class="video-testimonial-card">
           <a class="video-testimonial-player video-embed" href="https://www.youtube.com/watch?v=LF6-CKyWXdQ" data-youtube-id="LF6-CKyWXdQ" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/LF6-CKyWXdQ/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+            <img src="https://i.ytimg.com/vi_webp/LF6-CKyWXdQ/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
             <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
             <span class="sr-only">Play video testimonial from Dr. Osako Marie Djemo (YouTube)</span>
           </a>
@@ -929,7 +829,7 @@
 
         <div class="video-testimonial-card">
           <a class="video-testimonial-player video-embed" href="https://www.youtube.com/watch?v=RX8k6RozVqE" data-youtube-id="RX8k6RozVqE" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/RX8k6RozVqE/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+            <img src="https://i.ytimg.com/vi_webp/RX8k6RozVqE/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
             <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
             <span class="sr-only">Play video testimonial from Waggy (YouTube)</span>
           </a>
@@ -955,6 +855,7 @@
       <span class="eyebrow">Based in Porto, Portugal</span>
       <h2 id="location-heading" class="text-balance">Working locally in Porto, and remotely wherever you are</h2>
       <p>I'm based in Porto and work with businesses here and in Vila Nova de Gaia who want a local perspective, as well as clients across Portugal and international businesses I work with remotely. Wherever you're based, the same approach applies: understand the business first, then build and improve around it.</p>
+      <p class="inline-links">Want to know more first? Read <a href="about/">about me and how I work</a>, see my <a href="services/ai-automation/">AI and automation services</a>, or <a href="pt/" hreflang="pt-PT" lang="pt-PT">ver o site em português</a>.</p>
     </div>
   </section>
 
@@ -989,6 +890,15 @@
           <a href="about/">About</a>
           <a href="work/">Portfolio</a>
           <a href="faq/">FAQ</a>
+          <a href="pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Services</p>
+        <div class="footer-links">
+          <a href="services/web-development/">Web Development</a>
+          <a href="services/marketing/">Marketing</a>
+          <a href="services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
       <div>
@@ -1006,11 +916,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year">2026</span> Samama Tahir. All rights reserved.
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=20260925c"></script>
+<script src="js/main.js?v=20261001a" defer></script>
 </body>
 </html>

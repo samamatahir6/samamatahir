@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
 <script>
@@ -13,33 +27,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Sobre Samama Tahir | Desenvolvedor Web Full-Stack no Porto</title>
-<meta name="description" content="Saiba mais sobre o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal, com mais de 8 anos de experiência." />
+<title>Sobre Samama Tahir | Programador Web Full-Stack no Porto</title>
+<meta name="description" content="Saiba mais sobre o Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto, com mais de 8 anos de experiência." />
 <link rel="canonical" href="https://samamatahir.com/pt/about/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/about/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/about/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/about/" />
 <link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Sobre Samama Tahir | Desenvolvedor Web Full-Stack no Porto" />
-<meta property="og:description" content="Saiba mais sobre o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal, com mais de 8 anos de experiência." />
+<meta property="og:title" content="Sobre Samama Tahir | Programador Web Full-Stack no Porto" />
+<meta property="og:description" content="Saiba mais sobre o Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto, com mais de 8 anos de experiência." />
 <meta property="og:url" content="https://samamatahir.com/pt/about/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_PT" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sobre Samama Tahir | Desenvolvedor Web Full-Stack no Porto" />
-<meta name="twitter:description" content="Saiba mais sobre o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal, com mais de 8 anos de experiência." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:title" content="Sobre Samama Tahir | Programador Web Full-Stack no Porto" />
+<meta name="twitter:description" content="Saiba mais sobre o Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto, com mais de 8 anos de experiência." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20260926a" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20260926a" />
+<link rel="stylesheet" href="../../css/styles.css?v=20261001c" />
+<link rel="stylesheet" href="../../css/responsive.css?v=20261001c" />
 
 <script type="application/ld+json">
 {
@@ -62,25 +83,34 @@
     "@type": "Person",
     "@id": "https://samamatahir.com/#person",
     "name": "Samama Tahir",
-    "jobTitle": "Desenvolvedor Web Full-Stack e Especialista em Crescimento Digital",
+    "jobTitle": "Programador Web Full-Stack e Especialista em Crescimento Digital",
     "url": "https://samamatahir.com/",
     "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/samama-tahir/",
       "https://www.upwork.com/freelancers/samamatahir",
       "https://www.fiverr.com/kingdom_designr",
-      "https://www.youtube.com/@samitahir1456"
+      "https://www.youtube.com/@samitahir1456",
+      "https://scholar.google.com/citations?user=tdhBV4QAAAAJ"
+    ],
+    "alternateName": [
+      "Sam Tahir",
+      "Sami Tahir"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Licenciatura em Engenharia Informática"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Mestrado em Engenharia Informática (Design de Sistemas Digitais)"
+      }
     ]
   }
 }
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t42b3vk2m8");
 </script>
 </head>
 
@@ -168,11 +198,11 @@
       <div>
         <span class="hero-badge">Sobre</span>
         <h1 class="text-balance">Sobre Samama Tahir</h1>
-        <p class="hero-text">Sou desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Construo sites e sistemas digitais, e depois ajudo as empresas por trás deles a serem encontradas online e a transformar esse tráfego em clientes.</p>
+        <p class="hero-text">Sou programador web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Construo sites e sistemas digitais, e depois ajudo as empresas por trás deles a serem encontradas online e a transformar esse tráfego em clientes.</p>
       </div>
       <div class="hero-portrait">
         <div class="hero-photo-blob" aria-hidden="true"></div>
-        <img class="hero-photo" src="../../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto" width="320" height="320" />
+        <img class="hero-photo" src="../../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto" width="320" height="320" />
         <div class="hero-badge-card hero-badge-card--a">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
           <div><strong>8+ Anos</strong><span>a construir na web</span></div>
@@ -227,7 +257,7 @@
             </span>
             <span>
               <strong>Licenciatura em Engenharia Informática</strong>
-              <span>2013 &ndash; 2017</span>
+              <span>2013 a 2017</span>
             </span>
           </div>
           <div class="edu-item">
@@ -235,11 +265,12 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
             </span>
             <span>
-              <strong>Mestrado em Engenharia Informática &mdash; Design de Sistemas Digitais</strong>
-              <span>2018 &ndash; 2021</span>
+              <strong>Mestrado em Engenharia Informática (Design de Sistemas Digitais)</strong>
+              <span>2018 a 2021</span>
             </span>
           </div>
         </div>
+        <p class="edu-scholar"><a href="https://scholar.google.com/citations?user=tdhBV4QAAAAJ" target="_blank" rel="noopener noreferrer">Publicações no Google Scholar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a></p>
       </div>
     </div>
   </section>
@@ -297,7 +328,7 @@
         </span>
         <span class="location-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
-          Remoto &mdash; Portugal e Mundo
+          Remoto: Portugal e resto do mundo
         </span>
       </div>
     </div>
@@ -323,7 +354,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <p>Samama Tahir</p>
-        <p style="margin-top: 0.5rem;">Desenvolvedor Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
         <p style="margin-top: 0.5rem;">Porto, Portugal</p>
       </div>
       <div>
@@ -334,6 +365,15 @@
           <a href="../about/">Sobre</a>
           <a href="../work/">Portefólio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Serviços</p>
+        <div class="footer-links">
+          <a href="../services/web-development/">Desenvolvimento Web</a>
+          <a href="../services/marketing/">Marketing</a>
+          <a href="../services/ai-automation/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -351,11 +391,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20260925c"></script>
+<script src="../../js/main.js?v=20261001a" defer></script>
 </body>
 </html>

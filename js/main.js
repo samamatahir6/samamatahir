@@ -1,4 +1,94 @@
 // ==========================================================================
+// Cookie consent (GDPR)
+// Google Analytics loads with Consent Mode set to "denied" (see the inline
+// script at the top of every <head>), so it sets no cookies until the visitor
+// accepts here. Microsoft Clarity isn't loaded at all until then. The choice
+// is stored in localStorage as 'granted' or 'denied'; any element with
+// [data-cookie-settings] (the footer link) reopens the banner.
+// ==========================================================================
+(() => {
+  const KEY = 'st-consent';
+  const CLARITY_ID = 't42b3vk2m8';
+  const isPt = document.documentElement.lang.startsWith('pt');
+  const privacyHref = document.querySelector('[data-privacy-link]')?.getAttribute('href') || (isPt ? '/pt/privacidade/' : '/privacy/');
+  const t = isPt
+    ? {
+        title: 'Cookies e estatísticas',
+        text: 'Uso o Google Analytics e o Microsoft Clarity para perceber como o site é usado e melhorá-lo. Só são ativados se aceitar.',
+        policy: 'Política de privacidade',
+        accept: 'Aceitar',
+        decline: 'Recusar',
+      }
+    : {
+        title: 'Cookies and analytics',
+        text: 'I use Google Analytics and Microsoft Clarity to understand how the site is used and improve it. They only run if you accept.',
+        policy: 'Privacy policy',
+        accept: 'Accept',
+        decline: 'Decline',
+      };
+
+  const read = () => {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  };
+  const save = (value) => {
+    try { localStorage.setItem(KEY, value); } catch (e) { /* private mode: ask again next visit */ }
+  };
+
+  let clarityLoaded = false;
+  const loadClarity = () => {
+    if (clarityLoaded) return;
+    clarityLoaded = true;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+    window.clarity('consent');
+  };
+
+  const apply = (value) => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { analytics_storage: value === 'granted' ? 'granted' : 'denied' });
+    }
+    if (value === 'granted') loadClarity();
+  };
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', t.title);
+  banner.hidden = true;
+  banner.innerHTML = `
+    <p class="cookie-banner-title">${t.title}</p>
+    <p class="cookie-banner-text">${t.text} <a href="${privacyHref}">${t.policy}</a></p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-primary cookie-banner-accept">${t.accept}</button>
+      <button type="button" class="btn btn-secondary cookie-banner-decline">${t.decline}</button>
+    </div>`;
+  document.body.append(banner);
+
+  const choose = (value) => {
+    save(value);
+    apply(value);
+    banner.hidden = true;
+  };
+  banner.querySelector('.cookie-banner-accept').addEventListener('click', () => choose('granted'));
+  banner.querySelector('.cookie-banner-decline').addEventListener('click', () => choose('denied'));
+
+  document.querySelectorAll('[data-cookie-settings]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      banner.hidden = false;
+      banner.querySelector('.cookie-banner-accept').focus();
+    });
+  });
+
+  const saved = read();
+  if (saved === 'granted') loadClarity();
+  if (!saved) banner.hidden = false;
+})();
+
+// ==========================================================================
 // Mobile navigation toggle
 // ==========================================================================
 const menuToggle = document.getElementById('menu-toggle');
@@ -202,18 +292,18 @@ workSliders.forEach((slider) => {
   if (nextBtn) nextBtn.addEventListener('click', () => show(active + 1));
   dots.forEach((dot, index) => dot.addEventListener('click', () => show(index)));
 
+  // Each screenshot is wrapped in a real <button>, so keyboards and screen
+  // readers treat it as something that opens the full-size view.
+  const zoomLabel = document.documentElement.lang.startsWith('pt') ? 'Ver em tamanho real' : 'View full size';
   const images = [...items].map((item) => item.querySelector('img'));
   images.forEach((img, index) => {
-    img.tabIndex = 0;
-    img.setAttribute('role', 'button');
-    const open = () => openImageModal && openImageModal(images, index, show);
-    img.addEventListener('click', open);
-    img.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        open();
-      }
-    });
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'work-slide-zoom';
+    button.setAttribute('aria-label', `${zoomLabel}: ${img.alt}`);
+    img.replaceWith(button);
+    button.append(img);
+    button.addEventListener('click', () => openImageModal && openImageModal(images, index, show));
   });
 });
 
@@ -268,7 +358,7 @@ if (workSliders.length && typeof HTMLDialogElement === 'function') {
     document.documentElement.classList.remove('has-image-modal');
     if (syncSlider) syncSlider(current);
     // Return focus to the screenshot now showing in the slider.
-    if (set[current]) set[current].focus();
+    if (set[current]) (set[current].closest('button') || set[current]).focus();
   };
   const closeModal = () => {
     modal.close();

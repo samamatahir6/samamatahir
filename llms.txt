@@ -1,0 +1,43 @@
+# Samama Tahir
+
+> Samama Tahir is a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience. Work covers WordPress and Shopify websites, custom web applications and plugins, SEO, paid ads and AI automation for small and medium businesses in Porto, Vila Nova de Gaia, across Portugal and internationally (remote).
+
+The site is available in English (root) and European Portuguese (/pt/).
+
+## Services
+
+- [Web Development](https://samamatahir.com/services/web-development/): WordPress and Shopify development (including Shopify 2.0 theme builds and migrations), custom web applications, e-commerce and API integrations.
+- [Marketing](https://samamatahir.com/services/marketing/): local and technical SEO, Google Business Profile, Google Ads, Meta Ads, analytics and tracking, conversion optimization.
+- [AI & Automation](https://samamatahir.com/services/ai-automation/): AI chatbots and automated replies, workflow and business process automation, AI-powered reports, API integrations.
+- [All services](https://samamatahir.com/services/)
+
+## Work
+
+- [Portfolio and case studies](https://samamatahir.com/work/): OROS (Shopify 1.0 to 2.0 migration), Fore Fathers (Shopify 2.0 with WordPress for content), Daytrip (custom Shopify 2.0 theme from Figma, Section Rendering API), a custom WordPress plugin connecting Gravity Forms to Advyzon and Wealthbox, and Those Coffee People (performance, QuickBooks integration, technical SEO).
+
+## About
+
+- [About Samama Tahir](https://samamatahir.com/about/): background, experience and education (Engineering Degree and Master's Degree in Computer Engineering, Digital System Design).
+- [FAQ](https://samamatahir.com/faq/): answers about web development, marketing and AI automation.
+
+## Contact
+
+- [Contact page](https://samamatahir.com/contact/)
+- Email: hello@samamatahir.com
+- Phone / WhatsApp: +351 932 426 753
+- Location: Porto, Portugal (works remotely worldwide)
+
+## Profiles
+
+- LinkedIn: https://www.linkedin.com/in/samama-tahir/
+- Upwork: https://www.upwork.com/freelancers/samamatahir
+- Fiverr: https://www.fiverr.com/kingdom_designr
+- YouTube: https://www.youtube.com/@samitahir1456
+- Google Scholar: https://scholar.google.com/citations?user=tdhBV4QAAAAJ
+
+## Portuguese
+
+- [Página inicial em português](https://samamatahir.com/pt/)
+- [Criação de sites](https://samamatahir.com/pt/services/web-development/)
+- [Marketing e SEO](https://samamatahir.com/pt/services/marketing/)
+- [IA e automação](https://samamatahir.com/pt/services/ai-automation/)

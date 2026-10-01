@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
 <script>
@@ -13,33 +27,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Serviços de Desenvolvimento Web no Porto | Samama Tahir</title>
-<meta name="description" content="Serviços de desenvolvimento web no Porto: WordPress e Shopify personalizados, aplicações em React, e-commerce, e integrações via API." />
+<title>Criação de Sites WordPress e Shopify no Porto | Samama Tahir</title>
+<meta name="description" content="Criação de sites no Porto: programador WordPress e Shopify para sites rápidos, lojas online e aplicações web à medida, do planeamento ao lançamento." />
 <link rel="canonical" href="https://samamatahir.com/pt/services/web-development/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
 <link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Serviços de Desenvolvimento Web no Porto | Samama Tahir" />
-<meta property="og:description" content="Serviços de desenvolvimento web no Porto: WordPress e Shopify personalizados, aplicações em React, e-commerce, e integrações via API." />
+<meta property="og:title" content="Criação de Sites WordPress e Shopify no Porto | Samama Tahir" />
+<meta property="og:description" content="Criação de sites no Porto: programador WordPress e Shopify para sites rápidos, lojas online e aplicações web à medida, do planeamento ao lançamento." />
 <meta property="og:url" content="https://samamatahir.com/pt/services/web-development/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_PT" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Serviços de Desenvolvimento Web no Porto | Samama Tahir" />
-<meta name="twitter:description" content="Serviços de desenvolvimento web no Porto: WordPress e Shopify personalizados, aplicações em React, e-commerce, e integrações via API." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:title" content="Criação de Sites WordPress e Shopify no Porto | Samama Tahir" />
+<meta name="twitter:description" content="Criação de sites no Porto: programador WordPress e Shopify para sites rápidos, lojas online e aplicações web à medida, do planeamento ao lançamento." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../../css/styles.css?v=20260926a" />
-<link rel="stylesheet" href="../../../css/responsive.css?v=20260926a" />
+<link rel="stylesheet" href="../../../css/styles.css?v=20261001c" />
+<link rel="stylesheet" href="../../../css/responsive.css?v=20261001c" />
 
 <script type="application/ld+json">
 {
@@ -59,10 +80,9 @@
   "name": "Serviços de Desenvolvimento Web",
   "serviceType": "Desenvolvimento web",
   "provider": {
-    "@type": "Person",
-    "@id": "https://samamatahir.com/#person",
-    "name": "Samama Tahir",
-    "url": "https://samamatahir.com/pt/"
+    "@type": "ProfessionalService",
+    "@id": "https://samamatahir.com/#business",
+    "name": "Samama Tahir"
   },
   "areaServed": [
     {
@@ -80,14 +100,6 @@
   ],
   "description": "Desenvolvimento WordPress personalizado, desenvolvimento de lojas Shopify, aplicações web personalizadas, e e-commerce para empresas no Porto e em Portugal, e clientes remotos."
 }
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t42b3vk2m8");
 </script>
 </head>
 
@@ -212,8 +224,13 @@
   </section>
 
   <!-- Service pillars -->
-  <section class="section">
+  <section class="section" aria-labelledby="build-heading">
     <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Construo</span>
+        <h2 id="build-heading" class="text-balance">Criação de sites WordPress e Shopify no Porto</h2>
+        <p>Trabalho como programador WordPress e programador Shopify para empresas no Porto e fora de Portugal, e desenvolvo aplicações web à medida quando uma plataforma não é a melhor opção.</p>
+      </div>
       <div class="card-grid card-grid--2">
 
         <article class="card pillar-card" id="wordpress-development">
@@ -349,7 +366,7 @@
           </div>
         </div>
         <div class="hero-actions" style="margin-top: var(--space-3);">
-          <a href="../../../pt/contact/" class="btn btn-primary">Pergunte-me o que Quiser</a>
+          <a href="../../../pt/contact/" class="btn btn-primary">Pergunte-me o que quiser</a>
         </div>
         <p style="margin-top: var(--space-2);"><a href="../../../pt/faq/" class="link-more">Ver todas as perguntas</a></p>
       </div>
@@ -417,7 +434,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <p>Samama Tahir</p>
-        <p style="margin-top: 0.5rem;">Desenvolvedor Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
         <p style="margin-top: 0.5rem;">Porto, Portugal</p>
       </div>
       <div>
@@ -428,6 +445,15 @@
           <a href="../../../pt/about/">Sobre</a>
           <a href="../../../pt/work/">Portefólio</a>
           <a href="../../../pt/faq/">FAQ</a>
+          <a href="../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Serviços</p>
+        <div class="footer-links">
+          <a href="../../../pt/services/web-development/">Desenvolvimento Web</a>
+          <a href="../../../pt/services/marketing/">Marketing</a>
+          <a href="../../../pt/services/ai-automation/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -445,11 +471,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="../../../js/main.js?v=20260925c"></script>
+<script src="../../../js/main.js?v=20261001a" defer></script>
 </body>
 </html>

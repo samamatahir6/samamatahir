@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
 <script>
@@ -13,33 +27,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Desenvolvedor Web e Crescimento Digital no Porto | Samama Tahir</title>
-<meta name="description" content="Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto, Portugal. Construo sites rápidos e ajudo empresas a crescer online." />
+<title>Programador Web no Porto e Criação de Sites | Samama Tahir</title>
+<meta name="description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
 <link rel="canonical" href="https://samamatahir.com/pt/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
 <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Desenvolvedor Web e Crescimento Digital no Porto | Samama Tahir" />
-<meta property="og:description" content="Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto, Portugal. Construo sites rápidos e ajudo empresas a crescer online." />
+<meta property="og:title" content="Programador Web no Porto e Criação de Sites | Samama Tahir" />
+<meta property="og:description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
 <meta property="og:url" content="https://samamatahir.com/pt/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_PT" />
-<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Desenvolvedor Web e Crescimento Digital no Porto | Samama Tahir" />
-<meta name="twitter:description" content="Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto, Portugal. Construo sites rápidos e ajudo empresas a crescer online." />
-<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg" />
+<meta name="twitter:title" content="Programador Web no Porto e Criação de Sites | Samama Tahir" />
+<meta name="twitter:description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../css/styles.css?v=20260926a" />
-<link rel="stylesheet" href="../css/responsive.css?v=20260926a" />
+<link rel="stylesheet" href="../css/styles.css?v=20261001c" />
+<link rel="stylesheet" href="../css/responsive.css?v=20261001c" />
 
 <script type="application/ld+json">
 {
@@ -47,8 +68,8 @@
   "@type": "Person",
   "@id": "https://samamatahir.com/#person",
   "name": "Samama Tahir",
-  "jobTitle": "Desenvolvedor Web Full-Stack e Especialista em Crescimento Digital",
-  "description": "Desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal, ajudando empresas a construir sites e melhorar a sua visibilidade online.",
+  "jobTitle": "Programador Web Full-Stack e Especialista em Crescimento Digital",
+  "description": "Programador web full-stack e especialista em crescimento digital baseado no Porto, Portugal, ajudando empresas a construir sites e melhorar a sua visibilidade online.",
   "url": "https://samamatahir.com/pt/",
   "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
   "email": "hello@samamatahir.com",
@@ -56,7 +77,8 @@
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Porto",
-    "addressCountry": "PT"
+    "addressCountry": "PT",
+    "addressLocality": "Porto"
   },
   "knowsAbout": [
     "WordPress",
@@ -78,11 +100,28 @@
     "https://www.linkedin.com/in/samama-tahir/",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456"
+    "https://www.youtube.com/@samitahir1456",
+    "https://scholar.google.com/citations?user=tdhBV4QAAAAJ"
   ],
   "worksFor": {
     "@id": "https://samamatahir.com/#business"
-  }
+  },
+  "alternateName": [
+    "Sam Tahir",
+    "Sami Tahir"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Licenciatura em Engenharia Informática"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Mestrado em Engenharia Informática (Design de Sistemas Digitais)"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -91,9 +130,9 @@
   "@type": "WebSite",
   "@id": "https://samamatahir.com/pt/#website",
   "name": "Samama Tahir",
-  "alternateName": "Samama Tahir, Desenvolvedor Web no Porto",
+  "alternateName": "Samama Tahir, Programador Web no Porto",
   "url": "https://samamatahir.com/pt/",
-  "description": "Portefólio e serviços de Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto, Portugal.",
+  "description": "Portefólio e serviços de Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto, Portugal.",
   "inLanguage": "pt-PT",
   "publisher": {
     "@id": "https://samamatahir.com/#person"
@@ -130,7 +169,8 @@
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Porto",
-    "addressCountry": "PT"
+    "addressCountry": "PT",
+    "addressLocality": "Porto"
   },
   "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
   "founder": {
@@ -190,148 +230,8 @@
         }
       }
     ]
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "João Martins"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O Sam ajudou-nos a melhorar bastante a nossa presença no Google. Otimizou o nosso Google Business Profile, trabalhou o SEO local e melhorou a nossa presença no Google Maps. Hoje é muito mais fácil para novos clientes encontrarem o nosso negócio."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ana Rodrigues"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Precisávamos de um website mais profissional e de uma presença online mais forte. O Sam criou um site moderno, rápido e adaptado ao telemóvel, além de melhorar o nosso Google Business. Foi muito profissional durante todo o projeto."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Miguel Silva"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O Sam fez um excelente trabalho com o nosso Google Business Profile e SEO local. Também nos ajudou a perceber como os clientes procuram serviços como o nosso no Google. Temos agora uma presença online muito mais profissional."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Sofia Costa"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Recomendo o trabalho do Sam. Ajudou-nos com o desenvolvimento do website, marketing digital, SEO e Google Ads. Também nos deu algumas ideias para campanhas de Facebook e Instagram que fizeram bastante sentido para o nosso negócio."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ricardo Fernandes"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O nosso website precisava de uma atualização completa. O Sam criou uma solução moderna e muito mais fácil de utilizar. Além do desenvolvimento web, ajudou-nos com SEO, Google Business e estratégia de marketing digital."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Mariana Oliveira"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Estávamos a ter dificuldade em aparecer nas pesquisas locais. O Sam trabalhou o nosso Google Business Profile, serviços, categorias e SEO local. Explicou tudo de forma simples e deu-nos uma estratégia clara para melhorar a nossa visibilidade online."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Pedro Santos"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O Sam ajudou-nos a melhorar a nossa presença digital desde o website até ao marketing online. Trabalhámos SEO local, Google Ads e Meta Ads, e também recebemos ótimas sugestões para melhorar a forma como apresentamos os nossos serviços online."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Daniel Thompson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O Sam ajudou-nos a melhorar o nosso Perfil de Empresa no Google e o SEO local. O nosso negócio agora tem um aspeto muito mais profissional no Google Maps, e também nos deu conselhos práticos sobre marketing digital e como atrair mais clientes locais."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Emma Wilson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Contratámos o Sam para redesenhar o nosso website e melhorar a nossa presença online. Ele criou um website moderno e adaptado ao telemóvel, e também nos ajudou com SEO, Google Ads e anúncios no Facebook. A comunicação foi excelente durante todo o projeto."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "James Anderson"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "O Sam combina muito bem o desenvolvimento web com o marketing digital. Ajudou-nos com o nosso website, Perfil de Empresa no Google, SEO e publicidade online. O que mais gostei foi o foco dele em gerar pedidos de contacto, e não apenas em fazer o website parecer bonito."
-    }
-  ]
+  }
 }
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t42b3vk2m8");
 </script>
 </head>
 
@@ -408,7 +308,7 @@
       <div>
         <span class="hero-badge">Porto, Portugal</span>
         <h1 class="text-balance">Construo sites e sistemas digitais que ajudam empresas a crescer online.</h1>
-        <p class="hero-text">Sou o Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Ajudo empresas a construir sites rápidos, melhorar a sua visibilidade no Google e transformar mais visitantes em clientes.</p>
+        <p class="hero-text">Sou o Samama Tahir, programador web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Ajudo empresas a construir sites rápidos, melhorar a sua visibilidade no Google e transformar mais visitantes em clientes.</p>
         <div class="hero-actions">
           <a href="contact/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
           <a href="services/" class="btn btn-secondary">Ver os meus serviços</a>
@@ -429,7 +329,7 @@
       </div>
       <div class="hero-portrait hero-portrait--cutout">
         <div class="hero-photo-blob" aria-hidden="true"></div>
-        <img class="hero-photo" src="../images/samama-tahir-full-stack-web-developer.webp" alt="Retrato do Samama Tahir, desenvolvedor web full-stack e especialista em crescimento digital no Porto" width="760" height="920" fetchpriority="high" />
+        <img class="hero-photo" src="../images/samama-tahir-full-stack-web-developer.webp" alt="Retrato do Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto" width="760" height="920" fetchpriority="high" />
         <div class="hero-badge-card hero-badge-card--a">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
           <div><strong>8+ Anos</strong><span>a construir na web</span></div>
@@ -458,7 +358,7 @@
       </div>
       <div>
         <a class="intro-video video-embed" href="https://www.youtube.com/watch?v=VsIfhwxvdvU" data-youtube-id="VsIfhwxvdvU" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/VsIfhwxvdvU/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+          <img src="https://i.ytimg.com/vi_webp/VsIfhwxvdvU/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
           <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
           <span class="sr-only">Ver o vídeo de apresentação: Samama Tahir explica os seus serviços (YouTube, em inglês)</span>
         </a>
@@ -569,7 +469,7 @@
         <a href="services/web-development/" class="link-more">Explorar serviços de desenvolvimento web</a>
       </div>
       <div class="split-panel split-panel--photo">
-        <img src="../images/samama-tahir-web-development-laptop.jpg" alt="Portátil do Samama Tahir a mostrar código num editor, a trabalhar num projeto web" width="1400" height="933" loading="lazy" />
+        <img src="../images/samama-tahir-web-development-laptop.webp" alt="Portátil do Samama Tahir a mostrar código num editor, a trabalhar num projeto web" width="1400" height="933" loading="lazy" />
       </div>
     </div>
   </section>
@@ -648,7 +548,7 @@
           </div>
         </div>
         <div class="hero-actions" style="margin-top: var(--space-3);">
-          <a href="contact/" class="btn btn-primary">Pergunte-me o que Quiser</a>
+          <a href="contact/" class="btn btn-primary">Pergunte-me o que quiser</a>
         </div>
         <p style="margin-top: var(--space-2);"><a href="faq/" class="link-more">Ver todas as perguntas</a></p>
       </div>
@@ -705,7 +605,7 @@
         <p>Avaliações reais de clientes no Porto e em Vila Nova de Gaia.</p>
       </div>
 
-      <div class="reviews-track" id="reviews-track" role="region" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
+      <div class="reviews-track" id="reviews-track" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
 
         <div class="review-card">
           <div class="review-card-head">
@@ -746,7 +646,7 @@
         <div class="review-card">
           <div class="review-card-head">
             <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">M</span>
+              <span class="review-avatar" style="background-color: var(--color-green-text);">M</span>
               <div>
                 <p class="review-name">Miguel Silva</p>
                 <p class="review-role">Proprietário de Barbearia, Porto</p>
@@ -836,7 +736,7 @@
         <div class="review-card">
           <div class="review-card-head">
             <div class="review-person">
-              <span class="review-avatar" style="background-color: var(--color-green-light);">D</span>
+              <span class="review-avatar" style="background-color: var(--color-green-text);">D</span>
               <div>
                 <p class="review-name">Daniel Thompson</p>
                 <p class="review-role">Proprietário de Negócio, Porto</p>
@@ -920,7 +820,7 @@
       <div class="video-testimonials-track" id="video-testimonials-track" role="region" aria-roledescription="carousel" aria-label="Testemunhos em vídeo">
         <div class="video-testimonial-card">
           <a class="video-testimonial-player video-embed" href="https://www.youtube.com/watch?v=LF6-CKyWXdQ" data-youtube-id="LF6-CKyWXdQ" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/LF6-CKyWXdQ/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+            <img src="https://i.ytimg.com/vi_webp/LF6-CKyWXdQ/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
             <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
             <span class="sr-only">Ver testemunho em vídeo: Dr. Osako Marie Djemo (YouTube)</span>
           </a>
@@ -929,7 +829,7 @@
 
         <div class="video-testimonial-card">
           <a class="video-testimonial-player video-embed" href="https://www.youtube.com/watch?v=RX8k6RozVqE" data-youtube-id="RX8k6RozVqE" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/RX8k6RozVqE/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+            <img src="https://i.ytimg.com/vi_webp/RX8k6RozVqE/sddefault.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
             <span class="video-embed-play"><svg viewBox="0 0 68 48" aria-hidden="true"><path class="video-embed-play-bg" d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path class="video-embed-play-icon" d="M45 24 27 14v20z"/></svg></span>
             <span class="sr-only">Ver testemunho em vídeo: Waggy (YouTube)</span>
           </a>
@@ -955,6 +855,7 @@
       <span class="eyebrow">Baseado no Porto, Portugal</span>
       <h2 id="location-heading" class="text-balance">A trabalhar localmente no Porto, e remotamente onde estiver</h2>
       <p>Estou baseado no Porto e trabalho com empresas aqui e em Vila Nova de Gaia que procuram uma perspetiva local, bem como com clientes por todo Portugal e empresas internacionais com quem trabalho remotamente. Onde quer que esteja, a abordagem é a mesma: perceber primeiro o negócio, e depois construir e melhorar em torno dele.</p>
+      <p class="inline-links">Quer saber mais primeiro? Leia <a href="about/">sobre mim e a forma como trabalho</a>, veja os meus <a href="services/ai-automation/">serviços de IA e automação</a>, ou <a href="../" hreflang="en" lang="en">view the site in English</a>.</p>
     </div>
   </section>
 
@@ -978,7 +879,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <p>Samama Tahir</p>
-        <p style="margin-top: 0.5rem;">Desenvolvedor Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
         <p style="margin-top: 0.5rem;">Porto, Portugal</p>
       </div>
       <div>
@@ -989,6 +890,15 @@
           <a href="about/">Sobre</a>
           <a href="work/">Portefólio</a>
           <a href="faq/">FAQ</a>
+          <a href="../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Serviços</p>
+        <div class="footer-links">
+          <a href="services/web-development/">Desenvolvimento Web</a>
+          <a href="services/marketing/">Marketing</a>
+          <a href="services/ai-automation/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -1006,11 +916,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="../js/main.js?v=20260925c"></script>
+<script src="../js/main.js?v=20261001a" defer></script>
 </body>
 </html>

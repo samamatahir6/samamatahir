@@ -1,13 +1,38 @@
-# Custom 404 page
+# Custom 404 page (the /pt/ folder has its own .htaccess pointing to the PT 404)
 ErrorDocument 404 /404.html
 
 # Don't expose directory listings (e.g. /images/, /icons/)
 Options -Indexes
 
-# Force HTTPS (uncomment once the domain is live on this site with a valid SSL cert)
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http -> https is handled by Hostinger's CDN already. Don't add a
+  # %{HTTPS} rule here: behind the CDN it can see "off" and loop.
+
+  # One host only: www.samamatahir.com -> samamatahir.com
+  RewriteCond %{HTTP_HOST} ^www\.samamatahir\.com$ [NC]
+  RewriteRule ^(.*)$ https://samamatahir.com/$1 [L,R=301]
+
+  # /index.html and /folder/index.html -> the clean folder URL. THE_REQUEST
+  # only matches what the visitor typed, so the server's own internal
+  # DirectoryIndex lookup doesn't loop.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301,NC]
+</IfModule>
+
+# Old WordPress URLs (the previous site) -> closest page on this site
+Redirect 301 /our-blog/ /
+Redirect 301 /blog/ /
+Redirect 301 /how-we-built-a-dynamic-add-to-cart-button-on-shopify-with-code-demo-links/ /work/
+Redirect 301 /wp-bakery-meets-shopify-checkout-extensibility-a-new-era-of-customization/ /work/
+Redirect 301 /how-to-display-related-products-posts-using-jetengine-query-builder-crocoblock/ /services/web-development/
+Redirect 301 /maximize-performance-with-image-optimization-in-wordpress/ /services/web-development/
+Redirect 301 /unlock-the-power-of-elementor-ai-for-smarter-website-design/ /services/web-development/
+RedirectMatch 301 ^/(category|tag|author)/.* /
+RedirectMatch 301 ^/feed/?$ /
+# Add more old URLs here as they show up in Search Console (Pages -> Not found):
+# Redirect 301 /old-path/ /new-path/
 
 # Working folders that aren't part of the site, in case they get uploaded
 RedirectMatch 404 ^/(img_for_website|videos)(/|$)
@@ -15,7 +40,12 @@ RedirectMatch 404 /\.git(/|$)
 
 # Compress text files
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain application/manifest+json
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
 </IfModule>
 
 # Browser caching. CSS and JS are safe to cache for a long time because
@@ -31,17 +61,28 @@ RedirectMatch 404 /\.git(/|$)
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType application/xml "access plus 1 day"
   ExpiresByType text/xml "access plus 1 day"
 </IfModule>
 
-# Basic security headers
 <IfModule mod_headers.c>
+  # Versioned assets: cache for a year (the CDN otherwise caps JS at 7 days)
+  <FilesMatch "\.(css|js|woff2|webp|jpg|jpeg|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Security headers
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
-</IfModule>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 
-# Example pattern for future 301 redirects when URLs change:
-# Redirect 301 /old-path/ /new-path/
+  # Content Security Policy in report-only mode: the browser reports anything
+  # that would be blocked (in the console) without blocking it. Switch the
+  # header name to Content-Security-Policy once nothing shows up as blocked.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms; connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com; img-src 'self' data: https://i.ytimg.com https://*.google-analytics.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+</IfModule>
