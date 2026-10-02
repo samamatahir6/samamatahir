@@ -82,7 +82,7 @@ The site is EN-default at the root, with a full European Portuguese mirror under
 - Each page carries a `.lang-switch` in the header (desktop) and mirrored in `#mobile-nav` (mobile), linking to its counterpart in the other language, plus `hreflang` alternate tags (`en`, `pt-PT`, `x-default`) in `<head>` and matching `<xhtml:link>` entries in `sitemap.xml`.
 - `<html lang="...">`, canonical URL, OG/Twitter meta, and JSON-LD (`inLanguage`, `description`, `url`) are all translated/adjusted per language, not just the visible copy.
 - **To add another page later**: build the EN version first, then copy it into the matching `pt/` path, translate the body copy and metadata, and fix only the asset-path prefix (add one `../`) — leave the internal nav/footer/breadcrumb links as copied, since the mirrored structure already makes them resolve correctly.
-- **Real review quotes are kept in whichever language the client actually wrote them in** (all 10 have a real, verbatim Portuguese version reused from `marketing.samamatahir.com`, since these are the same real Google reviews for the same person). Where a real quote says "o Sam"/"Sam", that's the client's own words and is left as-is even though the rest of the site's copy says "Samama"/"Samama Tahir" per the branding decision below.
+- **Real review quotes are never translated.** The Fiverr/Upwork reviews were written in English, so the PT home page shows the same English text (its intro says so). Only the dates, star labels and "Read more" text are localized.
 
 ## Services structure
 
@@ -199,7 +199,7 @@ Components that come in color variants use a modifier class that sets a local cu
 
 - First-person voice only ("I", "my"), never "we" / "our team" / agency language.
 - The site refers to him as **"Samama Tahir"** / **"Samama"** throughout its own copy, not "Sam" — except inside real, verbatim client review quotes (see Reviews section below), which are never edited.
-- No invented clients, testimonials, awards, certifications, revenue figures, or rankings. The only testimonials on the site are the 10 real Google reviews in the Reviews section, reused as-is from `marketing.samamatahir.com` (same real person, same real reviews).
+- No invented clients, testimonials, awards, certifications, revenue figures, or rankings. The only written testimonials on the site are the real Fiverr and Upwork reviews in the home page Reviews section.
 - No guaranteed-ranking or guaranteed-results claims.
 - Only the real facts provided: 8+ years of experience, the tech/skill list, Porto/Portugal location, real photo, real contact details.
 - No em dashes in body copy. Use periods, commas, or colons instead. This was flagged as reading as AI-generated, so keep sentences short and plainly punctuated.
@@ -209,9 +209,11 @@ Components that come in color variants use a modifier class that sets a local cu
 
 The home page (both languages) includes a "What clients say" / "O que dizem os clientes" section: a horizontally scrolling `.reviews-track` of `.review-card` elements (1 visible on mobile, 3 on desktop via `css/responsive.css`), driven by hand-rolled `requestAnimationFrame` easing in `js/main.js` rather than native `scroll-behavior: smooth`, which was found unreliable for this kind of track on the sibling `marketing.samamatahir.com` project.
 
-- All 10 reviews are **real Google reviews for the same real person**, reused from `marketing.samamatahir.com` (not fabricated for this site).
-- `ProfessionalService.review` in the home page's JSON-LD lists the same 10 reviews as structured data, `ratingValue: "5"` each, no fabricated `aggregateRating`.
-- If more real reviews are collected later, add them the same way: a `.review-card` in both `index.html` and `pt/index.html`, plus a matching `Review` entry in both pages' JSON-LD. Never invent one.
+- The cards come from `web-dev-reviews.json` (73 real Fiverr and Upwork reviews for web development work). Each card shows the review **word for word**, the stars (partial stars for a 4.7, none for the one Upwork testimonial with no rating), the `client_label`, the project, the date, and a small Fiverr or Upwork logo linking to the review's `link` (Fiverr has no per-review links, so those go to the gig page).
+- Reviews with `featured: true` come first, then the rest in the JSON's order.
+- Quotes use `white-space: pre-line` so line breaks the client typed are kept. Long quotes are clamped to 7 lines with a "Read more" / "Ler mais" button (`initReviewClamp` in `js/main.js`); the full text is always in the HTML and nothing is clamped without JS.
+- **No review structured data** (`Review`, `AggregateRating`, microdata). Google doesn't show star snippets for reviews a business publishes about itself, so the markup would add nothing.
+- To add or change reviews: edit the cards in both `index.html` and `pt/index.html` (same English text in both). Never invent or edit one.
 
 ## Work / portfolio page
 
@@ -227,7 +229,7 @@ The home page (both languages) has a "Meet Samama" section right after the hero 
 
 ## Video testimonials
 
-The home page (both languages) has a "Video Testimonials" section, right after the text Reviews section: `.video-testimonials-track` (a scroll-snap slider with prev/next arrows, same `initCardSlider` JS as the Reviews slider) of `.video-testimonial-card` elements. The arrows hide themselves automatically when every card already fits (e.g. 2 videos on desktop).
+The home page (both languages) has a "Video Testimonials" section, right after the Web Development section (moved up from below the text Reviews so it is seen earlier, and given the `section--alt` background so it separates from the white sections around it): `.video-testimonials-track` (a scroll-snap slider with prev/next arrows, same `initCardSlider` JS as the Reviews slider) of `.video-testimonial-card` elements. The arrows hide themselves automatically when every card already fits (e.g. 2 videos on desktop).
 
 Videos are hosted on YouTube (channel `@samitahir1456`), not in the repo. Each card is a click-to-load embed: a plain link to the YouTube video showing its thumbnail (`i.ytimg.com/vi_webp/<id>/sddefault.webp`) and a brand yellow/green play button. With JS, a click opens the video in a popup: a native `<dialog class="video-modal">` built by `js/main.js`, holding a privacy-enhanced `youtube-nocookie.com/embed/<id>` iframe that autoplays. Esc, a backdrop click, or the yellow close button shut it, and closing removes the iframe so the video stops. The popup sizes itself to fit both the viewport width and height (so it works on landscape phones), and page scroll is locked while it is open. No YouTube player loads until the visitor presses play. Without JS, the card opens the video on YouTube.
 
@@ -248,7 +250,7 @@ A Portugal photo gallery was discussed but intentionally not built yet: it doesn
 - **One `<h1>` per page**, logical `h2`/`h3` hierarchy, semantic `<header>/<nav>/<main>/<section>/<footer>` throughout. No div-soup.
 - **Unique `<title>`, meta description, canonical, and Open Graph tags** on all eighteen pages (nine EN + nine PT; titles roughly 51 to 80 characters, descriptions under 160 characters), each translated per language, not duplicated.
 - **`hreflang` alternates** (`en`, `pt-PT`, `x-default`) in every page's `<head>` and in `sitemap.xml` via `<xhtml:link>`, so Google serves the right language version per searcher.
-- **JSON-LD structured data**: `Person` + `WebSite` + `ProfessionalService` (with a real `review` array of 10 Google reviews) on the home page, `Service` + `BreadcrumbList` on the service page, `BreadcrumbList` on About, `BreadcrumbList` on Work, `BreadcrumbList` + `ContactPage` on Contact, all duplicated and translated on the PT side with `/pt/` URLs and `inLanguage: "pt-PT"`. All fields reflect only real, stated information. No fabricated ratings, prices, or reviews beyond the real ones.
+- **JSON-LD structured data**: `Person` + `WebSite` + `ProfessionalService` (no review markup, see Reviews section) on the home page, `Service` + `BreadcrumbList` on the service page, `BreadcrumbList` on About, `BreadcrumbList` on Work, `BreadcrumbList` + `ContactPage` on Contact, all duplicated and translated on the PT side with `/pt/` URLs and `inLanguage: "pt-PT"`. All fields reflect only real, stated information. No fabricated ratings, prices, or reviews beyond the real ones.
 - **Relative asset and internal-link paths** so the site works both from a real server and by opening files directly, with correct depth handling for nested pages (including the extra `/pt/` folder level).
 - **Minimal JavaScript**: menu toggle, scroll shadow, footer year, the reviews slider, and the contact-form fetch enhancement only. All page content is real HTML, not JS-rendered. The contact form works with JS disabled (plain POST to Web3Forms). Nothing meaningful is hidden behind JavaScript.
 - **Images**: one real photo, descriptive filename (`samama-tahir-web-developer-porto.jpg`), explicit `width`/`height` to avoid layout shift, meaningful `alt` text (not keyword-stuffed, translated on PT pages).

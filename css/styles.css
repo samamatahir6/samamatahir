@@ -1756,6 +1756,8 @@ input:focus-visible {
 }
 
 .review-card {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 85%;
   scroll-snap-align: start;
   background-color: var(--color-white);
@@ -1812,32 +1814,117 @@ input:focus-visible {
   color: var(--color-text-muted);
 }
 
-.review-google-icon {
-  width: 20px;
-  height: 20px;
+.review-platform {
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
+  padding: 0.2rem;
+  border-radius: 4px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
 }
 
+.review-platform:hover,
+.review-platform:focus-visible {
+  opacity: 1;
+}
+
+.review-platform svg {
+  display: block;
+  height: 14px;
+  width: auto;
+}
+
+.review-platform--fiverr {
+  color: #1dbf73;
+}
+
+.review-platform--upwork {
+  color: #14a800;
+}
+
+.review-platform--upwork svg {
+  height: 16px;
+}
+
+/* Gold stars clipped over grey ones, so a 4.7 shows as 4.7 stars */
 .review-stars {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.review-stars-bg,
+.review-stars-fill {
   display: flex;
   gap: 0.15rem;
+}
+
+.review-stars-fill {
+  width: calc((5 * 17px + 4 * 0.15rem) * var(--rating, 5) / 5);
+}
+
+.review-stars-bg {
+  color: var(--color-border);
+}
+
+.review-stars-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
   color: #f5a623;
-  margin-bottom: var(--space-2);
 }
 
 .review-stars svg {
   width: 17px;
   height: 17px;
+  flex-shrink: 0;
 }
 
+.review-rating {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* pre-line keeps the line breaks clients typed, so quotes stay verbatim */
 .review-quote {
   color: var(--color-text);
   font-size: 1rem;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  margin-bottom: var(--space-3);
+}
+
+/* Long reviews are clamped only once JS can offer "Read more" */
+.reviews-track.js-clamp .review-quote:not(.is-expanded) {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-more {
+  align-self: flex-start;
+  margin-top: calc(0.5rem - var(--space-3));
+  margin-bottom: var(--space-3);
+  color: var(--color-green-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.review-more[hidden] {
+  display: none;
 }
 
 .review-tag {
-  display: inline-block;
-  margin-top: var(--space-3);
+  align-self: flex-start;
+  margin-top: auto;
   padding: 0.4rem 0.9rem;
   background-color: rgba(11, 59, 42, 0.08);
   color: var(--color-green);

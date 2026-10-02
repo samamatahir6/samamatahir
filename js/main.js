@@ -190,6 +190,45 @@ initCardSlider(
   '.review-card'
 );
 
+// ==========================================================================
+// Reviews: clamp long quotes with a "Read more" toggle. The full text is
+// always in the HTML; without JS nothing is clamped.
+// ==========================================================================
+function initReviewClamp(track) {
+  if (!track) return;
+  track.classList.add('js-clamp');
+  const more = track.dataset.more || 'Read more';
+  const less = track.dataset.less || 'Show less';
+
+  const buttons = [];
+  track.querySelectorAll('.review-quote').forEach((quote) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'review-more';
+    btn.textContent = more;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.hidden = true;
+    btn.addEventListener('click', () => {
+      const expanded = quote.classList.toggle('is-expanded');
+      btn.textContent = expanded ? less : more;
+      btn.setAttribute('aria-expanded', String(expanded));
+    });
+    quote.after(btn);
+    buttons.push([quote, btn]);
+  });
+
+  const update = () => {
+    buttons.forEach(([quote, btn]) => {
+      if (quote.classList.contains('is-expanded')) return;
+      btn.hidden = quote.scrollHeight <= quote.clientHeight + 1;
+    });
+  };
+  update();
+  window.addEventListener('resize', update);
+}
+
+initReviewClamp(document.getElementById('reviews-track'));
+
 initCardSlider(
   document.getElementById('video-testimonials-track'),
   document.getElementById('video-testimonials-prev'),
