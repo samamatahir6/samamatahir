@@ -22,6 +22,7 @@ The site is available in English (root) and European Portuguese (/pt/).
 
 ## Contact
 
+- [Privacy policy](https://samamatahir.com/privacy/) ([Português](https://samamatahir.com/pt/privacidade/))
 - [Contact page](https://samamatahir.com/contact/)
 - Email: hello@samamatahir.com
 - Phone / WhatsApp: +351 932 426 753

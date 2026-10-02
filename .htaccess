@@ -32,6 +32,8 @@ Redirect 301 /unlock-the-power-of-elementor-ai-for-smarter-website-design/ /serv
 Redirect 301 /streamline-discussions-with-elementors-new-comment-feature/ /services/web-development/
 Redirect 301 /how-to-connect-shipstation-with-wordpress-and-fix-the-502-bad-gateway-error/ /services/web-development/
 Redirect 301 /auto-add-free-products-to-shopify-cart/ /work/
+Redirect 301 /understanding-shopify-customer-accounts-what-changed-in-the-new-architecture/ /work/
+Redirect 301 /mobile-friendly-multi-level-wordpress-menu-with-custom-walker-and-jquery/ /services/web-development/
 # Old WordPress tag and category archives were all WordPress/Shopify dev topics
 RedirectMatch 301 ^/(category|tag)/.* /services/web-development/
 RedirectMatch 301 ^/author/.* /about/
@@ -88,12 +90,12 @@ RedirectMatch 404 /\.git(/|$)
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Strict-Transport-Security "max-age=31536000"
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(self \"https://www.youtube-nocookie.com\"), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(self \"https://www.youtube-nocookie.com\"), fullscreen=(self \"https://www.youtube-nocookie.com\"), geolocation=(), gyroscope=(), hid=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(self \"https://www.youtube-nocookie.com\"), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()"
   Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 
-  # Content Security Policy in report-only mode: the browser reports anything
-  # that would be blocked (in the console) without blocking it. Switch the
-  # header name to Content-Security-Policy once nothing shows up as blocked.
-  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms; connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com; img-src 'self' data: https://i.ytimg.com https://*.google-analytics.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+  # Content Security Policy (enforced). It ran in report-only mode first with
+  # no violations. If you add a new third-party tool (script, iframe, form
+  # endpoint), add its domain to the matching directive or it will be blocked.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms; connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.google.com https://*.doubleclick.net https://*.clarity.ms https://c.bing.com; img-src 'self' data: https://i.ytimg.com https://*.google-analytics.com https://www.googletagmanager.com https://www.google.com https://*.doubleclick.net https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>
