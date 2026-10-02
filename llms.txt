@@ -17,7 +17,7 @@ The site is available in English (root) and European Portuguese (/pt/).
 
 ## About
 
-- [About Samama Tahir](https://samamatahir.com/about/): background, experience and education (Engineering Degree and Master's Degree in Computer Engineering, Digital System Design).
+- [About Samama Tahir](https://samamatahir.com/about/): background, experience and education (Bachelor's, Computer Engineering, 2013 to 2017, and Master's, Computer Engineering (Digital System Design), 2018 to 2021, both at the University of Engineering and Technology, Taxila).
 - [FAQ](https://samamatahir.com/faq/): answers about web development, marketing and AI automation.
 
 ## Contact
