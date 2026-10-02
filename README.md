@@ -2,7 +2,7 @@
 
 Plain HTML5 + CSS3 + vanilla JavaScript. No frameworks, no build step, no dependencies.
 
-This is a **personal brand** site for Samama Tahir, full-stack web developer and digital growth specialist. It's distinct from the `marketing.samamatahir.com` subdomain, which is a separate consulting sub-brand (Sami Marketing Digital) aimed at local Porto businesses. Voice here is first-person throughout ("I build", "I help"), never agency language.
+This is a **personal brand** site for Samama Tahir, full-stack web developer and digital growth specialist. The `marketing.samamatahir.com` subdomain (the former Sami Marketing Digital sub-brand, repo `samamatahir6/Marketing`) was retired in October 2026: it now 301-redirects to `/pt/services/marketing/` (and `/en/` to `/services/marketing/`) on this site. Mentions of it below are historical. Voice here is first-person throughout ("I build", "I help"), never agency language.
 
 ## Run it locally
 
