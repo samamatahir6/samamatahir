@@ -91,7 +91,7 @@ RedirectMatch 404 /\.git(/|$)
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-  Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(self \"https://www.youtube-nocookie.com\"), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(self \"https://www.youtube-nocookie.com\"), fullscreen=(self \"https://www.youtube-nocookie.com\"), geolocation=(), gyroscope=(), hid=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(self \"https://www.youtube-nocookie.com\"), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()"
+  Header always set Permissions-Policy 'accelerometer=(), ambient-light-sensor=(), autoplay=(self "https://www.youtube-nocookie.com"), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(self "https://www.youtube-nocookie.com"), fullscreen=(self "https://www.youtube-nocookie.com"), geolocation=(), gyroscope=(), hid=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(self "https://www.youtube-nocookie.com"), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()'
   Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 
   # Content Security Policy (enforced). It ran in report-only mode first with
