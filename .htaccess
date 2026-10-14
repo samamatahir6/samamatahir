@@ -23,14 +23,14 @@ Options -Indexes
 
 # Portuguese pages moved from English slugs to Portuguese ones (Oct 2026).
 # Most specific first: mod_alias uses the first rule that matches.
-RedirectMatch 301 ^/pt/services/web-development/criacao-de-sites-wordpress/?(.*)$ /pt/servicos/criacao-de-sites/wordpress/$1
-RedirectMatch 301 ^/pt/services/web-development/?(.*)$ /pt/servicos/criacao-de-sites/$1
-RedirectMatch 301 ^/pt/services/marketing/?(.*)$ /pt/servicos/marketing-digital/$1
-RedirectMatch 301 ^/pt/services/ai-automation/?(.*)$ /pt/servicos/automacao-ia/$1
-RedirectMatch 301 ^/pt/services/?(.*)$ /pt/servicos/$1
-RedirectMatch 301 ^/pt/about/?(.*)$ /pt/sobre/$1
-RedirectMatch 301 ^/pt/contact/?(.*)$ /pt/contacto/$1
-RedirectMatch 301 ^/pt/work/?(.*)$ /pt/portefolio/$1
+RedirectMatch 301 ^/pt/services/web-development/criacao-de-sites-wordpress(?:/(.*))?$ /pt/servicos/criacao-de-sites/wordpress/$1
+RedirectMatch 301 ^/pt/services/web-development(?:/(.*))?$ /pt/servicos/criacao-de-sites/$1
+RedirectMatch 301 ^/pt/services/marketing(?:/(.*))?$ /pt/servicos/marketing-digital/$1
+RedirectMatch 301 ^/pt/services/ai-automation(?:/(.*))?$ /pt/servicos/automacao-ia/$1
+RedirectMatch 301 ^/pt/services(?:/(.*))?$ /pt/servicos/$1
+RedirectMatch 301 ^/pt/about(?:/(.*))?$ /pt/sobre/$1
+RedirectMatch 301 ^/pt/contact(?:/(.*))?$ /pt/contacto/$1
+RedirectMatch 301 ^/pt/work(?:/(.*))?$ /pt/portefolio/$1
 
 # Old WordPress URLs (the previous site) -> closest page on this site.
 # /blog/ is a real page again (Oct 2026), so it is no longer redirected here,
