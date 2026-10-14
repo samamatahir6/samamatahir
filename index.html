@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,21 +18,26 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Web Developer &amp; Growth Specialist in Porto | Samama Tahir</title>
-<meta name="description" content="I'm Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal. I build fast websites and help businesses grow online." />
+<title>Freelance Web Developer in Porto, Portugal | Samama Tahir</title>
+<meta name="description" content="I'm Samama Tahir, a freelance web developer in Porto and Vila Nova de Gaia. I build fast WordPress, Shopify and React websites for clients in Portugal, the UK and the US." />
 <link rel="canonical" href="https://samamatahir.com/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Web Developer & Growth Specialist in Porto | Samama Tahir" />
-<meta property="og:description" content="I'm Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal. I build fast websites and help businesses grow online." />
+<meta property="og:title" content="Freelance Web Developer in Porto, Portugal | Samama Tahir" />
+<meta property="og:description" content="I'm Samama Tahir, a freelance web developer in Porto and Vila Nova de Gaia. I build fast WordPress, Shopify and React websites for clients in Portugal, the UK and the US." />
 <meta property="og:url" content="https://samamatahir.com/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,16 @@
 <meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Web Developer & Growth Specialist in Porto | Samama Tahir" />
-<meta name="twitter:description" content="I'm Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal. I build fast websites and help businesses grow online." />
+<meta name="twitter:title" content="Freelance Web Developer in Porto, Portugal | Samama Tahir" />
+<meta name="twitter:description" content="I'm Samama Tahir, a freelance web developer in Porto and Vila Nova de Gaia. I build fast WordPress, Shopify and React websites for clients in Portugal, the UK and the US." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="images/samama-tahir-full-stack-web-developer.webp" as="image" type="image/webp" fetchpriority="high" />
 
-<link rel="stylesheet" href="css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -97,12 +107,10 @@
     "Website performance optimization"
   ],
   "sameAs": [
-    "https://www.linkedin.com/in/samama-tahir/",
+    "https://www.linkedin.com/in/samama-tahir",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456",
-    "https://scholar.google.com/citations?user=tdhBV4QAAAAJ",
-    "https://www.google.com/search?kgmid=/g/11ntcr1gmr"
+    "https://www.youtube.com/@samitahir1456"
   ],
   "worksFor": {
     "@id": "https://samamatahir.com/#business"
@@ -158,7 +166,7 @@
   "name": "Samama Tahir",
   "alternateName": "Samama Tahir, Web Developer in Porto",
   "url": "https://samamatahir.com/",
-  "description": "Portfolio and services of Samama Tahir, a full-stack web developer and digital growth specialist in Porto, Portugal.",
+  "description": "Portfolio and services of Samama Tahir, a freelance web developer and digital growth specialist in Porto, Portugal, working with clients in Portugal, the UK and the US.",
   "inLanguage": "en",
   "publisher": {
     "@id": "https://samamatahir.com/#person"
@@ -174,7 +182,7 @@
   "@type": "ProfessionalService",
   "@id": "https://samamatahir.com/#business",
   "name": "Samama Tahir",
-  "description": "Full-stack web development and digital growth services for businesses in Porto, Vila Nova de Gaia, and Portugal, and remote/international clients.",
+  "description": "Freelance web development and digital growth services for businesses in Porto, Vila Nova de Gaia and the rest of Portugal, and for remote clients in the UK and the US.",
   "url": "https://samamatahir.com/",
   "telephone": "+351932426753",
   "email": "hello@samamatahir.com",
@@ -190,6 +198,14 @@
     {
       "@type": "Country",
       "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
     }
   ],
   "address": {
@@ -203,11 +219,10 @@
     "@id": "https://samamatahir.com/#person"
   },
   "sameAs": [
-    "https://www.linkedin.com/in/samama-tahir/",
+    "https://www.linkedin.com/in/samama-tahir",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456",
-    "https://www.google.com/search?kgmid=/g/11ntcr1gmr"
+    "https://www.youtube.com/@samitahir1456"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -280,15 +295,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="about/">About</a></li>
         <li><a href="work/">Work</a></li>
         <li><a href="faq/">FAQ</a></li>
+        <li><a href="blog/">Blog</a></li>
         <li><a href="contact/">Contact</a></li>
       </ul>
     </nav>
@@ -312,15 +347,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="about/">About</a></li>
       <li><a href="work/">Work</a></li>
       <li><a href="faq/">FAQ</a></li>
+      <li><a href="blog/">Blog</a></li>
       <li><a href="contact/">Contact</a></li>
       <li><a href="contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -335,7 +390,7 @@
       <div>
         <span class="hero-badge">Porto, Portugal</span>
         <h1 class="text-balance">I build websites and digital systems that help businesses grow online.</h1>
-        <p class="hero-text">I'm Samama Tahir, a full-stack web developer and digital growth specialist based in Porto, Portugal. I help businesses build fast websites, improve their visibility on Google, and turn more visitors into customers.</p>
+        <p class="hero-text">I'm Samama Tahir, a freelance web developer and digital growth specialist based in Porto, Portugal. I help businesses build fast websites, improve their visibility on Google, and turn more visitors into customers.</p>
         <div class="hero-actions">
           <a href="contact/" class="btn btn-primary">Let's talk about your project</a>
           <a href="services/" class="btn btn-secondary">View my services</a>
@@ -475,16 +530,35 @@
         <article class="card help-card">
           <h3>Build</h3>
           <p>Websites, e-commerce stores, and custom web applications built to be fast, secure, and easy to maintain.</p>
+          <ul class="tag-list" aria-label="Web development services">
+            <li class="tag"><a href="services/web-development/wordpress-developer/">WordPress</a></li>
+            <li class="tag"><a href="services/web-development/shopify-developer/">Shopify</a></li>
+            <li class="tag"><a href="services/web-development/custom-web-apps/">Custom web apps (React)</a></li>
+            <li class="tag"><a href="services/web-development/online-store/">Online stores</a></li>
+          </ul>
           <a href="services/web-development/" class="link-more">Explore web development services</a>
         </article>
         <article class="card help-card">
           <h3>Grow</h3>
           <p>Getting found on Google: Google Business Profile, local SEO, and paid ads that bring the right people to your site.</p>
+          <ul class="tag-list" aria-label="Marketing services">
+            <li class="tag"><a href="services/marketing/google-business-profile/">Google Business Profile</a></li>
+            <li class="tag"><a href="services/marketing/local-seo/">Local SEO</a></li>
+            <li class="tag"><a href="services/marketing/seo-consultant/">SEO consulting</a></li>
+            <li class="tag"><a href="services/marketing/google-ads/">Google Ads</a></li>
+            <li class="tag"><a href="services/marketing/meta-ads/">Meta Ads</a></li>
+          </ul>
           <a href="services/marketing/" class="link-more">Explore marketing services</a>
         </article>
         <article class="card help-card">
           <h3>Improve</h3>
           <p>Understanding your traffic, tracking what matters, and improving the experience that turns visitors into customers.</p>
+          <ul class="tag-list" aria-label="Analytics and automation services">
+            <li class="tag"><a href="services/marketing/ga4-analytics/">GA4 and Tag Manager</a></li>
+            <li class="tag"><a href="services/marketing/ga4-analytics/">Conversion tracking</a></li>
+            <li class="tag">AI and automation</li>
+          </ul>
+          <a href="services/ai-automation/" class="link-more">Explore AI and automation services</a>
         </article>
       </div>
 
@@ -699,7 +773,7 @@
             <span class="review-stars-fill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg></span>
             <span class="review-rating" aria-hidden="true">5.0</span>
           </div>
-          <p class="review-quote">Samama did an excellent job on our WordPress plugin development project with complex API integration. His communication was great, he showed strong commitment, and paid close attention to every detail. He was always available from 9am to 5pm EST and quick to jump on calls when needed. Highly reliable and committed—we’d definitely work with him again.</p>
+          <p class="review-quote">Samama did an excellent job on our WordPress plugin development project with complex API integration. His communication was great, he showed strong commitment, and paid close attention to every detail. He was always available from 9am to 5pm EST and quick to jump on calls when needed. Highly reliable and committed. We’d definitely work with him again.</p>
           <span class="review-tag">Custom wordpress form with API integration for logistics</span>
         </div>
 
@@ -2165,10 +2239,26 @@ Awesome seller, highly recommended!!!</p>
   <!-- Porto / Portugal -->
   <section class="section" aria-labelledby="location-heading">
     <div class="container">
-      <span class="eyebrow">Based in Porto, Portugal</span>
-      <h2 id="location-heading" class="text-balance">Working locally in Porto, and remotely wherever you are</h2>
-      <p>I'm based in Porto and work with businesses here and in Vila Nova de Gaia who want a local perspective, as well as clients across Portugal and international businesses I work with remotely. Wherever you're based, the same approach applies: understand the business first, then build and improve around it.</p>
-      <p class="inline-links">Want to know more first? Read <a href="about/">about me and how I work</a>, see my <a href="services/ai-automation/">AI and automation services</a>, or <a href="pt/" hreflang="pt-PT" lang="pt-PT">ver o site em português</a>.</p>
+      <div class="section-head">
+        <span class="eyebrow">Who I Work With</span>
+        <h2 id="location-heading" class="text-balance">Freelance web developer in Porto, working with clients in Portugal, the UK and the US</h2>
+        <p>I'm based in Porto and can meet businesses here, in Vila Nova de Gaia and nearby in person when it helps. Clients in the rest of Portugal, the UK and the US work with me online. Most of them want to hire a freelance web developer rather than an agency: one person who builds the site, understands how it gets found on Google, and answers your emails directly. Wherever you're based, the approach is the same: understand the business first, then build and improve around it.</p>
+      </div>
+      <div class="card-grid card-grid--3 work-with-grid">
+        <article class="card">
+          <h3>Portugal</h3>
+          <p>In person in Porto, Vila Nova de Gaia and nearby when it helps, and online anywhere else in the country. I work in English and Portuguese. More on working with a <a href="web-developer-porto/">web developer in Porto</a>.</p>
+        </article>
+        <article class="card">
+          <h3>United Kingdom</h3>
+          <p>The work is fully online. Portugal shares the UK's time zone, so we keep the same working hours, and calls, updates and fixes happen during your day.</p>
+        </article>
+        <article class="card">
+          <h3>United States</h3>
+          <p>The work is fully online. My afternoons overlap with the East Coast morning, which gives us a daily window for video calls, and the rest moves forward with written updates.</p>
+        </article>
+      </div>
+      <p class="inline-links" style="margin-top: var(--space-3);">Want to know more first? Read <a href="about/">about me and how I work</a>, see my <a href="services/ai-automation/">AI and automation services</a>, or <a href="pt/" hreflang="pt-PT" lang="pt-PT">ver o site em português</a>.</p>
     </div>
   </section>
 
@@ -2203,14 +2293,32 @@ Awesome seller, highly recommended!!!</p>
           <a href="about/">About</a>
           <a href="work/">Portfolio</a>
           <a href="faq/">FAQ</a>
+          <a href="blog/">Blog</a>
           <a href="pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="services/web-development/">Web Development</a>
+          <a href="services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="services/web-development/online-store/">Online Stores</a>
+          <a href="services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="services/marketing/">Marketing</a>
+          <a href="services/marketing/local-seo/">Local SEO</a>
+          <a href="services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="services/marketing/google-ads/">Google Ads</a>
+          <a href="services/marketing/meta-ads/">Meta Ads</a>
+          <a href="services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -2224,8 +2332,7 @@ Awesome seller, highly recommended!!!</p>
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -2239,6 +2346,6 @@ Awesome seller, highly recommended!!!</p>
   </div>
 </footer>
 
-<script src="js/main.js?v=20261002a" defer></script>
+<script src="js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

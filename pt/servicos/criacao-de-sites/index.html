@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Criação de Sites Profissionais no Porto | Samama Tahir</title>
+<meta name="description" content="Criação de sites profissionais em WordPress, Shopify e React no Porto e em Gaia. Orçamento claro, do planeamento ao lançamento." />
+<link rel="canonical" href="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Criação de Sites Profissionais no Porto | Samama Tahir" />
+<meta property="og:description" content="Criação de sites profissionais em WordPress, Shopify e React no Porto e em Gaia. Orçamento claro, do planeamento ao lançamento." />
+<meta property="og:url" content="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Criação de Sites Profissionais no Porto | Samama Tahir" />
+<meta name="twitter:description" content="Criação de sites profissionais em WordPress, Shopify e React no Porto e em Gaia. Orçamento claro, do planeamento ao lançamento." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://samamatahir.com/pt/" },
+    { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://samamatahir.com/pt/servicos/" },
+    { "@type": "ListItem", "position": 3, "name": "Serviços de Desenvolvimento Web", "item": "https://samamatahir.com/pt/servicos/criacao-de-sites/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Criação de Sites Profissionais",
+  "serviceType": "Desenvolvimento web",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://samamatahir.com/#business",
+    "name": "Samama Tahir"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Porto"
+    },
+    {
+      "@type": "City",
+      "name": "Vila Nova de Gaia"
+    },
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Criação de sites profissionais para empresas: websites em WordPress, lojas Shopify, aplicações web em React e e-commerce, no Porto, em Vila Nova de Gaia e no resto de Portugal, e remotamente para clientes no Reino Unido e nos Estados Unidos."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como é feito o orçamento para criação de sites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Começamos por uma conversa sobre o que o site tem de fazer pelo negócio: que páginas precisa, se vende online, que ferramentas tem de ligar. Depois envio um orçamento fechado por escrito, com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa fazer um site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende da plataforma e do âmbito. Um site institucional em WordPress custa menos do que uma loja online com muitos produtos, e uma aplicação web à medida é outro nível de trabalho. Depois de perceber o que o site tem de fazer, envio um orçamento fechado, para que saiba o custo total antes de começarmos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como criar um site profissional para a minha empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em quatro passos: perceber o que o site tem de fazer, escolher a plataforma e definir o âmbito, construir com velocidade, segurança e versão para telemóvel desde o início, e manter o apoio depois do lançamento. Não precisa de saber de tecnologia para começar, basta saber o que quer que o site faça pelo negócio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faz criação de sites em WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O WordPress é a melhor opção para sites institucionais e para empresas que querem editar as suas próprias páginas. Trabalho com Elementor, Divi, Bricks, WPBakery e Oxygen, e com temas feitos à medida. Para lojas online, o Shopify costuma ser mais simples de gerir, e explico a diferença antes de decidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trabalha com empresas fora do Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Quando é útil, reúno-me presencialmente com empresas do Porto, de Vila Nova de Gaia e arredores. Com clientes no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../pt/servicos/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../services/web-development/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../pt/servicos/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Localização">
+    <div class="container">
+      <a href="../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../pt/servicos/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Desenvolvimento Web</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Desenvolvimento Web</span>
+        <h1 class="text-balance">Criação de Sites Profissionais para Empresas</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Sou programador web freelance e faço criação de sites profissionais para empresas no Porto e em Vila Nova de Gaia. Desenho, construo e mantenho websites em WordPress, lojas Shopify e aplicações web em React, para que o site por trás do seu negócio seja rápido, seguro e realmente fácil de manter.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--diagram">
+        <div class="hero-diagram" aria-hidden="true">
+          <svg class="diagram-wires" viewBox="0 0 600 300" preserveAspectRatio="none">
+            <path class="wire" d="M132,90 C210,90 230,140 300,150"></path>
+            <path class="wire" d="M468,90 C390,90 370,140 300,150"></path>
+            <path class="wire" d="M300,222 C300,195 300,180 300,150"></path>
+          </svg>
+          <div class="diagram-node diagram-node--a">
+            <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            <span class="diagram-node-label">WordPress</span>
+          </div>
+          <div class="diagram-node diagram-node--b">
+            <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+            <span class="diagram-node-label">Shopify</span>
+          </div>
+          <div class="diagram-node diagram-node--c">
+            <span class="diagram-node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <span class="diagram-node-label">Código Personalizado</span>
+          </div>
+          <div class="diagram-hub">
+            <span class="diagram-hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="6.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="9.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></span>
+          </div>
+          <div class="diagram-peeks">
+            <span class="diagram-peek">Rápido</span>
+            <span class="diagram-peek">Seguro</span>
+            <span class="diagram-peek">Fácil de manter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service pillars -->
+  <section class="section" aria-labelledby="build-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Construo</span>
+        <h2 id="build-heading" class="text-balance">Criação de sites WordPress e Shopify no Porto</h2>
+        <p>Trabalho como programador WordPress e programador Shopify para empresas no Porto e fora de Portugal, e desenvolvo aplicações web à medida quando uma plataforma não é a melhor opção.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+
+        <article class="card pillar-card" id="wordpress-development">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </span>
+          <h3>Desenvolvimento WordPress</h3>
+          <p>Desenvolvimento WordPress personalizado e customização de temas, não uma pilha de plugins montada às pressas. Trabalho com Elementor, Divi, Bricks, WPBakery, e Oxygen conforme o que cada projeto realmente precisa, além de temas totalmente personalizados quando não se encaixam num construtor.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Temas personalizados, e customização em Elementor, Divi, Bricks, WPBakery, e Oxygen</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Advanced Custom Fields, Custom Post Types, e blocos Gutenberg</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>WooCommerce, Gravity Forms, JetEngine, e desenvolvimentos com Crocoblock</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Otimização de desempenho, reforço de segurança, e limpeza de plugins/temas</div>
+          </div>
+          <p class="pillar-note">Um site WordPress que se mantém rápido e seguro à medida que cresce, não um que abranda a cada novo plugin.</p>
+          <a href="wordpress/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Mais sobre criação de sites WordPress</a>
+        </article>
+
+        <article class="card pillar-card pillar-card--yellow" id="shopify-development">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </span>
+          <h3>Desenvolvimento Shopify</h3>
+          <p>Construção de lojas Shopify e customização de temas em Liquid, incluindo o tema Dawn, com as integrações de aplicações de que uma loja em crescimento realmente precisa.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de temas em Liquid, incluindo o tema Dawn</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Trabalho com a Storefront API e Admin API para funcionalidades personalizadas</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de aplicações, incluindo Appstle e Recharge para subscrições</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização da loja construída à volta de como os clientes realmente compram</div>
+          </div>
+          <a href="programador-shopify/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Mais sobre o meu trabalho em Shopify</a>
+        </article>
+
+        <article class="card pillar-card pillar-card--red" id="custom-web-applications">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+          <h3>Aplicações Web Personalizadas</h3>
+          <p>Quando um negócio precisa de algo além de WordPress ou Shopify, construo diretamente: React ou Vue no frontend, PHP (Laravel, CodeIgniter) ou Node.js/Express no backend, com uma base de dados real por trás.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Frontends em React e Vue.js, responsivos desde o início</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Backends em Laravel, CodeIgniter, e Node.js/Express</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>MySQL, MongoDB, e PostgreSQL para aplicações orientadas a dados</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>APIs REST, autenticação JWT e OAuth, e webhooks para integrações com terceiros</div>
+          </div>
+          <p class="pillar-note">Construído à medida de como o negócio realmente funciona, não forçado num modelo de que não precisa.</p>
+          <a href="aplicacoes-web/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Mais sobre aplicações web à medida</a>
+        </article>
+
+        <article class="card pillar-card pillar-card--green-light" id="ecommerce">
+          <span class="pillar-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
+          <h3>E-Commerce</h3>
+          <p>Lojas online em WooCommerce ou Shopify, construídas à volta de um checkout que realmente converte: fluxos de pagamento claros, sistemas de subscrição a funcionar, e configuração de produtos que não luta contra a plataforma.</p>
+          <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construção e customização de lojas WooCommerce e Shopify</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrações de pagamento e fluxos de checkout</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sistemas de subscrição, incluindo Recharge e Appstle</div>
+            <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Customização de produtos e loja orientada para conversão, não apenas aparência</div>
+          </div>
+          <a href="../marketing-digital/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Veja como isto se liga ao trabalho de marketing e conversão</a>
+          <a href="criar-loja-online/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">Mais sobre criar uma loja online</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.2rem; line-height: 1.5;">Escrevo o código eu próprio, em todos os projetos. Sem passar para um developer júnior depois de o contrato ser assinado, e sem um modelo pronto disfarçado de trabalho personalizado.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portugal and abroad -->
+  <section class="section" aria-labelledby="where-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Para Quem</span>
+        <h2 id="where-heading" class="text-balance">Criação de sites em Portugal, para clientes cá e lá fora</h2>
+        <p>A maioria dos meus clientes chega por uma de duas razões. Uns são empresas do Porto, de Vila Nova de Gaia e arredores que querem um programador com quem se possam reunir pessoalmente. Outros estão no resto do país, no Reino Unido ou nos Estados Unidos e trabalham comigo online: querem alguém que trabalhe no seu horário e fale diretamente com eles, sem gestores de conta pelo meio. Veja também <a href="../../../pt/criacao-de-sites-porto/">criação de sites no Porto</a> e <a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">criação de sites em Vila Nova de Gaia</a>.</p>
+        <p style="margin-top: var(--space-2);">Em qualquer dos casos, o desenvolvimento web começa pelo que o site tem de fazer pelo negócio: trazer contactos, vender produtos ou poupar horas de trabalho manual. A criação de sites profissionais inclui sempre a base técnica para aparecer no Google: estrutura limpa, carregamento rápido, títulos certos e dados estruturados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como Funciona</span>
+        <h2 id="process-heading" class="text-balance">Um processo simples e honesto</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Perceber</h3>
+          <p>Perceber o que o negócio realmente precisa que o site ou aplicação faça.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Planear</h3>
+          <p>Escolher a plataforma certa: WordPress, Shopify, ou um desenvolvimento personalizado, e definir o âmbito.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Construir</h3>
+          <p>Construir corretamente: desempenho, segurança, e design responsivo desde a base.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Apoiar</h3>
+          <p>Continuar disponível para correções, alterações, e as questões que surgem depois do lançamento.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Common Questions -->
+  <section class="section" aria-labelledby="questions-heading">
+    <div class="container split">
+      <div class="split-content">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="questions-heading" class="text-balance">O que as pessoas perguntam antes de construir</h2>
+        <p style="margin-top: var(--space-2);">Algumas das perguntas que surgem antes de começar um projeto de website ou aplicação.</p>
+        <div class="questions-trust">
+          <div class="questions-trust-item">
+            <span class="questions-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6V17h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"/></svg>
+            </span>
+            <div>
+              <h3>Respostas diretas</h3>
+              <p>Cada pergunta recebe uma resposta clara e direta. Se algo ainda não vale a pena fazer, digo-o, mesmo que signifique menos trabalho para mim.</p>
+            </div>
+          </div>
+          <div class="questions-trust-item">
+            <span class="questions-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div>
+              <h3>Sem compromisso</h3>
+              <p>Fazer uma pergunta não o compromete a nada. Prefiro que saiba no que está a entrar antes de começarmos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../pt/contacto/" class="btn btn-primary">Pergunte-me o que quiser</a>
+        </div>
+        <p style="margin-top: var(--space-2);"><a href="../../../pt/faq/" class="link-more">Ver todas as perguntas</a></p>
+      </div>
+      <div class="split-panel split-panel--marquee">
+        <div class="questions-marquee" aria-hidden="true">
+          <div class="questions-dots"></div>
+          <div class="questions-fade questions-fade--left"></div>
+          <div class="questions-fade questions-fade--right"></div>
+          <div class="questions-rows">
+            <div class="questions-row questions-row--left">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"WordPress ou Shopify, do que preciso?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode arranjar um site feito por outra pessoa?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"WordPress ou Shopify, do que preciso?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode arranjar um site feito por outra pessoa?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--right">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"O meu site vai funcionar bem em telemóvel?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto tempo demora a construir um website?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"O meu site vai funcionar bem em telemóvel?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Quanto tempo demora a construir um website?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--left questions-row--slow">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Constrói lojas online?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"O que acontece depois do site ser lançado?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Constrói lojas online?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"O que acontece depois do site ser lançado?"</span>
+              </div>
+            </div>
+            <div class="questions-row questions-row--right questions-row--slow">
+              <div class="questions-track">
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode ligar o meu site a outras ferramentas?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Porque é que o meu site atual é tão lento?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Pode ligar o meu site a outras ferramentas?"</span>
+                <span class="question-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>"Porque é que o meu site atual é tão lento?"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="webdev-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="webdev-faq-heading" class="text-balance">Perguntas sobre criação de sites</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>Como é feito o orçamento para criação de sites?</summary>
+            <p>Começamos por uma conversa sobre o que o site tem de fazer pelo negócio: que páginas precisa, se vende online, que ferramentas tem de ligar. Depois envio um orçamento fechado por escrito, com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quanto custa fazer um site?</summary>
+            <p>Depende da plataforma e do âmbito. Um site institucional em WordPress custa menos do que uma loja online com muitos produtos, e uma aplicação web à medida é outro nível de trabalho. Depois de perceber o que o site tem de fazer, envio um orçamento fechado, para que saiba o custo total antes de começarmos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como criar um site profissional para a minha empresa?</summary>
+            <p>Em quatro passos: perceber o que o site tem de fazer, escolher a plataforma e definir o âmbito, construir com velocidade, segurança e versão para telemóvel desde o início, e manter o apoio depois do lançamento. Não precisa de saber de tecnologia para começar, basta saber o que quer que o site faça pelo negócio.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Faz criação de sites em WordPress?</summary>
+            <p>Sim. O WordPress é a melhor opção para sites institucionais e para empresas que querem editar as suas próprias páginas. Trabalho com Elementor, Divi, Bricks, WPBakery e Oxygen, e com temas feitos à medida. Para lojas online, o Shopify costuma ser mais simples de gerir, e explico a diferença antes de decidir.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Trabalha com empresas fora do Porto?</summary>
+            <p>Sim. Quando é útil, reúno-me presencialmente com empresas do Porto, de Vila Nova de Gaia e arredores. Com clientes no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Tem um website ou aplicação em mente?</h2>
+        <p>Diga-me o que o negócio precisa, e serei honesto sobre a forma certa de o construir.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../pt/">Início</a>
+          <a href="../../../pt/servicos/" aria-current="page">Serviços</a>
+          <a href="../../../pt/sobre/">Sobre</a>
+          <a href="../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../pt/faq/">FAQ</a>
+          <a href="../../../pt/blog/">Blog</a>
+          <a href="../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

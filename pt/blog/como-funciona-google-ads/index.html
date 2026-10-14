@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Como Funciona o Google Ads? Guia para Pequenas Empresas | Samama Tahir</title>
+<meta name="description" content="O que é o Google Ads e como funciona: o leilão, o Índice de Qualidade, as palavras-chave, os tipos de campanha e quanto controlo tem sobre o orçamento." />
+<link rel="canonical" href="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
+<link rel="alternate" type="application/rss+xml" title="Blog de Samama Tahir" href="https://samamatahir.com/pt/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Como Funciona o Google Ads? Guia para Pequenas Empresas | Samama Tahir" />
+<meta property="og:description" content="O que é o Google Ads e como funciona: o leilão, o Índice de Qualidade, as palavras-chave, os tipos de campanha e quanto controlo tem sobre o orçamento." />
+<meta property="og:url" content="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Como Funciona o Google Ads? Guia para Pequenas Empresas | Samama Tahir" />
+<meta name="twitter:description" content="O que é o Google Ads e como funciona: o leilão, o Índice de Qualidade, as palavras-chave, os tipos de campanha e quanto controlo tem sobre o orçamento." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Como funciona o Google Ads",
+      "item": "https://samamatahir.com/pt/blog/como-funciona-google-ads/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Como funciona o Google Ads? Um guia para pequenas empresas",
+  "description": "O que é o Google Ads e como funciona: o leilão, o Índice de Qualidade, as palavras-chave, os tipos de campanha e quanto controlo tem sobre o orçamento.",
+  "url": "https://samamatahir.com/pt/blog/como-funciona-google-ads/",
+  "mainEntityOfPage": "https://samamatahir.com/pt/blog/como-funciona-google-ads/",
+  "inLanguage": "pt-PT",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 980,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/pt/blog/#blog",
+    "url": "https://samamatahir.com/pt/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É a plataforma de publicidade do Google, que mostra anúncios nos resultados de pesquisa, no YouTube, no Maps e em sites parceiros, e cobra sobretudo por clique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cada pesquisa, o Google faz um leilão entre os anunciantes. A posição depende da licitação, da qualidade e relevância do anúncio e da página de destino, e do contexto da pesquisa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Há um orçamento mínimo no Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não há um mínimo obrigatório. Define um orçamento diário, e o valor certo depende da concorrência no seu setor e de quanto vale um cliente para si."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pago por cada vez que o anúncio aparece?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nas campanhas de pesquisa, normalmente paga só quando alguém clica no anúncio."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../pt/servicos/">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../blog/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../pt/servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../pt/blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Como funciona o Google Ads</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Google Ads</span>
+      <h1 class="text-balance">Como funciona o Google Ads? Um guia para pequenas empresas</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">O que é o Google Ads, como funciona o leilão, o que decide quanto paga por clique e como começar sem desperdiçar dinheiro.</p>
+      <p class="post-meta">Por Samama Tahir · <time datetime="2026-10-14">14 de outubro de 2026</time> · 4 min de leitura</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>O Google Ads é a plataforma de publicidade do Google. Permite mostrar anúncios a quem pesquisa o que vende, no momento em que está à procura, e paga sobretudo quando alguém clica. Bem configurado, é uma das formas mais rápidas de gerar contactos e vendas. Mal configurado, é uma das formas mais rápidas de gastar dinheiro. Neste guia explico como funciona por dentro. Se quiser ajuda a configurar ou rever a sua conta, veja o meu serviço de <a href="../../../pt/servicos/marketing-digital/google-ads/">gestão de Google Ads</a>.</p>
+
+        <h2>O que é o Google Ads</h2>
+        <p>É o sistema que mostra os anúncios marcados como "Patrocinado" nos resultados do Google, mas também anúncios no YouTube, no Gmail, no Google Maps e em milhões de sites parceiros. Define quanto quer gastar por dia, a quem quer mostrar os anúncios e o que conta como resultado (um formulário, uma chamada, uma compra). O Google faz o resto num leilão automático, a cada pesquisa.</p>
+
+        <h2>Como funciona o leilão</h2>
+        <p>Cada vez que alguém pesquisa, o Google faz um leilão instantâneo entre os anunciantes interessados naquela pesquisa. Mas não ganha simplesmente quem paga mais. A posição depende do chamado Ad Rank, que combina:</p>
+        <ul>
+          <li><strong>A licitação:</strong> quanto está disposto a pagar por um clique.</li>
+          <li><strong>A qualidade:</strong> quão relevante é o anúncio para a pesquisa, a taxa de cliques esperada e a experiência na página de destino.</li>
+          <li><strong>O contexto:</strong> o dispositivo, a localização, a hora e os recursos do anúncio (links extra, telefone, morada).</li>
+        </ul>
+        <p>Isto significa que um anúncio muito relevante, que leva a uma boa página, pode ficar acima de um concorrente que licita mais e pagar menos por clique. É por isso que a qualidade importa tanto como o orçamento.</p>
+
+        <h2>O Índice de Qualidade</h2>
+        <p>O Google dá a cada palavra-chave uma nota de 1 a 10, o Índice de Qualidade, com base em três componentes: a taxa de cliques esperada, a relevância do anúncio e a experiência na página de destino. Não é usado diretamente no leilão, mas é um bom diagnóstico. Notas baixas costumam indicar que o anúncio não corresponde à pesquisa ou que a página de destino é lenta, confusa ou fala de outra coisa.</p>
+
+        <h2>Palavras-chave e tipos de correspondência</h2>
+        <p>Nas campanhas de pesquisa escolhe palavras-chave, e o tipo de correspondência diz ao Google quão à letra as deve levar:</p>
+        <ul>
+          <li><strong>Correspondência ampla:</strong> o anúncio pode aparecer em pesquisas relacionadas, mesmo que não usem as suas palavras. Alcança mais, mas precisa de boa medição e de vigilância.</li>
+          <li><strong>Correspondência de expressão:</strong> a pesquisa tem de incluir o significado da expressão.</li>
+          <li><strong>Correspondência exata:</strong> a pesquisa tem de ter o mesmo significado da palavra-chave.</li>
+        </ul>
+        <p>Igualmente importantes são as <strong>palavras-chave negativas</strong>, que impedem o anúncio de aparecer em pesquisas que nunca vão comprar, como "grátis", "emprego" ou "curso", conforme o negócio. O relatório de termos de pesquisa mostra o que as pessoas escreveram antes de clicar, e é a primeira coisa que vejo numa conta.</p>
+
+        <h2>Tipos de campanha</h2>
+        <ul>
+          <li><strong>Pesquisa:</strong> anúncios de texto nos resultados do Google. É onde a maioria das pequenas empresas deve começar, porque mostra anúncios a quem já está à procura.</li>
+          <li><strong>Performance Max:</strong> uma campanha automática que mostra anúncios em todos os canais do Google. Funciona bem para lojas online com um bom feed de produtos e boa medição de conversões.</li>
+          <li><strong>Shopping:</strong> anúncios com fotografia, preço e nome da loja, para comércio eletrónico.</li>
+          <li><strong>Display e YouTube:</strong> anúncios visuais e em vídeo, mais úteis para notoriedade e para voltar a mostrar anúncios a quem já visitou o site.</li>
+        </ul>
+
+        <h2>Quanto custa anunciar no Google</h2>
+        <p>Não há um valor mínimo obrigatório. Define um orçamento diário e o Google não ultrapassa, em média, esse valor ao longo do mês. O custo por clique depende da concorrência no seu setor e na sua zona: pesquisas como "advogado" ou "seguros" são muito disputadas; nichos locais costumam ser mais baratos. A pergunta útil não é quanto custa o clique, mas quanto custa um cliente e quanto vale esse cliente para si. É por isso que a medição de conversões vem antes de tudo.</p>
+
+        <h2>Medir conversões: a parte que quase todos fazem mal</h2>
+        <p>Sem medição, o Google Ads otimiza às cegas. Uma conversão deve ser uma ação real: um formulário enviado, uma chamada, uma compra concluída. Contar visitas a páginas como conversões, ou contar a mesma compra duas vezes, ensina o algoritmo a procurar as pessoas erradas. Configuro as conversões com o Google Tag Manager e o GA4, e confirmo que os números batem com os contactos e vendas reais. Expliquei a ferramenta em <a href="../../../pt/blog/google-tag-manager-o-que-e/">o que é o Google Tag Manager</a>.</p>
+
+        <h2>Como começar sem desperdiçar dinheiro</h2>
+        <ol>
+          <li>Crie a conta em seu nome, para que o histórico e os dados fiquem sempre consigo.</li>
+          <li>Configure e teste as conversões antes de lançar a primeira campanha.</li>
+          <li>Comece com uma campanha de pesquisa, poucos grupos de anúncios e palavras-chave muito ligadas ao que vende.</li>
+          <li>Limite a localização à zona onde trabalha de facto.</li>
+          <li>Leve cada anúncio a uma página que fale exatamente daquilo, não à página inicial.</li>
+          <li>Reveja os termos de pesquisa todas as semanas no início e acrescente negativas.</li>
+          <li>Dê tempo à campanha para aprender antes de tirar conclusões.</li>
+        </ol>
+
+        <h2>Google Ads ou SEO?</h2>
+        <p>O Google Ads traz resultados já, enquanto paga. O SEO demora mais, mas o tráfego que conquista não se paga por clique. Para muitas empresas, a melhor estratégia é usar os anúncios para ter contactos agora e aprender que pesquisas convertem, enquanto o SEO cresce. Se quer perceber o outro lado, leia <a href="../../../pt/blog/o-que-e-seo/">o que é SEO</a>.</p>
+
+        <h2>Quanto tempo até ver resultados</h2>
+        <p>Os primeiros cliques chegam no dia em que a campanha arranca. As primeiras semanas servem para aprender: que pesquisas trazem contactos, que anúncios funcionam, a que horas e em que zonas. É normal ajustar bastante nesta fase. Avaliar uma campanha ao fim de três dias costuma levar a decisões erradas; o melhor é olhar para os dados ao fim de algumas semanas, com conversões bem medidas.</p>
+
+        <aside class="post-cta" aria-label="Quer anúncios no Google que dão retorno?">
+          <h2>Quer anúncios no Google que dão retorno?</h2>
+          <p>Configuro a medição, crio as campanhas e mostro-lhe todos os meses o que está a funcionar. Comece por uma chamada gratuita de 20 minutos.</p>
+          <a href="../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="faq-heading" class="text-balance">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>O que é o Google Ads?</summary>
+            <p>É a plataforma de publicidade do Google, que mostra anúncios nos resultados de pesquisa, no YouTube, no Maps e em sites parceiros, e cobra sobretudo por clique.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como funciona o Google Ads?</summary>
+            <p>A cada pesquisa, o Google faz um leilão entre os anunciantes. A posição depende da licitação, da qualidade e relevância do anúncio e da página de destino, e do contexto da pesquisa.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Há um orçamento mínimo no Google Ads?</summary>
+            <p>Não há um mínimo obrigatório. Define um orçamento diário, e o valor certo depende da concorrência no seu setor e de quanto vale um cliente para si.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pago por cada vez que o anúncio aparece?</summary>
+            <p>Nas campanhas de pesquisa, normalmente paga só quando alguém clica no anúncio.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../pt/">Início</a>
+          <a href="../../../pt/servicos/">Serviços</a>
+          <a href="../../../pt/sobre/">Sobre</a>
+          <a href="../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../pt/faq/">FAQ</a>
+          <a href="../../../pt/blog/">Blog</a>
+          <a href="../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

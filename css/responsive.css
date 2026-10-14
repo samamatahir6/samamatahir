@@ -36,6 +36,11 @@
     display: none !important;
   }
 
+  .primary-nav a,
+  .header-cta {
+    white-space: nowrap;
+  }
+
   .hero .container {
     grid-template-columns: 1.2fr 0.8fr;
   }
@@ -157,7 +162,7 @@
   }
 
   .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1.1fr 1.1fr 1fr 1fr;
   }
 
   .review-card {
@@ -171,6 +176,36 @@
   .work-case {
     grid-template-columns: 220px 1fr;
     gap: var(--space-5);
+  }
+}
+
+/* Between the desktop breakpoint and full width, the six menu items, the
+   language switch and the CTA only fit on one line with tighter spacing. */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .primary-nav ul {
+    gap: 1.1rem;
+  }
+
+  .header-cta {
+    padding-inline: 1.1rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+  .primary-nav {
+    margin-inline: 0.75rem;
+  }
+
+  .primary-nav ul {
+    gap: 0.75rem;
+  }
+
+  .primary-nav a:not(.btn) {
+    font-size: 0.92rem;
+  }
+
+  .header-cta {
+    padding-inline: 0.9rem;
   }
 }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog de Samama Tahir</title>
+    <link>https://samamatahir.com/pt/blog/</link>
+    <atom:link href="https://samamatahir.com/pt/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Guias sobre criação de sites, SEO, lojas online e analítica.</description>
+    <language>pt-PT</language>
+    <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Quanto custa um site em Portugal?</title>
+      <link>https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Quanto custa a criação de um site em Portugal: o que faz subir ou descer um orçamento, que custos se repetem todos os anos e como comparar propostas.</description>
+    </item>
+    <item>
+      <title>O que é SEO? Um guia simples para pequenas empresas</title>
+      <link>https://samamatahir.com/pt/blog/o-que-e-seo/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/o-que-e-seo/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>O que é SEO, como o Google decide que páginas mostrar e o que uma pequena empresa pode fazer, passo a passo, para aparecer mais nas pesquisas.</description>
+    </item>
+    <item>
+      <title>Como criar uma loja online em Portugal, passo a passo</title>
+      <link>https://samamatahir.com/pt/blog/como-criar-loja-online/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/como-criar-loja-online/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Como criar uma loja online em Portugal, passo a passo: plataforma, pagamentos como MB WAY e Multibanco, envios, IVA, faturação, páginas legais e lançamento.</description>
+    </item>
+    <item>
+      <title>Qual a melhor plataforma para criar uma loja online em Portugal?</title>
+      <link>https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Shopify, WooCommerce, PrestaShop ou Wix? Comparo as plataformas para criar uma loja online em Portugal: pagamentos, facilidade, custos e quando escolher cada uma.</description>
+    </item>
+    <item>
+      <title>Google Meu Negócio: como funciona e como criar o seu perfil</title>
+      <link>https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Como funciona o Google Meu Negócio (Perfil de Empresa no Google), como criar e verificar o perfil passo a passo e como otimizá-lo para aparecer no Google Maps.</description>
+    </item>
+    <item>
+      <title>Como funciona o Google Ads? Um guia para pequenas empresas</title>
+      <link>https://samamatahir.com/pt/blog/como-funciona-google-ads/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/como-funciona-google-ads/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>O que é o Google Ads e como funciona: o leilão, o Índice de Qualidade, as palavras-chave, os tipos de campanha e quanto controlo tem sobre o orçamento.</description>
+    </item>
+    <item>
+      <title>Google Tag Manager: o que é e como funciona</title>
+      <link>https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>O que é o Google Tag Manager, para que serve, como funcionam etiquetas, acionadores e variáveis, e como o usar com o GA4, o Google Ads e o pixel da Meta.</description>
+    </item>
+    <item>
+      <title>Preços da Shopify em Portugal: o que vai realmente pagar</title>
+      <link>https://samamatahir.com/pt/blog/precos-shopify-portugal/</link>
+      <guid isPermaLink="true">https://samamatahir.com/pt/blog/precos-shopify-portugal/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Preços da Shopify em Portugal explicados: subscrição, comissões de pagamento, apps, temas, domínio, IVA e o trabalho de desenvolvimento, sem surpresas.</description>
+    </item>
+  </channel>
+</rss>

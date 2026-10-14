@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Blog: Web Development, SEO and Ecommerce Guides | Samama Tahir</title>
+<meta name="description" content="Practical guides on WordPress, Shopify, ecommerce costs, GA4 and hiring a developer, written by a freelance web developer in Porto." />
+<link rel="canonical" href="https://samamatahir.com/blog/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Blog: Web Development, SEO and Ecommerce Guides | Samama Tahir" />
+<meta property="og:description" content="Practical guides on WordPress, Shopify, ecommerce costs, GA4 and hiring a developer, written by a freelance web developer in Porto." />
+<meta property="og:url" content="https://samamatahir.com/blog/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Blog: Web Development, SEO and Ecommerce Guides | Samama Tahir" />
+<meta name="twitter:description" content="Practical guides on WordPress, Shopify, ecommerce costs, GA4 and hiring a developer, written by a freelance web developer in Porto." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://samamatahir.com/blog/#blog",
+  "name": "Blog: Web Development, SEO and Ecommerce Guides",
+  "url": "https://samamatahir.com/blog/",
+  "description": "Practical guides on WordPress, Shopify, ecommerce costs, GA4 and hiring a developer, written by a freelance web developer in Porto.",
+  "inLanguage": "en",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/",
+        "name": "How to hire a WordPress developer: a practical checklist"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://samamatahir.com/blog/ecommerce-website-development-cost/",
+        "name": "Ecommerce website development cost: what really drives it"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://samamatahir.com/blog/ga4-setup-guide/",
+        "name": "GA4 setup guide: a step-by-step checklist"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/",
+        "name": "How much does a Shopify expert cost?"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/",
+        "name": "Understanding Shopify customer accounts: what changed in the new architecture"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/",
+        "name": "Mobile-friendly multi-level WordPress menu with a custom walker and jQuery"
+      }
+    ]
+  }
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../work/">Work</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/" aria-current="page">Blog</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../work/">Work</a></li>
+      <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/" aria-current="page">Blog</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Blog</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Blog</span>
+      <h1 class="text-balance">Blog: Web Development, SEO and Ecommerce Guides</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">Practical guides on WordPress, Shopify, online stores and analytics. I write about the questions clients ask me most, with the detail I would want if I were in their place.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid card-grid--3">
+        <article class="card post-card">
+          <p class="post-card-meta">WordPress · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/how-to-hire-a-wordpress-developer/">How to hire a WordPress developer: a practical checklist</a></h2>
+          <p>How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well.</p>
+          <a href="../blog/how-to-hire-a-wordpress-developer/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+        <article class="card post-card">
+          <p class="post-card-meta">Online Stores · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/ecommerce-website-development-cost/">Ecommerce website development cost: what really drives it</a></h2>
+          <p>What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly.</p>
+          <a href="../blog/ecommerce-website-development-cost/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+        <article class="card post-card">
+          <p class="post-card-meta">GA4 and Analytics · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/ga4-setup-guide/">GA4 setup guide: a step-by-step checklist</a></h2>
+          <p>A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing.</p>
+          <a href="../blog/ga4-setup-guide/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+        <article class="card post-card">
+          <p class="post-card-meta">Shopify · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/how-much-does-a-shopify-expert-cost/">How much does a Shopify expert cost?</a></h2>
+          <p>How much a Shopify expert costs depends on the type of work, the pricing model and who you hire. What drives the cost and how to get a fair quote.</p>
+          <a href="../blog/how-much-does-a-shopify-expert-cost/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+        <article class="card post-card">
+          <p class="post-card-meta">Shopify · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/shopify-customer-accounts-new-architecture/">Understanding Shopify customer accounts: what changed in the new architecture</a></h2>
+          <p>Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching.</p>
+          <a href="../blog/shopify-customer-accounts-new-architecture/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+        <article class="card post-card">
+          <p class="post-card-meta">WordPress · <time datetime="2026-10-14">14 October 2026</time></p>
+          <h2><a href="../blog/wordpress-mobile-multi-level-menu-walker-jquery/">Mobile-friendly multi-level WordPress menu with a custom walker and jQuery</a></h2>
+          <p>Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin.</p>
+          <a href="../blog/wordpress-mobile-multi-level-menu-walker-jquery/" class="link-more" aria-hidden="true" tabindex="-1">Read the article</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../services/">Services</a>
+          <a href="../about/">About</a>
+          <a href="../work/">Portfolio</a>
+          <a href="../faq/">FAQ</a>
+          <a href="../blog/" aria-current="page">Blog</a>
+          <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

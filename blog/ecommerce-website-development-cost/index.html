@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Ecommerce Website Development Cost: What Drives It | Samama Tahir</title>
+<meta name="description" content="What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly." />
+<link rel="canonical" href="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Ecommerce Website Development Cost: What Drives It | Samama Tahir" />
+<meta property="og:description" content="What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly." />
+<meta property="og:url" content="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ecommerce Website Development Cost: What Drives It | Samama Tahir" />
+<meta name="twitter:description" content="What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ecommerce website development cost",
+      "item": "https://samamatahir.com/blog/ecommerce-website-development-cost/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ecommerce website development cost: what really drives it",
+  "description": "What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly.",
+  "url": "https://samamatahir.com/blog/ecommerce-website-development-cost/",
+  "mainEntityOfPage": "https://samamatahir.com/blog/ecommerce-website-development-cost/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 962,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/blog/#blog",
+    "url": "https://samamatahir.com/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does an ecommerce website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the platform, the size and complexity of the catalogue, the design approach, the integrations, any migration, and the SEO and analytics work. A written scope is the only reliable way to get a real number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Shopify cheaper than WooCommerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Shopify has a subscription but includes hosting and security. WooCommerce has no platform fee but needs hosting, extensions and maintenance. Compare the total over two or three years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ongoing costs does an online store have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Platform subscription or hosting, payment processing fees, apps or extensions, the domain and maintenance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I reduce ecommerce development costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start from a strong theme, prepare clean product data, launch with the essentials, use fewer apps and set up tracking correctly at launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do ecommerce quotes vary so much?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because they usually describe different work. One quote may include data clean-up, SEO, analytics and support, another only a theme install. Ask for a written scope so you compare like with like."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Ecommerce website development cost</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Online Stores</span>
+      <h1 class="text-balance">Ecommerce website development cost: what really drives it</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">Why online store quotes vary so much, what each part of the cost pays for, and how to get a quote you can trust.</p>
+      <p class="post-meta">By Samama Tahir · <time datetime="2026-10-14">14 October 2026</time> · 4 min read</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Ask ten developers what an ecommerce website costs and you will get ten very different numbers. That's not because some are honest and some aren't. It's because "an online store" can mean a ten-product Shopify shop or a B2B store with custom pricing and an ERP integration. I build online stores on Shopify and WooCommerce, and in this article I explain what actually drives the cost, so you can read any quote with confidence. To see how I work, visit my page on <a href="../../services/web-development/online-store/">ecommerce website development</a>.</p>
+        <p>I don't publish prices on my site, because a number without a scope is misleading. What I can do is show you where the money goes.</p>
+
+        <h2>The one-off build: six things that move the cost</h2>
+        <h3>1. Platform</h3>
+        <p>Shopify includes hosting, security and the checkout, so less development time goes into infrastructure. WooCommerce runs on WordPress and gives more freedom, but needs hosting and more setup. Custom-built ecommerce is rarely the right call for a small or medium business, and costs far more. The platform itself is less important to the cost than what you ask it to do.</p>
+        <h3>2. Catalogue size and complexity</h3>
+        <p>Fifty simple products are quick. Thousands of products with variants, bundles, custom options or B2B pricing take longer, especially when the data needs cleaning before import.</p>
+        <h3>3. Design</h3>
+        <p>A good theme adapted to your brand is the fastest route. A custom design from Figma, built as a bespoke theme, takes longer and gives you something nobody else has. I've done both; Daytrip, for example, was a custom Shopify 2.0 theme built from Figma designs. The right choice depends on how much the store's look sets you apart.</p>
+        <h3>4. Integrations</h3>
+        <p>Each connection to another system adds work: ERP or inventory software, accounting tools, CRMs, marketplaces, shipping providers, subscriptions. An integration that uses a well-supported app is quick. One that needs custom code against an API takes longer, and should be scoped carefully.</p>
+        <h3>5. Migration</h3>
+        <p>Moving from another platform means transferring products, customers and order history, and redirecting every old URL so you don't lose search rankings. It's often underestimated. Theme migrations count too: I moved OROS from a Shopify 1.0 theme to Online Store 2.0, which is a project in its own right.</p>
+        <h3>6. SEO, analytics and launch work</h3>
+        <p>Titles and structured data for products and collections, GA4 ecommerce events, the Meta pixel and Conversions API, legal pages, test orders. None of it is glamorous, and all of it decides whether the store can grow after launch.</p>
+
+        <h2>The running costs after launch</h2>
+        <p>The build is a one-off. These continue every month or year:</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Cost</th><th>Shopify</th><th>WooCommerce</th></tr></thead>
+          <tbody>
+            <tr><td>Platform</td><td>Monthly subscription</td><td>Plugin is free</td></tr>
+            <tr><td>Hosting and security</td><td>Included</td><td>Paid hosting, you manage security</td></tr>
+            <tr><td>Payment processing</td><td>Per transaction, plus a fee if you don't use Shopify Payments</td><td>Per transaction, set by the payment provider</td></tr>
+            <tr><td>Apps or extensions</td><td>Often monthly</td><td>Often yearly licences</td></tr>
+            <tr><td>Maintenance</td><td>Light</td><td>Regular updates and backups</td></tr>
+            <tr><td>Domain</td><td>Yearly</td><td>Yearly</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>When you compare platforms, compare the total over two or three years, not just the build cost or the subscription.</p>
+
+        <h2>Why quotes for the same store differ</h2>
+        <p>When two quotes are far apart, they almost always describe different work. One may include data clean-up, SEO, analytics, training and support; another may be a theme install with your logo. Ask every developer for a written scope covering:</p>
+        <ul>
+          <li>Platform, theme approach and number of page templates.</li>
+          <li>How many products are imported, and who prepares the data.</li>
+          <li>Payment methods, shipping rules and taxes.</li>
+          <li>Each integration, and how it will be built.</li>
+          <li>Redirects and SEO setup.</li>
+          <li>Analytics and ad tracking.</li>
+          <li>Rounds of changes, training and post-launch support.</li>
+        </ul>
+        <p>Once quotes describe the same thing, you can compare them fairly.</p>
+
+        <h2>Ways to keep the cost down without cutting corners</h2>
+        <ul>
+          <li><strong>Start with a strong theme</strong> and customise it, rather than building from scratch.</li>
+          <li><strong>Prepare your product data</strong> in a clean spreadsheet before the project starts.</li>
+          <li><strong>Launch with the essentials</strong> and add features once you see what customers use.</li>
+          <li><strong>Use fewer apps.</strong> A small custom section is sometimes cheaper over a year than a monthly app, and faster.</li>
+          <li><strong>Get the tracking right at launch.</strong> Fixing analytics later costs more, and you lose the data in between.</li>
+        </ul>
+
+        <h2>What a good ecommerce quote looks like</h2>
+        <p>A good quote is specific. It names the platform and theme, lists the templates and integrations, says who does what, sets out a timeline, and is honest about what is not included. It also tells you what you will need to pay for after launch. If a quote doesn't do that, ask. If the answers stay vague, that tells you something too.</p>
+        <p>For Shopify-specific costs, read <a href="../../blog/how-much-does-a-shopify-expert-cost/">how much a Shopify expert costs</a>. If you are comparing developers for a WordPress or WooCommerce build, my <a href="../../blog/how-to-hire-a-wordpress-developer/">checklist for hiring a WordPress developer</a> covers the questions to ask.</p>
+
+        <h2>Build cost versus total cost of ownership</h2>
+        <p>The cheapest build is not always the cheapest store. A store built quickly with a dozen paid apps can cost more over two years than one with a few custom sections and no monthly fees. A WooCommerce store with no maintenance plan can end up costing more in emergency fixes than a careful monthly routine. When you compare options, add up the build, the platform or hosting, the apps, the payment fees and the maintenance for two or three years. That is the number that tells you which option is really cheaper.</p>
+
+        <h2>B2B and wholesale stores</h2>
+        <p>B2B ecommerce adds its own costs: customer-specific price lists, company accounts with several buyers, payment terms, minimum order quantities and quick order forms. Shopify has B2B features on its higher plans, and WooCommerce does it through extensions. Either way, scope the B2B rules carefully before the build starts, because they touch the catalogue, the checkout and the customer accounts at once.</p>
+
+        <aside class="post-cta" aria-label="Planning an online store?">
+          <h2>Planning an online store?</h2>
+          <p>Tell me about the products and how you want to sell. After a free 20-minute call I send a written fixed quote with the full scope.</p>
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>How much does an ecommerce website cost?</summary>
+            <p>It depends on the platform, the size and complexity of the catalogue, the design approach, the integrations, any migration, and the SEO and analytics work. A written scope is the only reliable way to get a real number.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is Shopify cheaper than WooCommerce?</summary>
+            <p>Not always. Shopify has a subscription but includes hosting and security. WooCommerce has no platform fee but needs hosting, extensions and maintenance. Compare the total over two or three years.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What ongoing costs does an online store have?</summary>
+            <p>Platform subscription or hosting, payment processing fees, apps or extensions, the domain and maintenance.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I reduce ecommerce development costs?</summary>
+            <p>Start from a strong theme, prepare clean product data, launch with the essentials, use fewer apps and set up tracking correctly at launch.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why do ecommerce quotes vary so much?</summary>
+            <p>Because they usually describe different work. One quote may include data clean-up, SEO, analytics and support, another only a theme install. Ask for a written scope so you compare like with like.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

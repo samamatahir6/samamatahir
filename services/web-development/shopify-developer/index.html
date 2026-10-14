@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Freelance Shopify Expert Developer | Samama Tahir</title>
+<meta name="description" content="I'm a freelance Shopify expert developer: Shopify 2.0 themes, custom sections, app integrations and speed fixes for UK, US and EU brands." />
+<link rel="canonical" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Freelance Shopify Expert Developer | Samama Tahir" />
+<meta property="og:description" content="I'm a freelance Shopify expert developer: Shopify 2.0 themes, custom sections, app integrations and speed fixes for UK, US and EU brands." />
+<meta property="og:url" content="https://samamatahir.com/services/web-development/shopify-developer/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance Shopify developer in Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Freelance Shopify Expert Developer | Samama Tahir" />
+<meta name="twitter:description" content="I'm a freelance Shopify expert developer: Shopify 2.0 themes, custom sections, app integrations and speed fixes for UK, US and EU brands." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance Shopify developer in Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://samamatahir.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web Development",
+      "item": "https://samamatahir.com/services/web-development/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Shopify Developer",
+      "item": "https://samamatahir.com/services/web-development/shopify-developer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Freelance Shopify Expert Developer",
+  "serviceType": "Shopify development",
+  "url": "https://samamatahir.com/services/web-development/shopify-developer/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Shopify 2.0 theme development, migrations from older themes to Online Store 2.0, custom sections in Liquid and JavaScript, app integrations and store speed work, from a freelance Shopify developer based in Porto, Portugal."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a Shopify developer do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Shopify developer works on the code behind a store: the Liquid theme, the sections and blocks your team edits, the JavaScript that runs product pages and carts, and the connections to apps and other systems. A Shopify expert developer also knows when not to write code, because an existing app or a theme setting already does the job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a Shopify expert cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the work. A theme fix, a migration from an older theme and a custom theme built from a Figma design are very different amounts of work. After a free 20-minute call I send a written fixed quote with the scope, so you know the full cost before anything starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I hire a Shopify expert or just install an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a well-reviewed app does exactly what you need, use the app. Hiring a Shopify expert makes sense when the design is custom, when apps are slowing the store down or clashing with each other, when you need a feature no app offers, or when you're moving from an older theme to Online Store 2.0."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you move my store to Online Store 2.0 without breaking my links?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. On migrations I rebuild the templates as sections and blocks, keep the design, and map any changed URLs to redirects so existing links still lead to the right products and collections. That's what I did when I moved Fore Fathers from a 1.0 theme to Online Store 2.0."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with Shopify stores in the UK and the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, online. If you're looking for a Shopify developer in London or anywhere in the UK, Portugal shares your time zone, so I work your hours. For US brands, my afternoons overlap with the East Coast morning, which gives us a daily window for video calls."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/web-development/shopify-developer/" aria-current="page">Shopify Development</a></li>
+                <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../about/">About</a></li>
+        <li><a href="../../../work/">Work</a></li>
+        <li><a href="../../../faq/">FAQ</a></li>
+        <li><a href="../../../blog/">Blog</a></li>
+        <li><a href="../../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../../pt/servicos/criacao-de-sites/programador-shopify/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/web-development/shopify-developer/" aria-current="page">Shopify Development</a></li>
+              <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../about/">About</a></li>
+      <li><a href="../../../work/">Work</a></li>
+      <li><a href="../../../faq/">FAQ</a></li>
+      <li><a href="../../../blog/">Blog</a></li>
+      <li><a href="../../../contact/">Contact</a></li>
+      <li><a href="../../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../">Web Development</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Shopify Developer</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Shopify</span>
+        <h1 class="text-balance">Freelance Shopify Expert Developer</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I'm a freelance Shopify expert developer based in Porto, Portugal. I build and fix Shopify 2.0 stores for brands in the UK, the US and Europe: custom themes from a Figma design, migrations from older themes, custom sections in Liquid, and the speed and app clean-up that keeps a store fast.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+          <a href="../../../work/" class="btn btn-secondary">See my Shopify work</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../images/daytrip-shopify-2-0-homepage-desktop.webp" alt="Daytrip homepage, a custom Shopify 2.0 theme Samama Tahir built from a Figma design" width="1800" height="1123" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="shopify-do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What I Do</span>
+        <h2 id="shopify-do-heading" class="text-balance">Shopify development, from theme code to store speed</h2>
+        <p>I write the code myself, on every project. These are the four kinds of Shopify work I do most.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Custom Shopify 2.0 themes</h3>
+          <p>I build a theme from your Figma design or brief, made of sections and blocks your team can rearrange in the theme editor without calling a developer every time.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Migrations to Online Store 2.0</h3>
+          <p>Stores still on a 1.0 theme miss out on sections everywhere, app blocks and faster updates. I rebuild the templates as 2.0 sections, keep the design, and map redirects so existing links keep working.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Custom sections and features</h3>
+          <p>Product pages that change with the variant, bundles, custom collection layouts. I build them in Liquid and JavaScript, using the Section Rendering API where content has to update without a page reload.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Speed, apps and integrations</h3>
+          <p>I remove apps the store no longer needs, replace some with a few lines of theme code, and connect the ones it does need, such as subscription apps like Recharge and Appstle.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring -->
+  <section class="section section--alt" aria-labelledby="hire-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Hiring a Shopify Expert</span>
+        <h2 id="hire-heading" class="text-balance">When it's worth hiring a Shopify expert, and when it isn't</h2>
+        <p>Plenty of stores run well on a standard theme and a few good apps, and if that's you, I'll say so. Hiring a Shopify expert pays off when the design is custom, when the app stack has grown until pages load slowly, when you need something no app does, or when the theme is too old to edit comfortably.</p>
+        <p style="margin-top: var(--space-2);">I work with brands across the UK, including London, and in the US and Europe, all online. You talk to me directly from the first call to launch, not to an account manager, and the person writing your theme code is the one answering your messages.</p>
+        <p style="margin-top: var(--space-2);">If you're budgeting, read <a href="../../../blog/how-much-does-a-shopify-expert-cost/">how much a Shopify expert costs</a>. Moving to Shopify's new customer accounts? I explain <a href="../../../blog/shopify-customer-accounts-new-architecture/">what changed and what to check</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section" aria-labelledby="shopify-work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recent Shopify Work</span>
+        <h2 id="shopify-work-heading" class="text-balance">Three Shopify 2.0 stores I worked on</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <img src="../../../images/oros-shopify-2-0-homepage-desktop.webp" alt="OROS Shopify 2.0 homepage with the hero banner and main navigation" width="1800" height="1137" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-2);" />
+          <h3>OROS</h3>
+          <p>Migrated a technical outdoor apparel brand from a Shopify 1.0 theme to Online Store 2.0, rebuilding product pages, collections and custom features as reusable sections instead of third-party apps.</p>
+        </article>
+        <article class="card">
+          <img src="../../../images/forefathers-shopify-2-0-homepage-desktop.webp" alt="Fore Fathers homepage with the Match Your Mini hero and best sellers" width="1800" height="1137" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-2);" />
+          <h3>Fore Fathers</h3>
+          <p>Moved a family apparel brand to Online Store 2.0, kept WordPress for the blog, and mapped product links and redirects so existing URLs still lead to the right products and collections.</p>
+        </article>
+        <article class="card">
+          <img src="../../../images/daytrip-shopify-2-0-product-page-desktop.webp" alt="Daytrip product page where switching variant changes the background colour and content" width="1800" height="1123" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-2);" />
+          <h3>Daytrip</h3>
+          <p>Built a custom Shopify 2.0 theme from Figma, with a product page that updates its colours and content per variant through the Section Rendering API, and made the store ADA compliant.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../../../work/" class="link-more">Read the full case studies</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How This Works</span>
+        <h2 id="process-heading" class="text-balance">From first call to a live store</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Call</h3>
+          <p>A free 20-minute call about the store, what's not working and what you want it to do.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Quote</h3>
+          <p>A written fixed quote with the scope and what's included, before any work starts.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Build</h3>
+          <p>I build and test on an unpublished theme, so the live store keeps selling while the work happens.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Launch and support</h3>
+          <p>We publish when you're happy, and I stay reachable for fixes and changes afterwards.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="shopify-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="shopify-faq-heading" class="text-balance">Questions about hiring a Shopify developer</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does a Shopify developer do?</summary>
+            <p>A Shopify developer works on the code behind a store: the Liquid theme, the sections and blocks your team edits, the JavaScript that runs product pages and carts, and the connections to apps and other systems. A Shopify expert developer also knows when not to write code, because an existing app or a theme setting already does the job.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does a Shopify expert cost?</summary>
+            <p>It depends on the work. A theme fix, a migration from an older theme and a custom theme built from a Figma design are very different amounts of work. After a free 20-minute call I send a written fixed quote with the scope, so you know the full cost before anything starts.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I hire a Shopify expert or just install an app?</summary>
+            <p>If a well-reviewed app does exactly what you need, use the app. Hiring a Shopify expert makes sense when the design is custom, when apps are slowing the store down or clashing with each other, when you need a feature no app offers, or when you're moving from an older theme to Online Store 2.0.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you move my store to Online Store 2.0 without breaking my links?</summary>
+            <p>Yes. On migrations I rebuild the templates as sections and blocks, keep the design, and map any changed URLs to redirects so existing links still lead to the right products and collections. That's what I did when I moved Fore Fathers from a 1.0 theme to Online Store 2.0.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with Shopify stores in the UK and the US?</summary>
+            <p>Yes, online. If you're looking for a Shopify developer in London or anywhere in the UK, Portugal shares your time zone, so I work your hours. For US brands, my afternoons overlap with the East Coast morning, which gives us a daily window for video calls.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Have a Shopify store that needs work?</h2>
+        <p>Tell me what the store needs, and I'll tell you honestly whether it's a theme setting, an app, or a job for a developer.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../../">Home</a>
+          <a href="../../" aria-current="page">Services</a>
+          <a href="../../../about/">About</a>
+          <a href="../../../work/">Portfolio</a>
+          <a href="../../../faq/">FAQ</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../../services/web-development/">Web Development</a>
+          <a href="../../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../../services/marketing/">Marketing</a>
+          <a href="../../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

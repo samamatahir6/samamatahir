@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
 <title>Work &amp; Results | Samama Tahir, Web Developer in Porto</title>
 <meta name="description" content="Real client projects by Samama Tahir: Shopify 2.0 builds, custom WordPress plugins, performance and technical SEO, explained by what I built." />
 <link rel="canonical" href="https://samamatahir.com/work/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/work/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/portefolio/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
 <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -59,8 +68,8 @@
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -92,15 +101,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../about/">About</a></li>
         <li><a href="../work/" aria-current="page">Work</a></li>
         <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
         <li><a href="../contact/">Contact</a></li>
       </ul>
     </nav>
@@ -108,7 +137,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../pt/work/" hreflang="pt-PT">PT</a>
+        <a href="../pt/portefolio/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -124,15 +153,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../about/">About</a></li>
       <li><a href="../work/" aria-current="page">Work</a></li>
       <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
       <li><a href="../contact/">Contact</a></li>
       <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -160,15 +209,16 @@
         <h1 class="text-balance" style="max-width: 34rem;">Client work, and what I actually built</h1>
         <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 42rem;">A selection of projects I've worked on, from Shopify 2.0 migrations and custom WordPress plugins to performance and technical SEO. Each one covers what the client needed and what I built. Some client work is under confidentiality, so not every project is shown here.</p>
       </div>
-      <div class="hero-trust-row">
+      <div class="hero-trust-row hero-trust-row--card">
         <div class="hero-trust-badge" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.4 9 10 5.2-1.6 9-5 9-10V6z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
         <div>
           <p class="hero-trust-stat"><span class="hero-trust-item"><span class="hero-trust-num">100%</span> Job Success</span> <span class="hero-trust-dot" aria-hidden="true"></span> <span class="hero-trust-item"><span class="hero-trust-num">400+</span> Jobs Completed</span></p>
+          <p class="hero-trust-caption">Read verified reviews from real clients</p>
           <div class="hero-trust-links">
-            <a href="https://www.upwork.com/freelancers/samamatahir" class="hero-trust-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>Upwork<svg class="hero-trust-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
-            <a href="https://www.fiverr.com/kingdom_designr?public_mode=true" class="hero-trust-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><text class="hero-trust-mono" x="12" y="16.5" text-anchor="middle" font-size="12.5" font-weight="800" font-family="Manrope, sans-serif">fi</text></svg>Fiverr<svg class="hero-trust-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
+            <a href="https://www.upwork.com/freelancers/samamatahir" class="hero-trust-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>Upwork reviews<svg class="hero-trust-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
+            <a href="https://www.fiverr.com/kingdom_designr?public_mode=true" class="hero-trust-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><text class="hero-trust-mono" x="12" y="16.5" text-anchor="middle" font-size="12.5" font-weight="800" font-family="Manrope, sans-serif">fi</text></svg>Fiverr reviews<svg class="hero-trust-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
           </div>
         </div>
       </div>
@@ -553,14 +603,32 @@
           <a href="../about/">About</a>
           <a href="../work/">Portfolio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -574,8 +642,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -589,6 +656,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002a" defer></script>
+<script src="../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Freelance SEO Consultant | Samama Tahir</title>
+<meta name="description" content="A freelance SEO consultant who can also fix the code: technical SEO, content and local SEO for businesses in Portugal, the UK and the US." />
+<link rel="canonical" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/consultor-seo/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Freelance SEO Consultant | Samama Tahir" />
+<meta property="og:description" content="A freelance SEO consultant who can also fix the code: technical SEO, content and local SEO for businesses in Portugal, the UK and the US." />
+<meta property="og:url" content="https://samamatahir.com/services/marketing/seo-consultant/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Freelance SEO Consultant | Samama Tahir" />
+<meta name="twitter:description" content="A freelance SEO consultant who can also fix the code: technical SEO, content and local SEO for businesses in Portugal, the UK and the US." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://samamatahir.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Marketing",
+      "item": "https://samamatahir.com/services/marketing/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "SEO Consultant",
+      "item": "https://samamatahir.com/services/marketing/seo-consultant/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Freelance SEO Consultant",
+  "serviceType": "Search engine optimisation consulting",
+  "url": "https://samamatahir.com/services/marketing/seo-consultant/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Technical SEO audits and fixes, on-page and content SEO, local SEO and ecommerce SEO from a freelance SEO consultant who is also a web developer, based in Porto, Portugal."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does an SEO consultant do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An SEO consultant works out why a site isn't getting the search traffic it should, and what to change. That covers the technical side (can Google crawl and index the right pages), the content (does each page answer what people search for), and authority (do other sites and listings point to yours). As a freelance SEO consultant who also codes, I make the changes too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does SEO take to work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technical fixes can show up within weeks, once Google recrawls the pages. Content and authority work usually takes a few months to build. I track progress in Search Console so you can see what is moving, rather than waiting and hoping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an SEO consultant cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the size of the site and how much needs fixing. After a first look at your site I send a clear quote for the work, so you know the cost before anything starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you do ecommerce SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I work as an ecommerce SEO consultant for Shopify and WooCommerce stores: collection and product pages, filters that create duplicate URLs, migrations and redirects, and the speed of the theme itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, online. I work with businesses in the UK and the US as well as Portugal. In-person meetings are only for businesses in Porto, Vila Nova de Gaia and nearby."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you do SEO on a site someone else built?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most of my SEO work is on sites I didn't build. I start with read access to Search Console and the site, check what is there, and only change what needs changing."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../services/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../../services/marketing/seo-consultant/" aria-current="page">SEO Consultant</a></li>
+                <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../about/">About</a></li>
+        <li><a href="../../../work/">Work</a></li>
+        <li><a href="../../../faq/">FAQ</a></li>
+        <li><a href="../../../blog/">Blog</a></li>
+        <li><a href="../../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../../pt/servicos/marketing-digital/consultor-seo/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../../services/marketing/seo-consultant/" aria-current="page">SEO Consultant</a></li>
+              <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../about/">About</a></li>
+      <li><a href="../../../work/">Work</a></li>
+      <li><a href="../../../faq/">FAQ</a></li>
+      <li><a href="../../../blog/">Blog</a></li>
+      <li><a href="../../../contact/">Contact</a></li>
+      <li><a href="../../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../services/">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../services/marketing/">Marketing</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">SEO Consultant</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">SEO</span>
+        <h1 class="text-balance">Freelance SEO Consultant</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I'm a freelance SEO consultant in Porto, Portugal, and also a web developer, so the problems an SEO audit finds get fixed in the code, not just listed in a report. I work on technical SEO, page content and local SEO for businesses in Portugal, the UK and the US.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+          <a href="../../../work/" class="btn btn-secondary">See my work</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../images/thosecoffeepeople-google-search-console-performance.webp" alt="Google Search Console performance report for an online coffee store Samama Tahir worked on" width="1800" height="1115" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What I Do</span>
+        <h2 id="do-heading" class="text-balance">SEO consultant services, from audit to fix</h2>
+        <p>Most of my SEO work falls into four areas. I usually start with the first, because it shows where the others matter.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Technical SEO audit</h3>
+          <p>Crawling, indexing, broken links, redirects, duplicate pages, site speed and structured data. I check what Google actually sees and fix what stops it from ranking the pages that matter.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>On-page and content SEO</h3>
+          <p>Titles, headings, internal links and the content on your key pages, matched to what people actually search. I write it in plain language, not keyword lists.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Local SEO</h3>
+          <p>For businesses that serve an area: Google Business Profile, location and service pages, citations and reviews. See my <a href="../../../services/marketing/local-seo/">local SEO services</a> for the detail.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Ecommerce SEO</h3>
+          <p>Collection and product pages, faceted navigation, migrations and redirects for Shopify and WooCommerce stores, where a lot of SEO problems start in the theme code.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Consultant Who Codes -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why a Consultant Who Codes</span>
+        <h2 id="text0-heading" class="text-balance">An SEO consultant service that includes the fixes</h2>
+        <p>A lot of SEO reports end up in a drawer because nobody has the time or access to make the changes. I do the changes myself: the redirects, the page templates, the structured data, the speed work. You get one person who finds the problem and fixes it, instead of a consultant and a developer passing tickets back and forth.</p>
+        <p style="margin-top: var(--space-2);">I won't promise a position on Google, because nobody honestly can. What I can promise is a clear list of what's holding the site back, in order of what's likely to matter most, and the work done properly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What You Get</span>
+        <h2 id="text1-heading" class="text-balance">What an SEO audit from me includes</h2>
+        <p>Every audit starts with Google Search Console, because it shows what Google has actually indexed and which searches already bring impressions. Then I crawl the site the way a search engine does and look for the things that quietly cost rankings: pages blocked by mistake, redirect chains, duplicate titles, thin pages, broken internal links and missing structured data.</p>
+        <p style="margin-top: var(--space-2);">You get a short, ordered list, not a 90-page PDF. Each item says what is wrong, why it matters and how long the fix takes. The ones I can fix in the code I fix. The ones that need you, like new content or a business decision, I explain in plain language.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It Suits -->
+  <section class="section section--alt" aria-labelledby="text2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who It Suits</span>
+        <h2 id="text2-heading" class="text-balance">Who hires a freelance SEO consultant</h2>
+        <p>Most of the businesses I work with are small: a local service business, an online store, a consultancy with a few key pages. They don't need an agency retainer. They need someone who can find the real problem, fix it and show the result in Search Console. If your site runs on WordPress or Shopify, I can work directly in the theme, which is where many SEO problems start.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recent SEO Work</span>
+        <h2 id="work-heading" class="text-balance">SEO work I have done for clients</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <h3>Online coffee store</h3>
+          <p>Cleaned up technical SEO across the site, fixing broken links, 404 errors and URLs that pointed to the wrong place, and improved loading speed to around 65 on mobile and 92 on desktop in PageSpeed.</p>
+        </article>
+        <article class="card">
+          <h3>Restaurant in Porto</h3>
+          <p>Optimised the Google Business Profile and worked on local SEO so new customers could find the restaurant when searching nearby on Google Maps.</p>
+        </article>
+        <article class="card">
+          <h3>Barber shop in Porto</h3>
+          <p>Worked on the Google Business Profile and local SEO, and walked the owner through how people actually search for a barber nearby.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../../../work/" class="link-more">See the full case studies</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How This Works</span>
+        <h2 id="process-heading" class="text-balance">How an SEO project runs</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Call</h3>
+          <p>A free 20-minute call about the site, the business and what you want from search.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Audit</h3>
+          <p>I check the technical setup, the content and the competition, and list what matters most.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Fix</h3>
+          <p>I make the changes myself, starting with the ones most likely to make a difference.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Measure</h3>
+          <p>Search Console and GA4 show what changed, and we decide what to do next from there.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions about working with an SEO consultant</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does an SEO consultant do?</summary>
+            <p>An SEO consultant works out why a site isn't getting the search traffic it should, and what to change. That covers the technical side (can Google crawl and index the right pages), the content (does each page answer what people search for), and authority (do other sites and listings point to yours). As a freelance SEO consultant who also codes, I make the changes too.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does SEO take to work?</summary>
+            <p>Technical fixes can show up within weeks, once Google recrawls the pages. Content and authority work usually takes a few months to build. I track progress in Search Console so you can see what is moving, rather than waiting and hoping.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does an SEO consultant cost?</summary>
+            <p>It depends on the size of the site and how much needs fixing. After a first look at your site I send a clear quote for the work, so you know the cost before anything starts.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you do ecommerce SEO?</summary>
+            <p>Yes. I work as an ecommerce SEO consultant for Shopify and WooCommerce stores: collection and product pages, filters that create duplicate URLs, migrations and redirects, and the speed of the theme itself.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with businesses outside Portugal?</summary>
+            <p>Yes, online. I work with businesses in the UK and the US as well as Portugal. In-person meetings are only for businesses in Porto, Vila Nova de Gaia and nearby.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you do SEO on a site someone else built?</summary>
+            <p>Yes. Most of my SEO work is on sites I didn't build. I start with read access to Search Console and the site, check what is there, and only change what needs changing.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Want to know what is holding your site back?</h2>
+        <p>Send me the site and what you want from search. I'll tell you honestly where I think the biggest gains are.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../../">Home</a>
+          <a href="../../../services/" aria-current="page">Services</a>
+          <a href="../../../about/">About</a>
+          <a href="../../../work/">Portfolio</a>
+          <a href="../../../faq/">FAQ</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../../services/web-development/">Web Development</a>
+          <a href="../../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../../services/marketing/">Marketing</a>
+          <a href="../../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

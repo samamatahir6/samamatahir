@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Google Meu Negócio: Como Funciona e Como Criar o Perfil | Samama Tahir</title>
+<meta name="description" content="Como funciona o Google Meu Negócio (Perfil de Empresa no Google), como criar e verificar o perfil passo a passo e como otimizá-lo para aparecer no Google Maps." />
+<link rel="canonical" href="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
+<link rel="alternate" type="application/rss+xml" title="Blog de Samama Tahir" href="https://samamatahir.com/pt/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Google Meu Negócio: Como Funciona e Como Criar o Perfil | Samama Tahir" />
+<meta property="og:description" content="Como funciona o Google Meu Negócio (Perfil de Empresa no Google), como criar e verificar o perfil passo a passo e como otimizá-lo para aparecer no Google Maps." />
+<meta property="og:url" content="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Google Meu Negócio: Como Funciona e Como Criar o Perfil | Samama Tahir" />
+<meta name="twitter:description" content="Como funciona o Google Meu Negócio (Perfil de Empresa no Google), como criar e verificar o perfil passo a passo e como otimizá-lo para aparecer no Google Maps." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Google Meu Negócio: como funciona",
+      "item": "https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Meu Negócio: como funciona e como criar o seu perfil",
+  "description": "Como funciona o Google Meu Negócio (Perfil de Empresa no Google), como criar e verificar o perfil passo a passo e como otimizá-lo para aparecer no Google Maps.",
+  "url": "https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/",
+  "mainEntityOfPage": "https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/",
+  "inLanguage": "pt-PT",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 1019,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/pt/blog/#blog",
+    "url": "https://samamatahir.com/pt/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como funciona o Google Meu Negócio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É um perfil gratuito da sua empresa no Google Search e no Google Maps. O Google mostra-o a quem pesquisa negócios como o seu na zona, ordenando os perfis por relevância, distância e destaque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como criar o Google Meu Negócio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vá a google.com/business com uma conta Google da empresa, indique o nome, a categoria, a morada ou zona servida e os contactos, e conclua a verificação, que hoje costuma ser feita por vídeo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Google Meu Negócio e Perfil de Empresa no Google são a mesma coisa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O Google mudou o nome de Google My Business para Perfil de Empresa no Google, mas é o mesmo serviço."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso ter o perfil sem morada pública?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Se vai ter com os clientes e não os recebe num espaço, pode esconder a morada e indicar as zonas que serve."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../pt/servicos/">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../blog/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../pt/servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../pt/blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Google Meu Negócio: como funciona</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Google Meu Negócio</span>
+      <h1 class="text-balance">Google Meu Negócio: como funciona e como criar o seu perfil</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">O que é o Google Meu Negócio, como criar e verificar o perfil, e o que faz um negócio aparecer no mapa do Google.</p>
+      <p class="post-meta">Por Samama Tahir · <time datetime="2026-10-14">14 de outubro de 2026</time> · 5 min de leitura</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Quando alguém pesquisa "café perto de mim" ou "eletricista em Gaia", o Google mostra um mapa com três negócios antes dos resultados normais. Esses negócios aparecem graças ao Google Meu Negócio, que o Google hoje chama Perfil de Empresa no Google. É gratuito e, para muitos negócios locais, é visto por mais pessoas do que o próprio site. Neste guia explico como funciona, como criar o perfil e como otimizá-lo. Se preferir que trate disso por si, veja o meu serviço de <a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>.</p>
+
+        <h2>O que é o Google Meu Negócio</h2>
+        <p>É a ficha da sua empresa no Google Search e no Google Maps: nome, categoria, morada ou zona servida, telefone, horário, site, fotografias, serviços, produtos, publicações e avaliações. O nome "Google My Business" foi substituído por "Perfil de Empresa no Google" (Google Business Profile), mas em Portugal quase toda a gente continua a dizer Google Meu Negócio. É a mesma coisa.</p>
+        <p>Hoje o perfil gere-se diretamente na pesquisa do Google ou na app Google Maps, com a conta Google que é proprietária do perfil.</p>
+
+        <h2>Como o Google decide quem aparece no mapa</h2>
+        <p>O Google diz que os resultados locais dependem de três fatores:</p>
+        <ul>
+          <li><strong>Relevância:</strong> o perfil corresponde ao que a pessoa pesquisou? Aqui contam a categoria, os serviços e a descrição.</li>
+          <li><strong>Distância:</strong> a que distância está o negócio de quem pesquisa, ou da zona pesquisada.</li>
+          <li><strong>Destaque:</strong> quão conhecido e bem avaliado é o negócio. Contam as avaliações, os links e menções na web e o próprio site.</li>
+        </ul>
+        <p>Não pode mudar a distância, mas pode trabalhar muito a relevância e o destaque. É disso que trata a otimização.</p>
+
+        <h2>Como criar o Google Meu Negócio, passo a passo</h2>
+        <ol>
+          <li><strong>Procure primeiro o seu negócio no Google Maps.</strong> Às vezes já existe um perfil criado automaticamente ou por um cliente. Nesse caso, peça a propriedade em vez de criar um novo, para não ficar com duplicados.</li>
+          <li><strong>Entre com a conta Google certa.</strong> Use uma conta da empresa a que terá sempre acesso, não a conta pessoal de um funcionário.</li>
+          <li><strong>Vá a google.com/business e escolha "Gerir agora".</strong> Escreva o nome exato do negócio, como aparece na fachada e nas faturas, sem palavras-chave extra.</li>
+          <li><strong>Escolha a categoria principal.</strong> É a decisão mais importante. Escolha a que descreve o que o negócio é, por exemplo "Restaurante português" e não apenas "Restaurante".</li>
+          <li><strong>Morada ou zona servida.</strong> Se recebe clientes num espaço, indique a morada. Se vai a casa dos clientes (canalizador, limpezas), pode esconder a morada e indicar as zonas que serve.</li>
+          <li><strong>Contactos e site.</strong> Telefone e endereço do site.</li>
+          <li><strong>Verificação.</strong> O Google pede para confirmar que o negócio é real. Hoje o método mais comum é um vídeo curto que mostra o espaço, a sinalização e algo que prove que é o responsável. Também pode ser por telefone, email ou postal, conforme o caso.</li>
+        </ol>
+        <p>Depois de verificado, o perfil pode demorar alguns dias a aparecer com todas as informações.</p>
+
+        <h2>Como otimizar o Google Meu Negócio</h2>
+        <p>Criar o perfil é o início. Estes são os pontos que reviso em todos os perfis com que trabalho:</p>
+        <h3>Categorias</h3>
+        <p>Uma categoria principal certa e algumas secundárias que correspondam a serviços reais. Não acrescente categorias só porque sim; dispersam a relevância.</p>
+        <h3>Serviços e produtos</h3>
+        <p>Liste todos os serviços, com uma frase curta nas palavras que os clientes usam. Se vende produtos, acrescente os principais com fotografia.</p>
+        <h3>Informação completa e consistente</h3>
+        <p>Horário, horários de feriados, atributos (acessibilidade, wi-fi, esplanada) e uma descrição clara. O nome, a morada e o telefone devem ser exatamente iguais no perfil, no site e nos diretórios onde a empresa aparece.</p>
+        <h3>Fotografias</h3>
+        <p>Fotografias reais e recentes do espaço por dentro e por fora, da equipa e do trabalho. Perfis com boas fotografias recebem mais pedidos de direções e mais cliques.</p>
+        <h3>Avaliações</h3>
+        <p>As avaliações pesam no destaque e na decisão do cliente. Peça a cada cliente satisfeito, com um link direto para avaliar, e responda a todas, boas e más, com calma e educação. Nunca compre avaliações nem ofereça descontos em troca; vai contra as regras do Google e pode levar à suspensão do perfil.</p>
+        <h3>Publicações</h3>
+        <p>Novidades, promoções, eventos. Uma publicação por semana mostra que o negócio está ativo e dá ao cliente mais razões para escolher o seu.</p>
+        <h3>O site</h3>
+        <p>O perfil funciona melhor quando o site confirma a mesma informação: uma página por serviço, a morada e o telefone visíveis, e dados estruturados de negócio local. É aqui que o <a href="../../../pt/servicos/marketing-digital/">SEO local</a> e o site trabalham juntos.</p>
+
+        <h2>O Google Meu Negócio é gratuito?</h2>
+        <p>Sim. Criar e manter o perfil não custa nada. O que custa é o tempo: configurar bem, tirar fotografias, pedir e responder a avaliações e publicar com regularidade. Muitos negócios criam o perfil e esquecem-no, e é por isso que perdem lugares no mapa para concorrentes mais ativos.</p>
+
+        <h2>Erros que fazem perder posições</h2>
+        <ul>
+          <li>Acrescentar palavras-chave ao nome do negócio, como "Restaurante X Melhor Francesinha Porto". É contra as regras e pode levar à suspensão.</li>
+          <li>Ter dois perfis para o mesmo negócio.</li>
+          <li>Moradas diferentes no perfil, no site e nos diretórios.</li>
+          <li>Horários desatualizados, que irritam clientes e geram más avaliações.</li>
+          <li>Deixar avaliações negativas sem resposta.</li>
+          <li>Usar uma morada virtual ou um escritório partilhado onde não recebe clientes.</li>
+        </ul>
+
+        <h2>Como medir resultados</h2>
+        <p>No próprio perfil, a secção de desempenho mostra quantas pessoas o viram, por que pesquisas, e quantas ligaram, pediram direções ou visitaram o site. Para ver o que fazem depois no site, acrescente um parâmetro de campanha ao link do site no perfil e acompanhe no Google Analytics. Assim sabe quantos contactos vieram realmente do mapa.</p>
+        <p>Se o seu negócio é no Porto ou em Gaia, também pode interessar-lhe <a href="../../../pt/blog/o-que-e-seo/">o que é SEO</a>, para perceber como o perfil se encaixa no resto do trabalho de pesquisa.</p>
+
+        <h2>Quanto tempo demora a ver resultados</h2>
+        <p>Um perfil novo pode começar a aparecer em pesquisas pelo nome da empresa poucos dias depois da verificação. Aparecer no mapa para pesquisas genéricas, como "cabeleireiro em Gaia", leva mais tempo e depende da concorrência na zona, das avaliações e da consistência da informação. Medir mês a mês na secção de desempenho mostra se o trabalho está a resultar.</p>
+
+        <aside class="post-cta" aria-label="Quer o seu negócio no mapa do Google?">
+          <h2>Quer o seu negócio no mapa do Google?</h2>
+          <p>Crio, verifico e otimizo o Google Meu Negócio da sua empresa, e deixo um plano simples para o manter ativo.</p>
+          <a href="../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="faq-heading" class="text-balance">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>Como funciona o Google Meu Negócio?</summary>
+            <p>É um perfil gratuito da sua empresa no Google Search e no Google Maps. O Google mostra-o a quem pesquisa negócios como o seu na zona, ordenando os perfis por relevância, distância e destaque.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como criar o Google Meu Negócio?</summary>
+            <p>Vá a google.com/business com uma conta Google da empresa, indique o nome, a categoria, a morada ou zona servida e os contactos, e conclua a verificação, que hoje costuma ser feita por vídeo.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Google Meu Negócio e Perfil de Empresa no Google são a mesma coisa?</summary>
+            <p>Sim. O Google mudou o nome de Google My Business para Perfil de Empresa no Google, mas é o mesmo serviço.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Posso ter o perfil sem morada pública?</summary>
+            <p>Sim. Se vai ter com os clientes e não os recebe num espaço, pode esconder a morada e indicar as zonas que serve.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../pt/">Início</a>
+          <a href="../../../pt/servicos/">Serviços</a>
+          <a href="../../../pt/sobre/">Sobre</a>
+          <a href="../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../pt/faq/">FAQ</a>
+          <a href="../../../pt/blog/">Blog</a>
+          <a href="../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

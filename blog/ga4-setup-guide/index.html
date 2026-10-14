@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>GA4 Setup Guide: A Step-by-Step Checklist for 2026 | Samama Tahir</title>
+<meta name="description" content="A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing." />
+<link rel="canonical" href="https://samamatahir.com/blog/ga4-setup-guide/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/ga4-setup-guide/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/ga4-setup-guide/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="GA4 Setup Guide: A Step-by-Step Checklist for 2026 | Samama Tahir" />
+<meta property="og:description" content="A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing." />
+<meta property="og:url" content="https://samamatahir.com/blog/ga4-setup-guide/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GA4 Setup Guide: A Step-by-Step Checklist for 2026 | Samama Tahir" />
+<meta name="twitter:description" content="A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GA4 setup guide",
+      "item": "https://samamatahir.com/blog/ga4-setup-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GA4 setup guide: a step-by-step checklist",
+  "description": "A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing.",
+  "url": "https://samamatahir.com/blog/ga4-setup-guide/",
+  "mainEntityOfPage": "https://samamatahir.com/blog/ga4-setup-guide/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 979,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/blog/#blog",
+    "url": "https://samamatahir.com/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a GA4 setup include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Creating the property and data stream, installing the tag (ideally through Google Tag Manager), consent mode, key events, ecommerce events for stores, traffic filters, links to Search Console and Google Ads, and testing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to set up GA4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A basic install takes minutes. A proper setup with consent mode, key events, ecommerce tracking and testing usually takes a few hours to a day, depending on the site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Google Tag Manager for GA4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, but it makes adding events and other tags much easier and keeps all tracking in one place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are key events in GA4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key events are the actions you mark as important to the business, such as a form sent or a purchase. It is the name GA4 now uses for what used to be called conversions."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">GA4 setup guide</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">GA4 and Analytics</span>
+      <h1 class="text-balance">GA4 setup guide: a step-by-step checklist</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">How to set up Google Analytics 4 properly, in the order I do it for clients, with the steps most setups skip.</p>
+      <p class="post-meta">By Samama Tahir · <time datetime="2026-10-14">14 October 2026</time> · 4 min read</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Installing Google Analytics 4 takes five minutes. Setting it up so the numbers are right and actually useful takes a bit longer. This guide walks through the steps in the order I follow when I do <a href="../../services/marketing/ga4-analytics/">GA4 setup and analytics</a> for clients, including the parts that most setups skip: consent mode, key events, internal traffic and testing.</p>
+
+        <h2>What a GA4 setup involves</h2>
+        <p>A GA4 setup has three layers. The <strong>property</strong> in Google Analytics, where data is stored and reported. The <strong>tag</strong> on your site, which sends the data, ideally through Google Tag Manager. And the <strong>configuration</strong>: which actions count as key events, what is filtered out and which Google tools are linked. Most broken setups get the first two right and skip the third.</p>
+
+        <h2>Step 1: create the property and data stream</h2>
+        <ol>
+          <li>In Google Analytics, go to Admin and create a property. Set the reporting time zone and currency to match your business.</li>
+          <li>Add a <strong>web data stream</strong> with your site's URL. GA4 gives you a measurement ID that starts with <code>G-</code>.</li>
+          <li>Leave <strong>enhanced measurement</strong> on. It tracks page views, scrolls, outbound clicks, site search, video engagement and file downloads without extra work.</li>
+          <li>Make sure the account belongs to the business, and that you are an administrator. Give agencies and freelancers their own access instead of sharing logins.</li>
+        </ol>
+
+        <h2>Step 2: install the tag through Google Tag Manager</h2>
+        <p>You can paste the Google tag directly into your site, but Google Tag Manager makes everything after this easier. Create a GTM container, add its code to your site, then create a Google tag in GTM with your <code>G-</code> measurement ID, firing on all pages. On WordPress this goes in the theme or through a lightweight plugin. On Shopify, the theme gets the normal code and checkout events are handled through the customer events settings.</p>
+        <p>Check that GA4 isn't also installed by a theme setting or a plugin. Two tags mean every visit counts twice.</p>
+
+        <h2>Step 3: set up consent mode</h2>
+        <p>If you have visitors in the EU or UK, analytics cookies should only be set after the visitor agrees. Consent mode connects your cookie banner to Google's tags. When a visitor declines, Google's tags run without cookies; when they accept, tags run normally. Version 2 adds signals for advertising data (<code>ad_user_data</code> and <code>ad_personalization</code>), which matter if you run Google Ads.</p>
+        <p>Set the default state to denied before any tag loads, update it when the visitor makes a choice, and test both paths. A cookie banner that only looks like it works is a common finding in audits.</p>
+
+        <h2>Step 4: decide which actions are key events</h2>
+        <p>GA4 tracks many events, but only a few matter to the business. Mark those as <strong>key events</strong> (GA4's current name for conversions). Typical ones:</p>
+        <ul>
+          <li><code>generate_lead</code>: a contact or quote form sent.</li>
+          <li>A click on your phone number or WhatsApp link.</li>
+          <li>A booking made.</li>
+          <li><code>purchase</code>: an order completed.</li>
+        </ul>
+        <p>Fire form events on a real success signal, such as the thank-you message or page, not on the button click, so failed submissions aren't counted. Keep the list short. If everything is a key event, nothing is.</p>
+
+        <h2>Step 5: add ecommerce events for online stores</h2>
+        <p>For a store, set up the standard ecommerce events with item data and value: <code>view_item</code>, <code>add_to_cart</code>, <code>begin_checkout</code>, <code>add_payment_info</code> and <code>purchase</code>. With these, GA4's ecommerce reports show which products sell and where people drop off. Shopify's native integration covers most of this; on WooCommerce, a well-maintained plugin or a custom <code>dataLayer</code> does the job. Make sure <code>purchase</code> fires once per order, with a transaction ID, so a page reload doesn't create a second sale.</p>
+
+        <h2>Step 6: filter internal and unwanted traffic</h2>
+        <ul>
+          <li>Define your office or home IP addresses as <strong>internal traffic</strong>, then activate the filter once you've tested it.</li>
+          <li>List payment providers and booking tools under <strong>unwanted referrals</strong>, so a customer returning from the payment page isn't counted as a new visit from that site.</li>
+          <li>If your checkout or booking runs on another domain, set up <strong>cross-domain measurement</strong>.</li>
+        </ul>
+
+        <h2>Step 7: adjust the defaults</h2>
+        <ul>
+          <li>Set <strong>data retention</strong> to the longest option, so exploration reports can look back further.</li>
+          <li>Check the <strong>reporting identity</strong> and Google signals settings against your privacy policy.</li>
+          <li>Create a small number of <strong>custom dimensions</strong> only if you need them, for example a form name.</li>
+        </ul>
+
+        <h2>Step 8: link Search Console and Google Ads</h2>
+        <p>Linking <strong>Search Console</strong> brings organic search queries and landing pages into GA4. Linking <strong>Google Ads</strong> lets you import key events as conversions and see what happens after an ad click. Both take a minute in the Admin section and are worth doing on day one.</p>
+
+        <h2>Step 9: test everything</h2>
+        <p>Open GTM's preview mode and GA4's <strong>DebugView</strong>, then use your site like a customer: browse, send a form, click the phone number, place a test order. Confirm each event appears once, with the right parameters. Check the real-time report from your phone too. Only then publish the GTM container.</p>
+
+        <h2>Step 10: write it down</h2>
+        <p>Keep a short document listing every event, what triggers it and why it exists. It takes ten minutes, and it saves hours the next time someone touches the setup.</p>
+
+        <h2>Common GA4 setup mistakes</h2>
+        <ul>
+          <li>GA4 installed twice, doubling page views.</li>
+          <li>Form events firing on click instead of on success.</li>
+          <li>Purchase events firing again on page reload.</li>
+          <li>No consent mode, or a banner that doesn't actually block anything.</li>
+          <li>Payment providers showing up as top referral sources.</li>
+          <li>Nobody on the business side having admin access.</li>
+        </ul>
+
+        <h2>Reading your first reports</h2>
+        <p>Give the setup a week or two to collect data. Then start with three reports: <strong>Traffic acquisition</strong> to see where visitors come from, <strong>Pages and screens</strong> to see what they read, and the <strong>key events</strong> view to see which channels lead to enquiries or sales. Resist building dashboards on day one. Knowing those three well is worth more.</p>
+
+        <aside class="post-cta" aria-label="Want GA4 set up properly?">
+          <h2>Want GA4 set up properly?</h2>
+          <p>I set up GA4 and Tag Manager with consent mode, key events and ecommerce tracking, test everything and write down what is tracked.</p>
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does a GA4 setup include?</summary>
+            <p>Creating the property and data stream, installing the tag (ideally through Google Tag Manager), consent mode, key events, ecommerce events for stores, traffic filters, links to Search Console and Google Ads, and testing.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does it take to set up GA4?</summary>
+            <p>A basic install takes minutes. A proper setup with consent mode, key events, ecommerce tracking and testing usually takes a few hours to a day, depending on the site.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need Google Tag Manager for GA4?</summary>
+            <p>No, but it makes adding events and other tags much easier and keeps all tracking in one place.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are key events in GA4?</summary>
+            <p>Key events are the actions you mark as important to the business, such as a form sent or a purchase. It is the name GA4 now uses for what used to be called conversions.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

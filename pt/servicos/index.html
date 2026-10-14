@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Criação de Sites e Marketing Digital em Portugal | Samama Tahir</title>
+<meta name="description" content="Serviços de criação de sites e marketing digital no Porto: WordPress, Shopify, React, SEO local, Google Meu Negócio, anúncios, GA4 e automação com IA." />
+<link rel="canonical" href="https://samamatahir.com/pt/servicos/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Criação de Sites e Marketing Digital em Portugal | Samama Tahir" />
+<meta property="og:description" content="Serviços de criação de sites e marketing digital no Porto: WordPress, Shopify, React, SEO local, Google Meu Negócio, anúncios, GA4 e automação com IA." />
+<meta property="og:url" content="https://samamatahir.com/pt/servicos/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Criação de Sites e Marketing Digital em Portugal | Samama Tahir" />
+<meta name="twitter:description" content="Serviços de criação de sites e marketing digital no Porto: WordPress, Shopify, React, SEO local, Google Meu Negócio, anúncios, GA4 e automação com IA." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://samamatahir.com/pt/" },
+    { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://samamatahir.com/pt/servicos/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Criação de Sites e Marketing Digital",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Desenvolvimento Web",
+        "url": "https://samamatahir.com/pt/servicos/criacao-de-sites/",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://samamatahir.com/#business",
+          "name": "Samama Tahir"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Marketing",
+        "url": "https://samamatahir.com/pt/servicos/marketing-digital/",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://samamatahir.com/#business",
+          "name": "Samama Tahir"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "IA e Automação",
+        "url": "https://samamatahir.com/pt/servicos/automacao-ia/",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://samamatahir.com/#business",
+          "name": "Samama Tahir"
+        }
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto custa a criação de um site em Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O custo varia consoante seja um site em WordPress, uma loja Shopify, ou uma aplicação totalmente personalizada, e a quantidade de conteúdo e funcionalidades necessárias. Em vez de indicar um valor que não seria correto para o seu projeto, prefiro perceber o que realmente precisa e dar-lhe um valor real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Porque é que não tem preços no site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque uma tabela de preços estaria errada para a maioria dos projetos. Um site de cinco páginas em WordPress, uma loja Shopify com centenas de produtos e uma aplicação web em React são trabalhos muito diferentes. Depois de uma chamada gratuita de 20 minutos, envio um orçamento por escrito com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de um novo website ou só de marketing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende do que realmente está a travar o negócio. Um site lento ou desatualizado limita o que o marketing consegue alcançar, mas um bom site que ninguém encontra também não faz um negócio crescer. Digo-lhe honestamente qual dos dois importa mais para a sua situação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pode arranjar o meu website atual em vez de o reconstruir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muitas vezes, sim. Se a base for sólida, corrigir o desempenho, a segurança, ou funcionalidades específicas costuma fazer mais sentido do que recomeçar do zero. Uma reconstrução completa só vale a pena quando o site atual está genuinamente a travar o negócio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo demora um projeto normalmente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende do âmbito: um site em WordPress costuma ser mais rápido do que uma aplicação web personalizada, e uma loja com muitos produtos demora mais a configurar do que um site simples. Dou-lhe um prazo realista assim que perceber o que está envolvido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trabalha com clientes no Reino Unido e nos Estados Unidos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, online. Portugal está no mesmo fuso horário do Reino Unido, por isso temos o mesmo horário de trabalho, e as minhas tardes coincidem com as manhãs da costa leste dos Estados Unidos, o que nos dá uma janela diária para videochamadas. As reuniões presenciais são só para empresas do Porto, de Vila Nova de Gaia e arredores."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../servicos/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../sobre/">Sobre</a></li>
+        <li><a href="../portefolio/">Portefólio</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../services/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../sobre/">Sobre</a></li>
+      <li><a href="../portefolio/">Portefólio</a></li>
+      <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../contacto/">Contacto</a></li>
+      <li><a href="../contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Localização">
+    <div class="container">
+      <a href="../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Serviços</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Serviços</span>
+      <h1 class="text-balance">Criação de sites e marketing digital, feitos por uma só pessoa</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3);">Ofereço serviços de criação de sites e marketing digital a partir do Porto, para empresas em Portugal, no Reino Unido e nos Estados Unidos. Um negócio precisa de um site que funcione e de uma forma de as pessoas o encontrarem de facto. Faço as duas coisas, para que nada se perca entre "quem construiu" e "quem devia promover".</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+        </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="section" aria-labelledby="services-list-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Faço</span>
+        <h2 id="services-list-heading" class="text-balance">Serviços de criação de sites e marketing no Porto</h2>
+        <p>Três áreas que funcionam melhor em conjunto: construir o site, pô-lo a aparecer no Google e automatizar o trabalho repetitivo à volta dele.</p>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+          <h3>Desenvolvimento Web</h3>
+          <p>WordPress e Shopify personalizados, aplicações em React, e-commerce, e as integrações via API que os ligam às ferramentas que o negócio já usa.</p>
+
+          <ul class="tag-list" aria-label="Serviços de desenvolvimento web">
+            <li class="tag"><a href="criacao-de-sites/wordpress/">WordPress</a></li>
+            <li class="tag"><a href="criacao-de-sites/programador-shopify/">Shopify</a></li>
+            <li class="tag"><a href="criacao-de-sites/aplicacoes-web/">Aplicações web (React)</a></li>
+            <li class="tag"><a href="criacao-de-sites/criar-loja-online/">Lojas online</a></li>
+          </ul>
+          <a href="criacao-de-sites/" class="link-more">Explorar serviços de desenvolvimento web</a>
+        </article>
+        <article class="card">
+          <span class="card-icon card-icon--yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <h3>Marketing</h3>
+          <p>Perfil de Empresa no Google, SEO local e técnico, Google Ads, Meta Ads, e a configuração de analítica que mostra o que está realmente a resultar.</p>
+
+          <ul class="tag-list" aria-label="Serviços de marketing">
+            <li class="tag"><a href="marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+            <li class="tag"><a href="../servicos/marketing-digital/">SEO local</a></li>
+            <li class="tag"><a href="marketing-digital/consultor-seo/">Consultoria SEO</a></li>
+            <li class="tag"><a href="marketing-digital/google-ads/">Google Ads</a></li>
+            <li class="tag"><a href="marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+            <li class="tag"><a href="marketing-digital/ga4-analytics/">GA4 e Tag Manager</a></li>
+          </ul>
+          <a href="marketing-digital/" class="link-more">Explorar serviços de marketing</a>
+        </article>
+        <article class="card">
+          <span class="card-icon card-icon--red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+          </span>
+          <h3>IA e Automação</h3>
+          <p>Chatbots de IA, automação de fluxos de trabalho, relatórios gerados por IA, e as integrações de API que os ligam às ferramentas que o negócio já usa.</p>
+
+          <ul class="tag-list" aria-label="Serviços de IA e automação">
+            <li class="tag">Chatbots de IA</li>
+            <li class="tag">Automação de processos</li>
+            <li class="tag">Relatórios com IA</li>
+          </ul>
+          <a href="automacao-ia/" class="link-more">Explorar serviços de IA e automação</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section">
+    <div class="container">
+      <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1.25rem; line-height: 1.5; color: var(--color-text);">A maioria das agências divide isto por três equipas que quase não falam entre si. Eu faço a construção, o crescimento, e a automação sozinho, para que as decisões sobre o seu site nunca sejam tomadas isoladamente.</p>
+        <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-green);">Samama Tahir</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why both -->
+  <section class="section section--alt" aria-labelledby="why-both-heading">
+    <div class="container">
+      <span class="eyebrow">Porquê os Três</span>
+      <h2 id="why-both-heading" class="text-balance">O site, o tráfego, e o trabalho manual por trás deles</h2>
+      <p style="margin-top: var(--space-2);">Um site rápido e bem construído sem ninguém a encontrá-lo não faz um negócio crescer, um orçamento de marketing apontado a um site lento ou com problemas também não, e nenhum dos dois poupa as horas perdidas a escrever a mesma resposta ou fatura à mão. Trabalho nas três frentes, para que estas decisões sejam tomadas pela mesma pessoa, e não divididas entre equipas separadas que nunca falam entre si.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="page-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="page-faq-heading" class="text-balance">Perguntas antes de entrar em contacto</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>Quanto custa a criação de um site em Portugal?</summary>
+            <p>O custo varia consoante seja um site em WordPress, uma loja Shopify, ou uma aplicação totalmente personalizada, e a quantidade de conteúdo e funcionalidades necessárias. Em vez de indicar um valor que não seria correto para o seu projeto, prefiro perceber o que realmente precisa e dar-lhe um valor real.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Porque é que não tem preços no site?</summary>
+            <p>Porque uma tabela de preços estaria errada para a maioria dos projetos. Um site de cinco páginas em WordPress, uma loja Shopify com centenas de produtos e uma aplicação web em React são trabalhos muito diferentes. Depois de uma chamada gratuita de 20 minutos, envio um orçamento por escrito com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso de um novo website ou só de marketing?</summary>
+            <p>Depende do que realmente está a travar o negócio. Um site lento ou desatualizado limita o que o marketing consegue alcançar, mas um bom site que ninguém encontra também não faz um negócio crescer. Digo-lhe honestamente qual dos dois importa mais para a sua situação.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pode arranjar o meu website atual em vez de o reconstruir?</summary>
+            <p>Muitas vezes, sim. Se a base for sólida, corrigir o desempenho, a segurança, ou funcionalidades específicas costuma fazer mais sentido do que recomeçar do zero. Uma reconstrução completa só vale a pena quando o site atual está genuinamente a travar o negócio.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quanto tempo demora um projeto normalmente?</summary>
+            <p>Depende do âmbito: um site em WordPress costuma ser mais rápido do que uma aplicação web personalizada, e uma loja com muitos produtos demora mais a configurar do que um site simples. Dou-lhe um prazo realista assim que perceber o que está envolvido.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Trabalha com clientes no Reino Unido e nos Estados Unidos?</summary>
+            <p>Sim, online. Portugal está no mesmo fuso horário do Reino Unido, por isso temos o mesmo horário de trabalho, e as minhas tardes coincidem com as manhãs da costa leste dos Estados Unidos, o que nos dá uma janela diária para videochamadas. As reuniões presenciais são só para empresas do Porto, de Vila Nova de Gaia e arredores.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="services-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="services-cta-heading" class="text-balance">Não sabe do que precisa primeiro?</h2>
+        <p>Diga-me onde o negócio está hoje, e digo-lhe honestamente se a prioridade é o site, o marketing, ou os dois.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../">Início</a>
+          <a href="../servicos/">Serviços</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../portefolio/">Portefólio</a>
+          <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
+          <a href="../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

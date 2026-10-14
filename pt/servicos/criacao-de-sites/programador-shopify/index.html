@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Programador Shopify em Portugal | Samama Tahir</title>
+<meta name="description" content="Programador Shopify em Portugal: criação de lojas Shopify, temas 2.0, integrações de apps, MB WAY e otimização de velocidade, com quem escreve o código." />
+<link rel="canonical" href="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+<link rel="icon" type="image/svg+xml" href="../../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Programador Shopify em Portugal | Samama Tahir" />
+<meta property="og:description" content="Programador Shopify em Portugal: criação de lojas Shopify, temas 2.0, integrações de apps, MB WAY e otimização de velocidade, com quem escreve o código." />
+<meta property="og:url" content="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Programador Shopify em Portugal | Samama Tahir" />
+<meta name="twitter:description" content="Programador Shopify em Portugal: criação de lojas Shopify, temas 2.0, integrações de apps, MB WAY e otimização de velocidade, com quem escreve o código." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<link rel="preload" href="../../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços",
+      "item": "https://samamatahir.com/pt/servicos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Desenvolvimento Web",
+      "item": "https://samamatahir.com/pt/servicos/criacao-de-sites/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Programador Shopify",
+      "item": "https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Programador Shopify em Portugal",
+  "serviceType": "Desenvolvimento Shopify",
+  "url": "https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Criação de lojas Shopify, temas Online Store 2.0, migrações de temas antigos, secções à medida em Liquid e JavaScript, integrações de apps e pagamentos portugueses, e otimização de velocidade, por um programador Shopify freelance no Porto."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A Shopify funciona bem em Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A Shopify está disponível em Portugal, em português, e aceita pagamentos com MB WAY e Multibanco através de fornecedores de pagamento compatíveis. Os envios, o IVA e a faturação certificada configuram-se na própria Shopify e com apps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa a Shopify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Shopify cobra uma mensalidade que depende do plano, paga diretamente à Shopify, mais as comissões de pagamento. O plano certo depende do volume de vendas e das funcionalidades. O meu trabalho é orçamentado à parte, com um orçamento fechado depois de uma chamada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shopify ou WooCommerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Shopify é mais simples de gerir e não precisa de alojamento nem de atualizações. O WooCommerce dá mais controlo e não tem mensalidade de plataforma, mas exige mais manutenção. Explico a diferença para o seu caso antes de decidirmos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pode migrar a minha loja para Online Store 2.0 sem perder os links?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Reconstruo os modelos como secções e blocos, mantenho o design e crio redirecionamentos para os URLs que mudam, para que os links antigos continuem a levar aos produtos e coleções certos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trabalha com lojas fora do Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Quando é útil, reúno-me presencialmente com lojas do Porto, de Vila Nova de Gaia e arredores. Com lojas no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../../pt/servicos/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/" aria-current="page">Programador Shopify</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../../services/web-development/shopify-developer/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../../pt/servicos/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/" aria-current="page">Programador Shopify</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Programador Shopify</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Shopify</span>
+        <h1 class="text-balance">Programador Shopify em Portugal</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Sou programador Shopify freelance no Porto e trabalho com lojas Shopify em Portugal e no estrangeiro. Faço a criação de lojas Shopify de raiz, temas 2.0 a partir de um design em Figma, migrações de temas antigos, secções à medida em Liquid e a limpeza de apps que deixa uma loja rápida outra vez.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+          <a href="../../../../pt/portefolio/" class="btn btn-secondary">Ver o meu trabalho</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../../images/daytrip-shopify-2-0-homepage-desktop.webp" alt="Página inicial da Daytrip, um tema Shopify 2.0 à medida criado por Samama Tahir a partir de um design em Figma" width="1800" height="1123" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Faço</span>
+        <h2 id="do-heading" class="text-balance">Lojas Shopify feitas à medida do negócio</h2>
+        <p>Escrevo o código eu próprio, em todos os projetos. Estes são os quatro tipos de trabalho Shopify que faço mais.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Criação de lojas Shopify</h3>
+          <p>Configuro a loja do zero: tema, coleções, produtos, envios, impostos e pagamentos, incluindo MB WAY e Multibanco através de um fornecedor de pagamentos compatível com a Shopify em Portugal.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Temas Shopify 2.0 à medida</h3>
+          <p>Construo o tema a partir do seu design ou de um briefing, com secções e blocos que a sua equipa pode reorganizar no editor sem precisar de um programador.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Migração para Online Store 2.0</h3>
+          <p>Lojas que ainda usam um tema 1.0 perdem secções em todas as páginas e blocos de apps. Reconstruo os modelos em 2.0, mantenho o design e crio redirecionamentos para os links antigos.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Velocidade, apps e integrações</h3>
+          <p>Removo apps de que a loja já não precisa, substituo algumas por código no tema, e ligo as que fazem falta, como apps de subscrição, faturação ou envios.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopify em Portugal -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Shopify em Portugal</span>
+        <h2 id="text0-heading" class="text-balance">Shopify em Portugal: o que muda numa loja portuguesa</h2>
+        <p>A Shopify funciona bem em Portugal, mas uma loja portuguesa tem detalhes que convém tratar desde o início: MB WAY e Multibanco no checkout, envios pelos CTT ou por transportadora, IVA bem configurado e faturação certificada através de uma app. Trato dessa configuração e explico o que cada parte faz, para que saiba gerir a loja depois do lançamento.</p>
+        <p style="margin-top: var(--space-2);">Sobre os preços da Shopify: os planos são pagos diretamente à Shopify, todos os meses, e o plano certo depende do volume de vendas e das funcionalidades de que precisa. O meu trabalho é orçamentado à parte, por projeto, com um orçamento fechado depois de percebermos o que a loja precisa. Expliquei todas as parcelas em <a href="../../../../pt/blog/precos-shopify-portugal/">preços da Shopify em Portugal</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quem -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Para Quem</span>
+        <h2 id="text1-heading" class="text-balance">Quando faz sentido contratar um programador Shopify</h2>
+        <p>Muitas lojas funcionam bem com um tema normal e algumas boas apps, e se for o seu caso, digo-lho. Um programador Shopify faz diferença quando o design é à medida, quando as apps já tornam a loja lenta, quando precisa de algo que nenhuma app faz, ou quando o tema é tão antigo que editar é difícil.</p>
+        <p style="margin-top: var(--space-2);">Trabalho com lojas do Porto, de Vila Nova de Gaia e arredores, com quem me posso reunir quando é útil, e online com lojas no resto do país, no Reino Unido e nos Estados Unidos. Fala sempre diretamente comigo, desde a primeira chamada até ao lançamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section section--alt" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trabalho Recente</span>
+        <h2 id="work-heading" class="text-balance">Três lojas Shopify 2.0 em que trabalhei</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <h3>OROS</h3>
+          <p>Migrei uma marca de vestuário técnico de um tema Shopify 1.0 para Online Store 2.0, com páginas de produto, coleções e funcionalidades reconstruídas como secções reutilizáveis em vez de apps.</p>
+        </article>
+        <article class="card">
+          <h3>Fore Fathers</h3>
+          <p>Mudei uma marca de vestuário familiar para Online Store 2.0, mantive o WordPress para o blog e mapeei links e redirecionamentos para que os URLs antigos continuassem a levar aos produtos certos.</p>
+        </article>
+        <article class="card">
+          <h3>Daytrip</h3>
+          <p>Criei um tema Shopify 2.0 à medida a partir do Figma, com uma página de produto que muda cores e conteúdo conforme a variante, através da Section Rendering API.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../../../../pt/portefolio/" class="link-more">Ler os casos completos</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como Funciona</span>
+        <h2 id="process-heading" class="text-balance">Da primeira chamada à loja no ar</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Chamada</h3>
+          <p>Uma chamada gratuita de 20 minutos sobre a loja, o que não está a funcionar e o que quer que ela faça.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Orçamento</h3>
+          <p>Um orçamento fechado por escrito, com o âmbito e o que está incluído, antes de começar.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Desenvolvimento</h3>
+          <p>Construo e testo num tema não publicado, para que a loja continue a vender durante o trabalho.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Lançamento e apoio</h3>
+          <p>Publicamos quando estiver satisfeito, e continuo disponível para correções e alterações.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="faq-heading" class="text-balance">Perguntas sobre lojas Shopify</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>A Shopify funciona bem em Portugal?</summary>
+            <p>Sim. A Shopify está disponível em Portugal, em português, e aceita pagamentos com MB WAY e Multibanco através de fornecedores de pagamento compatíveis. Os envios, o IVA e a faturação certificada configuram-se na própria Shopify e com apps.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quanto custa a Shopify?</summary>
+            <p>A Shopify cobra uma mensalidade que depende do plano, paga diretamente à Shopify, mais as comissões de pagamento. O plano certo depende do volume de vendas e das funcionalidades. O meu trabalho é orçamentado à parte, com um orçamento fechado depois de uma chamada.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Shopify ou WooCommerce?</summary>
+            <p>A Shopify é mais simples de gerir e não precisa de alojamento nem de atualizações. O WooCommerce dá mais controlo e não tem mensalidade de plataforma, mas exige mais manutenção. Explico a diferença para o seu caso antes de decidirmos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pode migrar a minha loja para Online Store 2.0 sem perder os links?</summary>
+            <p>Sim. Reconstruo os modelos como secções e blocos, mantenho o design e crio redirecionamentos para os URLs que mudam, para que os links antigos continuem a levar aos produtos e coleções certos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Trabalha com lojas fora do Porto?</summary>
+            <p>Sim. Quando é útil, reúno-me presencialmente com lojas do Porto, de Vila Nova de Gaia e arredores. Com lojas no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Tem uma loja Shopify que precisa de trabalho?</h2>
+        <p>Diga-me o que a loja precisa, e digo-lhe honestamente se é uma definição do tema, uma app, ou trabalho para um programador.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/">Início</a>
+          <a href="../../../../pt/servicos/" aria-current="page">Serviços</a>
+          <a href="../../../../pt/sobre/">Sobre</a>
+          <a href="../../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../../pt/faq/">FAQ</a>
+          <a href="../../../../pt/blog/">Blog</a>
+          <a href="../../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

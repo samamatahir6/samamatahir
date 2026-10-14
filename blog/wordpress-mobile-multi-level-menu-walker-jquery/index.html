@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Mobile Multi-Level WordPress Menu with a Custom Walker | Samama Tahir</title>
+<meta name="description" content="Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin." />
+<link rel="canonical" href="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Mobile Multi-Level WordPress Menu with a Custom Walker | Samama Tahir" />
+<meta property="og:description" content="Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin." />
+<meta property="og:url" content="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mobile Multi-Level WordPress Menu with a Custom Walker | Samama Tahir" />
+<meta name="twitter:description" content="Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mobile multi-level WordPress menu",
+      "item": "https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mobile-friendly multi-level WordPress menu with a custom walker and jQuery",
+  "description": "Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin.",
+  "url": "https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/",
+  "mainEntityOfPage": "https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 966,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/blog/#blog",
+    "url": "https://samamatahir.com/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a WordPress nav menu walker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the class WordPress uses to turn a menu into HTML. Extending Walker_Nav_Menu lets you change the markup, for example to add a toggle button to items that have submenus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make WordPress submenus work on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add a toggle button next to each parent item, hide submenus with CSS on small screens, and open them by adding a class when the button is tapped, updating aria-expanded at the same time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need jQuery for a mobile menu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. jQuery is convenient because WordPress ships with it, but the same logic works in plain JavaScript with the same walker and CSS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this work with block themes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Block themes usually use the Navigation block, which has its own mobile behaviour. This approach is for classic themes that print menus with wp_nav_menu()."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use a plugin for a mobile menu instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but a small walker and script give you clean markup, fewer files to load and full control over accessibility, without another plugin to keep updated."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Mobile multi-level WordPress menu</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">WordPress</span>
+      <h1 class="text-balance">Mobile-friendly multi-level WordPress menu with a custom walker and jQuery</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">A step-by-step tutorial: extend Walker_Nav_Menu, add accessible submenu toggles and open them with a few lines of jQuery.</p>
+      <p class="post-meta">By Samama Tahir · <time datetime="2026-10-14">14 October 2026</time> · 4 min read</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Multi-level menus are easy on a desktop, where submenus open on hover. On a phone there is no hover, and a menu with three levels quickly becomes unusable: submenus that never open, or open all at once in a long list. In this tutorial I build a mobile-friendly multi-level WordPress menu with a custom walker class and a small jQuery script, without a menu plugin. It's the kind of thing I do in custom themes as a <a href="../../services/web-development/wordpress-developer/">freelance WordPress developer</a>.</p>
+        <p>This is a rewritten version of a tutorial from my old blog, updated for current WordPress and with better accessibility.</p>
+
+        <h2>What we are building</h2>
+        <ul>
+          <li>On mobile, a "Menu" button opens the navigation, and each item with children gets its own toggle button to open its submenu, at any depth.</li>
+          <li>Only one submenu per level is open at a time, so the menu stays short.</li>
+          <li>On desktop, the same markup works as a normal horizontal menu with hover and keyboard dropdowns.</li>
+          <li>Buttons use <code>aria-expanded</code>, so screen readers know what is open, and the Escape key closes the menu.</li>
+        </ul>
+
+        <h2>Why a custom walker?</h2>
+        <p><code>wp_nav_menu()</code> builds the menu HTML with a class called <code>Walker_Nav_Menu</code>. To add a toggle button next to every link that has a submenu, we extend that class and change only what we need. The alternative, adding buttons with JavaScript after the page loads, works, but it means the buttons are missing until the script runs and the markup is harder to style. A walker gives you the right HTML from the server.</p>
+
+        <h2>Step 1: the walker class</h2>
+        <p>Add this to your theme, for example in <code>inc/class-st-mobile-menu-walker.php</code>, and load it from <code>functions.php</code> with <code>require_once</code>. It calls the parent class to build each item as WordPress normally does, then adds a button when the item has children. WordPress adds the <code>menu-item-has-children</code> class to those items, which is what we check.</p>
+        <pre><code>&lt;?php
+/**
+ * Adds a toggle button to every menu item that has a submenu,
+ * so submenus can be opened by tap and by keyboard on mobile.
+ */
+class ST_Mobile_Menu_Walker extends Walker_Nav_Menu {
+
+    public function start_lvl( &amp;$output, $depth = 0, $args = null ) {
+        $indent  = str_repeat( &quot;\t&quot;, $depth );
+        $output .= &quot;\n{$indent}&lt;ul class=\&quot;sub-menu\&quot;&gt;\n&quot;;
+    }
+
+    public function start_el( &amp;$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+        // Let WordPress build the &lt;li&gt; and &lt;a&gt; as usual.
+        parent::start_el( $output, $data_object, $depth, $args, $current_object_id );
+
+        if ( in_array( &#x27;menu-item-has-children&#x27;, (array) $data_object-&gt;classes, true ) ) {
+            $label = sprintf(
+                /* translators: %s: menu item title */
+                __( &#x27;Show submenu for %s&#x27;, &#x27;your-textdomain&#x27; ),
+                wp_strip_all_tags( $data_object-&gt;title )
+            );
+            $output .= sprintf(
+                &#x27;&lt;button type=&quot;button&quot; class=&quot;submenu-toggle&quot; aria-expanded=&quot;false&quot; aria-label=&quot;%s&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;&#x27;,
+                esc_attr( $label )
+            );
+        }
+    }
+}</code></pre>
+        <p>The button gets a readable label ("Show submenu for Services") so it makes sense to screen reader users, and the chevron is drawn with CSS inside an empty <code>span</code>.</p>
+
+        <h2>Step 2: output the menu with the walker</h2>
+        <p>In <code>header.php</code>, where your menu is printed, add the menu button and pass the walker to <code>wp_nav_menu()</code>. The <code>container_id</code> matches the button's <code>aria-controls</code>.</p>
+        <pre><code>&lt;button type=&quot;button&quot; class=&quot;menu-toggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;site-nav&quot;&gt;
+  &lt;?php esc_html_e( &#x27;Menu&#x27;, &#x27;your-textdomain&#x27; ); ?&gt;
+&lt;/button&gt;
+
+&lt;?php
+wp_nav_menu( array(
+    &#x27;theme_location&#x27;  =&gt; &#x27;primary&#x27;,
+    &#x27;container&#x27;       =&gt; &#x27;nav&#x27;,
+    &#x27;container_id&#x27;    =&gt; &#x27;site-nav&#x27;,
+    &#x27;container_class&#x27; =&gt; &#x27;site-nav&#x27;,
+    &#x27;menu_class&#x27;      =&gt; &#x27;menu&#x27;,
+    &#x27;walker&#x27;          =&gt; new ST_Mobile_Menu_Walker(),
+) );</code></pre>
+        <p>Make sure the <code>primary</code> menu location is registered with <code>register_nav_menus()</code> in your theme, and that a menu is assigned to it under Appearance &rarr; Menus, or in the site editor for block themes that still use classic menus.</p>
+
+        <h2>Step 3: load the script</h2>
+        <p>WordPress ships with jQuery, so we declare it as a dependency and load our script in the footer:</p>
+        <pre><code>add_action( &#x27;wp_enqueue_scripts&#x27;, function () {
+    wp_enqueue_script(
+        &#x27;st-mobile-menu&#x27;,
+        get_theme_file_uri( &#x27;js/mobile-menu.js&#x27; ),
+        array( &#x27;jquery&#x27; ),
+        &#x27;1.0.0&#x27;,
+        true
+    );
+} );</code></pre>
+
+        <h2>Step 4: the jQuery</h2>
+        <p>Save this as <code>js/mobile-menu.js</code> in your theme. It handles three things: the main menu button, the submenu toggles at any depth, and the Escape key. Event delegation (<code>$nav.on('click', '.submenu-toggle', ...)</code>) means it works for every level without extra code.</p>
+        <pre><code>jQuery(function ($) {
+  var $nav = $(&#x27;#site-nav&#x27;);
+  var $menuToggle = $(&#x27;.menu-toggle&#x27;);
+
+  function closeSubmenus($scope) {
+    $scope.find(&#x27;li.is-open&#x27;).removeClass(&#x27;is-open&#x27;)
+      .children(&#x27;.submenu-toggle&#x27;).attr(&#x27;aria-expanded&#x27;, &#x27;false&#x27;);
+  }
+
+  // Open and close the whole menu on mobile.
+  $menuToggle.on(&#x27;click&#x27;, function () {
+    var open = $menuToggle.attr(&#x27;aria-expanded&#x27;) === &#x27;true&#x27;;
+    $menuToggle.attr(&#x27;aria-expanded&#x27;, String(!open));
+    $nav.toggleClass(&#x27;is-open&#x27;, !open);
+    if (open) closeSubmenus($nav);
+  });
+
+  // Open one submenu at a time on each level.
+  $nav.on(&#x27;click&#x27;, &#x27;.submenu-toggle&#x27;, function () {
+    var $btn = $(this);
+    var $li = $btn.parent(&#x27;li&#x27;);
+    var open = $btn.attr(&#x27;aria-expanded&#x27;) === &#x27;true&#x27;;
+
+    // Close this level (siblings, this item and everything below it) first.
+    closeSubmenus($li.parent());
+    $btn.attr(&#x27;aria-expanded&#x27;, String(!open));
+    $li.toggleClass(&#x27;is-open&#x27;, !open);
+  });
+
+  // Escape closes everything and returns focus to the menu button.
+  $(document).on(&#x27;keydown&#x27;, function (e) {
+    if (e.key === &#x27;Escape&#x27; &amp;&amp; $nav.hasClass(&#x27;is-open&#x27;)) {
+      closeSubmenus($nav);
+      $nav.removeClass(&#x27;is-open&#x27;);
+      $menuToggle.attr(&#x27;aria-expanded&#x27;, &#x27;false&#x27;).trigger(&#x27;focus&#x27;);
+    }
+  });
+});</code></pre>
+        <p>When a submenu opens, its open siblings and anything nested inside them close first, so only one branch is open per level. Closing a parent also closes its children, so the menu is tidy the next time it opens.</p>
+
+        <h2>Step 5: the CSS</h2>
+        <p>The CSS does the real show-and-hide work. The script only adds and removes the <code>is-open</code> class. Adjust the breakpoint, colours and spacing to match your theme.</p>
+        <pre><code>.site-nav ul { list-style: none; margin: 0; padding: 0; }
+.site-nav li { position: relative; }
+
+.submenu-toggle {
+  width: 44px; height: 44px;
+  border: 0; background: none; cursor: pointer;
+}
+.submenu-toggle span {
+  display: inline-block; width: 8px; height: 8px;
+  border: solid currentColor; border-width: 0 2px 2px 0;
+  transform: rotate(45deg); transition: transform 0.2s;
+}
+.submenu-toggle[aria-expanded=&quot;true&quot;] span { transform: rotate(-135deg); }
+
+/* Mobile: stacked menu, submenus open on tap */
+@media (max-width: 959px) {
+  .site-nav { display: none; }
+  .site-nav.is-open { display: block; }
+  .site-nav li { display: flex; flex-wrap: wrap; align-items: center; }
+  .site-nav li &gt; a { flex: 1; padding: 0.75rem 0; }
+  .site-nav .sub-menu { display: none; flex-basis: 100%; padding-left: 1rem; }
+  .site-nav li.is-open &gt; .sub-menu { display: block; }
+}
+
+/* Desktop: horizontal menu, submenus open on hover and keyboard focus */
+@media (min-width: 960px) {
+  .menu-toggle, .submenu-toggle { display: none; }
+  .site-nav .menu { display: flex; gap: 1.5rem; }
+  .site-nav .sub-menu {
+    display: none; position: absolute; top: 100%; left: 0; z-index: 10;
+    min-width: 14rem; padding: 0.5rem 0; background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  .site-nav .sub-menu a { display: block; padding: 0.5rem 1rem; }
+  .site-nav .sub-menu .sub-menu { top: 0; left: 100%; }
+  .site-nav li:hover &gt; .sub-menu,
+  .site-nav li:focus-within &gt; .sub-menu { display: block; }
+}</code></pre>
+        <p>Two details matter on mobile. The toggle buttons are 44 by 44 pixels, a comfortable size to tap. And each link stays a normal link: tapping "Services" goes to the Services page, while tapping the chevron next to it opens the submenu. Parent items with their own pages remain reachable.</p>
+
+        <h2>Testing</h2>
+        <ul>
+          <li>Open the menu on a real phone, not only in a narrow desktop window.</li>
+          <li>Open a second-level submenu, then a third-level one, then a sibling. Only one branch should stay open.</li>
+          <li>Use the keyboard on desktop: Tab through the menu and check that dropdowns appear with <code>:focus-within</code>.</li>
+          <li>Try a screen reader. The toggles should announce "collapsed" or "expanded".</li>
+          <li>Check that nothing jumps when the page loads, because the CSS hides submenus before the script runs.</li>
+        </ul>
+
+        <h2>Without jQuery</h2>
+        <p>If your theme doesn't load jQuery anywhere else, it's worth dropping it for this. The same logic in plain JavaScript uses <code>document.querySelector</code>, <code>addEventListener</code> on the nav for delegated clicks, and <code>classList.toggle</code>. The walker and CSS stay exactly the same, which is the point of keeping the markup on the server side.</p>
+
+        <h2>Common problems</h2>
+        <ul>
+          <li><strong>Nothing happens on tap:</strong> check that the script is loading (look for it in the page source) and that the container ID is <code>site-nav</code>.</li>
+          <li><strong>Submenus open on desktop and won't close:</strong> the desktop media query must hide the toggles and rely on hover and focus.</li>
+          <li><strong>Buttons appear on items without children:</strong> another plugin may be adding the <code>menu-item-has-children</code> class; check the menu output.</li>
+        </ul>
+        <p>If you need help with a custom WordPress theme, a menu that misbehaves or a site that has grown too many plugins, see my <a href="../../services/web-development/wordpress-developer/">WordPress development</a> page.</p>
+
+        <h2>Using the walker in a child theme</h2>
+        <p>If you're working on a theme you didn't build, put the walker class and the script in a child theme, so a theme update doesn't wipe them out. Copy the parent theme's <code>header.php</code> into the child theme, change the <code>wp_nav_menu()</code> call to pass the walker, and enqueue the script from the child theme's <code>functions.php</code>. Remove or disable the parent theme's own mobile menu script, or the two will fight over the same clicks.</p>
+
+        <h2>Performance</h2>
+        <p>The script is a few hundred bytes and runs once when the page loads. Loading it in the footer, as the enqueue code above does, keeps it from blocking the first paint. If jQuery is only loaded for this menu, switching to plain JavaScript removes a larger file from every page, which helps mobile speed scores.</p>
+
+        <aside class="post-cta" aria-label="Need a custom WordPress theme?">
+          <h2>Need a custom WordPress theme?</h2>
+          <p>I build fast, accessible WordPress themes without piles of plugins, and fix menus and layouts that break on mobile.</p>
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is a WordPress nav menu walker?</summary>
+            <p>It is the class WordPress uses to turn a menu into HTML. Extending Walker_Nav_Menu lets you change the markup, for example to add a toggle button to items that have submenus.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I make WordPress submenus work on mobile?</summary>
+            <p>Add a toggle button next to each parent item, hide submenus with CSS on small screens, and open them by adding a class when the button is tapped, updating aria-expanded at the same time.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need jQuery for a mobile menu?</summary>
+            <p>No. jQuery is convenient because WordPress ships with it, but the same logic works in plain JavaScript with the same walker and CSS.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will this work with block themes?</summary>
+            <p>Block themes usually use the Navigation block, which has its own mobile behaviour. This approach is for classic themes that print menus with wp_nav_menu().</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I use a plugin for a mobile menu instead?</summary>
+            <p>You can, but a small walker and script give you clean markup, fewer files to load and full control over accessibility, without another plugin to keep updated.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

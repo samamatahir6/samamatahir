@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>SEO Consultant &amp; Marketing Services in Porto | Samama Tahir</title>
-<meta name="description" content="Marketing services in Porto: Google Business Profile, local SEO, Google Ads, Meta Ads, analytics and conversion optimization." />
+<title>Local SEO, Google Business Profile &amp; Ads | Samama Tahir</title>
+<meta name="description" content="Local SEO for businesses in Porto and Vila Nova de Gaia, and online abroad: Google Business Profile, technical SEO, Google Ads, Meta Ads and GA4 tracking." />
 <link rel="canonical" href="https://samamatahir.com/services/marketing/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/marketing/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
 <link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="SEO Consultant &amp; Marketing Services in Porto | Samama Tahir" />
-<meta property="og:description" content="Marketing services in Porto: Google Business Profile, local SEO, Google Ads, Meta Ads, analytics and conversion optimization." />
+<meta property="og:title" content="Local SEO, Google Business Profile &amp; Ads | Samama Tahir" />
+<meta property="og:description" content="Local SEO for businesses in Porto and Vila Nova de Gaia, and online abroad: Google Business Profile, technical SEO, Google Ads, Meta Ads and GA4 tracking." />
 <meta property="og:url" content="https://samamatahir.com/services/marketing/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,15 @@
 <meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="SEO Consultant &amp; Marketing Services in Porto | Samama Tahir" />
-<meta name="twitter:description" content="Marketing services in Porto: Google Business Profile, local SEO, Google Ads, Meta Ads, analytics and conversion optimization." />
+<meta name="twitter:title" content="Local SEO, Google Business Profile &amp; Ads | Samama Tahir" />
+<meta name="twitter:description" content="Local SEO for businesses in Porto and Vila Nova de Gaia, and online abroad: Google Business Profile, technical SEO, Google Ads, Meta Ads and GA4 tracking." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -77,7 +86,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Marketing Services",
+  "name": "Local SEO and Marketing Services",
   "serviceType": "Digital marketing and growth strategy",
   "provider": {
     "@type": "ProfessionalService",
@@ -96,9 +105,73 @@
     {
       "@type": "Country",
       "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
     }
   ],
-  "description": "Google Business Profile optimization, local and technical SEO, Google Ads, Meta Ads, analytics and tracking, and conversion optimization for businesses in Porto and Portugal."
+  "description": "Local SEO, Google Business Profile optimization, technical SEO, Google Ads, Meta Ads, GA4 analytics and conversion optimization for businesses in Porto and Vila Nova de Gaia, and online for businesses in the rest of Portugal, the UK and the US."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is local SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Local SEO is the work that helps a business show up when people nearby search for what it offers, both in the Google Maps results (the local pack) and in the normal results under them. It covers your Google Business Profile, the service and location pages on your website, consistent business details across directories, and reviews."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is local SEO important for a small business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Searches that include a place, or \"near me\", usually come from people who are ready to call or visit. If your business doesn't appear in the map results for those searches, those customers go to whoever does. And unlike ads, you don't pay for each visit that local search sends you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you rank in local SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google looks at three things for map results: relevance (how well your profile and site match the search), distance (how close you are to the person searching) and prominence (reviews, links and mentions). I work on the parts you can influence: a complete and accurate Google Business Profile, clear service and location pages, consistent citations, a steady flow of genuine reviews, and a technically sound website. Nobody can honestly guarantee a position, but these are what move it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a local SEO citation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A citation is any online mention of your business name, address and phone number, such as a directory listing or a Bing Places profile. Google compares them, so they need to match your Google Business Profile exactly. I find and fix the ones that don't, and add the directories that are worth being on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does local SEO cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how competitive your services and area are, and whether we're starting from a new profile or an established one. After a first look at your Google Business Profile and website, I send a clear quote for the work, so you know the cost before anything starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with businesses in Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. I can meet businesses in Porto, Vila Nova de Gaia and nearby in person when it helps, and I work online with businesses in the rest of Portugal, the UK and the US. Local SEO works the same way in any city: the profile, the pages and the reviews have to match the area you serve."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -121,15 +194,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../../services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../../about/">About</a></li>
         <li><a href="../../work/">Work</a></li>
         <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
         <li><a href="../../contact/">Contact</a></li>
       </ul>
     </nav>
@@ -137,7 +230,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../../pt/services/marketing/" hreflang="pt-PT">PT</a>
+        <a href="../../pt/servicos/marketing-digital/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -153,15 +246,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../../services/marketing/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../../about/">About</a></li>
       <li><a href="../../work/">Work</a></li>
       <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
       <li><a href="../../contact/">Contact</a></li>
       <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -188,8 +301,11 @@
     <div class="container split">
       <div class="split-content">
         <span class="hero-badge">Marketing</span>
-        <h1 class="text-balance">Marketing Services for Businesses in Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I help businesses improve their visibility on Google, understand their website traffic, and turn more visitors into enquiries and customers.</p>
+        <h1 class="text-balance">Marketing Services: Local SEO, Google Business Profile and Ads</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I help businesses in Porto and Vila Nova de Gaia, and online further afield, with local SEO, Google Business Profile and ads: better visibility on Google and Google Maps, a clear view of the website traffic, and more visitors turned into enquiries and customers.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </div>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -229,7 +345,7 @@
       <div class="section-head">
         <span class="eyebrow">What I Do</span>
         <h2 id="marketing-list-heading" class="text-balance">SEO consulting and digital marketing in Porto</h2>
-        <p>As an SEO consultant, I work on local and technical SEO, your Google Business Profile and paid ads, with tracking in place so you can see what is working.</p>
+        <p>As an <a href="seo-consultant/">SEO consultant</a>, I work on local and technical SEO, your Google Business Profile and paid ads, with tracking in place so you can see what is working.</p>
       </div>
       <div class="card-grid card-grid--2">
 
@@ -246,6 +362,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>A working process for collecting reviews</div>
           </div>
           <p class="pillar-note">Help local customers find your business when they search on Google and Google Maps.</p>
+          <a href="google-business-profile/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about Google Business Profile optimization</a>
         </article>
 
         <article class="card pillar-card pillar-card--yellow" id="local-seo">
@@ -261,6 +378,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Content that matches what your customers actually search for</div>
           </div>
           <p class="pillar-note">The goal is durable search visibility. I won't promise a guaranteed #1 ranking, because no one honestly can.</p>
+          <a href="local-seo/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about my local SEO services</a>
         </article>
 
         <article class="card pillar-card pillar-card--red" id="google-ads">
@@ -276,6 +394,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ongoing performance measurement, not "set and forget"</div>
           </div>
           <p class="pillar-note">The focus is qualified traffic that's likely to convert, not just a higher click count.</p>
+          <a href="google-ads/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about Google Ads</a>
         </article>
 
         <article class="card pillar-card pillar-card--green-light" id="meta-ads">
@@ -290,6 +409,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Landing pages matched to the campaign</div>
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel and conversion tracking across the funnel</div>
           </div>
+          <a href="meta-ads/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about Facebook and Instagram ads</a>
         </article>
 
         <article class="card pillar-card" id="analytics-tracking">
@@ -304,6 +424,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Meta Pixel setup alongside Google's tracking</div>
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Event and conversion tracking tied to real business actions</div>
           </div>
+          <a href="ga4-analytics/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about GA4 setup</a>
         </article>
 
         <article class="card pillar-card pillar-card--yellow" id="conversion-optimization">
@@ -331,6 +452,18 @@
       <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
         <p style="font-size: 1.2rem; line-height: 1.5;">I don't guess what's working. Every campaign and every page change gets tracked, so we know within weeks, not months, whether it actually moved the needle.</p>
         <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- One consultant -->
+  <section class="section" aria-labelledby="one-consultant-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who It's For</span>
+        <h2 id="one-consultant-heading" class="text-balance">Local SEO for businesses, from one consultant</h2>
+        <p>A local SEO agency usually splits the work between an account manager, a content writer and a developer. I do it myself: the Google Business Profile, the pages on your site, the technical fixes in the code, and the tracking that shows which calls and enquiries came from search. Because I'm also a web developer, the problems an audit finds get fixed, not just listed in a report.</p>
+        <p style="margin-top: var(--space-2);">I meet local businesses in Porto, Vila Nova de Gaia and nearby when it helps, and work online with businesses in the rest of Portugal, the UK and the US. Local SEO for businesses is the same work wherever you are: accurate details, pages that are relevant to the area you serve, and real reasons for customers to choose you.</p>
       </div>
     </div>
   </section>
@@ -443,6 +576,42 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="hub-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="hub-faq-heading" class="text-balance">Local SEO questions, answered</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is local SEO?</summary>
+            <p>Local SEO is the work that helps a business show up when people nearby search for what it offers, both in the Google Maps results (the local pack) and in the normal results under them. It covers your Google Business Profile, the service and location pages on your website, consistent business details across directories, and reviews.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is local SEO important for a small business?</summary>
+            <p>Searches that include a place, or "near me", usually come from people who are ready to call or visit. If your business doesn't appear in the map results for those searches, those customers go to whoever does. And unlike ads, you don't pay for each visit that local search sends you.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do you rank in local SEO?</summary>
+            <p>Google looks at three things for map results: relevance (how well your profile and site match the search), distance (how close you are to the person searching) and prominence (reviews, links and mentions). I work on the parts you can influence: a complete and accurate Google Business Profile, clear service and location pages, consistent citations, a steady flow of genuine reviews, and a technically sound website. Nobody can honestly guarantee a position, but these are what move it.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is a local SEO citation?</summary>
+            <p>A citation is any online mention of your business name, address and phone number, such as a directory listing or a Bing Places profile. Google compares them, so they need to match your Google Business Profile exactly. I find and fix the ones that don't, and add the directories that are worth being on.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does local SEO cost?</summary>
+            <p>It depends on how competitive your services and area are, and whether we're starting from a new profile or an established one. After a first look at your Google Business Profile and website, I send a clear quote for the work, so you know the cost before anything starts.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you only work with businesses in Porto?</summary>
+            <p>No. I can meet businesses in Porto, Vila Nova de Gaia and nearby in person when it helps, and I work online with businesses in the rest of Portugal, the UK and the US. Local SEO works the same way in any city: the profile, the pages and the reviews have to match the area you serve.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
     <div class="container">
@@ -451,7 +620,7 @@
         <p>I'll take an initial look at your website and online presence and let you know, honestly, where I think there's room to improve.</p>
       </div>
       <div class="hero-actions">
-        <a href="../../contact/" class="btn btn-primary">Talk to Samama</a>
+        <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
       </div>
     </div>
   </section>
@@ -474,14 +643,32 @@
           <a href="../../about/">About</a>
           <a href="../../work/">Portfolio</a>
           <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
           <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -495,8 +682,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -510,6 +696,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20261002a" defer></script>
+<script src="../../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

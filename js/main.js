@@ -1,8 +1,11 @@
 // ==========================================================================
 // Cookie consent (GDPR)
-// Google Analytics loads with Consent Mode set to "denied" (see the inline
+// Google Analytics runs with Consent Mode set to "denied" (see the inline
 // script at the top of every <head>), so it sets no cookies until the visitor
-// accepts here. Microsoft Clarity isn't loaded at all until then. The choice
+// accepts here. gtag.js is fetched on the first interaction or on accept.
+// Microsoft Clarity isn't loaded at all until the visitor accepts, and for a
+// returning visitor who already accepted it waits for the first interaction
+// too, so neither script competes with the first paint. The choice
 // is stored in localStorage as 'granted' or 'denied'; any element with
 // [data-cookie-settings] (the footer link) reopens the banner.
 // ==========================================================================
@@ -47,6 +50,7 @@
   };
 
   const apply = (value) => {
+    if (value === 'granted' && typeof window.stLoadGtag === 'function') window.stLoadGtag();
     if (typeof window.gtag === 'function') {
       window.gtag('consent', 'update', { analytics_storage: value === 'granted' ? 'granted' : 'denied' });
     }
@@ -84,7 +88,11 @@
   });
 
   const saved = read();
-  if (saved === 'granted') loadClarity();
+  if (saved === 'granted') {
+    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((e) => {
+      addEventListener(e, loadClarity, { capture: true, passive: true, once: true });
+    });
+  }
   if (!saved) banner.hidden = false;
 })();
 

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>WordPress &amp; Shopify Developer in Porto | Samama Tahir</title>
-<meta name="description" content="Web development services in Porto: custom WordPress and Shopify builds, React applications, e-commerce, and API integrations built to last." />
+<title>Web Design in Portugal: WordPress, Shopify &amp; React | Samama Tahir</title>
+<meta name="description" content="Web design in Portugal from a freelance developer in Porto and Vila Nova de Gaia: WordPress, Shopify and React sites, custom e-commerce and SEO built in." />
 <link rel="canonical" href="https://samamatahir.com/services/web-development/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
 <link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="WordPress &amp; Shopify Developer in Porto | Samama Tahir" />
-<meta property="og:description" content="Web development services in Porto: custom WordPress and Shopify builds, React applications, e-commerce, and API integrations built to last." />
+<meta property="og:title" content="Web Design in Portugal: WordPress, Shopify &amp; React | Samama Tahir" />
+<meta property="og:description" content="Web design in Portugal from a freelance developer in Porto and Vila Nova de Gaia: WordPress, Shopify and React sites, custom e-commerce and SEO built in." />
 <meta property="og:url" content="https://samamatahir.com/services/web-development/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,15 @@
 <meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="WordPress &amp; Shopify Developer in Porto | Samama Tahir" />
-<meta name="twitter:description" content="Web development services in Porto: custom WordPress and Shopify builds, React applications, e-commerce, and API integrations built to last." />
+<meta name="twitter:title" content="Web Design in Portugal: WordPress, Shopify &amp; React | Samama Tahir" />
+<meta name="twitter:description" content="Web design in Portugal from a freelance developer in Porto and Vila Nova de Gaia: WordPress, Shopify and React sites, custom e-commerce and SEO built in." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -77,7 +86,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Web Development Services",
+  "name": "Web Design and Development in Portugal",
   "serviceType": "Web development",
   "provider": {
     "@type": "ProfessionalService",
@@ -96,9 +105,65 @@
     {
       "@type": "Country",
       "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
     }
   ],
-  "description": "Custom WordPress development, Shopify store development, custom web applications, and e-commerce for businesses in Porto and Portugal, and remote clients."
+  "description": "Web design and development in Portugal: WordPress websites, Shopify stores, custom React web applications and e-commerce for businesses in Porto, Vila Nova de Gaia and the rest of Portugal, and remote clients in the UK and the US."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the platform and the scope. A WordPress business site, a Shopify store and a custom React application are very different amounts of work, and so are five pages and fifty. I give a fixed quote once I know what the site needs to do, so you know the full cost before any work starts. Tell me about the project and I'll send you one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you build a website for a business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In four steps. I start by understanding what the site has to do for the business, then choose the platform and agree the scope. I build it with speed, security and mobile layouts in from the start, and after launch I stay reachable for fixes and changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should my site be WordPress, Shopify or a custom React build?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WordPress suits content-led sites and businesses that want to edit their own pages. Shopify is usually the simplest way to run an online store. A custom React application makes sense when the site has to do something no platform does well, such as a booking flow or a client dashboard. I recommend the one that fits, even when it's the smaller job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with UK and US businesses from Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, online. Portugal is on the same time zone as the UK, so I work your hours and we can talk during your day. For businesses in the US, my afternoons overlap with the East Coast morning, which gives us a daily window for video calls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your websites built with SEO in mind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I work as an SEO web developer as well as a builder: clean page structure, fast loading, proper titles and headings, structured data and a sitemap are part of every build, not extras added later. Ongoing SEO and Google Business Profile work is covered on my marketing services page."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -121,15 +186,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../../services/web-development/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../../about/">About</a></li>
         <li><a href="../../work/">Work</a></li>
         <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
         <li><a href="../../contact/">Contact</a></li>
       </ul>
     </nav>
@@ -137,7 +222,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../../pt/services/web-development/" hreflang="pt-PT">PT</a>
+        <a href="../../pt/servicos/criacao-de-sites/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -153,15 +238,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../../services/web-development/" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub" aria-current="page"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../../about/">About</a></li>
       <li><a href="../../work/">Work</a></li>
       <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
       <li><a href="../../contact/">Contact</a></li>
       <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -188,8 +293,11 @@
     <div class="container split">
       <div class="split-content">
         <span class="hero-badge">Web Development</span>
-        <h1 class="text-balance">Web Development Services for Businesses in Porto</h1>
-        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I design, build, and maintain WordPress websites, Shopify stores, and custom web applications, so the site behind your business is fast, secure, and actually easy to keep running.</p>
+        <h1 class="text-balance">Web Design in Portugal: WordPress, Shopify and React</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I'm a freelance web developer offering web design in Portugal from Porto and Vila Nova de Gaia. I design, build, and maintain WordPress websites, Shopify stores, and custom React applications, so the site behind your business is fast, secure, and actually easy to keep running.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </div>
       </div>
       <div class="split-panel split-panel--diagram">
         <div class="hero-diagram" aria-hidden="true">
@@ -229,7 +337,7 @@
       <div class="section-head">
         <span class="eyebrow">What I Build</span>
         <h2 id="build-heading" class="text-balance">WordPress and Shopify development in Porto</h2>
-        <p>I work as a WordPress developer and Shopify developer for businesses in Porto and abroad, and build custom web applications when a platform isn't the right fit.</p>
+        <p>I work as a WordPress developer and Shopify developer for businesses in Porto and abroad, and build custom web applications when a platform isn't the right fit. Every site is set up to be found on Google from the first day, not fixed for SEO afterwards.</p>
       </div>
       <div class="card-grid card-grid--2">
 
@@ -246,6 +354,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Performance optimization, security hardening, and plugin/theme cleanup</div>
           </div>
           <p class="pillar-note">A WordPress site that stays fast and secure as it grows, not one that slows down with every new plugin.</p>
+          <a href="wordpress-developer/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about my WordPress development work</a>
         </article>
 
         <article class="card pillar-card pillar-card--yellow" id="shopify-development">
@@ -260,6 +369,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>App integrations, including Appstle and Recharge for subscriptions</div>
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Store customization built around how customers actually shop</div>
           </div>
+          <a href="shopify-developer/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about my Shopify development work</a>
         </article>
 
         <article class="card pillar-card pillar-card--red" id="custom-web-applications">
@@ -275,6 +385,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>REST APIs, JWT and OAuth authentication, and webhooks for third-party integrations</div>
           </div>
           <p class="pillar-note">Built to fit how the business actually works, not forced into a template it doesn't need.</p>
+          <a href="custom-web-apps/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about custom web apps</a>
         </article>
 
         <article class="card pillar-card pillar-card--green-light" id="ecommerce">
@@ -282,7 +393,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </span>
           <h3>E-Commerce</h3>
-          <p>Online stores on WooCommerce or Shopify, built around a checkout that actually converts: clear payment flows, working subscription systems, and product setups that don't fight the platform.</p>
+          <p>Online stores on WooCommerce or Shopify, plus custom e-commerce website development when a store needs more than a theme, built around a checkout that actually converts: clear payment flows, working subscription systems, and product setups that don't fight the platform.</p>
           <div style="display: grid; gap: 0.5rem; margin-top: var(--space-2);">
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>WooCommerce and Shopify store builds and customization</div>
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Payment integrations and checkout workflows</div>
@@ -290,6 +401,7 @@
             <div class="pillar-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Product and store customization aimed at conversion, not just appearance</div>
           </div>
           <a href="../marketing/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">See how this connects to marketing and conversion work</a>
+          <a href="online-store/" class="link-more" style="margin-top: var(--space-2); display: inline-block;">More about building an online store</a>
         </article>
 
       </div>
@@ -302,6 +414,18 @@
       <div class="split-content" style="display: flex; flex-direction: column; justify-content: center;">
         <p style="font-size: 1.2rem; line-height: 1.5;">I write the code myself, on every project. No hand-off to a junior developer once the contract is signed, and no template dressed up as custom work.</p>
         <p style="margin-top: var(--space-2); font-weight: 800; color: var(--color-yellow);">Samama Tahir</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portugal and abroad -->
+  <section class="section" aria-labelledby="where-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who It's For</span>
+        <h2 id="where-heading" class="text-balance">Web design in Portugal, for clients here and abroad</h2>
+        <p>Most of my clients find me for one of two reasons. Some are businesses in Porto, Vila Nova de Gaia and nearby that want a web developer they can meet in person. Others are elsewhere in Portugal, the UK or the US and work with me online: they want a developer who works their hours and talks to them directly, not through an account manager. If you're in Porto, see <a href="../../web-developer-porto/">web developer in Porto</a>.</p>
+        <p style="margin-top: var(--space-2);">Either way, the site is planned around what it has to do for the business: bring in enquiries, sell products, or save someone hours of manual work. For online stores that includes custom e-commerce website development: catalogue and checkout logic, integrations with stock, shipping or accounting tools, and the tracking that shows which products actually sell.</p>
       </div>
     </div>
   </section>
@@ -414,6 +538,38 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="webdev-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="webdev-faq-heading" class="text-balance">Web design questions, answered</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>How much does a website cost in Portugal?</summary>
+            <p>It depends on the platform and the scope. A WordPress business site, a Shopify store and a custom React application are very different amounts of work, and so are five pages and fifty. I give a fixed quote once I know what the site needs to do, so you know the full cost before any work starts. Tell me about the project and I'll send you one.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do you build a website for a business?</summary>
+            <p>In four steps. I start by understanding what the site has to do for the business, then choose the platform and agree the scope. I build it with speed, security and mobile layouts in from the start, and after launch I stay reachable for fixes and changes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should my site be WordPress, Shopify or a custom React build?</summary>
+            <p>WordPress suits content-led sites and businesses that want to edit their own pages. Shopify is usually the simplest way to run an online store. A custom React application makes sense when the site has to do something no platform does well, such as a booking flow or a client dashboard. I recommend the one that fits, even when it's the smaller job.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with UK and US businesses from Portugal?</summary>
+            <p>Yes, online. Portugal is on the same time zone as the UK, so I work your hours and we can talk during your day. For businesses in the US, my afternoons overlap with the East Coast morning, which gives us a daily window for video calls.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are your websites built with SEO in mind?</summary>
+            <p>Yes. I work as an SEO web developer as well as a builder: clean page structure, fast loading, proper titles and headings, structured data and a sitemap are part of every build, not extras added later. Ongoing SEO and Google Business Profile work is covered on <a href="../marketing/">my marketing services page</a>.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
     <div class="container">
@@ -422,7 +578,7 @@
         <p>Tell me what the business needs, and I'll be honest about the right way to build it.</p>
       </div>
       <div class="hero-actions">
-        <a href="../../contact/" class="btn btn-primary">Talk to Samama</a>
+        <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
       </div>
     </div>
   </section>
@@ -445,14 +601,32 @@
           <a href="../../about/">About</a>
           <a href="../../work/">Portfolio</a>
           <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
           <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -466,8 +640,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -481,6 +654,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20261002a" defer></script>
+<script src="../../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

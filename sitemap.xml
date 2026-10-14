@@ -3,142 +3,406 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://samamatahir.com/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/services/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
-  </url>
-  <url>
-    <loc>https://samamatahir.com/services/web-development/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
-  </url>
-  <url>
-    <loc>https://samamatahir.com/services/marketing/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/marketing/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
-  </url>
-  <url>
-    <loc>https://samamatahir.com/services/ai-automation/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/ai-automation/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
-  </url>
-  <url>
     <loc>https://samamatahir.com/about/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/about/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/about/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/sobre/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/about/" />
   </url>
   <url>
+    <loc>https://samamatahir.com/blog/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/ecommerce-website-development-cost/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/ecommerce-website-development-cost/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/ga4-setup-guide/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/ga4-setup-guide/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/ga4-setup-guide/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/" />
+  </url>
+  <url>
     <loc>https://samamatahir.com/contact/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/contact/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contact/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contacto/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/contact/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/work/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/work/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
-  </url>
-  <url>
     <loc>https://samamatahir.com/faq/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/faq/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/faq/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/faq/" />
   </url>
   <url>
     <loc>https://samamatahir.com/privacy/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/privacy/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/privacidade/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/privacy/" />
   </url>
   <url>
+    <loc>https://samamatahir.com/services/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/ai-automation/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/automacao-ia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/ga4-analytics/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/google-ads/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/google-ads/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/google-business-profile/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/google-business-profile/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/google-meu-negocio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/google-business-profile/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/local-seo/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/local-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/local-seo/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/meta-ads/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/meta-ads/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/anuncios-facebook-instagram/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/meta-ads/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/marketing/seo-consultant/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/consultor-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/custom-web-apps/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/online-store/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/online-store/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/criar-loja-online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/online-store/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/shopify-developer/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/wordpress-developer/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/wordpress-developer/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/wordpress-developer/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/services/web-development/wordpress-developer/hire/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/wordpress-developer/hire/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/contratar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/wordpress-developer/hire/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/web-developer-porto/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/web-developer-porto/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/criacao-de-sites-porto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/web-developer-porto/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/work/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/portefolio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
+  </url>
+  <url>
     <loc>https://samamatahir.com/pt/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/services/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+    <loc>https://samamatahir.com/pt/blog/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/services/web-development/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/web-development/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+    <loc>https://samamatahir.com/pt/blog/como-criar-loja-online/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/como-criar-loja-online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/como-criar-loja-online/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/services/marketing/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/marketing/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
+    <loc>https://samamatahir.com/pt/blog/como-funciona-google-ads/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/como-funciona-google-ads/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/services/ai-automation/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/ai-automation/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
+    <loc>https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/about/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/about/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/about/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/about/" />
+    <loc>https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/contact/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/blog/o-que-e-seo/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/o-que-e-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/o-que-e-seo/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/blog/precos-shopify-portugal/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/precos-shopify-portugal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/precos-shopify-portugal/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/contacto/</loc>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/contact/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contact/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contacto/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/contact/" />
   </url>
   <url>
-    <loc>https://samamatahir.com/pt/work/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/work/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
+    <loc>https://samamatahir.com/pt/criacao-de-sites-porto/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/web-developer-porto/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/criacao-de-sites-porto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/web-developer-porto/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/criacao-de-sites-vila-nova-de-gaia/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/criacao-de-sites-vila-nova-de-gaia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/pt/criacao-de-sites-vila-nova-de-gaia/" />
   </url>
   <url>
     <loc>https://samamatahir.com/pt/faq/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/faq/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/faq/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/faq/" />
   </url>
   <url>
+    <loc>https://samamatahir.com/pt/portefolio/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/work/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/portefolio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/work/" />
+  </url>
+  <url>
     <loc>https://samamatahir.com/pt/privacidade/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/privacy/" />
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/privacidade/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/privacy/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/automacao-ia/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/ai-automation/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/automacao-ia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/ai-automation/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/criar-loja-online/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/online-store/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/criar-loja-online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/online-store/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/shopify-developer/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/wordpress-developer/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/wordpress-developer/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/contratar/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/wordpress-developer/hire/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/contratar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/wordpress-developer/hire/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/anuncios-facebook-instagram/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/meta-ads/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/anuncios-facebook-instagram/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/meta-ads/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/consultor-seo/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/consultor-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/seo-consultant/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/google-ads/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/google-ads/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/servicos/marketing-digital/google-meu-negocio/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/google-business-profile/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/google-meu-negocio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/google-business-profile/" />
+  </url>
+  <url>
+    <loc>https://samamatahir.com/pt/sobre/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samamatahir.com/about/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/sobre/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samamatahir.com/about/" />
   </url>
 </urlset>

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,21 +18,26 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Programador Web no Porto e Criação de Sites | Samama Tahir</title>
-<meta name="description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
+<title>Criação de Sites no Porto e Gaia | Samama Tahir</title>
+<meta name="description" content="Sou o Samama Tahir, programador web freelance no Porto e em Vila Nova de Gaia. Faço criação de sites profissionais, lojas online e SEO local para empresas." />
 <link rel="canonical" href="https://samamatahir.com/pt/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/" />
 <link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Programador Web no Porto e Criação de Sites | Samama Tahir" />
-<meta property="og:description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
+<meta property="og:title" content="Criação de Sites no Porto e Gaia | Samama Tahir" />
+<meta property="og:description" content="Sou o Samama Tahir, programador web freelance no Porto e em Vila Nova de Gaia. Faço criação de sites profissionais, lojas online e SEO local para empresas." />
 <meta property="og:url" content="https://samamatahir.com/pt/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,16 @@
 <meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Programador Web no Porto e Criação de Sites | Samama Tahir" />
-<meta name="twitter:description" content="Sou o Samama Tahir, programador web full-stack no Porto. Faço criação de sites rápidos, lojas online e SEO para ajudar empresas a crescer online." />
+<meta name="twitter:title" content="Criação de Sites no Porto e Gaia | Samama Tahir" />
+<meta name="twitter:description" content="Sou o Samama Tahir, programador web freelance no Porto e em Vila Nova de Gaia. Faço criação de sites profissionais, lojas online e SEO local para empresas." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../images/samama-tahir-full-stack-web-developer.webp" as="image" type="image/webp" fetchpriority="high" />
 
-<link rel="stylesheet" href="../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -97,12 +107,10 @@
     "Website performance optimization"
   ],
   "sameAs": [
-    "https://www.linkedin.com/in/samama-tahir/",
+    "https://www.linkedin.com/in/samama-tahir",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456",
-    "https://scholar.google.com/citations?user=tdhBV4QAAAAJ",
-    "https://www.google.com/search?kgmid=/g/11ntcr1gmr"
+    "https://www.youtube.com/@samitahir1456"
   ],
   "worksFor": {
     "@id": "https://samamatahir.com/#business"
@@ -158,7 +166,7 @@
   "name": "Samama Tahir",
   "alternateName": "Samama Tahir, Programador Web no Porto",
   "url": "https://samamatahir.com/pt/",
-  "description": "Portefólio e serviços de Samama Tahir, programador web full-stack e especialista em crescimento digital no Porto, Portugal.",
+  "description": "Portefólio e serviços de Samama Tahir, programador web freelance e especialista em crescimento digital no Porto, com clientes em Portugal, no Reino Unido e nos Estados Unidos.",
   "inLanguage": "pt-PT",
   "publisher": {
     "@id": "https://samamatahir.com/#person"
@@ -174,7 +182,7 @@
   "@type": "ProfessionalService",
   "@id": "https://samamatahir.com/#business",
   "name": "Samama Tahir",
-  "description": "Serviços de desenvolvimento web full-stack e crescimento digital para empresas no Porto, Vila Nova de Gaia e Portugal, e clientes remotos/internacionais.",
+  "description": "Criação de sites para empresas e serviços de crescimento digital no Porto, em Vila Nova de Gaia e no resto de Portugal, e remotamente para clientes no Reino Unido e nos Estados Unidos.",
   "url": "https://samamatahir.com/pt/",
   "telephone": "+351932426753",
   "email": "hello@samamatahir.com",
@@ -190,6 +198,14 @@
     {
       "@type": "Country",
       "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
     }
   ],
   "address": {
@@ -203,11 +219,10 @@
     "@id": "https://samamatahir.com/#person"
   },
   "sameAs": [
-    "https://www.linkedin.com/in/samama-tahir/",
+    "https://www.linkedin.com/in/samama-tahir",
     "https://www.upwork.com/freelancers/samamatahir",
     "https://www.fiverr.com/kingdom_designr",
-    "https://www.youtube.com/@samitahir1456",
-    "https://www.google.com/search?kgmid=/g/11ntcr1gmr"
+    "https://www.youtube.com/@samitahir1456"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -228,7 +243,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Desenvolvimento Web",
-          "url": "https://samamatahir.com/pt/services/web-development/",
+          "url": "https://samamatahir.com/pt/servicos/criacao-de-sites/",
           "provider": {
             "@id": "https://samamatahir.com/#business"
           }
@@ -239,7 +254,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Marketing",
-          "url": "https://samamatahir.com/pt/services/marketing/",
+          "url": "https://samamatahir.com/pt/servicos/marketing-digital/",
           "provider": {
             "@id": "https://samamatahir.com/#business"
           }
@@ -250,7 +265,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "IA e Automação",
-          "url": "https://samamatahir.com/pt/services/ai-automation/",
+          "url": "https://samamatahir.com/pt/servicos/automacao-ia/",
           "provider": {
             "@id": "https://samamatahir.com/#business"
           }
@@ -276,20 +291,40 @@
     <nav class="primary-nav" aria-label="Principal">
       <ul>
         <li class="nav-dropdown">
-          <a href="services/">
+          <a href="servicos/">
             <span class="nav-star" aria-hidden="true">✦</span>Serviços
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-            <li><a href="services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
           </ul>
         </li>
-        <li><a href="about/">Sobre</a></li>
-        <li><a href="work/">Portefólio</a></li>
+        <li><a href="sobre/">Sobre</a></li>
+        <li><a href="portefolio/">Portefólio</a></li>
         <li><a href="faq/">FAQ</a></li>
-        <li><a href="contact/">Contacto</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contacto/">Contacto</a></li>
       </ul>
     </nav>
 
@@ -299,7 +334,7 @@
         <span class="is-active" aria-current="page">PT</span>
       </div>
 
-      <a href="contact/" class="btn btn-primary header-cta">Vamos falar</a>
+      <a href="contacto/" class="btn btn-primary header-cta">Vamos falar</a>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -311,18 +346,38 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
       <li class="mobile-nav-services">
-        <a href="services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-          <li><a href="services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+        <a href="servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
         </ul>
       </li>
-      <li><a href="about/">Sobre</a></li>
-      <li><a href="work/">Portefólio</a></li>
+      <li><a href="sobre/">Sobre</a></li>
+      <li><a href="portefolio/">Portefólio</a></li>
       <li><a href="faq/">FAQ</a></li>
-      <li><a href="contact/">Contacto</a></li>
-      <li><a href="contact/" class="btn btn-primary btn-block">Vamos falar</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="contacto/">Contacto</a></li>
+      <li><a href="contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
     </ul>
   </nav>
 </header>
@@ -335,10 +390,10 @@
       <div>
         <span class="hero-badge">Porto, Portugal</span>
         <h1 class="text-balance">Construo sites e sistemas digitais que ajudam empresas a crescer online.</h1>
-        <p class="hero-text">Sou o Samama Tahir, programador web full-stack e especialista em crescimento digital baseado no Porto, Portugal. Ajudo empresas a construir sites rápidos, melhorar a sua visibilidade no Google e transformar mais visitantes em clientes.</p>
+        <p class="hero-text">Sou o Samama Tahir, programador web freelance e especialista em crescimento digital no Porto, Portugal. Faço criação de sites para empresas: sites rápidos, lojas online e SEO local, para melhorar a sua visibilidade no Google e transformar mais visitantes em clientes.</p>
         <div class="hero-actions">
-          <a href="contact/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
-          <a href="services/" class="btn btn-secondary">Ver os meus serviços</a>
+          <a href="contacto/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
+          <a href="servicos/" class="btn btn-secondary">Ver os meus serviços</a>
         </div>
         <a href="#intro-video" class="hero-video-link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver o meu vídeo de apresentação <span class="hero-video-link-note">(em inglês)</span></a>
         <div class="hero-trust-row">
@@ -380,7 +435,7 @@
         <h2 id="intro-video-heading" class="text-balance">O que faço, nas minhas palavras</h2>
         <p>Um vídeo curto em que explico os serviços que ofereço e como posso ajudar o seu negócio, para saber com quem vai trabalhar antes de falarmos. O vídeo está em inglês.</p>
         <div class="hero-actions">
-          <a href="contact/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
+          <a href="contacto/" class="btn btn-primary">Vamos falar sobre o seu projeto</a>
         </div>
       </div>
       <div>
@@ -466,16 +521,35 @@
         <article class="card help-card">
           <h3>Construir</h3>
           <p>Sites, lojas de e-commerce e aplicações web personalizadas, construídos para serem rápidos, seguros e fáceis de manter.</p>
-          <a href="services/web-development/" class="link-more">Explorar serviços de desenvolvimento web</a>
+          <ul class="tag-list" aria-label="Serviços de desenvolvimento web">
+            <li class="tag"><a href="servicos/criacao-de-sites/wordpress/">WordPress</a></li>
+            <li class="tag"><a href="servicos/criacao-de-sites/programador-shopify/">Shopify</a></li>
+            <li class="tag"><a href="servicos/criacao-de-sites/aplicacoes-web/">Aplicações web (React)</a></li>
+            <li class="tag"><a href="servicos/criacao-de-sites/criar-loja-online/">Lojas online</a></li>
+          </ul>
+          <a href="servicos/criacao-de-sites/" class="link-more">Explorar serviços de desenvolvimento web</a>
         </article>
         <article class="card help-card">
           <h3>Crescer</h3>
           <p>Ser encontrado no Google: Perfil de Empresa no Google, SEO local e anúncios pagos que trazem as pessoas certas até ao seu site.</p>
-          <a href="services/marketing/" class="link-more">Explorar serviços de marketing</a>
+          <ul class="tag-list" aria-label="Serviços de marketing">
+            <li class="tag"><a href="servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+            <li class="tag"><a href="servicos/marketing-digital/">SEO local</a></li>
+            <li class="tag"><a href="servicos/marketing-digital/consultor-seo/">Consultoria SEO</a></li>
+            <li class="tag"><a href="servicos/marketing-digital/google-ads/">Google Ads</a></li>
+            <li class="tag"><a href="servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+          </ul>
+          <a href="servicos/marketing-digital/" class="link-more">Explorar serviços de marketing</a>
         </article>
         <article class="card help-card">
           <h3>Melhorar</h3>
           <p>Perceber o seu tráfego, acompanhar o que importa, e melhorar a experiência que transforma visitantes em clientes.</p>
+          <ul class="tag-list" aria-label="Serviços de análise e automação">
+            <li class="tag"><a href="servicos/marketing-digital/ga4-analytics/">GA4 e Tag Manager</a></li>
+            <li class="tag"><a href="servicos/marketing-digital/ga4-analytics/">Acompanhamento de conversões</a></li>
+            <li class="tag">IA e automação</li>
+          </ul>
+          <a href="servicos/automacao-ia/" class="link-more">Explorar serviços de IA e automação</a>
         </article>
       </div>
 
@@ -533,7 +607,7 @@
             Construído a pensar na conversão, não apenas na aparência
           </li>
         </ul>
-        <a href="services/web-development/" class="link-more">Explorar serviços de desenvolvimento web</a>
+        <a href="servicos/criacao-de-sites/" class="link-more">Explorar serviços de desenvolvimento web</a>
       </div>
       <div class="split-panel split-panel--photo">
         <img src="../images/samama-tahir-web-development-laptop.webp" alt="Portátil do Samama Tahir a mostrar código num editor, a trabalhar num projeto web" width="1400" height="933" loading="lazy" />
@@ -553,7 +627,7 @@
         <p>Uma empresa também precisa de ser encontrada no Google, perceber de onde vêm realmente os seus visitantes, acompanhar quais se transformam em pedidos de contacto, e continuar a melhorar esse percurso ao longo do tempo.</p>
         <p style="margin-top: 1rem;">Trabalho o Perfil de Empresa no Google, SEO local e técnico, Google Ads, Meta Ads, e a configuração de analítica (GA4, Google Tag Manager) que mostra o que está realmente a funcionar.</p>
         <div class="hero-actions" style="margin-top: 1.5rem;">
-          <a href="services/marketing/" class="btn btn-primary">Ver como funciona o marketing</a>
+          <a href="servicos/marketing-digital/" class="btn btn-primary">Ver como funciona o marketing</a>
         </div>
       </div>
     </div>
@@ -615,7 +689,7 @@
           </div>
         </div>
         <div class="hero-actions" style="margin-top: var(--space-3);">
-          <a href="contact/" class="btn btn-primary">Pergunte-me o que quiser</a>
+          <a href="contacto/" class="btn btn-primary">Pergunte-me o que quiser</a>
         </div>
         <p style="margin-top: var(--space-2);"><a href="faq/" class="link-more">Ver todas as perguntas</a></p>
       </div>
@@ -690,7 +764,7 @@
             <span class="review-stars-fill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg></span>
             <span class="review-rating" aria-hidden="true">5,0</span>
           </div>
-          <p class="review-quote">Samama did an excellent job on our WordPress plugin development project with complex API integration. His communication was great, he showed strong commitment, and paid close attention to every detail. He was always available from 9am to 5pm EST and quick to jump on calls when needed. Highly reliable and committed—we’d definitely work with him again.</p>
+          <p class="review-quote">Samama did an excellent job on our WordPress plugin development project with complex API integration. His communication was great, he showed strong commitment, and paid close attention to every detail. He was always available from 9am to 5pm EST and quick to jump on calls when needed. Highly reliable and committed. We’d definitely work with him again.</p>
           <span class="review-tag">Custom wordpress form with API integration for logistics</span>
         </div>
 
@@ -2165,10 +2239,26 @@ Awesome seller, highly recommended!!!</p>
   <!-- Porto / Portugal -->
   <section class="section" aria-labelledby="location-heading">
     <div class="container">
-      <span class="eyebrow">Baseado no Porto, Portugal</span>
-      <h2 id="location-heading" class="text-balance">A trabalhar localmente no Porto, e remotamente onde estiver</h2>
-      <p>Estou baseado no Porto e trabalho com empresas aqui e em Vila Nova de Gaia que procuram uma perspetiva local, bem como com clientes por todo Portugal e empresas internacionais com quem trabalho remotamente. Onde quer que esteja, a abordagem é a mesma: perceber primeiro o negócio, e depois construir e melhorar em torno dele.</p>
-      <p class="inline-links">Quer saber mais primeiro? Leia <a href="about/">sobre mim e a forma como trabalho</a>, veja os meus <a href="services/ai-automation/">serviços de IA e automação</a>, ou <a href="../" hreflang="en" lang="en">view the site in English</a>.</p>
+      <div class="section-head">
+        <span class="eyebrow">Com Quem Trabalho</span>
+        <h2 id="location-heading" class="text-balance">Criação de sites profissionais para empresas no Porto e em Gaia</h2>
+        <p>Estou baseado no Porto e, quando é útil, posso reunir-me presencialmente com empresas do Porto, de Vila Nova de Gaia e arredores. Com clientes no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online. Faço criação de sites para pequenas empresas e para negócios com mais estrutura, e o web design é pensado desde o início para ser encontrado no Google. Quem procura criação de sites no Porto ou web design no Porto fala diretamente comigo, sem passar por uma agência. Onde quer que esteja, a abordagem é a mesma: perceber primeiro o negócio, e depois construir e melhorar em torno dele.</p>
+      </div>
+      <div class="card-grid card-grid--3 work-with-grid">
+        <article class="card">
+          <h3>Portugal</h3>
+          <p>Presencialmente no Porto, em Vila Nova de Gaia e arredores quando é útil, e online em qualquer outro ponto do país. Trabalho em português e em inglês. Veja <a href="criacao-de-sites-porto/">criação de sites no Porto</a> e <a href="criacao-de-sites-vila-nova-de-gaia/">em Gaia</a>.</p>
+        </article>
+        <article class="card">
+          <h3>Reino Unido</h3>
+          <p>O trabalho é feito totalmente online. Portugal está no mesmo fuso horário do Reino Unido, por isso temos o mesmo horário de trabalho, e chamadas, atualizações e correções acontecem durante o seu dia.</p>
+        </article>
+        <article class="card">
+          <h3>Estados Unidos</h3>
+          <p>O trabalho é feito totalmente online. As minhas tardes coincidem com as manhãs da costa leste, o que nos dá uma janela diária para videochamadas, e o resto avança com atualizações por escrito.</p>
+        </article>
+      </div>
+      <p class="inline-links" style="margin-top: var(--space-3);">Quer saber mais primeiro? Leia <a href="sobre/">sobre mim e a forma como trabalho</a>, veja os meus <a href="servicos/automacao-ia/">serviços de IA e automação</a>, ou <a href="../" hreflang="en" lang="en">view the site in English</a>.</p>
     </div>
   </section>
 
@@ -2180,7 +2270,7 @@ Awesome seller, highly recommended!!!</p>
         <p>Diga-me o que está a tentar construir, melhorar ou fazer crescer. Vou dar uma vista de olhos e dizer-lhe honestamente onde posso ajudar.</p>
       </div>
       <div class="hero-actions">
-        <a href="contact/" class="btn btn-primary">Iniciar uma conversa</a>
+        <a href="contacto/" class="btn btn-primary">Iniciar uma conversa</a>
       </div>
     </div>
   </section>
@@ -2199,19 +2289,37 @@ Awesome seller, highly recommended!!!</p>
         <p class="footer-heading">Navegação</p>
         <div class="footer-links">
           <a href="./">Início</a>
-          <a href="services/">Serviços</a>
-          <a href="about/">Sobre</a>
-          <a href="work/">Portefólio</a>
+          <a href="servicos/">Serviços</a>
+          <a href="sobre/">Sobre</a>
+          <a href="portefolio/">Portefólio</a>
           <a href="faq/">FAQ</a>
+          <a href="blog/">Blog</a>
           <a href="../" hreflang="en" lang="en">English</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Serviços</p>
+        <p class="footer-heading">Desenvolvimento Web</p>
         <div class="footer-links">
-          <a href="services/web-development/">Desenvolvimento Web</a>
-          <a href="services/marketing/">Marketing</a>
-          <a href="services/ai-automation/">IA e Automação</a>
+          <a href="../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../pt/servicos/automacao-ia/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -2224,8 +2332,7 @@ Awesome seller, highly recommended!!!</p>
       <div>
         <p class="footer-heading">Redes Sociais</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Perfil no Google</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -2239,6 +2346,6 @@ Awesome seller, highly recommended!!!</p>
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002a" defer></script>
+<script src="../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

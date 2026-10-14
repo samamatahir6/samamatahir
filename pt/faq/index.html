@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,18 +18,23 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
 <title>FAQ | Samama Tahir, Desenvolvimento Web &amp; Marketing no Porto</title>
 <meta name="description" content="Respostas a perguntas comuns sobre desenvolvimento web, marketing e automação com IA, de Samama Tahir, programador full-stack no Porto." />
@@ -59,8 +68,8 @@
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -79,8 +88,13 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quanto custa um website?",
+      "name": "Quanto custa a criação de um site em Portugal?",
       "acceptedAnswer": { "@type": "Answer", "text": "O custo varia consoante seja um site em WordPress, uma loja Shopify, ou uma aplicação totalmente personalizada, e a quantidade de conteúdo e funcionalidades necessárias. Em vez de indicar um valor que não seria correto para o seu projeto, prefiro perceber o que realmente precisa e dar-lhe um valor real." }
+    },
+    {
+      "@type": "Question",
+      "name": "Porque é que não tem preços no site?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Porque uma tabela de preços estaria errada para a maioria dos projetos. Um site de cinco páginas em WordPress, uma loja Shopify com centenas de produtos e uma aplicação web em React são trabalhos muito diferentes. Depois de uma chamada gratuita de 20 minutos, envio um orçamento por escrito com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos." }
     },
     {
       "@type": "Question",
@@ -104,6 +118,11 @@
     },
     {
       "@type": "Question",
+      "name": "Trabalha com clientes no Reino Unido e nos Estados Unidos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim, online. Portugal está no mesmo fuso horário do Reino Unido, por isso temos o mesmo horário de trabalho, e as minhas tardes coincidem com as manhãs da costa leste dos Estados Unidos, o que nos dá uma janela diária para videochamadas. As reuniões presenciais são só para empresas do Porto, de Vila Nova de Gaia e arredores." }
+    },
+    {
+      "@type": "Question",
       "name": "E se ainda não souber bem o que preciso?",
       "acceptedAnswer": { "@type": "Answer", "text": "É normal, e é um bom ponto de partida. Diga-me o que se passa com o negócio, e ajudo-o a perceber se a prioridade é o site, o marketing, ou outra coisa primeiro." }
     },
@@ -111,6 +130,11 @@
       "@type": "Question",
       "name": "WordPress ou Shopify, qual é melhor para mim?",
       "acceptedAnswer": { "@type": "Answer", "text": "O WordPress tende a servir bem negócios com muito conteúdo ou baseados em serviços, enquanto o Shopify foi feito especificamente para e-commerce. Se nenhum dos dois se encaixar no que realmente pretende, uma aplicação personalizada pode fazer mais sentido. Ajudo-o a perceber qual." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a melhor plataforma para criar uma loja online em Portugal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para a maioria das lojas que estão a começar, o Shopify é o caminho mais simples: o alojamento, a segurança e os pagamentos já vêm incluídos. O WooCommerce, em WordPress, faz mais sentido quando a loja precisa de muito conteúdo, de regras de produto fora do comum, ou quando já tem um site em WordPress. Explico as diferenças na página sobre como criar uma loja online." }
     },
     {
       "@type": "Question",
@@ -161,6 +185,16 @@
       "@type": "Question",
       "name": "O meu Perfil de Empresa no Google está bem configurado?",
       "acceptedAnswer": { "@type": "Answer", "text": "Muitos perfis não têm categorias corretas, informação completa, ou um processo real de recolha de avaliações. Posso rever o seu e dizer-lhe honestamente o que falta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como otimizar o Google Meu Negócio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Escolha a categoria principal certa, preencha os serviços, o horário e a zona que serve, adicione fotografias reais, peça avaliações a clientes verdadeiros e responda a todas, e publique novidades com regularidade. Também ajuda que o nome, a morada e o telefone sejam iguais no site e nos diretórios. Se preferir, trato disto por si: veja Google Meu Negócio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Pode criar e verificar o Google Meu Negócio da minha empresa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Posso criar um perfil novo ou ajudar a reivindicar um que já exista, escolher as categorias certas, preencher serviços, horário e área de serviço, e adicionar fotografias. É o Google que decide como a empresa é verificada, muitas vezes com um vídeo curto do espaço, e acompanho-o no método que for pedido." }
     },
     {
       "@type": "Question",
@@ -215,7 +249,7 @@
     {
       "@type": "Question",
       "name": "Preciso de saber programar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Diga-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la." }
     },
     {
       "@type": "Question",
@@ -241,20 +275,40 @@
     <nav class="primary-nav" aria-label="Principal">
       <ul>
         <li class="nav-dropdown">
-          <a href="../services/">
+          <a href="../servicos/">
             <span class="nav-star" aria-hidden="true">✦</span>Serviços
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
           </ul>
         </li>
-        <li><a href="../about/">Sobre</a></li>
-        <li><a href="../work/">Portefólio</a></li>
+        <li><a href="../sobre/">Sobre</a></li>
+        <li><a href="../portefolio/">Portefólio</a></li>
         <li><a href="../faq/" aria-current="page">FAQ</a></li>
-        <li><a href="../contact/">Contacto</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../contacto/">Contacto</a></li>
       </ul>
     </nav>
 
@@ -264,7 +318,7 @@
         <span class="is-active" aria-current="page">PT</span>
       </div>
 
-      <a href="../contact/" class="btn btn-primary header-cta">Vamos falar</a>
+      <a href="../contacto/" class="btn btn-primary header-cta">Vamos falar</a>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -276,18 +330,38 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+        <a href="../servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
         </ul>
       </li>
-      <li><a href="../about/">Sobre</a></li>
-      <li><a href="../work/">Portefólio</a></li>
+      <li><a href="../sobre/">Sobre</a></li>
+      <li><a href="../portefolio/">Portefólio</a></li>
       <li><a href="../faq/" aria-current="page">FAQ</a></li>
-      <li><a href="../contact/">Contacto</a></li>
-      <li><a href="../contact/" class="btn btn-primary btn-block">Vamos falar</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../contacto/">Contacto</a></li>
+      <li><a href="../contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
     </ul>
   </nav>
 </header>
@@ -310,7 +384,7 @@
     <div class="container">
       <span class="hero-badge">FAQ</span>
       <h1 class="text-balance">Perguntas Frequentes</h1>
-      <p style="font-size: 1.15rem; margin-top: var(--space-3);">Cada pergunta abaixo é algo que um cliente real já perguntou antes ou durante um projeto. Se a sua não estiver aqui, <a href="../contact/" style="text-decoration: underline; color: var(--color-yellow);">pergunte</a>.</p>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3);">Cada pergunta abaixo é algo que um cliente real já perguntou antes ou durante um projeto. Se a sua não estiver aqui, <a href="../contacto/" style="text-decoration: underline; color: var(--color-yellow);">pergunte</a>.</p>
     </div>
   </section>
 
@@ -327,8 +401,12 @@
         </div>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>Quanto custa um website?</summary>
+            <summary>Quanto custa a criação de um site em Portugal?</summary>
             <p>O custo varia consoante seja um site em WordPress, uma loja Shopify, ou uma aplicação totalmente personalizada, e a quantidade de conteúdo e funcionalidades necessárias. Em vez de indicar um valor que não seria correto para o seu projeto, prefiro perceber o que realmente precisa e dar-lhe um valor real.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Porque é que não tem preços no site?</summary>
+            <p>Porque uma tabela de preços estaria errada para a maioria dos projetos. Um site de cinco páginas em WordPress, uma loja Shopify com centenas de produtos e uma aplicação web em React são trabalhos muito diferentes. Depois de uma chamada gratuita de 20 minutos, envio um orçamento por escrito com o âmbito e o que está incluído, para que saiba o custo total antes de começarmos.</p>
           </details>
           <details class="faq-item">
             <summary>Preciso de um novo website ou só de marketing?</summary>
@@ -347,12 +425,20 @@
             <p>Sim. Estou baseado no Porto e trabalho com negócios locais presencialmente quando é útil, mas a maior parte do trabalho, desenvolvimento, marketing, e comunicação, funciona igualmente bem remotamente com clientes em qualquer lugar.</p>
           </details>
           <details class="faq-item">
+            <summary>Trabalha com clientes no Reino Unido e nos Estados Unidos?</summary>
+            <p>Sim, online. Portugal está no mesmo fuso horário do Reino Unido, por isso temos o mesmo horário de trabalho, e as minhas tardes coincidem com as manhãs da costa leste dos Estados Unidos, o que nos dá uma janela diária para videochamadas. As reuniões presenciais são só para empresas do Porto, de Vila Nova de Gaia e arredores.</p>
+          </details>
+          <details class="faq-item">
             <summary>E se ainda não souber bem o que preciso?</summary>
             <p>É normal, e é um bom ponto de partida. Diga-me o que se passa com o negócio, e ajudo-o a perceber se a prioridade é o site, o marketing, ou outra coisa primeiro.</p>
           </details>
           <details class="faq-item">
             <summary>WordPress ou Shopify, qual é melhor para mim?</summary>
             <p>O WordPress tende a servir bem negócios com muito conteúdo ou baseados em serviços, enquanto o Shopify foi feito especificamente para e-commerce. Se nenhum dos dois se encaixar no que realmente pretende, uma aplicação personalizada pode fazer mais sentido. Ajudo-o a perceber qual.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Qual a melhor plataforma para criar uma loja online em Portugal?</summary>
+            <p>Para a maioria das lojas que estão a começar, o Shopify é o caminho mais simples: o alojamento, a segurança e os pagamentos já vêm incluídos. O WooCommerce, em WordPress, faz mais sentido quando a loja precisa de muito conteúdo, de regras de produto fora do comum, ou quando já tem um site em WordPress. Explico as diferenças na página sobre como <a href="../servicos/criacao-de-sites/criar-loja-online/">criar uma loja online</a>.</p>
           </details>
           <details class="faq-item">
             <summary>Pode ajudar depois do site estar no ar?</summary>
@@ -390,7 +476,7 @@
             <p>Normalmente é uma combinação de imagens não otimizadas, plugins a mais, alojamento fraco, ou código que nunca foi limpo. Posso auditar o que está realmente a causar o problema em vez de adivinhar.</p>
           </details>
         </div>
-        <p style="margin-top: var(--space-3);"><a href="../services/web-development/" class="link-more">Mais sobre serviços de desenvolvimento web</a></p>
+        <p style="margin-top: var(--space-3);"><a href="../servicos/criacao-de-sites/" class="link-more">Mais sobre serviços de desenvolvimento web</a></p>
       </div>
 
       <div class="faq-category">
@@ -418,6 +504,14 @@
             <p>Muitos perfis não têm categorias corretas, informação completa, ou um processo real de recolha de avaliações. Posso rever o seu e dizer-lhe honestamente o que falta.</p>
           </details>
           <details class="faq-item">
+            <summary>Como otimizar o Google Meu Negócio?</summary>
+            <p>Escolha a categoria principal certa, preencha os serviços, o horário e a zona que serve, adicione fotografias reais, peça avaliações a clientes verdadeiros e responda a todas, e publique novidades com regularidade. Também ajuda que o nome, a morada e o telefone sejam iguais no site e nos diretórios. Se preferir, trato disto por si: veja <a href="../servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pode criar e verificar o Google Meu Negócio da minha empresa?</summary>
+            <p>Sim. Posso criar um perfil novo ou ajudar a reivindicar um que já exista, escolher as categorias certas, preencher serviços, horário e área de serviço, e adicionar fotografias. É o Google que decide como a empresa é verificada, muitas vezes com um vídeo curto do espaço, e acompanho-o no método que for pedido.</p>
+          </details>
+          <details class="faq-item">
             <summary>Qual é um bom orçamento para Google Ads?</summary>
             <p>Depende do seu setor, da concorrência, e dos objetivos. Em vez de dar um número genérico, ajudo-o a definir um orçamento com base no que realmente pretende alcançar.</p>
           </details>
@@ -434,7 +528,7 @@
             <p>Nem sempre. Depende de onde os seus clientes realmente passam tempo e de como procuram negócios como o seu. Digo-lhe se vale a pena adicionar.</p>
           </details>
         </div>
-        <p style="margin-top: var(--space-3);"><a href="../services/marketing/" class="link-more">Mais sobre serviços de marketing</a></p>
+        <p style="margin-top: var(--space-3);"><a href="../servicos/marketing-digital/" class="link-more">Mais sobre serviços de marketing</a></p>
       </div>
 
       <div class="faq-category">
@@ -471,14 +565,14 @@
           </details>
           <details class="faq-item">
             <summary>Preciso de saber programar?</summary>
-            <p>Não. Diz-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la.</p>
+            <p>Não. Diga-me como é o processo hoje, e eu construo e mantenho a automação. Depois, é só usá-la.</p>
           </details>
           <details class="faq-item">
             <summary>Consegue gerar relatórios sozinho?</summary>
             <p>Sim. Construí ferramentas que analisam uma entrada, como um website, e depois usam IA para transformar essa análise num relatório claro e legível, entregue automaticamente.</p>
           </details>
         </div>
-        <p style="margin-top: var(--space-3);"><a href="../services/ai-automation/" class="link-more">Mais sobre serviços de IA e automação</a></p>
+        <p style="margin-top: var(--space-3);"><a href="../servicos/automacao-ia/" class="link-more">Mais sobre serviços de IA e automação</a></p>
       </div>
 
     </div>
@@ -492,7 +586,7 @@
         <p>Se não estiver respondida aqui, pergunte. De qualquer forma, terá uma resposta direta.</p>
       </div>
       <div class="hero-actions">
-        <a href="../contact/" class="btn btn-primary">Falar com o Samama</a>
+        <a href="../contacto/" class="btn btn-primary">Falar com o Samama</a>
       </div>
     </div>
   </section>
@@ -511,19 +605,37 @@
         <p class="footer-heading">Navegação</p>
         <div class="footer-links">
           <a href="../">Início</a>
-          <a href="../services/">Serviços</a>
-          <a href="../about/">Sobre</a>
-          <a href="../work/">Portefólio</a>
+          <a href="../servicos/">Serviços</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../portefolio/">Portefólio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../../" hreflang="en" lang="en">English</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Serviços</p>
+        <p class="footer-heading">Desenvolvimento Web</p>
         <div class="footer-links">
-          <a href="../services/web-development/">Desenvolvimento Web</a>
-          <a href="../services/marketing/">Marketing</a>
-          <a href="../services/ai-automation/">IA e Automação</a>
+          <a href="../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../pt/servicos/automacao-ia/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -536,8 +648,7 @@
       <div>
         <p class="footer-heading">Redes Sociais</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Perfil no Google</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -551,6 +662,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20261002a" defer></script>
+<script src="../../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

@@ -1,15 +1,29 @@
 # Samama Tahir
 
-> Samama Tahir is a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience. Work covers WordPress and Shopify websites, custom web applications and plugins, SEO, paid ads and AI automation for small and medium businesses in Porto, Vila Nova de Gaia, across Portugal and internationally (remote).
+> Samama Tahir is a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience. Work covers WordPress and Shopify websites, custom web applications and plugins, SEO, paid ads and AI automation for small and medium businesses in Porto, Vila Nova de Gaia, across Portugal and internationally (online).
 
 The site is available in English (root) and European Portuguese (/pt/).
 
 ## Services
 
-- [Web Development](https://samamatahir.com/services/web-development/): WordPress and Shopify development (including Shopify 2.0 theme builds and migrations), custom web applications, e-commerce and API integrations.
-- [Marketing](https://samamatahir.com/services/marketing/): local and technical SEO, Google Business Profile, Google Ads, Meta Ads, analytics and tracking, conversion optimization.
-- [AI & Automation](https://samamatahir.com/services/ai-automation/): AI chatbots and automated replies, workflow and business process automation, AI-powered reports, API integrations.
 - [All services](https://samamatahir.com/services/)
+- [Web Development](https://samamatahir.com/services/web-development/): web design in Portugal. WordPress and Shopify development, custom web applications, e-commerce and API integrations.
+  - [Shopify Developer](https://samamatahir.com/services/web-development/shopify-developer/): custom Shopify 2.0 themes, migrations from 1.0 themes to Online Store 2.0, custom sections in Liquid and JavaScript, app integrations and store speed.
+  - [WordPress Developer](https://samamatahir.com/services/web-development/wordpress-developer/): custom themes and plugins, page builders, WooCommerce, speed, WordPress SEO and maintenance.
+  - [Hire a WordPress Developer](https://samamatahir.com/services/web-development/wordpress-developer/hire/): how hiring works, for UK and US clients.
+  - [Online Stores](https://samamatahir.com/services/web-development/online-store/): ecommerce website development on Shopify and WooCommerce.
+  - [Custom Web Apps](https://samamatahir.com/services/web-development/custom-web-apps/): React or Vue frontends, Laravel, CodeIgniter or Node.js backends, dashboards and API integrations.
+  - [Web Developer in Porto](https://samamatahir.com/web-developer-porto/): for local and English-speaking businesses in Porto.
+- [Marketing](https://samamatahir.com/services/marketing/): local SEO, Google Business Profile, Google Ads, Meta Ads, analytics and tracking, conversion optimization.
+  - [Local SEO Services](https://samamatahir.com/services/marketing/local-seo/): Google Business Profile, citations, location pages, reviews and tracking for small businesses.
+  - [SEO Consultant](https://samamatahir.com/services/marketing/seo-consultant/): technical SEO, content and local SEO, with the fixes implemented.
+  - [Google Business Profile](https://samamatahir.com/services/marketing/google-business-profile/): setup, verification help and optimization.
+  - [Google Ads](https://samamatahir.com/services/marketing/google-ads/): campaign setup and management with conversion tracking.
+  - [Meta Ads](https://samamatahir.com/services/marketing/meta-ads/): Facebook and Instagram ads with pixel and Conversions API.
+  - [GA4 and Analytics](https://samamatahir.com/services/marketing/ga4-analytics/): GA4 and Google Tag Manager setup, consent mode, ecommerce events.
+- [AI & Automation](https://samamatahir.com/services/ai-automation/): AI chatbots and automated replies, workflow and business process automation, AI-powered reports, API integrations.
+
+Pricing is not listed on the site. Every project gets a written fixed quote after a free 20-minute call.
 
 ## Work
 
@@ -20,26 +34,55 @@ The site is available in English (root) and European Portuguese (/pt/).
 - [About Samama Tahir](https://samamatahir.com/about/): background, experience and education (Bachelor's, Computer Engineering, Mirpur University of Science and Technology, 2013 to 2017, and Master's, Computer Engineering (Digital System Design), University of Engineering and Technology, Taxila, 2018 to 2021).
 - [FAQ](https://samamatahir.com/faq/): answers about web development, marketing and AI automation.
 
+## Blog
+
+- [Blog](https://samamatahir.com/blog/): guides on web development, ecommerce and analytics.
+  - [How to hire a WordPress developer: a practical checklist](https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/)
+  - [Ecommerce website development cost: what really drives it](https://samamatahir.com/blog/ecommerce-website-development-cost/)
+  - [GA4 setup guide: a step-by-step checklist](https://samamatahir.com/blog/ga4-setup-guide/)
+  - [How much does a Shopify expert cost?](https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/)
+  - [Understanding Shopify customer accounts: what changed in the new architecture](https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/)
+  - [Mobile-friendly multi-level WordPress menu with a custom walker and jQuery](https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/)
+
 ## Contact
 
 - [Privacy policy](https://samamatahir.com/privacy/) ([Português](https://samamatahir.com/pt/privacidade/))
 - [Contact page](https://samamatahir.com/contact/)
 - Email: hello@samamatahir.com
 - Phone / WhatsApp: +351 932 426 753
-- Location: Porto, Portugal (works remotely worldwide)
+- Location: Porto, Portugal. Meets clients in person in Porto, Vila Nova de Gaia and nearby; works online with clients elsewhere in Portugal, the UK and the US.
 
 ## Profiles
 
-- Google Business Profile: https://www.google.com/search?kgmid=/g/11ntcr1gmr
-- LinkedIn: https://www.linkedin.com/in/samama-tahir/
+- LinkedIn: https://www.linkedin.com/in/samama-tahir
 - Upwork: https://www.upwork.com/freelancers/samamatahir
 - Fiverr: https://www.fiverr.com/kingdom_designr
 - YouTube: https://www.youtube.com/@samitahir1456
-- Google Scholar: https://scholar.google.com/citations?user=tdhBV4QAAAAJ
 
 ## Portuguese
 
 - [Página inicial em português](https://samamatahir.com/pt/)
-- [Criação de sites](https://samamatahir.com/pt/services/web-development/)
-- [Marketing e SEO](https://samamatahir.com/pt/services/marketing/)
-- [IA e automação](https://samamatahir.com/pt/services/ai-automation/)
+- [Criação de sites](https://samamatahir.com/pt/servicos/criacao-de-sites/)
+- [Programador Shopify](https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/)
+- [Criação de sites WordPress](https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/)
+- [Contratar programador WordPress](https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/contratar/)
+- [Criar loja online](https://samamatahir.com/pt/servicos/criacao-de-sites/criar-loja-online/)
+- [Aplicações web e software à medida](https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/)
+- [Criação de sites no Porto](https://samamatahir.com/pt/criacao-de-sites-porto/)
+- [Criação de sites em Vila Nova de Gaia](https://samamatahir.com/pt/criacao-de-sites-vila-nova-de-gaia/)
+- [SEO local e marketing digital](https://samamatahir.com/pt/servicos/marketing-digital/)
+- [Consultor SEO](https://samamatahir.com/pt/servicos/marketing-digital/consultor-seo/)
+- [Google Meu Negócio](https://samamatahir.com/pt/servicos/marketing-digital/google-meu-negocio/)
+- [Google Ads](https://samamatahir.com/pt/servicos/marketing-digital/google-ads/)
+- [Anúncios Facebook e Instagram](https://samamatahir.com/pt/servicos/marketing-digital/anuncios-facebook-instagram/)
+- [GA4 e Google Tag Manager](https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/)
+- [IA e automação](https://samamatahir.com/pt/servicos/automacao-ia/)
+- [Blog em português](https://samamatahir.com/pt/blog/)
+  - [Quanto custa um site em Portugal?](https://samamatahir.com/pt/blog/quanto-custa-um-site-em-portugal/)
+  - [O que é SEO? Um guia simples para pequenas empresas](https://samamatahir.com/pt/blog/o-que-e-seo/)
+  - [Como criar uma loja online em Portugal, passo a passo](https://samamatahir.com/pt/blog/como-criar-loja-online/)
+  - [Qual a melhor plataforma para criar uma loja online em Portugal?](https://samamatahir.com/pt/blog/melhor-plataforma-loja-online-portugal/)
+  - [Google Meu Negócio: como funciona e como criar o seu perfil](https://samamatahir.com/pt/blog/google-meu-negocio-como-funciona/)
+  - [Como funciona o Google Ads? Um guia para pequenas empresas](https://samamatahir.com/pt/blog/como-funciona-google-ads/)
+  - [Google Tag Manager: o que é e como funciona](https://samamatahir.com/pt/blog/google-tag-manager-o-que-e/)
+  - [Preços da Shopify em Portugal: o que vai realmente pagar](https://samamatahir.com/pt/blog/precos-shopify-portugal/)

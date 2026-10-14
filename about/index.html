@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>About Samama Tahir | Full-Stack Web Developer in Porto</title>
-<meta name="description" content="Learn more about Samama Tahir, a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience." />
+<title>About Samama Tahir | Freelance Web Developer in Porto</title>
+<meta name="description" content="I'm Samama Tahir, a freelance web developer in Porto with 8+ years building WordPress, Shopify and React sites, and the SEO and analytics around them." />
 <link rel="canonical" href="https://samamatahir.com/about/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/about/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/about/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/sobre/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/about/" />
 <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="About Samama Tahir | Full-Stack Web Developer in Porto" />
-<meta property="og:description" content="Learn more about Samama Tahir, a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience." />
+<meta property="og:title" content="About Samama Tahir | Freelance Web Developer in Porto" />
+<meta property="og:description" content="I'm Samama Tahir, a freelance web developer in Porto with 8+ years building WordPress, Shopify and React sites, and the SEO and analytics around them." />
 <meta property="og:url" content="https://samamatahir.com/about/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,15 @@
 <meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="About Samama Tahir | Full-Stack Web Developer in Porto" />
-<meta name="twitter:description" content="Learn more about Samama Tahir, a full-stack web developer and digital growth specialist based in Porto, Portugal, with 8+ years of experience." />
+<meta name="twitter:title" content="About Samama Tahir | Freelance Web Developer in Porto" />
+<meta name="twitter:description" content="I'm Samama Tahir, a freelance web developer in Porto with 8+ years building WordPress, Shopify and React sites, and the SEO and analytics around them." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -78,7 +87,7 @@
   "@type": "ProfilePage",
   "url": "https://samamatahir.com/about/",
   "inLanguage": "en",
-  "name": "About Samama Tahir",
+  "name": "About Samama Tahir, Freelance Web Developer in Porto",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://samamatahir.com/#person",
@@ -87,12 +96,10 @@
     "url": "https://samamatahir.com/",
     "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto.jpg",
     "sameAs": [
-      "https://www.linkedin.com/in/samama-tahir/",
+      "https://www.linkedin.com/in/samama-tahir",
       "https://www.upwork.com/freelancers/samamatahir",
       "https://www.fiverr.com/kingdom_designr",
-      "https://www.youtube.com/@samitahir1456",
-      "https://scholar.google.com/citations?user=tdhBV4QAAAAJ",
-      "https://www.google.com/search?kgmid=/g/11ntcr1gmr"
+      "https://www.youtube.com/@samitahir1456"
     ],
     "alternateName": [
       "Sam Tahir"
@@ -158,15 +165,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../about/" aria-current="page">About</a></li>
         <li><a href="../work/">Work</a></li>
         <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
         <li><a href="../contact/">Contact</a></li>
       </ul>
     </nav>
@@ -174,7 +201,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../pt/about/" hreflang="pt-PT">PT</a>
+        <a href="../pt/sobre/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -190,15 +217,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../about/" aria-current="page">About</a></li>
       <li><a href="../work/">Work</a></li>
       <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
       <li><a href="../contact/">Contact</a></li>
       <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -223,12 +270,12 @@
     <div class="container">
       <div>
         <span class="hero-badge">About</span>
-        <h1 class="text-balance">About Samama Tahir</h1>
-        <p class="hero-text">I'm a full-stack web developer and digital growth specialist based in Porto, Portugal. I build websites and digital systems, then help the businesses behind them get found online and turn that traffic into customers.</p>
+        <h1 class="text-balance">About Samama Tahir, Freelance Web Developer in Porto</h1>
+        <p class="hero-text">I'm a freelance web developer and digital growth specialist based in Porto, Portugal, working full-stack. I build websites and digital systems, then help the businesses behind them get found online and turn that traffic into customers.</p>
       </div>
       <div class="hero-portrait">
         <div class="hero-photo-blob" aria-hidden="true"></div>
-        <img class="hero-photo" src="../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, full-stack web developer and digital growth specialist in Porto" width="320" height="320" />
+        <img class="hero-photo" src="../images/samama-tahir-web-developer-porto.jpg" alt="Samama Tahir, full-stack web developer and digital growth specialist in Porto" width="320" height="320" fetchpriority="high" />
         <div class="hero-badge-card hero-badge-card--a">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
           <div><strong>8+ Years</strong><span>building on the web</span></div>
@@ -298,7 +345,6 @@
             </span>
           </div>
         </div>
-        <p class="edu-scholar"><a href="https://scholar.google.com/citations?user=tdhBV4QAAAAJ" target="_blank" rel="noopener noreferrer">Publications on Google Scholar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a></p>
       </div>
     </div>
   </section>
@@ -348,7 +394,7 @@
     <div class="container">
       <span class="eyebrow">Based in Porto</span>
       <h2 id="location-heading" class="text-balance">Porto, Vila Nova de Gaia, and clients further afield</h2>
-      <p style="max-width: 42rem;">I'm based in Porto and know the local business landscape here and across the river in Vila Nova de Gaia well. I also work remotely with clients across Portugal and internationally, using the same process either way.</p>
+      <p style="max-width: 42rem;">I'm based in Porto and know the local business landscape here and across the river in Vila Nova de Gaia well, so I can meet clients here and nearby in person when it helps. I work online with clients in the rest of Portugal, the UK and the US, using the same process either way.</p>
       <div class="location-badges">
         <span class="location-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -393,14 +439,32 @@
           <a href="../about/">About</a>
           <a href="../work/">Portfolio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -414,8 +478,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -429,6 +492,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002a" defer></script>
+<script src="../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

@@ -21,9 +21,21 @@ Options -Indexes
   RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301,NC]
 </IfModule>
 
-# Old WordPress URLs (the previous site) -> closest page on this site
-Redirect 301 /our-blog/ /
-Redirect 301 /blog/ /
+# Portuguese pages moved from English slugs to Portuguese ones (Oct 2026).
+# Most specific first: mod_alias uses the first rule that matches.
+RedirectMatch 301 ^/pt/services/web-development/criacao-de-sites-wordpress/?(.*)$ /pt/servicos/criacao-de-sites/wordpress/$1
+RedirectMatch 301 ^/pt/services/web-development/?(.*)$ /pt/servicos/criacao-de-sites/$1
+RedirectMatch 301 ^/pt/services/marketing/?(.*)$ /pt/servicos/marketing-digital/$1
+RedirectMatch 301 ^/pt/services/ai-automation/?(.*)$ /pt/servicos/automacao-ia/$1
+RedirectMatch 301 ^/pt/services/?(.*)$ /pt/servicos/$1
+RedirectMatch 301 ^/pt/about/?(.*)$ /pt/sobre/$1
+RedirectMatch 301 ^/pt/contact/?(.*)$ /pt/contacto/$1
+RedirectMatch 301 ^/pt/work/?(.*)$ /pt/portefolio/$1
+
+# Old WordPress URLs (the previous site) -> closest page on this site.
+# /blog/ is a real page again (Oct 2026), so it is no longer redirected here,
+# and the two tutorials that were still indexed now point to their rewrites.
+Redirect 301 /our-blog/ /blog/
 Redirect 301 /how-we-built-a-dynamic-add-to-cart-button-on-shopify-with-code-demo-links/ /work/
 Redirect 301 /wp-bakery-meets-shopify-checkout-extensibility-a-new-era-of-customization/ /work/
 Redirect 301 /how-to-display-related-products-posts-using-jetengine-query-builder-crocoblock/ /services/web-development/
@@ -32,17 +44,17 @@ Redirect 301 /unlock-the-power-of-elementor-ai-for-smarter-website-design/ /serv
 Redirect 301 /streamline-discussions-with-elementors-new-comment-feature/ /services/web-development/
 Redirect 301 /how-to-connect-shipstation-with-wordpress-and-fix-the-502-bad-gateway-error/ /services/web-development/
 Redirect 301 /auto-add-free-products-to-shopify-cart/ /work/
-Redirect 301 /understanding-shopify-customer-accounts-what-changed-in-the-new-architecture/ /work/
-Redirect 301 /mobile-friendly-multi-level-wordpress-menu-with-custom-walker-and-jquery/ /services/web-development/
+Redirect 301 /understanding-shopify-customer-accounts-what-changed-in-the-new-architecture/ /blog/shopify-customer-accounts-new-architecture/
+Redirect 301 /mobile-friendly-multi-level-wordpress-menu-with-custom-walker-and-jquery/ /blog/wordpress-mobile-multi-level-menu-walker-jquery/
 # Old WordPress tag and category archives were all WordPress/Shopify dev topics
 RedirectMatch 301 ^/(category|tag)/.* /services/web-development/
 RedirectMatch 301 ^/author/.* /about/
-RedirectMatch 301 ^/feed/?$ /
+RedirectMatch 301 ^/feed/?$ /blog/feed.xml
 # Add more old URLs here as they show up in Search Console (Pages -> Not found):
 # Redirect 301 /old-path/ /new-path/
 
 # Working folders that aren't part of the site, in case they get uploaded
-RedirectMatch 404 ^/(img_for_website|videos)(/|$)
+RedirectMatch 404 ^/(img_for_website|videos|scripts)(/|$)
 RedirectMatch 404 /\.git(/|$)
 
 # Compress text files
@@ -82,7 +94,7 @@ RedirectMatch 404 /\.git(/|$)
 
   # Crawler files change rarely but must update quickly when they do, so
   # cache them for an hour, not the week the CDN applies to plain text.
-  <FilesMatch "^(robots\.txt|llms\.txt|sitemap\.xml)$">
+  <FilesMatch "^(robots\.txt|llms\.txt|sitemap\.xml|feed\.xml)$">
     Header set Cache-Control "public, max-age=3600"
   </FilesMatch>
 

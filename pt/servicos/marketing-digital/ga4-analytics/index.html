@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Configuração GA4 e Google Tag Manager | Samama Tahir</title>
+<meta name="description" content="Configuração do Google Analytics GA4 e do Google Tag Manager, consent mode e eventos de e-commerce, com dados em que pode confiar." />
+<link rel="canonical" href="https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/marketing/ga4-analytics/" />
+<link rel="icon" type="image/svg+xml" href="../../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Configuração GA4 e Google Tag Manager | Samama Tahir" />
+<meta property="og:description" content="Configuração do Google Analytics GA4 e do Google Tag Manager, consent mode e eventos de e-commerce, com dados em que pode confiar." />
+<meta property="og:url" content="https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Configuração GA4 e Google Tag Manager | Samama Tahir" />
+<meta name="twitter:description" content="Configuração do Google Analytics GA4 e do Google Tag Manager, consent mode e eventos de e-commerce, com dados em que pode confiar." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<link rel="preload" href="../../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços",
+      "item": "https://samamatahir.com/pt/servicos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Marketing",
+      "item": "https://samamatahir.com/pt/servicos/marketing-digital/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "GA4 e Analítica",
+      "item": "https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Configuração GA4 e Google Tag Manager",
+  "serviceType": "Configuração de analítica web",
+  "url": "https://samamatahir.com/pt/servicos/marketing-digital/ga4-analytics/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Configuração e auditoria do Google Analytics 4 e do Google Tag Manager, consent mode, acompanhamento de conversões e eventos de e-commerce, por um consultor freelance no Porto."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o Google Analytics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É a ferramenta gratuita da Google que mostra quantas pessoas visitam o site, de onde vêm e o que fazem nele. O GA4 é a versão atual e regista tudo como eventos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é o Google Tag Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É a ferramenta que gere as etiquetas do site (Google Analytics, Google Ads, pixel da Meta) num só sítio, sem alterar o código do site sempre que é preciso uma nova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a diferença entre o Google Analytics e o Search Console?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Search Console mostra como o site aparece na pesquisa Google: pesquisas, posições e cliques. O Google Analytics mostra o que as pessoas fazem depois de chegar ao site, venham de onde vierem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Configura o GA4 na Shopify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A Shopify tem a sua própria integração com a Google para o básico, e acrescento ou corrijo os eventos e conversões que faltam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O GA4 cumpre o RGPD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode ser usado de forma compatível com o RGPD, com um banner de cookies e consent mode, para que os cookies de analítica só sejam criados depois do consentimento. Confirme a parte legal com o seu consultor; eu trato da configuração técnica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso do Google Tag Manager para usar o GA4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não, mas ajuda. O Tag Manager junta todo o acompanhamento num só sítio, por isso acrescentar um evento ou um novo pixel de anúncios mais tarde não obriga a mexer no código do site. Na maior parte dos sites configuro o GA4 através dele."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../../pt/servicos/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/" aria-current="page">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../../services/marketing/ga4-analytics/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../../pt/servicos/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/" aria-current="page">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/marketing-digital/">Marketing</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">GA4 e Analítica</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">GA4</span>
+        <h1 class="text-balance">Configuração do Google Analytics GA4 e Tag Manager</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Faço a configuração do Google Analytics GA4 e do Google Tag Manager para empresas que querem confiar nos seus números: um dataLayer limpo, consent mode e eventos e conversões que refletem o que realmente importa ao negócio, dos pedidos de contacto às vendas da loja online.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+          <a href="../../../../pt/servicos/marketing-digital/" class="btn btn-secondary">Serviços de marketing</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../../images/coworking-desk-laptop-analytics-dashboard.webp" alt="Portátil com um dashboard de analítica ao lado de um café num espaço de coworking" width="1050" height="822" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Faço</span>
+        <h2 id="do-heading" class="text-balance">GA4 configurado para poder confiar nos dados</h2>
+        <p>A maior parte dos problemas com o GA4 vem da configuração, não do GA4. Estas são as quatro partes em que trabalho.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>GA4 e Tag Manager</h3>
+          <p>Uma propriedade GA4 e um contentor do Google Tag Manager configurados de raiz ou arrumados, com nomes claros para que os eventos ainda façam sentido daqui a um ano.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Consent mode</h3>
+          <p>O Consent Mode v2 ligado ao seu banner de cookies, para que a analítica respeite a escolha do visitante, como pede o RGPD.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Conversões e e-commerce</h3>
+          <p>Formulários, chamadas, marcações e compras registados como eventos principais, incluindo GA4 na Shopify e eventos de e-commerce no WooCommerce, com receita por produto.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Relatórios e auditorias</h3>
+          <p>Uma auditoria da configuração atual e relatórios simples que respondem às perguntas que realmente faz: de onde vêm os contactos e que páginas convertem.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Porque Importa -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Porque Importa</span>
+        <h2 id="text0-heading" class="text-balance">O que é o Google Tag Manager, e porque faz diferença</h2>
+        <p>O Google Tag Manager é a ferramenta que envia os dados do seu site para o Google Analytics e para outras plataformas, sem mexer no código do site para cada nova etiqueta. Bem configurado, junta num só sítio tudo o que é medido. Mal configurado, conta formulários a dobrar ou perde compras, e todas as campanhas passam a otimizar para a coisa errada.</p>
+        <p style="margin-top: var(--space-2);">Este site usa o GA4 com consent mode e só o carrega depois de o visitante interagir ou aceitar, para não tornar a página mais lenta. Configuro os clientes com o mesmo cuidado. Veja também <a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quem -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Para Quem</span>
+        <h2 id="text1-heading" class="text-balance">Google Analytics 4 para empresas cá e lá fora</h2>
+        <p>Quando é útil, reúno-me presencialmente com empresas do Porto, de Vila Nova de Gaia e arredores. Com empresas no resto do país e no estrangeiro, o trabalho é feito online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configuração -->
+  <section class="section section--alt" aria-labelledby="text2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Configuração</span>
+        <h2 id="text2-heading" class="text-balance">O que inclui uma configuração de GA4 bem feita</h2>
+        <p>Configurar o GA4 é mais do que colar uma etiqueta no site. Faço a instalação pelo Google Tag Manager, para que as alterações não precisem sempre de um programador, ligo o consent mode ao banner de cookies e defino como eventos principais os poucos que importam: um formulário enviado, um clique para ligar, uma marcação, uma compra. Excluo o tráfego interno, ligo o Search Console e o Google Ads, ajusto a retenção de dados e confirmo cada evento no DebugView antes de dar o trabalho por terminado.</p>
+        <p style="margin-top: var(--space-2);">Em lojas online junto os eventos de e-commerce, da visualização do produto à compra, para ver onde as pessoas desistem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auditorias -->
+  <section class="section" aria-labelledby="text3-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Auditorias</span>
+        <h2 id="text3-heading" class="text-balance">Quando os números não batem certo</h2>
+        <p>Se o GA4 mostra mais vendas do que a loja, ou nenhuma, há algo errado na configuração. As causas mais comuns são etiquetas duplicadas, um evento de compra que dispara quando a página é recarregada, o consentimento a bloquear o que não devia e checkouts noutro domínio que partem uma visita em duas. Encontro a causa, corrijo-a e deixo escrito o que é medido, para que a próxima pessoa perceba.</p>
+        <p style="margin-top: var(--space-2);">Expliquei a ferramenta em detalhe em <a href="../../../../pt/blog/google-tag-manager-o-que-e/">o que é o Google Tag Manager</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODO(Samama): adicionar um caso de analítica (o que estava mal, o que mudou) quando tiver um que possa partilhar -->
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como Funciona</span>
+        <h2 id="process-heading" class="text-balance">Como funciona</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Chamada</h3>
+          <p>Uma chamada gratuita de 20 minutos sobre as perguntas a que os dados devem responder.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Auditoria</h3>
+          <p>Verifico o que é medido, o que falta e o que está a contar a dobrar.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Configuração</h3>
+          <p>GA4, Tag Manager, consent mode e eventos principais, testados em modo de depuração.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Relatório</h3>
+          <p>Um relatório simples e uma explicação curta para o conseguir ler sozinho.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="faq-heading" class="text-balance">Perguntas sobre o GA4</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>O que é o Google Analytics?</summary>
+            <p>É a ferramenta gratuita da Google que mostra quantas pessoas visitam o site, de onde vêm e o que fazem nele. O GA4 é a versão atual e regista tudo como eventos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>O que é o Google Tag Manager?</summary>
+            <p>É a ferramenta que gere as etiquetas do site (Google Analytics, Google Ads, pixel da Meta) num só sítio, sem alterar o código do site sempre que é preciso uma nova.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Qual é a diferença entre o Google Analytics e o Search Console?</summary>
+            <p>O Search Console mostra como o site aparece na pesquisa Google: pesquisas, posições e cliques. O Google Analytics mostra o que as pessoas fazem depois de chegar ao site, venham de onde vierem.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Configura o GA4 na Shopify?</summary>
+            <p>Sim. A Shopify tem a sua própria integração com a Google para o básico, e acrescento ou corrijo os eventos e conversões que faltam.</p>
+          </details>
+          <details class="faq-item">
+            <summary>O GA4 cumpre o RGPD?</summary>
+            <p>Pode ser usado de forma compatível com o RGPD, com um banner de cookies e consent mode, para que os cookies de analítica só sejam criados depois do consentimento. Confirme a parte legal com o seu consultor; eu trato da configuração técnica.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso do Google Tag Manager para usar o GA4?</summary>
+            <p>Não, mas ajuda. O Tag Manager junta todo o acompanhamento num só sítio, por isso acrescentar um evento ou um novo pixel de anúncios mais tarde não obriga a mexer no código do site. Na maior parte dos sites configuro o GA4 através dele.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Não tem a certeza de que os números estão certos?</h2>
+        <p>Diga-me o que quer saber a partir dos dados. Verifico a configuração e digo-lhe honestamente o que falta.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/">Início</a>
+          <a href="../../../../pt/servicos/" aria-current="page">Serviços</a>
+          <a href="../../../../pt/sobre/">Sobre</a>
+          <a href="../../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../../pt/faq/">FAQ</a>
+          <a href="../../../../pt/blog/">Blog</a>
+          <a href="../../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

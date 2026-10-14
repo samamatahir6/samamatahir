@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Aplicações Web e Software à Medida | Samama Tahir</title>
+<meta name="description" content="Desenvolvimento de aplicações web e software à medida em React, com integrações API e dashboards, por um programador full-stack freelance no Porto." />
+<link rel="canonical" href="https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/custom-web-apps/" />
+<link rel="icon" type="image/svg+xml" href="../../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Aplicações Web e Software à Medida | Samama Tahir" />
+<meta property="og:description" content="Desenvolvimento de aplicações web e software à medida em React, com integrações API e dashboards, por um programador full-stack freelance no Porto." />
+<meta property="og:url" content="https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aplicações Web e Software à Medida | Samama Tahir" />
+<meta name="twitter:description" content="Desenvolvimento de aplicações web e software à medida em React, com integrações API e dashboards, por um programador full-stack freelance no Porto." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, programador web freelance no Porto" />
+
+<link rel="preload" href="../../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços",
+      "item": "https://samamatahir.com/pt/servicos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Desenvolvimento Web",
+      "item": "https://samamatahir.com/pt/servicos/criacao-de-sites/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Aplicações Web",
+      "item": "https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Aplicações Web e Software à Medida",
+  "serviceType": "Desenvolvimento de software à medida",
+  "url": "https://samamatahir.com/pt/servicos/criacao-de-sites/aplicacoes-web/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Aplicações web e software à medida com React ou Vue no frontend e PHP (Laravel, CodeIgniter) ou Node.js e Express no backend, integrações API e dashboards, por um programador full-stack freelance no Porto."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é desenvolvimento de software à medida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É criar uma aplicação feita para o seu negócio, em vez de adaptar o negócio a um software genérico. Faz sentido quando o processo é específico ou quando precisa de ligar sistemas que não falam entre si."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como criar uma aplicação web para a minha empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Começa-se por definir o problema que ela resolve e quem a vai usar. Depois desenha-se o mínimo que resolve esse problema, constrói-se por fases e melhora-se com o uso real. Ajudo em todas as fases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que tecnologias usa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sobretudo React, e Vue quando faz sentido. No backend, PHP com Laravel ou CodeIgniter, ou Node.js com Express, sempre com uma base de dados real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa uma aplicação à medida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende do âmbito. Envio um orçamento fechado por escrito depois de uma chamada gratuita, dividido em fases nas aplicações maiores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pode continuar uma aplicação que outro programador começou?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Posso rever o código primeiro e dizer-lhe honestamente se vale a pena continuar ou se é melhor refazer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De quem é o código?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É seu. O código fica no seu repositório ou no seu servidor, e recebe tudo o que é preciso para o pôr a funcionar e alterar, comigo ou com outro programador no futuro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A aplicação pode crescer mais tarde?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, e é assim que costumo trabalhar. Começamos por uma primeira versão com o essencial, vemos como é usada e acrescentamos funcionalidades por ordem de importância. O código é organizado a pensar nisso, para que crescer não obrigue a refazer tudo."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../../pt/" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../../pt/servicos/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/" aria-current="page">Aplicações Web</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../../pt/sobre/">Sobre</a></li>
+        <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+        <li><a href="../../../../pt/faq/">FAQ</a></li>
+        <li><a href="../../../../pt/blog/">Blog</a></li>
+        <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../../services/web-development/custom-web-apps/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../../pt/contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../../pt/servicos/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/" aria-current="page">Aplicações Web</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../../pt/sobre/">Sobre</a></li>
+      <li><a href="../../../../pt/portefolio/">Portefólio</a></li>
+      <li><a href="../../../../pt/faq/">FAQ</a></li>
+      <li><a href="../../../../pt/blog/">Blog</a></li>
+      <li><a href="../../../../pt/contacto/">Contacto</a></li>
+      <li><a href="../../../../pt/contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../../pt/" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/">Serviços</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Aplicações Web</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Aplicações Web</span>
+        <h1 class="text-balance">Aplicações Web e Software à Medida</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Faço desenvolvimento de aplicações web e software à medida para empresas que precisam de algo que o WordPress ou a Shopify não fazem: marcações, portais de clientes, dashboards e integrações entre sistemas. Sou programador full-stack freelance no Porto e trabalho com React ou Vue no frontend e PHP (Laravel, CodeIgniter) ou Node.js e Express no backend.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+          <a href="../../../../pt/portefolio/" class="btn btn-secondary">Ver o meu trabalho</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../../images/samama-tahir-coding-setup-laptop-coffee.webp" alt="Portátil com código aberto num editor, um cappuccino e um caderno de couro junto a uma janela" width="960" height="720" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O Que Faço</span>
+        <h2 id="do-heading" class="text-balance">Software à medida da forma como trabalha</h2>
+        <p>Plataformas como o WordPress e a Shopify cobrem muito. Estes são os trabalhos que não cobrem.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Aplicações web</h3>
+          <p>Sistemas de marcações, ferramentas internas, portais de clientes e calculadoras, em React com backend em Laravel, CodeIgniter ou Node.js e Express.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Dashboards</h3>
+          <p>Um só ecrã que junta os dados das ferramentas que já usa, para a equipa deixar de copiar números entre folhas de cálculo.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Integrações API</h3>
+          <p>Ligar sistemas que não falam entre si: CRMs, faturação, formulários, lojas. Criei um plugin que envia formulários para dois CRMs e liguei uma loja ao QuickBooks.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Evoluir uma aplicação existente</h3>
+          <p>Novas funcionalidades, correções e desempenho numa aplicação React ou PHP que outra pessoa começou.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Porquê Freelance -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Porquê Freelance</span>
+        <h2 id="text0-heading" class="text-balance">Desenvolvimento de software à medida, sem uma empresa inteira pelo meio</h2>
+        <p>Uma empresa de desenvolvimento de software põe muitas vezes um gestor de projeto, um designer e dois programadores numa aplicação. Para muitos projetos é mais gente do que o trabalho precisa. Comigo, o programador com quem fala é quem escreve o código, e as decisões levam uma conversa em vez de três reuniões.</p>
+        <p style="margin-top: var(--space-2);">Se o trabalho for mais simples do que uma aplicação à medida, digo-lhe. Às vezes a resposta certa é um plugin WordPress ou uma app Shopify, e isso sai mais barato.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quem -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Para Quem</span>
+        <h2 id="text1-heading" class="text-balance">Desenvolvimento de aplicações web para empresas em Portugal e lá fora</h2>
+        <p>Quando é útil, reúno-me presencialmente com empresas do Porto, de Vila Nova de Gaia e arredores. Com empresas no resto do país, no Reino Unido e nos Estados Unidos, o trabalho é feito online, em português ou em inglês.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologia -->
+  <section class="section section--alt" aria-labelledby="text2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Tecnologia</span>
+        <h2 id="text2-heading" class="text-balance">Com que tecnologias desenvolvo aplicações web</h2>
+        <p>No frontend uso sobretudo React, e Vue quando o projeto já está nessa tecnologia. No backend trabalho com Laravel, CodeIgniter e Node.js, com bases de dados MySQL ou PostgreSQL, e ligo serviços externos pelas suas APIs: pagamentos, CRMs, ferramentas de contabilidade como o QuickBooks e formulários como o Gravity Forms. Escolho a tecnologia que serve o projeto e quem o vai manter, não a mais recente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Antes de Começar -->
+  <section class="section" aria-labelledby="text3-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Antes de Começar</span>
+        <h2 id="text3-heading" class="text-balance">O que preciso para orçamentar software à medida</h2>
+        <p>O mais útil que me pode enviar é uma lista das pessoas que vão usar a aplicação e do que cada uma precisa de fazer. Junte as ferramentas com que tem de comunicar e as folhas de cálculo ou tarefas manuais que deve substituir. A partir daí proponho uma primeira versão pequena o suficiente para ser feita depressa e útil o suficiente para aprender com ela.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section section--alt" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Integrações</span>
+        <h2 id="work-heading" class="text-balance">Integrações que construí</h2>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card">
+          <h3>Formulários para dois CRMs</h3>
+          <p>Um plugin WordPress feito de raiz que liga os campos do Gravity Forms ao Advyzon e ao Wealthbox e envia cada formulário para os dois.</p>
+        </article>
+        <article class="card">
+          <h3>Loja ligada à contabilidade</h3>
+          <p>Liguei uma loja online de café ao QuickBooks, para que a loja e a contabilidade partilhem os mesmos dados.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../../../../pt/portefolio/" class="link-more">Ler os casos completos</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como Funciona</span>
+        <h2 id="process-heading" class="text-balance">Como funciona um projeto à medida</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Chamada</h3>
+          <p>Uma chamada gratuita de 20 minutos sobre o problema que a aplicação tem de resolver.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Âmbito</h3>
+          <p>Um âmbito escrito e um orçamento fechado, dividido em fases nos projetos maiores.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Desenvolvimento</h3>
+          <p>Versões a funcionar que pode experimentar ao longo do projeto.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Lançamento e apoio</h3>
+          <p>Publicação, passagem de conhecimento e apoio para correções e novas funcionalidades.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2 id="faq-heading" class="text-balance">Perguntas sobre software à medida</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>O que é desenvolvimento de software à medida?</summary>
+            <p>É criar uma aplicação feita para o seu negócio, em vez de adaptar o negócio a um software genérico. Faz sentido quando o processo é específico ou quando precisa de ligar sistemas que não falam entre si.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como criar uma aplicação web para a minha empresa?</summary>
+            <p>Começa-se por definir o problema que ela resolve e quem a vai usar. Depois desenha-se o mínimo que resolve esse problema, constrói-se por fases e melhora-se com o uso real. Ajudo em todas as fases.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Que tecnologias usa?</summary>
+            <p>Sobretudo React, e Vue quando faz sentido. No backend, PHP com Laravel ou CodeIgniter, ou Node.js com Express, sempre com uma base de dados real.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quanto custa uma aplicação à medida?</summary>
+            <p>Depende do âmbito. Envio um orçamento fechado por escrito depois de uma chamada gratuita, dividido em fases nas aplicações maiores.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pode continuar uma aplicação que outro programador começou?</summary>
+            <p>Sim. Posso rever o código primeiro e dizer-lhe honestamente se vale a pena continuar ou se é melhor refazer.</p>
+          </details>
+          <details class="faq-item">
+            <summary>De quem é o código?</summary>
+            <p>É seu. O código fica no seu repositório ou no seu servidor, e recebe tudo o que é preciso para o pôr a funcionar e alterar, comigo ou com outro programador no futuro.</p>
+          </details>
+          <details class="faq-item">
+            <summary>A aplicação pode crescer mais tarde?</summary>
+            <p>Sim, e é assim que costumo trabalhar. Começamos por uma primeira versão com o essencial, vemos como é usada e acrescentamos funcionalidades por ordem de importância. O código é organizado a pensar nisso, para que crescer não obrigue a refazer tudo.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Tem uma aplicação em mente?</h2>
+        <p>Diga-me o que a aplicação tem de fazer. Digo-lhe honestamente se precisa de código à medida ou de uma ferramenta mais simples.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../../pt/contacto/" class="btn btn-primary">Marque uma chamada grátis de 20 min</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/">Início</a>
+          <a href="../../../../pt/servicos/" aria-current="page">Serviços</a>
+          <a href="../../../../pt/sobre/">Sobre</a>
+          <a href="../../../../pt/portefolio/">Portefólio</a>
+          <a href="../../../../pt/faq/">FAQ</a>
+          <a href="../../../../pt/blog/">Blog</a>
+          <a href="../../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

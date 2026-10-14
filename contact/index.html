@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
 <title>Contact Samama Tahir | Web Developer in Porto</title>
-<meta name="description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, Portugal, working locally and remotely." />
+<meta name="description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, meeting locally when it helps, and working online with clients abroad." />
 <link rel="canonical" href="https://samamatahir.com/contact/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/contact/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contact/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/contacto/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/contact/" />
 <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -40,7 +49,7 @@
 <meta name="theme-color" content="#0b3b2a" />
 
 <meta property="og:title" content="Contact Samama Tahir | Web Developer in Porto" />
-<meta property="og:description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, Portugal, working locally and remotely." />
+<meta property="og:description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, meeting locally when it helps, and working online with clients abroad." />
 <meta property="og:url" content="https://samamatahir.com/contact/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -53,14 +62,14 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Contact Samama Tahir | Web Developer in Porto" />
-<meta name="twitter:description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, Portugal, working locally and remotely." />
+<meta name="twitter:description" content="Get in touch with Samama Tahir about a website or digital growth project. Based in Porto, meeting locally when it helps, and working online with clients abroad." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -86,6 +95,38 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with clients outside Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I can meet businesses in Porto, Vila Nova de Gaia and nearby in person when it helps. Clients in the rest of Portugal, the UK and the US work with me online, by video call, email and WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we talk in Portuguese?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I work in English and Portuguese, so use whichever you're more comfortable with, in messages and on calls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the first call commit me to anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The first call is free and takes about 20 minutes. It's for understanding what you need and whether I'm the right fit, not a sales pitch."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -106,15 +147,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../about/">About</a></li>
         <li><a href="../work/">Work</a></li>
         <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
         <li><a href="../contact/" aria-current="page">Contact</a></li>
       </ul>
     </nav>
@@ -122,7 +183,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../pt/contact/" hreflang="pt-PT">PT</a>
+        <a href="../pt/contacto/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -138,15 +199,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../about/">About</a></li>
       <li><a href="../work/">Work</a></li>
       <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
       <li><a href="../contact/" aria-current="page">Contact</a></li>
       <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -255,6 +336,53 @@
     </div>
   </section>
 
+  <!-- Next steps, areas served, mini FAQ -->
+  <section class="section section--alt" aria-labelledby="next-steps-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What Happens Next</span>
+        <h2 id="next-steps-heading" class="text-balance">What happens after you get in touch</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <h3>1. I reply myself</h3>
+          <p>I read every message personally and reply with a first view of the project, or the questions I need answered to give one.</p>
+        </article>
+        <article class="card">
+          <h3>2. A free 20-minute call</h3>
+          <p>If it makes sense, we talk through what you need by video call, or in person if you're in Porto, Gaia or nearby.</p>
+        </article>
+        <article class="card">
+          <h3>3. A clear quote</h3>
+          <p>I send a written quote with the scope and what's included, so you know the cost before any work starts.</p>
+        </article>
+      </div>
+      <div class="split" style="margin-top: var(--space-5); align-items: start;">
+        <div class="split-content">
+          <h3>Where I work</h3>
+          <p style="margin-top: 0.5rem;">I'm based in Porto and can meet clients in Porto, Vila Nova de Gaia and the surrounding area in person when it helps. For businesses in the rest of Portugal, the UK and the US, the work is done online. Portugal shares the UK's time zone, and my afternoons overlap with the US East Coast morning, so there's always a window for a call. I work in English and Portuguese.</p>
+        </div>
+        <div>
+          <h3>Quick questions</h3>
+          <div class="faq-list" style="margin-top: var(--space-2);">
+          <details class="faq-item">
+            <summary>Do you work with clients outside Porto?</summary>
+            <p>Yes. I can meet businesses in Porto, Vila Nova de Gaia and nearby in person when it helps. Clients in the rest of Portugal, the UK and the US work with me online, by video call, email and WhatsApp.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can we talk in Portuguese?</summary>
+            <p>Yes. I work in English and Portuguese, so use whichever you're more comfortable with, in messages and on calls.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does the first call commit me to anything?</summary>
+            <p>No. The first call is free and takes about 20 minutes. It's for understanding what you need and whether I'm the right fit, not a sales pitch.</p>
+          </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -273,14 +401,32 @@
           <a href="../about/">About</a>
           <a href="../work/">Portfolio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -294,8 +440,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -309,6 +454,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002a" defer></script>
+<script src="../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

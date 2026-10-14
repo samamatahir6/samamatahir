@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,20 +18,25 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Política de Privacidade | Samama Tahir</title>
+<title>Política de Privacidade e Cookies | Samama Tahir</title>
 <meta name="description" content="Como o samamatahir.com trata dados pessoais: o formulário de contacto, cookies de estatísticas opcionais, vídeos incorporados e os seus direitos no RGPD." />
 <link rel="canonical" href="https://samamatahir.com/pt/privacidade/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/privacy/" />
@@ -39,7 +48,7 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Política de Privacidade | Samama Tahir" />
+<meta property="og:title" content="Política de Privacidade e Cookies | Samama Tahir" />
 <meta property="og:description" content="Como o samamatahir.com trata dados pessoais: o formulário de contacto, cookies de estatísticas opcionais, vídeos incorporados e os seus direitos no RGPD." />
 <meta property="og:url" content="https://samamatahir.com/pt/privacidade/" />
 <meta property="og:site_name" content="Samama Tahir" />
@@ -52,15 +61,15 @@
 <meta property="og:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Política de Privacidade | Samama Tahir" />
+<meta name="twitter:title" content="Política de Privacidade e Cookies | Samama Tahir" />
 <meta name="twitter:description" content="Como o samamatahir.com trata dados pessoais: o formulário de contacto, cookies de estatísticas opcionais, vídeos incorporados e os seus direitos no RGPD." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-programador-web-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, programador web full-stack no Porto" />
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -88,20 +97,40 @@
     <nav class="primary-nav" aria-label="Principal">
       <ul>
         <li class="nav-dropdown">
-          <a href="../services/">
+          <a href="../servicos/">
             <span class="nav-star" aria-hidden="true">✦</span>Serviços
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
           </ul>
         </li>
-        <li><a href="../about/">Sobre</a></li>
-        <li><a href="../work/">Portefólio</a></li>
+        <li><a href="../sobre/">Sobre</a></li>
+        <li><a href="../portefolio/">Portefólio</a></li>
         <li><a href="../faq/">FAQ</a></li>
-        <li><a href="../contact/">Contacto</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../contacto/">Contacto</a></li>
       </ul>
     </nav>
 
@@ -111,7 +140,7 @@
         <span class="is-active" aria-current="page">PT</span>
       </div>
 
-      <a href="../contact/" class="btn btn-primary header-cta">Vamos falar</a>
+      <a href="../contacto/" class="btn btn-primary header-cta">Vamos falar</a>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -123,18 +152,38 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
     <ul>
       <li class="mobile-nav-services">
-        <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a></li>
+        <a href="../servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
         </ul>
       </li>
-      <li><a href="../about/">Sobre</a></li>
-      <li><a href="../work/">Portefólio</a></li>
+      <li><a href="../sobre/">Sobre</a></li>
+      <li><a href="../portefolio/">Portefólio</a></li>
       <li><a href="../faq/">FAQ</a></li>
-      <li><a href="../contact/">Contacto</a></li>
-      <li><a href="../contact/" class="btn btn-primary btn-block">Vamos falar</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../contacto/">Contacto</a></li>
+      <li><a href="../contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
     </ul>
   </nav>
 </header>
@@ -201,19 +250,37 @@
         <p class="footer-heading">Navegação</p>
         <div class="footer-links">
           <a href="../">Início</a>
-          <a href="../services/">Serviços</a>
-          <a href="../about/">Sobre</a>
-          <a href="../work/">Portefólio</a>
+          <a href="../servicos/">Serviços</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../portefolio/">Portefólio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../../" hreflang="en" lang="en">English</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Serviços</p>
+        <p class="footer-heading">Desenvolvimento Web</p>
         <div class="footer-links">
-          <a href="../services/web-development/">Desenvolvimento Web</a>
-          <a href="../services/marketing/">Marketing</a>
-          <a href="../services/ai-automation/">IA e Automação</a>
+          <a href="../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../pt/servicos/automacao-ia/">IA e Automação</a>
         </div>
       </div>
       <div>
@@ -226,8 +293,7 @@
       <div>
         <p class="footer-heading">Redes Sociais</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Perfil no Google</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -241,6 +307,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20261002a" defer></script>
+<script src="../../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

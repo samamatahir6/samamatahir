@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>How to Hire a WordPress Developer: A Practical Checklist | Samama Tahir</title>
+<meta name="description" content="How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well." />
+<link rel="canonical" href="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="How to Hire a WordPress Developer: A Practical Checklist | Samama Tahir" />
+<meta property="og:description" content="How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well." />
+<meta property="og:url" content="https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Hire a WordPress Developer: A Practical Checklist | Samama Tahir" />
+<meta name="twitter:description" content="How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to hire a WordPress developer",
+      "item": "https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to hire a WordPress developer: a practical checklist",
+  "description": "How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well.",
+  "url": "https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/",
+  "mainEntityOfPage": "https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 981,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/blog/#blog",
+    "url": "https://samamatahir.com/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I hire a good WordPress developer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Be clear about the type of work, look at real projects they did, ask who writes the code and how changes are tested, compare written scopes rather than prices, and consider starting with a small paid task."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I hire a freelancer or an agency for WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A freelancer is usually simpler and faster for small and medium sites. An agency makes sense when you need a full team working on a large project at once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should own the WordPress hosting and domain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should. The developer gets their own user account, but the domain, hosting and admin access stay in your name."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a WordPress developer quote include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pages and templates, the design approach, who adds content, SEO and analytics, the number of revision rounds and what support follows launch."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">How to hire a WordPress developer</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">WordPress</span>
+      <h1 class="text-balance">How to hire a WordPress developer: a practical checklist</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">What to look for, what to ask and what to avoid when you hire a WordPress developer, from someone who gets hired for it.</p>
+      <p class="post-meta">By Samama Tahir · <time datetime="2026-10-14">14 October 2026</time> · 4 min read</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Hiring a WordPress developer looks easy: there are thousands of them. Hiring a good one, who writes clean code, communicates clearly and is still around when something breaks, is harder. I'm a freelance WordPress developer, and this is the checklist I would use if I were on your side of the table. If you want to see how I work, read <a href="../../services/web-development/wordpress-developer/hire/">hire a WordPress developer</a>.</p>
+
+        <h2>Step 1: be clear about the kind of WordPress work</h2>
+        <p>"WordPress developer" covers very different jobs, and the right person for one is not always right for another:</p>
+        <ul>
+          <li><strong>Site builds with a page builder</strong> (Elementor, Divi, Bricks): mostly design and configuration, some custom CSS.</li>
+          <li><strong>Custom themes:</strong> PHP templates, the block editor, custom post types and fields. Needs a real developer.</li>
+          <li><strong>Custom plugins and integrations:</strong> connecting WordPress to a CRM, a payment provider or an internal tool through APIs.</li>
+          <li><strong>WooCommerce:</strong> online stores, payment and shipping rules, product logic.</li>
+          <li><strong>Speed, security and rescue work:</strong> fixing a slow, broken or hacked site someone else built.</li>
+          <li><strong>Maintenance:</strong> updates, backups and small changes over time.</li>
+        </ul>
+        <p>Write one or two sentences about which of these you need. It filters candidates faster than anything else.</p>
+
+        <h2>Step 2: decide between a freelancer and an agency</h2>
+        <p>An agency gives you a team: designer, developer, project manager, sometimes a copywriter. That makes sense for large sites with many moving parts. A freelancer gives you one person who does the work and talks to you directly, which is usually faster and simpler for small and medium sites. The trade-off is capacity: a freelancer can only take on so much at once, so ask about availability early.</p>
+
+        <h2>Step 3: where to find WordPress developers</h2>
+        <ul>
+          <li><strong>Referrals</strong> from other business owners. Still the best source.</li>
+          <li><strong>Freelance platforms</strong> such as Upwork and Fiverr, where you can see job history and client reviews.</li>
+          <li><strong>Search.</strong> Developers with their own site and real case studies are showing you how they work.</li>
+          <li><strong>Communities</strong> such as local WordPress meetups and WordCamps.</li>
+        </ul>
+        <p>Wherever you look, judge the work, not the profile headline.</p>
+
+        <h2>Step 4: check real work</h2>
+        <p>Ask for two or three sites or projects similar to yours, and look at them properly. Open them on your phone. Run them through PageSpeed Insights. Click around the menu and the forms. Ask what exactly the developer did on each one, because "I worked on this site" can mean anything from building it to changing a button colour.</p>
+
+        <h2>Step 5: ask the questions that reveal how someone works</h2>
+        <ol>
+          <li><strong>Who will actually write the code?</strong> You want the answer to be the person you're talking to, or a clear answer about who else.</li>
+          <li><strong>How do you test changes before they go live?</strong> A good answer mentions a staging copy and backups.</li>
+          <li><strong>How many plugins do you usually use, and how do you choose them?</strong> Fewer, well-maintained plugins usually means a faster, safer site.</li>
+          <li><strong>What happens if something breaks a month after launch?</strong></li>
+          <li><strong>Who owns the hosting, the domain and the admin accounts?</strong> It should be you.</li>
+          <li><strong>How will we communicate, and how often?</strong></li>
+          <li><strong>What do you need from me, and when?</strong> A developer who asks this is planning properly.</li>
+        </ol>
+
+        <h2>Step 6: compare quotes properly</h2>
+        <p>Two quotes for "a WordPress site" can be far apart because they describe different work. Ask each developer for a written scope that lists:</p>
+        <ul>
+          <li>The pages and templates included.</li>
+          <li>Whether the design is a theme adapted to your brand or built from scratch.</li>
+          <li>Who adds the content.</li>
+          <li>What is included for SEO, speed and analytics.</li>
+          <li>How many rounds of changes.</li>
+          <li>What support is included after launch.</li>
+        </ul>
+        <p>Hourly or fixed price? Fixed quotes are easier to budget for well-defined projects. Hourly works for ongoing, open-ended work. I quote fixed prices per project, after a call, so the client knows the full cost before work starts. I explain more about cost factors in <a href="../../blog/ecommerce-website-development-cost/">ecommerce website development cost</a>, which applies to most website projects too.</p>
+
+        <h2>Red flags</h2>
+        <ul>
+          <li>No written scope, or a scope so vague it could mean anything.</li>
+          <li>The developer wants to host the site on their own account with no admin access for you.</li>
+          <li>A promise of first place on Google.</li>
+          <li>A plan that relies on a long list of premium plugins for basic features.</li>
+          <li>No mention of backups, testing or what happens after launch.</li>
+          <li>Pressure to decide quickly.</li>
+        </ul>
+
+        <h2>Step 7: start with a small task</h2>
+        <p>If you're unsure, start with something small and paid: a speed fix, a new page template, a form integration. It shows how the developer communicates, how they handle feedback and how good the work is, before you commit to a bigger project.</p>
+
+        <h2>Step 8: set the project up well</h2>
+        <p>Once you hire someone, a few things make the project go smoothly:</p>
+        <ul>
+          <li>Give them their own user account, not your password.</li>
+          <li>Agree on one channel for messages and one place for feedback.</li>
+          <li>Send content early. Missing text and photos delay more projects than code does.</li>
+          <li>Ask for changes to be tested on a staging copy before they reach the live site.</li>
+          <li>Agree on what happens after launch before launch day.</li>
+        </ul>
+
+        <h2>Hiring a WordPress developer in another country</h2>
+        <p>Many UK and US businesses hire WordPress developers abroad. It works well when time zones overlap and communication is clear. Portugal shares the UK's time zone, and afternoons in Portugal overlap with mornings on the US East Coast, which gives a daily window for calls. Whoever you hire, agree on working hours and response times at the start.</p>
+
+        <h2>How long a WordPress project usually takes</h2>
+        <p>A small fix can be done in a day. A typical small business site takes a few weeks, and most of that time depends on content and feedback, not code. A WooCommerce store or a site with custom integrations takes longer. Ask for a timeline with the quote, and ask what the developer needs from you at each stage, because missing content delays more projects than anything else.</p>
+
+        <aside class="post-cta" aria-label="Looking to hire a WordPress developer?">
+          <h2>Looking to hire a WordPress developer?</h2>
+          <p>Tell me about the site and the work. I reply myself, usually with a few questions and an honest first view.</p>
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do I hire a good WordPress developer?</summary>
+            <p>Be clear about the type of work, look at real projects they did, ask who writes the code and how changes are tested, compare written scopes rather than prices, and consider starting with a small paid task.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I hire a freelancer or an agency for WordPress?</summary>
+            <p>A freelancer is usually simpler and faster for small and medium sites. An agency makes sense when you need a full team working on a large project at once.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Who should own the WordPress hosting and domain?</summary>
+            <p>You should. The developer gets their own user account, but the domain, hosting and admin access stay in your name.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What should a WordPress developer quote include?</summary>
+            <p>The pages and templates, the design approach, who adds content, SEO and analytics, the number of revision rounds and what support follows launch.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

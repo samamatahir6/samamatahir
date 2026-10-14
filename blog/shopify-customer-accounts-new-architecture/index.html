@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Shopify Customer Accounts: What Changed in the New Version | Samama Tahir</title>
+<meta name="description" content="Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching." />
+<link rel="canonical" href="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+<link rel="alternate" type="application/rss+xml" title="Samama Tahir blog" href="https://samamatahir.com/blog/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Shopify Customer Accounts: What Changed in the New Version | Samama Tahir" />
+<meta property="og:description" content="Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching." />
+<meta property="og:url" content="https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+<meta property="article:published_time" content="2026-10-14" />
+<meta property="article:modified_time" content="2026-10-14" />
+<meta property="article:author" content="https://samamatahir.com/about/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shopify Customer Accounts: What Changed in the New Version | Samama Tahir" />
+<meta name="twitter:description" content="Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://samamatahir.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Shopify customer accounts",
+      "item": "https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Understanding Shopify customer accounts: what changed in the new architecture",
+  "description": "Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching.",
+  "url": "https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/",
+  "mainEntityOfPage": "https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "publisher": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "image": "https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg",
+  "wordCount": 990,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://samamatahir.com/blog/#blog",
+    "url": "https://samamatahir.com/blog/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between classic and new Shopify customer accounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Classic accounts use email and password and are rendered by the theme's customers templates. New customer accounts use a one-time code instead of a password and are hosted by Shopify, customised through the checkout and accounts editor and app extensions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit new customer account pages with Liquid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The account pages are hosted by Shopify. You change their branding in the checkout and accounts editor and add content with customer account UI extensions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the customer Liquid object still work with new customer accounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When a customer is signed in, the customer object is still available on the storefront, so greetings and customer-specific content keep working."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need new customer accounts for Shopify B2B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Shopify's B2B features require new customer accounts."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/blog/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../blog/">Blog</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Shopify customer accounts</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <span class="hero-badge">Shopify</span>
+      <h1 class="text-balance">Understanding Shopify customer accounts: what changed in the new architecture</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3); max-width: 46rem;">Classic and new Shopify customer accounts compared, what it means for your theme and apps, and a checklist before you switch.</p>
+      <p class="post-meta">By Samama Tahir · <time datetime="2026-10-14">14 October 2026</time> · 4 min read</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="post-content">
+<p>Shopify now has two versions of customer accounts: the classic accounts that themes have used for years, and the newer customer accounts that Shopify hosts itself. They look similar to a shopper, but for a store owner and a theme developer they work very differently. I build and migrate Shopify themes for a living as a <a href="../../services/web-development/shopify-developer/">freelance Shopify developer</a>, and this is the summary I give clients who ask what changed and what they need to do.</p>
+        <p>This is a rewritten version of a tutorial that used to live on my old blog, updated for how accounts work today.</p>
+
+        <h2>Classic customer accounts: how they worked</h2>
+        <p>With classic accounts (Shopify now calls them legacy customer accounts), customers sign up with an email and a password. The login, registration, account, order and address pages are all part of your theme, built from Liquid templates in the <code>customers/</code> folder: <code>login</code>, <code>register</code>, <code>account</code>, <code>order</code>, <code>addresses</code>, <code>activate_account</code> and <code>reset_password</code>.</p>
+        <p>Because those pages live in the theme, developers could change anything: the layout, extra fields, loyalty points on the account page, custom order history. Apps often injected code into these templates too. The downside was the same freedom: every theme handled accounts slightly differently, password resets were a common support issue, and features like B2B were hard to build on top.</p>
+
+        <h2>New customer accounts: what changed</h2>
+        <p>With new customer accounts, the account area is no longer part of the theme. Shopify hosts it and keeps it consistent across stores. The main differences:</p>
+        <ul>
+          <li><strong>No passwords.</strong> Customers enter their email and receive a one-time code to sign in. No more forgotten passwords.</li>
+          <li><strong>Hosted by Shopify.</strong> The account and order pages are served by Shopify, not by your theme's <code>customers/</code> templates. Those templates are simply not used when new accounts are on.</li>
+          <li><strong>Branding in the editor, not in Liquid.</strong> You set the logo, colours and fonts in the checkout and accounts editor, so the account area matches the checkout.</li>
+          <li><strong>Extensions instead of template edits.</strong> Extra content, such as loyalty points, a returns form or custom fields from metafields, is added with customer account UI extensions, which are built as apps.</li>
+          <li><strong>Self-serve features.</strong> Customers can see orders, reorder, manage their profile and addresses, and, depending on your setup, request returns.</li>
+          <li><strong>Required for some features.</strong> Shopify's B2B features and some newer account features only work with new customer accounts.</li>
+        </ul>
+
+        <h2>What stays the same in the theme</h2>
+        <p>Most of the storefront still works the same way. The <code>customer</code> Liquid object is still available when a customer is signed in, so you can show a greeting or customer-specific content. The <code>routes</code> object still gives you the right URLs, and Shopify sends them to whichever account version the store uses. A header account link written like this works with both:</p>
+        <pre><code>{%- if shop.customer_accounts_enabled -%}
+  {%- if customer -%}
+    &lt;a href=&quot;{{ routes.account_url }}&quot;&gt;{{ &#x27;customer.account.title&#x27; | t }}&lt;/a&gt;
+  {%- else -%}
+    &lt;a href=&quot;{{ routes.account_login_url }}&quot;&gt;{{ &#x27;customer.log_in&#x27; | t }}&lt;/a&gt;
+  {%- endif -%}
+{%- endif -%}</code></pre>
+        <p>And a simple greeting still works anywhere on the storefront:</p>
+        <pre><code>{%- if customer -%}
+  &lt;p class=&quot;welcome&quot;&gt;Welcome back, {{ customer.first_name | escape }}&lt;/p&gt;
+{%- endif -%}</code></pre>
+        <p>What no longer applies with new accounts are the <code>customer_login</code> and <code>create_customer</code> forms and anything built inside the <code>customers/</code> templates, because those pages are never shown.</p>
+
+        <h2>What to check before switching</h2>
+        <p>Switching is done in the admin under <strong>Settings &rarr; Customer accounts</strong>. Before you change it on a live store, go through this list:</p>
+        <ol>
+          <li><strong>Theme customisations.</strong> Open the <code>customers/</code> templates and list anything custom: extra fields, loyalty widgets, custom order tables, tracking links. Each one needs a new home, usually an app extension or the order status page.</li>
+          <li><strong>Apps.</strong> Check every app that touched account pages (loyalty, wishlists, subscriptions, returns). Most popular apps now support new accounts through extensions, but confirm it and switch on their extension.</li>
+          <li><strong>Hard-coded links.</strong> Search the theme for <code>/account</code> and <code>/account/login</code> written as plain text, and replace them with the <code>routes</code> variables above.</li>
+          <li><strong>Branding.</strong> Set the logo, colours and fonts in the checkout and accounts editor so the account area doesn't look like a different shop.</li>
+          <li><strong>Notifications.</strong> Review the customer emails, because the sign-in flow no longer uses passwords and invitation emails read differently.</li>
+          <li><strong>Translations.</strong> If you sell in several languages, check the account pages in each one.</li>
+          <li><strong>Test.</strong> Sign in as a customer with a real past order. Check order history, addresses, reorder and any extension you added.</li>
+        </ol>
+
+        <h2>Custom data on the account page</h2>
+        <p>The most common question I get is "where do my custom fields go now?". With classic accounts, developers often stored extra customer information in metafields and printed it in <code>account.liquid</code>. With new accounts, the customer data still lives in metafields, but it's shown and edited through a customer account UI extension. For a headless storefront, the Customer Account API gives secure access to the signed-in customer's orders and profile.</p>
+        <p>If the custom data was only decoration, it's often simpler to move it to the storefront itself, using the <code>customer</code> object on a normal theme page, and keep the account area standard.</p>
+
+        <h2>Should you switch now?</h2>
+        <p>For most stores, yes. Shopify treats classic accounts as legacy and is putting new account features into the new version, so it's better to move on your own schedule than in a hurry later. If your account pages are heavily customised, plan the move as a small project: audit, rebuild the custom parts as extensions or storefront sections, test on a development store or with the setting switched during a quiet period, then switch.</p>
+        <p>If you are also moving an old theme to Online Store 2.0, it's a good moment to handle both together. I did a similar 1.0 to 2.0 theme migration for OROS, which you can read about on my <a href="../../work/">work page</a>.</p>
+
+        <h2>The order status page</h2>
+        <p>With new customer accounts, the order status page that customers see after checkout is linked to their account, so they can move from one order to their full order history without signing in again. If you used to add tracking widgets or post-purchase content to the old order status page with scripts, check how your apps handle it now; Shopify has moved this to checkout and customer account extensions as well.</p>
+
+        <aside class="post-cta" aria-label="Need help moving to new customer accounts?">
+          <h2>Need help moving to new customer accounts?</h2>
+          <p>I audit the theme and apps, rebuild custom account features the new way and test the switch, so your customers don't notice anything except an easier sign-in.</p>
+          <a href="../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is the difference between classic and new Shopify customer accounts?</summary>
+            <p>Classic accounts use email and password and are rendered by the theme's customers templates. New customer accounts use a one-time code instead of a password and are hosted by Shopify, customised through the checkout and accounts editor and app extensions.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I edit new customer account pages with Liquid?</summary>
+            <p>No. The account pages are hosted by Shopify. You change their branding in the checkout and accounts editor and add content with customer account UI extensions.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does the customer Liquid object still work with new customer accounts?</summary>
+            <p>Yes. When a customer is signed in, the customer object is still available on the storefront, so greetings and customer-specific content keep working.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need new customer accounts for Shopify B2B?</summary>
+            <p>Yes. Shopify's B2B features require new customer accounts.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

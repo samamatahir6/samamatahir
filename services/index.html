@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Consent Mode v2: analytics stays off until the visitor accepts in the
-     cookie banner (main.js). A saved choice is applied before the tag loads. -->
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -14,24 +18,29 @@
     ad_personalization: 'denied',
     analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
   });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
 </script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
-<title>Services | Samama Tahir, Web &amp; Marketing in Porto</title>
-<meta name="description" content="Web development and marketing services from Samama Tahir in Porto: WordPress, Shopify, custom applications, local SEO, and paid ads." />
+<title>Web Development and Marketing Services in Portugal | Samama Tahir</title>
+<meta name="description" content="Web development and marketing services from a freelancer in Porto: WordPress, Shopify, React, local SEO, Google Business Profile, ads, GA4 and AI automation." />
 <link rel="canonical" href="https://samamatahir.com/services/" />
 <link rel="alternate" hreflang="en" href="https://samamatahir.com/services/" />
-<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/services/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/" />
 <link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/" />
 <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -39,8 +48,8 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#0b3b2a" />
 
-<meta property="og:title" content="Services | Samama Tahir, Web & Marketing in Porto" />
-<meta property="og:description" content="Web development and marketing services from Samama Tahir in Porto: WordPress, Shopify, custom applications, local SEO, and paid ads." />
+<meta property="og:title" content="Web Development and Marketing Services in Portugal | Samama Tahir" />
+<meta property="og:description" content="Web development and marketing services from a freelancer in Porto: WordPress, Shopify, React, local SEO, Google Business Profile, ads, GA4 and AI automation." />
 <meta property="og:url" content="https://samamatahir.com/services/" />
 <meta property="og:site_name" content="Samama Tahir" />
 <meta property="og:type" content="website" />
@@ -52,15 +61,15 @@
 <meta property="og:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Services | Samama Tahir, Web & Marketing in Porto" />
-<meta name="twitter:description" content="Web development and marketing services from Samama Tahir in Porto: WordPress, Shopify, custom applications, local SEO, and paid ads." />
+<meta name="twitter:title" content="Web Development and Marketing Services in Portugal | Samama Tahir" />
+<meta name="twitter:description" content="Web development and marketing services from a freelancer in Porto: WordPress, Shopify, React, local SEO, Google Business Profile, ads, GA4 and AI automation." />
 <meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
 <meta name="twitter:image:alt" content="Samama Tahir, full-stack web developer in Porto" />
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../css/styles.css?v=20261002c" />
-<link rel="stylesheet" href="../css/responsive.css?v=20261002b" />
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
 {
@@ -76,7 +85,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Services",
+  "name": "Web Development and Marketing Services",
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -123,6 +132,62 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Portugal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costs vary depending on whether it's a WordPress site, a Shopify store, or a fully custom application, and how much content and functionality it needs. Rather than quote a number that wouldn't be accurate for your project, I'd rather look at what you actually need and give you a real figure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why don't you list prices on the website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a price list would be wrong for most projects. A five-page WordPress site, a Shopify store with hundreds of products and a custom React application are very different jobs. After a free 20-minute call I send a written quote with the scope and what's included, so you know the full cost before anything starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a new website or just marketing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on what's actually holding the business back. A slow or outdated site limits what marketing can achieve, but a good site with nobody finding it doesn't grow a business either. I'll tell you honestly which one matters more for your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix my current website instead of rebuilding it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, yes. If the foundation is sound, fixing performance, security, or specific features usually makes more sense than starting over. A full rebuild is only worth it when the current site is genuinely holding the business back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a project usually take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on scope: a WordPress site is usually quicker than a custom web application, and a store with many products takes longer to set up than a simple business site. I'll give you a realistic timeline once I understand what's involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with UK and US clients remotely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, online. Portugal shares the UK's time zone, so we keep the same working hours, and my afternoons overlap with the US East Coast morning, which gives us a daily window for video calls. In-person meetings are only for businesses in Porto, Vila Nova de Gaia and nearby."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -143,15 +208,35 @@
             <span class="nav-star" aria-hidden="true">✦</span>Services
             <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-            <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-            <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
           </ul>
         </li>
         <li><a href="../about/">About</a></li>
         <li><a href="../work/">Work</a></li>
         <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
         <li><a href="../contact/">Contact</a></li>
       </ul>
     </nav>
@@ -159,7 +244,7 @@
     <div style="display: flex; align-items: center; gap: 0.75rem;">
       <div class="lang-switch">
         <span class="is-active" aria-current="page">EN</span>
-        <a href="../pt/services/" hreflang="pt-PT">PT</a>
+        <a href="../pt/servicos/" hreflang="pt-PT">PT</a>
       </div>
 
       <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
@@ -175,15 +260,35 @@
     <ul>
       <li class="mobile-nav-services">
         <a href="../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
-        <ul class="mobile-nav-submenu">
-          <li><a href="../services/web-development/"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a></li>
-          <li><a href="../services/marketing/"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a></li>
-          <li><a href="../services/ai-automation/"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a></li>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
         </ul>
       </li>
       <li><a href="../about/">About</a></li>
       <li><a href="../work/">Work</a></li>
       <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
       <li><a href="../contact/">Contact</a></li>
       <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
     </ul>
@@ -207,8 +312,11 @@
   <section class="section section--dark page-intro">
     <div class="container">
       <span class="hero-badge">Services</span>
-      <h1 class="text-balance">Web development and marketing, from one person</h1>
-      <p style="font-size: 1.15rem; margin-top: var(--space-3);">A business needs a site that works and a way for people to actually find it. I do both, so nothing gets lost between "who built it" and "who's supposed to promote it."</p>
+      <h1 class="text-balance">Web development and marketing services in Portugal, from one person</h1>
+      <p style="font-size: 1.15rem; margin-top: var(--space-3);">I offer web development and marketing services from Porto, for businesses in Portugal, the UK and the US. A business needs a site that works and a way for people to actually find it. I do both, so nothing gets lost between "who built it" and "who's supposed to promote it."</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../contact/" class="btn btn-primary">Book a free 20-min call</a>
+        </div>
     </div>
   </section>
 
@@ -227,6 +335,13 @@
           </span>
           <h3>Web Development</h3>
           <p>Custom WordPress and Shopify builds, React applications, e-commerce, and the API integrations that connect them to the tools a business already runs on.</p>
+
+          <ul class="tag-list" aria-label="Web development services">
+            <li class="tag"><a href="web-development/wordpress-developer/">WordPress</a></li>
+            <li class="tag"><a href="web-development/shopify-developer/">Shopify</a></li>
+            <li class="tag"><a href="web-development/custom-web-apps/">Custom web apps (React)</a></li>
+            <li class="tag"><a href="web-development/online-store/">Online stores</a></li>
+          </ul>
           <a href="web-development/" class="link-more">Explore web development services</a>
         </article>
         <article class="card">
@@ -235,6 +350,15 @@
           </span>
           <h3>Marketing</h3>
           <p>Google Business Profile, local and technical SEO, Google Ads, Meta Ads, and the analytics setup that tells you which of it is actually working.</p>
+
+          <ul class="tag-list" aria-label="Marketing services">
+            <li class="tag"><a href="marketing/google-business-profile/">Google Business Profile</a></li>
+            <li class="tag"><a href="marketing/local-seo/">Local SEO</a></li>
+            <li class="tag"><a href="marketing/seo-consultant/">SEO consulting</a></li>
+            <li class="tag"><a href="marketing/google-ads/">Google Ads</a></li>
+            <li class="tag"><a href="marketing/meta-ads/">Meta Ads</a></li>
+            <li class="tag"><a href="marketing/ga4-analytics/">GA4 and Tag Manager</a></li>
+          </ul>
           <a href="marketing/" class="link-more">Explore marketing services</a>
         </article>
         <article class="card">
@@ -243,6 +367,12 @@
           </span>
           <h3>AI &amp; Automation</h3>
           <p>AI chatbots, workflow automation, AI-generated reports, and the API integrations that connect them to the tools a business already runs on.</p>
+
+          <ul class="tag-list" aria-label="AI and automation services">
+            <li class="tag">AI chatbots</li>
+            <li class="tag">Workflow automation</li>
+            <li class="tag">AI reports</li>
+          </ul>
           <a href="ai-automation/" class="link-more">Explore AI and automation services</a>
         </article>
       </div>
@@ -268,6 +398,42 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="page-faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="page-faq-heading" class="text-balance">Questions before you get in touch</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>How much does a website cost in Portugal?</summary>
+            <p>Costs vary depending on whether it's a WordPress site, a Shopify store, or a fully custom application, and how much content and functionality it needs. Rather than quote a number that wouldn't be accurate for your project, I'd rather look at what you actually need and give you a real figure.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why don't you list prices on the website?</summary>
+            <p>Because a price list would be wrong for most projects. A five-page WordPress site, a Shopify store with hundreds of products and a custom React application are very different jobs. After a free 20-minute call I send a written quote with the scope and what's included, so you know the full cost before anything starts.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need a new website or just marketing?</summary>
+            <p>It depends on what's actually holding the business back. A slow or outdated site limits what marketing can achieve, but a good site with nobody finding it doesn't grow a business either. I'll tell you honestly which one matters more for your situation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you fix my current website instead of rebuilding it?</summary>
+            <p>Often, yes. If the foundation is sound, fixing performance, security, or specific features usually makes more sense than starting over. A full rebuild is only worth it when the current site is genuinely holding the business back.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does a project usually take?</summary>
+            <p>It depends on scope: a WordPress site is usually quicker than a custom web application, and a store with many products takes longer to set up than a simple business site. I'll give you a realistic timeline once I understand what's involved.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with UK and US clients remotely?</summary>
+            <p>Yes, online. Portugal shares the UK's time zone, so we keep the same working hours, and my afternoons overlap with the US East Coast morning, which gives us a daily window for video calls. In-person meetings are only for businesses in Porto, Vila Nova de Gaia and nearby.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--dark final-cta" aria-labelledby="services-cta-heading">
     <div class="container">
@@ -276,7 +442,7 @@
         <p>Tell me where the business is today, and I'll tell you honestly whether the priority is the site, the marketing, or both.</p>
       </div>
       <div class="hero-actions">
-        <a href="../contact/" class="btn btn-primary">Talk to Samama</a>
+        <a href="../contact/" class="btn btn-primary">Book a free 20-min call</a>
       </div>
     </div>
   </section>
@@ -299,14 +465,32 @@
           <a href="../about/">About</a>
           <a href="../work/">Portfolio</a>
           <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
           <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
         </div>
       </div>
       <div class="footer-services">
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Web Development</p>
         <div class="footer-links">
           <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
           <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
           <a href="../services/ai-automation/">AI &amp; Automation</a>
         </div>
       </div>
@@ -320,8 +504,7 @@
       <div>
         <p class="footer-heading">Social</p>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/samama-tahir/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
-          <a href="https://share.google/9vlpYLPfjb59Ebdjr" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -335,6 +518,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002a" defer></script>
+<script src="../js/main.min.js?v=20261014b" defer></script>
 </body>
 </html>

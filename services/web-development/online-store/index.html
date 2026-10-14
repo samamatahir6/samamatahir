@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Ecommerce Website Developer (Shopify &amp; WooCommerce) | Samama Tahir</title>
+<meta name="description" content="Ecommerce website developer for UK, US and EU brands: I build online stores on Shopify and WooCommerce with payments, shipping, SEO and tracking." />
+<link rel="canonical" href="https://samamatahir.com/services/web-development/online-store/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/services/web-development/online-store/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/servicos/criacao-de-sites/criar-loja-online/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/services/web-development/online-store/" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Ecommerce Website Developer (Shopify &amp; WooCommerce) | Samama Tahir" />
+<meta property="og:description" content="Ecommerce website developer for UK, US and EU brands: I build online stores on Shopify and WooCommerce with payments, shipping, SEO and tracking." />
+<meta property="og:url" content="https://samamatahir.com/services/web-development/online-store/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ecommerce Website Developer (Shopify &amp; WooCommerce) | Samama Tahir" />
+<meta name="twitter:description" content="Ecommerce website developer for UK, US and EU brands: I build online stores on Shopify and WooCommerce with payments, shipping, SEO and tracking." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://samamatahir.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web Development",
+      "item": "https://samamatahir.com/services/web-development/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Online Stores",
+      "item": "https://samamatahir.com/services/web-development/online-store/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ecommerce Website Development",
+  "serviceType": "Ecommerce website development",
+  "url": "https://samamatahir.com/services/web-development/online-store/",
+  "provider": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "description": "Online store development on Shopify and WooCommerce: store setup, payments, shipping, integrations with accounting and stock tools, ecommerce SEO and conversion tracking, by a freelance ecommerce website developer in Porto, Portugal."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I build an online store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick a platform (usually Shopify or WooCommerce), set up products and collections, connect payments and shipping, write clear product pages, and test the checkout with real orders before launch. Then set up tracking and SEO so people can find the store and you can see what sells. I can do all of it, or the parts you would rather not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an ecommerce website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ecommerce website is a site where customers can browse products, pay and place orders online, with stock, payments, shipping and order emails handled by the platform behind it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an ecommerce website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the platform, the number of products, the design and the integrations. After a free call I send a written fixed quote, so you know the cost before anything starts. Platform fees, such as a Shopify plan, are paid to the platform separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you take over an existing store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A lot of my store work is on existing stores: speed, broken features, a theme upgrade or an integration that never worked properly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with UK and US brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, online. Portugal shares the UK time zone, and my afternoons overlap with the US East Coast morning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build an online store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends mostly on the number of products, how ready the content is and how custom the design needs to be. I give you a timeline with the written quote, and I tell you early if anything on your side, like product photos, is likely to hold it up."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../services/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../../services/web-development/online-store/" aria-current="page">Online Stores</a></li>
+                <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../about/">About</a></li>
+        <li><a href="../../../work/">Work</a></li>
+        <li><a href="../../../faq/">FAQ</a></li>
+        <li><a href="../../../blog/">Blog</a></li>
+        <li><a href="../../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../../pt/servicos/criacao-de-sites/criar-loja-online/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../../services/web-development/online-store/" aria-current="page">Online Stores</a></li>
+              <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../about/">About</a></li>
+      <li><a href="../../../work/">Work</a></li>
+      <li><a href="../../../faq/">FAQ</a></li>
+      <li><a href="../../../blog/">Blog</a></li>
+      <li><a href="../../../contact/">Contact</a></li>
+      <li><a href="../../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../services/">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../services/web-development/">Web Development</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Online Stores</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Ecommerce</span>
+        <h1 class="text-balance">Ecommerce Website Developer for Shopify and WooCommerce</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I'm a freelance ecommerce website developer based in Porto, Portugal, building online stores for brands in the UK, the US and Europe. I build on Shopify and WooCommerce, and I set up the parts that decide whether a store sells: payments, shipping, product pages, SEO and the tracking that shows which products actually make money.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+          <a href="../../../work/" class="btn btn-secondary">See my store work</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../../../images/thosecoffeepeople-homepage-desktop.webp" alt="Homepage of an online coffee store Samama Tahir worked on" width="1800" height="1123" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What I Do</span>
+        <h2 id="do-heading" class="text-balance">What goes into an online store that sells</h2>
+        <p>Every store is different, but these four parts are in almost every project.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Store build</h3>
+          <p>A new store on Shopify or WooCommerce, or a rebuild of one that has outgrown its theme: catalogue structure, collections, product templates and a checkout that is easy to finish.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Payments and shipping</h3>
+          <p>Payment providers, shipping zones and rates, taxes, and the emails customers get after they order, set up and tested with real test orders before launch.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Integrations</h3>
+          <p>Connecting the store to the tools the business already uses, such as accounting, stock, subscriptions or a CRM. I connected one coffee store to QuickBooks so the store and the accounting talk to each other.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>SEO and tracking</h3>
+          <p>Clean collection and product pages for search, structured data, a fast theme, and GA4 ecommerce events so you can see revenue by product and by channel.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopify or WooCommerce -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Shopify or WooCommerce</span>
+        <h2 id="text0-heading" class="text-balance">Shopify or WooCommerce: which one fits your store</h2>
+        <p>Shopify is usually the simpler choice: hosting, security and updates are handled for you, and it runs well with a small team. WooCommerce runs on WordPress, so it suits stores that are content-heavy or need deep customisation, but it needs more maintenance. I build on both, and I will recommend the one that fits, even when it is the smaller job. For Shopify-specific work, see my <a href="../../../services/web-development/shopify-developer/">Shopify developer</a> page.</p>
+        <p style="margin-top: var(--space-2);">I also take on WooCommerce web developer work on existing stores, and B2B ecommerce website development where customers need their own prices, bulk ordering or account-based buying.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who It's For</span>
+        <h2 id="text1-heading" class="text-balance">Ecommerce web developer for UK, US and European brands</h2>
+        <p>Most of my ecommerce clients are outside Portugal and work with me online. If you are looking for an ecommerce website developer in the UK, Portugal shares your time zone, so I work your hours. US brands get a daily overlap with the East Coast morning. Businesses in Porto, Vila Nova de Gaia and nearby can also meet me in person when it helps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Goes Into a Store -->
+  <section class="section section--alt" aria-labelledby="text2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What Goes Into a Store</span>
+        <h2 id="text2-heading" class="text-balance">What an ecommerce website build includes</h2>
+        <p>A store is more than a theme and some products. Before launch I set up the parts that decide whether it sells: a product structure that makes sense for your catalogue, collection pages people can filter, a checkout with the payment methods your customers expect, shipping rules and taxes, transactional emails, and the legal pages. Then the parts that let it grow: clean URLs and product data for search, GA4 ecommerce events, and the Meta pixel if you plan to advertise.</p>
+        <p style="margin-top: var(--space-2);">For what drives the cost of a store, read <a href="../../../blog/ecommerce-website-development-cost/">ecommerce website development cost</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recent Store Work</span>
+        <h2 id="work-heading" class="text-balance">Online stores I have worked on</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <article class="card">
+          <h3>Online coffee store</h3>
+          <p>Improved loading speed to around 65 on mobile and 92 on desktop in PageSpeed, connected the store to QuickBooks, and fixed broken links and wrong URLs across the site.</p>
+        </article>
+        <article class="card">
+          <h3>OROS</h3>
+          <p>Migrated an outdoor apparel store from a Shopify 1.0 theme to Online Store 2.0, rebuilding product pages and collections as reusable sections.</p>
+        </article>
+        <article class="card">
+          <h3>Fore Fathers</h3>
+          <p>Moved a family apparel store to Online Store 2.0 and mapped redirects so existing product links kept working.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../../../work/" class="link-more">Read the full case studies</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How This Works</span>
+        <h2 id="process-heading" class="text-balance">From first call to first order</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Call</h3>
+          <p>A free 20-minute call about what you sell, who buys it and how you ship it.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Quote</h3>
+          <p>A written fixed quote with the scope and what is included, before work starts.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Build and test</h3>
+          <p>I build the store and test payments, shipping and emails with real test orders.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Launch and support</h3>
+          <p>We go live when you are happy, and I stay reachable for fixes and changes.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions about building an online store</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do I build an online store?</summary>
+            <p>Pick a platform (usually Shopify or WooCommerce), set up products and collections, connect payments and shipping, write clear product pages, and test the checkout with real orders before launch. Then set up tracking and SEO so people can find the store and you can see what sells. I can do all of it, or the parts you would rather not.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is an ecommerce website?</summary>
+            <p>An ecommerce website is a site where customers can browse products, pay and place orders online, with stock, payments, shipping and order emails handled by the platform behind it.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does an ecommerce website cost?</summary>
+            <p>It depends on the platform, the number of products, the design and the integrations. After a free call I send a written fixed quote, so you know the cost before anything starts. Platform fees, such as a Shopify plan, are paid to the platform separately.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you take over an existing store?</summary>
+            <p>Yes. A lot of my store work is on existing stores: speed, broken features, a theme upgrade or an integration that never worked properly.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with UK and US brands?</summary>
+            <p>Yes, online. Portugal shares the UK time zone, and my afternoons overlap with the US East Coast morning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does it take to build an online store?</summary>
+            <p>It depends mostly on the number of products, how ready the content is and how custom the design needs to be. I give you a timeline with the written quote, and I tell you early if anything on your side, like product photos, is likely to hold it up.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Planning an online store, or fixing one?</h2>
+        <p>Tell me what you sell and where you sell it. I will tell you honestly which platform and setup I would use.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../../../contact/" class="btn btn-primary">Book a free 20-min call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../../">Home</a>
+          <a href="../../../services/" aria-current="page">Services</a>
+          <a href="../../../about/">About</a>
+          <a href="../../../work/">Portfolio</a>
+          <a href="../../../faq/">FAQ</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../../services/web-development/">Web Development</a>
+          <a href="../../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../../services/marketing/">Marketing</a>
+          <a href="../../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>

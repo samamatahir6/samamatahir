@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Web Developer in Porto, Portugal | Samama Tahir</title>
+<meta name="description" content="Web developer in Porto for local and international businesses: websites, online stores, Google Business Profile and local SEO, in English or Portuguese." />
+<link rel="canonical" href="https://samamatahir.com/web-developer-porto/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/web-developer-porto/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/criacao-de-sites-porto/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/web-developer-porto/" />
+<link rel="icon" type="image/svg+xml" href="../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Web Developer in Porto, Portugal | Samama Tahir" />
+<meta property="og:description" content="Web developer in Porto for local and international businesses: websites, online stores, Google Business Profile and local SEO, in English or Portuguese." />
+<meta property="og:url" content="https://samamatahir.com/web-developer-porto/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Web Developer in Porto, Portugal | Samama Tahir" />
+<meta name="twitter:description" content="Web developer in Porto for local and international businesses: websites, online stores, Google Business Profile and local SEO, in English or Portuguese." />
+<meta name="twitter:image" content="https://samamatahir.com/images/samama-tahir-web-developer-porto-og.jpg" />
+<meta name="twitter:image:alt" content="Samama Tahir, freelance web developer in Porto" />
+
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../css/responsive.min.css?v=20261014e" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://samamatahir.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web Development",
+      "item": "https://samamatahir.com/services/web-development/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Web Developer in Porto",
+      "item": "https://samamatahir.com/web-developer-porto/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Web Developer in Porto",
+  "url": "https://samamatahir.com/web-developer-porto/",
+  "description": "Web development, online stores, Google Business Profile and local SEO for businesses in Porto and Vila Nova de Gaia, in English or Portuguese, from a freelance web developer based in Porto.",
+  "parentOrganization": {
+    "@id": "https://samamatahir.com/#business"
+  },
+  "founder": {
+    "@id": "https://samamatahir.com/#person"
+  },
+  "telephone": "+351932426753",
+  "email": "hello@samamatahir.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Porto",
+    "addressRegion": "Porto",
+    "addressCountry": "PT"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Porto"
+    },
+    {
+      "@type": "City",
+      "name": "Vila Nova de Gaia"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can we meet in person in Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, when it helps. I am based in Porto and can meet you in the city, usually at the start of the project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work in English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I work in English and Portuguese, and can build the site in either language or both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a website cost in Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the number of pages, whether you sell online and what needs connecting to the site. After a free call I send a written fixed quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you set up Portuguese payments for my store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MB WAY, Multibanco and cards through a payment provider that supports Shopify or WooCommerce in Portugal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work outside Porto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In person in Vila Nova de Gaia and nearby, and online with the rest of Portugal, the UK and the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you also work with businesses in Vila Nova de Gaia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I meet clients in person in Porto, Vila Nova de Gaia and nearby when it helps. Everywhere else, the work is done online."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../services/" aria-current="page">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../web-developer-porto/" aria-current="page">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../work/">Work</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../blog/">Blog</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../pt/criacao-de-sites-porto/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../services/" aria-current="page"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../web-developer-porto/" aria-current="page">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../work/">Work</a></li>
+      <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../services/">Services</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../services/web-development/">Web Development</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Web Developer in Porto</span>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">Porto</span>
+        <h1 class="text-balance">Web Developer in Porto</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">I'm a freelance web developer in Porto, Portugal, working with local businesses and with the many international founders, expats and English-speaking teams who have set up here. I build websites and online stores, set up the Google Business Profile and local SEO, and I can work with you in English or Portuguese, and meet in person in Porto when it helps.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="../contact/" class="btn btn-primary">Book a free 20-min call</a>
+          <a href="../work/" class="btn btn-secondary">See my work</a>
+        </div>
+      </div>
+      <div class="split-panel split-panel--photo">
+        <img src="../images/samama-tahir-desk-laptop-notebook-coffee.webp" alt="Closed laptop, espresso and an ST-monogrammed notebook on Samama Tahir's desk" width="1196" height="896" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section" aria-labelledby="do-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What I Do</span>
+        <h2 id="do-heading" class="text-balance">What I do for businesses in Porto</h2>
+        <p>Most of the Porto businesses I work with need one or more of these.</p>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card pillar-card">
+          <h3>Websites</h3>
+          <p>Fast, mobile-friendly sites on WordPress or custom code, with everything a customer checks before getting in touch: services, hours, location and reviews.</p>
+        </article>
+        <article class="card pillar-card pillar-card--yellow">
+          <h3>Online stores</h3>
+          <p>Shopify or WooCommerce stores with Portuguese payment methods like MB WAY and Multibanco, plus shipping and invoicing set up properly. See <a href="../services/web-development/online-store/">online stores</a>.</p>
+        </article>
+        <article class="card pillar-card pillar-card--red">
+          <h3>Google Business Profile and local SEO</h3>
+          <p>Getting found on Google Maps and in local search in Porto. See <a href="../services/marketing/google-business-profile/">Google Business Profile</a> and <a href="../services/marketing/local-seo/">local SEO</a>.</p>
+        </article>
+        <article class="card pillar-card pillar-card--green-light">
+          <h3>Bilingual sites</h3>
+          <p>English and Portuguese versions linked correctly, so Google shows the right one to each visitor. This site is built the same way.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Local -->
+  <section class="section section--alt" aria-labelledby="text0-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Local</span>
+        <h2 id="text0-heading" class="text-balance">An English-speaking web developer in Porto</h2>
+        <p>If you run a business in Porto and your first language is not Portuguese, getting a website built can mean translating everything twice: your ideas into Portuguese, then the developer's questions back. I work in English and Portuguese, so the conversation happens in whichever language you are comfortable with, and the site can serve both audiences.</p>
+        <p style="margin-top: var(--space-2);">For Portuguese-speaking businesses, the Portuguese page is <a href="../pt/criacao-de-sites-porto/">criação de sites no Porto</a>. Businesses across the river can also see <a href="../pt/criacao-de-sites-vila-nova-de-gaia/">criação de sites em Vila Nova de Gaia</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meetings -->
+  <section class="section" aria-labelledby="text1-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Meetings</span>
+        <h2 id="text1-heading" class="text-balance">Meet in person in Porto, then work online</h2>
+        <p>I can meet you in Porto when it makes sense, usually at the start of a project. After that, most of the work moves forward online, with written updates and short calls, so it fits around running your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who I Work With -->
+  <section class="section section--alt" aria-labelledby="text2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who I Work With</span>
+        <h2 id="text2-heading" class="text-balance">Web design in Porto for local and international businesses</h2>
+        <p>Porto has a lot of businesses that serve two audiences at once: locals who search in Portuguese and visitors, expats and remote workers who search in English. Restaurants, guesthouses, clinics, shops, tour operators, consultancies and new companies set up by people who moved here. For them I build sites that work properly in both languages, with the right hreflang setup so Google shows each visitor the right version.</p>
+        <p style="margin-top: var(--space-2);">I also work with Porto-based founders who sell abroad and want a developer they can actually meet, while their customers are in the UK, the US or elsewhere in Europe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Local Work</span>
+        <h2 id="work-heading" class="text-balance">Porto businesses I have worked with</h2>
+      </div>
+      <div class="card-grid card-grid--2">
+        <article class="card">
+          <h3>Restaurant in Porto</h3>
+          <p>Optimised the Google Business Profile and worked on local SEO so new customers could find the restaurant on Google Maps.</p>
+        </article>
+        <article class="card">
+          <h3>Barber shop in Porto</h3>
+          <p>Worked on the Google Business Profile and local SEO, and walked the owner through how people search for a barber nearby.</p>
+        </article>
+      </div>
+      <p style="margin-top: var(--space-3);"><a href="../work/" class="link-more">See what these clients said</a></p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How This Works</span>
+        <h2 id="process-heading" class="text-balance">How it works</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Talk</h3>
+          <p>A free 20-minute call, or a meeting in Porto, about the business and its customers.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Quote</h3>
+          <p>A written fixed quote with the scope and what is included.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Build</h3>
+          <p>The site, the Google profile and local SEO, with updates along the way.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Launch and support</h3>
+          <p>We go live when you are happy, and I stay reachable afterwards.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Questions about hiring a web developer in Porto</h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item">
+            <summary>Can we meet in person in Porto?</summary>
+            <p>Yes, when it helps. I am based in Porto and can meet you in the city, usually at the start of the project.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work in English?</summary>
+            <p>Yes. I work in English and Portuguese, and can build the site in either language or both.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does a website cost in Porto?</summary>
+            <p>It depends on the number of pages, whether you sell online and what needs connecting to the site. After a free call I send a written fixed quote.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you set up Portuguese payments for my store?</summary>
+            <p>Yes. MB WAY, Multibanco and cards through a payment provider that supports Shopify or WooCommerce in Portugal.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work outside Porto?</summary>
+            <p>Yes. In person in Vila Nova de Gaia and nearby, and online with the rest of Portugal, the UK and the US.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you also work with businesses in Vila Nova de Gaia?</summary>
+            <p>Yes. I meet clients in person in Porto, Vila Nova de Gaia and nearby when it helps. Everywhere else, the work is done online.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="service-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="service-cta-heading" class="text-balance">Running a business in Porto?</h2>
+        <p>Tell me what you do and where. I will reply myself, with a first view or the right questions.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="../contact/" class="btn btn-primary">Book a free 20-min call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../services/" aria-current="page">Services</a>
+          <a href="../about/">About</a>
+          <a href="../work/">Portfolio</a>
+          <a href="../faq/">FAQ</a>
+          <a href="../blog/">Blog</a>
+          <a href="../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../services/web-development/">Web Development</a>
+          <a href="../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../services/web-development/online-store/">Online Stores</a>
+          <a href="../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../services/marketing/">Marketing</a>
+          <a href="../services/marketing/local-seo/">Local SEO</a>
+          <a href="../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../services/marketing/google-ads/">Google Ads</a>
+          <a href="../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.min.js?v=20261014b" defer></script>
+</body>
+</html>
