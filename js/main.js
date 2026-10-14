@@ -549,3 +549,9 @@ if (!prefersReducedMotion) {
     }, 2600);
   });
 }
+
+// Blog posts: the table of contents starts closed on phones so the article
+// isn't pushed down; it stays open on larger screens.
+if (window.matchMedia('(max-width: 639px)').matches) {
+  document.querySelectorAll('.post-toc[open]').forEach((toc) => toc.removeAttribute('open'));
+}

@@ -70,7 +70,7 @@
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014k" />
 <link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
@@ -300,14 +300,26 @@
   <section class="section">
     <div class="container">
       <article class="post-content">
-<p>Shopify now has two versions of customer accounts: the classic accounts that themes have used for years, and the newer customer accounts that Shopify hosts itself. They look similar to a shopper, but for a store owner and a theme developer they work very differently. I build and migrate Shopify themes for a living as a <a href="../../services/web-development/shopify-developer/">freelance Shopify developer</a>, and this is the summary I give clients who ask what changed and what they need to do.</p>
+        <details class="post-toc" open>
+          <summary>In this article</summary>
+          <ol>
+            <li><a href="#classic-customer-accounts-how-they-worked">Classic customer accounts: how they worked</a></li>
+            <li><a href="#new-customer-accounts-what-changed">New customer accounts: what changed</a></li>
+            <li><a href="#what-stays-the-same-in-the-theme">What stays the same in the theme</a></li>
+            <li><a href="#what-to-check-before-switching">What to check before switching</a></li>
+            <li><a href="#custom-data-on-the-account-page">Custom data on the account page</a></li>
+            <li><a href="#should-you-switch-now">Should you switch now?</a></li>
+            <li><a href="#the-order-status-page">The order status page</a></li>
+          </ol>
+        </details>
+        <p>Shopify now has two versions of customer accounts: the classic accounts that themes have used for years, and the newer customer accounts that Shopify hosts itself. They look similar to a shopper, but for a store owner and a theme developer they work very differently. I build and migrate Shopify themes for a living as a <a href="../../services/web-development/shopify-developer/">freelance Shopify developer</a>, and this is the summary I give clients who ask what changed and what they need to do.</p>
         <p>This is a rewritten version of a tutorial that used to live on my old blog, updated for how accounts work today.</p>
 
-        <h2>Classic customer accounts: how they worked</h2>
+        <h2 id="classic-customer-accounts-how-they-worked">Classic customer accounts: how they worked</h2>
         <p>With classic accounts (Shopify now calls them legacy customer accounts), customers sign up with an email and a password. The login, registration, account, order and address pages are all part of your theme, built from Liquid templates in the <code>customers/</code> folder: <code>login</code>, <code>register</code>, <code>account</code>, <code>order</code>, <code>addresses</code>, <code>activate_account</code> and <code>reset_password</code>.</p>
         <p>Because those pages live in the theme, developers could change anything: the layout, extra fields, loyalty points on the account page, custom order history. Apps often injected code into these templates too. The downside was the same freedom: every theme handled accounts slightly differently, password resets were a common support issue, and features like B2B were hard to build on top.</p>
 
-        <h2>New customer accounts: what changed</h2>
+        <h2 id="new-customer-accounts-what-changed">New customer accounts: what changed</h2>
         <p>With new customer accounts, the account area is no longer part of the theme. Shopify hosts it and keeps it consistent across stores. The main differences:</p>
         <ul>
           <li><strong>No passwords.</strong> Customers enter their email and receive a one-time code to sign in. No more forgotten passwords.</li>
@@ -318,7 +330,7 @@
           <li><strong>Required for some features.</strong> Shopify's B2B features and some newer account features only work with new customer accounts.</li>
         </ul>
 
-        <h2>What stays the same in the theme</h2>
+        <h2 id="what-stays-the-same-in-the-theme">What stays the same in the theme</h2>
         <p>Most of the storefront still works the same way. The <code>customer</code> Liquid object is still available when a customer is signed in, so you can show a greeting or customer-specific content. The <code>routes</code> object still gives you the right URLs, and Shopify sends them to whichever account version the store uses. A header account link written like this works with both:</p>
         <pre><code>{%- if shop.customer_accounts_enabled -%}
   {%- if customer -%}
@@ -333,7 +345,7 @@
 {%- endif -%}</code></pre>
         <p>What no longer applies with new accounts are the <code>customer_login</code> and <code>create_customer</code> forms and anything built inside the <code>customers/</code> templates, because those pages are never shown.</p>
 
-        <h2>What to check before switching</h2>
+        <h2 id="what-to-check-before-switching">What to check before switching</h2>
         <p>Switching is done in the admin under <strong>Settings &rarr; Customer accounts</strong>. Before you change it on a live store, go through this list:</p>
         <ol>
           <li><strong>Theme customisations.</strong> Open the <code>customers/</code> templates and list anything custom: extra fields, loyalty widgets, custom order tables, tracking links. Each one needs a new home, usually an app extension or the order status page.</li>
@@ -345,15 +357,15 @@
           <li><strong>Test.</strong> Sign in as a customer with a real past order. Check order history, addresses, reorder and any extension you added.</li>
         </ol>
 
-        <h2>Custom data on the account page</h2>
+        <h2 id="custom-data-on-the-account-page">Custom data on the account page</h2>
         <p>The most common question I get is "where do my custom fields go now?". With classic accounts, developers often stored extra customer information in metafields and printed it in <code>account.liquid</code>. With new accounts, the customer data still lives in metafields, but it's shown and edited through a customer account UI extension. For a headless storefront, the Customer Account API gives secure access to the signed-in customer's orders and profile.</p>
         <p>If the custom data was only decoration, it's often simpler to move it to the storefront itself, using the <code>customer</code> object on a normal theme page, and keep the account area standard.</p>
 
-        <h2>Should you switch now?</h2>
+        <h2 id="should-you-switch-now">Should you switch now?</h2>
         <p>For most stores, yes. Shopify treats classic accounts as legacy and is putting new account features into the new version, so it's better to move on your own schedule than in a hurry later. If your account pages are heavily customised, plan the move as a small project: audit, rebuild the custom parts as extensions or storefront sections, test on a development store or with the setting switched during a quiet period, then switch.</p>
         <p>If you are also moving an old theme to Online Store 2.0, it's a good moment to handle both together. I did a similar 1.0 to 2.0 theme migration for OROS, which you can read about on my <a href="../../work/">work page</a>.</p>
 
-        <h2>The order status page</h2>
+        <h2 id="the-order-status-page">The order status page</h2>
         <p>With new customer accounts, the order status page that customers see after checkout is linked to their account, so they can move from one order to their full order history without signing in again. If you used to add tracking widgets or post-purchase content to the old order status page with scripts, check how your apps handle it now; Shopify has moved this to checkout and customer account extensions as well.</p>
 
         <aside class="post-cta" aria-label="Need help moving to new customer accounts?">
@@ -464,6 +476,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.min.js?v=20261014b" defer></script>
+<script src="../../js/main.min.js?v=20261014d" defer></script>
 </body>
 </html>

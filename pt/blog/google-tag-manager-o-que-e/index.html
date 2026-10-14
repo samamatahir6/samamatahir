@@ -70,7 +70,7 @@
 
 <link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261014k" />
 <link rel="stylesheet" href="../../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
@@ -300,9 +300,23 @@
   <section class="section">
     <div class="container">
       <article class="post-content">
-<p>O Google Tag Manager (GTM) é uma ferramenta gratuita do Google que permite gerir todos os códigos de medição de um site num só sítio, sem mexer no código do site a cada alteração. Em vez de pedir a um programador que cole o código do Google Analytics, depois o do Google Ads, depois o pixel da Meta, instala o Tag Manager uma vez e gere tudo a partir dele. É a base de quase todas as configurações que faço no meu serviço de <a href="../../../pt/servicos/marketing-digital/ga4-analytics/">configuração do GA4 e Google Tag Manager</a>.</p>
+        <details class="post-toc" open>
+          <summary>Neste artigo</summary>
+          <ol>
+            <li><a href="#para-que-serve-o-google-tag-manager">Para que serve o Google Tag Manager</a></li>
+            <li><a href="#google-tag-manager-e-google-analytics-qual-e-a-diferenca">Google Tag Manager e Google Analytics: qual é a diferença?</a></li>
+            <li><a href="#os-tres-conceitos-etiquetas-acionadores-e-variaveis">Os três conceitos: etiquetas, acionadores e variáveis</a></li>
+            <li><a href="#a-camada-de-dados-datalayer">A camada de dados (dataLayer)</a></li>
+            <li><a href="#como-instalar-o-google-tag-manager">Como instalar o Google Tag Manager</a></li>
+            <li><a href="#consentimento-de-cookies-e-consent-mode">Consentimento de cookies e consent mode</a></li>
+            <li><a href="#erros-comuns-no-tag-manager">Erros comuns no Tag Manager</a></li>
+            <li><a href="#preciso-mesmo-do-tag-manager">Preciso mesmo do Tag Manager?</a></li>
+            <li><a href="#exemplo-medir-o-envio-de-um-formulario">Exemplo: medir o envio de um formulário</a></li>
+          </ol>
+        </details>
+        <p>O Google Tag Manager (GTM) é uma ferramenta gratuita do Google que permite gerir todos os códigos de medição de um site num só sítio, sem mexer no código do site a cada alteração. Em vez de pedir a um programador que cole o código do Google Analytics, depois o do Google Ads, depois o pixel da Meta, instala o Tag Manager uma vez e gere tudo a partir dele. É a base de quase todas as configurações que faço no meu serviço de <a href="../../../pt/servicos/marketing-digital/ga4-analytics/">configuração do GA4 e Google Tag Manager</a>.</p>
 
-        <h2>Para que serve o Google Tag Manager</h2>
+        <h2 id="para-que-serve-o-google-tag-manager">Para que serve o Google Tag Manager</h2>
         <p>Sites modernos têm vários "tags": pequenos pedaços de código que enviam dados para ferramentas externas. O GA4 mede visitas e eventos, o Google Ads mede conversões, a Meta mede o que acontece depois de um anúncio no Instagram, o Microsoft Clarity grava mapas de calor. Sem o GTM, cada um destes códigos é colado à mão no site, e cada mudança obriga a editar o tema.</p>
         <p>Com o GTM:</p>
         <ul>
@@ -312,10 +326,10 @@
           <li>Tem um histórico de versões e pode voltar atrás se algo correr mal.</li>
         </ul>
 
-        <h2>Google Tag Manager e Google Analytics: qual é a diferença?</h2>
+        <h2 id="google-tag-manager-e-google-analytics-qual-e-a-diferenca">Google Tag Manager e Google Analytics: qual é a diferença?</h2>
         <p>É a confusão mais comum. O <strong>Google Analytics (GA4)</strong> é onde os dados são guardados e analisados: relatórios de visitas, origem do tráfego, conversões. O <strong>Google Tag Manager</strong> é só o mecanismo de entrega: é o que envia os dados do site para o GA4 e para as outras ferramentas. O GTM não mostra relatórios. Pode usar o GA4 sem o GTM, mas o GTM torna a configuração mais flexível e organizada.</p>
 
-        <h2>Os três conceitos: etiquetas, acionadores e variáveis</h2>
+        <h2 id="os-tres-conceitos-etiquetas-acionadores-e-variaveis">Os três conceitos: etiquetas, acionadores e variáveis</h2>
         <h3>Etiquetas (tags)</h3>
         <p>São o que é enviado. Por exemplo, a etiqueta da Google (que liga o site ao GA4), um evento GA4 chamado <code>generate_lead</code>, uma conversão do Google Ads ou o pixel da Meta.</p>
         <h3>Acionadores (triggers)</h3>
@@ -323,10 +337,10 @@
         <h3>Variáveis</h3>
         <p>São valores que as etiquetas e os acionadores usam: o endereço da página, o texto de um botão clicado, o valor de uma encomenda, o ID de medição do GA4. Em vez de escrever o ID em dez sítios, cria uma variável e usa-a em todo o lado.</p>
 
-        <h2>A camada de dados (dataLayer)</h2>
+        <h2 id="a-camada-de-dados-datalayer">A camada de dados (dataLayer)</h2>
         <p>Para medições mais ricas, como o valor de uma compra ou o produto adicionado ao carrinho, o site envia informação para uma estrutura chamada <code>dataLayer</code>. O GTM lê essa informação e passa-a às etiquetas. A Shopify e muitos plugins de WooCommerce já enviam eventos de e-commerce; em sites à medida, programo o envio. É esta ligação que permite ver no GA4 de onde vêm as vendas.</p>
 
-        <h2>Como instalar o Google Tag Manager</h2>
+        <h2 id="como-instalar-o-google-tag-manager">Como instalar o Google Tag Manager</h2>
         <ol>
           <li>Crie uma conta e um contentor em tagmanager.google.com, com o endereço do site.</li>
           <li>Copie os dois blocos de código que o GTM dá: um vai no <code>&lt;head&gt;</code>, o outro logo após a abertura do <code>&lt;body&gt;</code>.</li>
@@ -336,10 +350,10 @@
           <li>Publique uma versão com um nome claro, por exemplo "GA4 base".</li>
         </ol>
 
-        <h2>Consentimento de cookies e consent mode</h2>
+        <h2 id="consentimento-de-cookies-e-consent-mode">Consentimento de cookies e consent mode</h2>
         <p>Na União Europeia, ferramentas de medição e publicidade só devem guardar cookies depois de o visitante aceitar. O Google Consent Mode liga o banner de cookies ao Tag Manager: se o visitante recusa, as etiquetas da Google não guardam cookies; se aceita, funcionam normalmente. Desde a versão 2, há também sinais específicos para dados de publicidade. É uma das partes que mais vejo mal feitas, e é importante tanto para o RGPD como para que o Google Ads continue a receber dados.</p>
 
-        <h2>Erros comuns no Tag Manager</h2>
+        <h2 id="erros-comuns-no-tag-manager">Erros comuns no Tag Manager</h2>
         <ul>
           <li><strong>Códigos duplicados:</strong> o GA4 instalado pelo tema e também pelo GTM, que conta tudo a dobrar.</li>
           <li><strong>Eventos de compra que disparam ao recarregar a página</strong> de confirmação.</li>
@@ -349,10 +363,10 @@
           <li><strong>Contas em nome de outra pessoa</strong>. O contentor deve ser da empresa, com acesso de administrador para si.</li>
         </ul>
 
-        <h2>Preciso mesmo do Tag Manager?</h2>
+        <h2 id="preciso-mesmo-do-tag-manager">Preciso mesmo do Tag Manager?</h2>
         <p>Para um site pequeno que só usa o GA4 com a medição avançada que já vem incluída, pode não precisar. Assim que quiser medir formulários, chamadas, cliques no WhatsApp, conversões do Google Ads ou o pixel da Meta, o GTM poupa muito tempo e evita erros. Se anuncia no Google, leia também <a href="../../../pt/blog/como-funciona-google-ads/">como funciona o Google Ads</a>, porque a medição de conversões é o que separa campanhas que dão retorno das que não dão.</p>
 
-        <h2>Exemplo: medir o envio de um formulário</h2>
+        <h2 id="exemplo-medir-o-envio-de-um-formulario">Exemplo: medir o envio de um formulário</h2>
         <p>Para ver como as peças encaixam, este é o fluxo que uso para medir pedidos de contacto:</p>
         <ol>
           <li>O site, depois de o formulário ser enviado com sucesso, envia um evento <code>form_submitted</code> para o <code>dataLayer</code>, com o nome do formulário.</li>
@@ -471,6 +485,6 @@
   </div>
 </footer>
 
-<script src="../../../js/main.min.js?v=20261014b" defer></script>
+<script src="../../../js/main.min.js?v=20261014d" defer></script>
 </body>
 </html>

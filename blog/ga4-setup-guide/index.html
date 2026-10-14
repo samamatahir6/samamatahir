@@ -70,7 +70,7 @@
 
 <link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-<link rel="stylesheet" href="../../css/styles.min.css?v=20261014i" />
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261014k" />
 <link rel="stylesheet" href="../../css/responsive.min.css?v=20261014e" />
 
 <script type="application/ld+json">
@@ -300,12 +300,30 @@
   <section class="section">
     <div class="container">
       <article class="post-content">
-<p>Installing Google Analytics 4 takes five minutes. Setting it up so the numbers are right and actually useful takes a bit longer. This guide walks through the steps in the order I follow when I do <a href="../../services/marketing/ga4-analytics/">GA4 setup and analytics</a> for clients, including the parts that most setups skip: consent mode, key events, internal traffic and testing.</p>
+        <details class="post-toc" open>
+          <summary>In this article</summary>
+          <ol>
+            <li><a href="#what-a-ga4-setup-involves">What a GA4 setup involves</a></li>
+            <li><a href="#step-1-create-the-property-and-data-stream">Step 1: create the property and data stream</a></li>
+            <li><a href="#step-2-install-the-tag-through-google-tag-manager">Step 2: install the tag through Google Tag Manager</a></li>
+            <li><a href="#step-3-set-up-consent-mode">Step 3: set up consent mode</a></li>
+            <li><a href="#step-4-decide-which-actions-are-key-events">Step 4: decide which actions are key events</a></li>
+            <li><a href="#step-5-add-ecommerce-events-for-online-stores">Step 5: add ecommerce events for online stores</a></li>
+            <li><a href="#step-6-filter-internal-and-unwanted-traffic">Step 6: filter internal and unwanted traffic</a></li>
+            <li><a href="#step-7-adjust-the-defaults">Step 7: adjust the defaults</a></li>
+            <li><a href="#step-8-link-search-console-and-google-ads">Step 8: link Search Console and Google Ads</a></li>
+            <li><a href="#step-9-test-everything">Step 9: test everything</a></li>
+            <li><a href="#step-10-write-it-down">Step 10: write it down</a></li>
+            <li><a href="#common-ga4-setup-mistakes">Common GA4 setup mistakes</a></li>
+            <li><a href="#reading-your-first-reports">Reading your first reports</a></li>
+          </ol>
+        </details>
+        <p>Installing Google Analytics 4 takes five minutes. Setting it up so the numbers are right and actually useful takes a bit longer. This guide walks through the steps in the order I follow when I do <a href="../../services/marketing/ga4-analytics/">GA4 setup and analytics</a> for clients, including the parts that most setups skip: consent mode, key events, internal traffic and testing.</p>
 
-        <h2>What a GA4 setup involves</h2>
+        <h2 id="what-a-ga4-setup-involves">What a GA4 setup involves</h2>
         <p>A GA4 setup has three layers. The <strong>property</strong> in Google Analytics, where data is stored and reported. The <strong>tag</strong> on your site, which sends the data, ideally through Google Tag Manager. And the <strong>configuration</strong>: which actions count as key events, what is filtered out and which Google tools are linked. Most broken setups get the first two right and skip the third.</p>
 
-        <h2>Step 1: create the property and data stream</h2>
+        <h2 id="step-1-create-the-property-and-data-stream">Step 1: create the property and data stream</h2>
         <ol>
           <li>In Google Analytics, go to Admin and create a property. Set the reporting time zone and currency to match your business.</li>
           <li>Add a <strong>web data stream</strong> with your site's URL. GA4 gives you a measurement ID that starts with <code>G-</code>.</li>
@@ -313,15 +331,15 @@
           <li>Make sure the account belongs to the business, and that you are an administrator. Give agencies and freelancers their own access instead of sharing logins.</li>
         </ol>
 
-        <h2>Step 2: install the tag through Google Tag Manager</h2>
+        <h2 id="step-2-install-the-tag-through-google-tag-manager">Step 2: install the tag through Google Tag Manager</h2>
         <p>You can paste the Google tag directly into your site, but Google Tag Manager makes everything after this easier. Create a GTM container, add its code to your site, then create a Google tag in GTM with your <code>G-</code> measurement ID, firing on all pages. On WordPress this goes in the theme or through a lightweight plugin. On Shopify, the theme gets the normal code and checkout events are handled through the customer events settings.</p>
         <p>Check that GA4 isn't also installed by a theme setting or a plugin. Two tags mean every visit counts twice.</p>
 
-        <h2>Step 3: set up consent mode</h2>
+        <h2 id="step-3-set-up-consent-mode">Step 3: set up consent mode</h2>
         <p>If you have visitors in the EU or UK, analytics cookies should only be set after the visitor agrees. Consent mode connects your cookie banner to Google's tags. When a visitor declines, Google's tags run without cookies; when they accept, tags run normally. Version 2 adds signals for advertising data (<code>ad_user_data</code> and <code>ad_personalization</code>), which matter if you run Google Ads.</p>
         <p>Set the default state to denied before any tag loads, update it when the visitor makes a choice, and test both paths. A cookie banner that only looks like it works is a common finding in audits.</p>
 
-        <h2>Step 4: decide which actions are key events</h2>
+        <h2 id="step-4-decide-which-actions-are-key-events">Step 4: decide which actions are key events</h2>
         <p>GA4 tracks many events, but only a few matter to the business. Mark those as <strong>key events</strong> (GA4's current name for conversions). Typical ones:</p>
         <ul>
           <li><code>generate_lead</code>: a contact or quote form sent.</li>
@@ -331,33 +349,33 @@
         </ul>
         <p>Fire form events on a real success signal, such as the thank-you message or page, not on the button click, so failed submissions aren't counted. Keep the list short. If everything is a key event, nothing is.</p>
 
-        <h2>Step 5: add ecommerce events for online stores</h2>
+        <h2 id="step-5-add-ecommerce-events-for-online-stores">Step 5: add ecommerce events for online stores</h2>
         <p>For a store, set up the standard ecommerce events with item data and value: <code>view_item</code>, <code>add_to_cart</code>, <code>begin_checkout</code>, <code>add_payment_info</code> and <code>purchase</code>. With these, GA4's ecommerce reports show which products sell and where people drop off. Shopify's native integration covers most of this; on WooCommerce, a well-maintained plugin or a custom <code>dataLayer</code> does the job. Make sure <code>purchase</code> fires once per order, with a transaction ID, so a page reload doesn't create a second sale.</p>
 
-        <h2>Step 6: filter internal and unwanted traffic</h2>
+        <h2 id="step-6-filter-internal-and-unwanted-traffic">Step 6: filter internal and unwanted traffic</h2>
         <ul>
           <li>Define your office or home IP addresses as <strong>internal traffic</strong>, then activate the filter once you've tested it.</li>
           <li>List payment providers and booking tools under <strong>unwanted referrals</strong>, so a customer returning from the payment page isn't counted as a new visit from that site.</li>
           <li>If your checkout or booking runs on another domain, set up <strong>cross-domain measurement</strong>.</li>
         </ul>
 
-        <h2>Step 7: adjust the defaults</h2>
+        <h2 id="step-7-adjust-the-defaults">Step 7: adjust the defaults</h2>
         <ul>
           <li>Set <strong>data retention</strong> to the longest option, so exploration reports can look back further.</li>
           <li>Check the <strong>reporting identity</strong> and Google signals settings against your privacy policy.</li>
           <li>Create a small number of <strong>custom dimensions</strong> only if you need them, for example a form name.</li>
         </ul>
 
-        <h2>Step 8: link Search Console and Google Ads</h2>
+        <h2 id="step-8-link-search-console-and-google-ads">Step 8: link Search Console and Google Ads</h2>
         <p>Linking <strong>Search Console</strong> brings organic search queries and landing pages into GA4. Linking <strong>Google Ads</strong> lets you import key events as conversions and see what happens after an ad click. Both take a minute in the Admin section and are worth doing on day one.</p>
 
-        <h2>Step 9: test everything</h2>
+        <h2 id="step-9-test-everything">Step 9: test everything</h2>
         <p>Open GTM's preview mode and GA4's <strong>DebugView</strong>, then use your site like a customer: browse, send a form, click the phone number, place a test order. Confirm each event appears once, with the right parameters. Check the real-time report from your phone too. Only then publish the GTM container.</p>
 
-        <h2>Step 10: write it down</h2>
+        <h2 id="step-10-write-it-down">Step 10: write it down</h2>
         <p>Keep a short document listing every event, what triggers it and why it exists. It takes ten minutes, and it saves hours the next time someone touches the setup.</p>
 
-        <h2>Common GA4 setup mistakes</h2>
+        <h2 id="common-ga4-setup-mistakes">Common GA4 setup mistakes</h2>
         <ul>
           <li>GA4 installed twice, doubling page views.</li>
           <li>Form events firing on click instead of on success.</li>
@@ -367,7 +385,7 @@
           <li>Nobody on the business side having admin access.</li>
         </ul>
 
-        <h2>Reading your first reports</h2>
+        <h2 id="reading-your-first-reports">Reading your first reports</h2>
         <p>Give the setup a week or two to collect data. Then start with three reports: <strong>Traffic acquisition</strong> to see where visitors come from, <strong>Pages and screens</strong> to see what they read, and the <strong>key events</strong> view to see which channels lead to enquiries or sales. Resist building dashboards on day one. Knowing those three well is worth more.</p>
 
         <aside class="post-cta" aria-label="Want GA4 set up properly?">
@@ -478,6 +496,6 @@
   </div>
 </footer>
 
-<script src="../../js/main.min.js?v=20261014b" defer></script>
+<script src="../../js/main.min.js?v=20261014d" defer></script>
 </body>
 </html>
