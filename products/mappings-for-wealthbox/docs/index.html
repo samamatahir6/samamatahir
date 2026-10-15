@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Mappings for Wealthbox Documentation | Setup, Mapping and Hooks</title>
+<meta name="description" content="How to install Mappings for Wealthbox, connect your Wealthbox token, map Gravity Forms fields, use Pro updates, logs and Nested Forms, and extend it with hooks." />
+<link rel="canonical" href="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<link rel="icon" type="image/svg+xml" href="../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Mappings for Wealthbox Documentation | Setup, Mapping and Hooks" />
+<meta property="og:description" content="How to install Mappings for Wealthbox, connect your Wealthbox token, map Gravity Forms fields, use Pro updates, logs and Nested Forms, and extend it with hooks." />
+<meta property="og:url" content="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Mappings for Wealthbox, a WordPress plugin by Samama Tahir" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mappings for Wealthbox Documentation | Setup, Mapping and Hooks" />
+<meta name="twitter:description" content="How to install Mappings for Wealthbox, connect your Wealthbox token, map Gravity Forms fields, use Pro updates, logs and Nested Forms, and extend it with hooks." />
+<meta name="twitter:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+
+<link rel="preload" href="../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../css/styles.min.css?v=20261015a" />
+<link rel="stylesheet" href="../../../css/responsive.min.css?v=20261015c" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://samamatahir.com/products/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mappings for Wealthbox",
+      "item": "https://samamatahir.com/products/mappings-for-wealthbox/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Documentation",
+      "item": "https://samamatahir.com/products/mappings-for-wealthbox/docs/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Mappings for Wealthbox documentation",
+  "url": "https://samamatahir.com/products/mappings-for-wealthbox/docs/",
+  "inLanguage": "en",
+  "description": "How to install Mappings for Wealthbox, connect your Wealthbox token, map Gravity Forms fields, use Pro updates, logs and Nested Forms, and extend it with hooks.",
+  "author": {
+      "@type": "Person",
+      "@id": "https://samamatahir.com/#person",
+      "name": "Samama Tahir",
+      "url": "https://samamatahir.com/"
+    },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Mappings for Wealthbox",
+    "url": "https://samamatahir.com/products/mappings-for-wealthbox/"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../about/">About</a></li>
+        <li><a href="../../../work/">Work</a></li>
+        <li><a href="../../../products/">Products</a></li>
+        <li><a href="../../../faq/">FAQ</a></li>
+        <li><a href="../../../blog/">Blog</a></li>
+        <li><a href="../../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../../pt/produtos/mappings-for-wealthbox/documentacao/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../about/">About</a></li>
+      <li><a href="../../../work/">Work</a></li>
+      <li><a href="../../../products/">Products</a></li>
+      <li><a href="../../../faq/">FAQ</a></li>
+      <li><a href="../../../blog/">Blog</a></li>
+      <li><a href="../../../contact/">Contact</a></li>
+      <li><a href="../../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../products/">Products</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../products/mappings-for-wealthbox/">Mappings for Wealthbox</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Documentation</span>
+    </div>
+  </nav>
+
+  <nav class="product-subnav" aria-label="Mappings for Wealthbox">
+    <div class="container">
+      <a href="../../../products/mappings-for-wealthbox/" class="product-subnav-name"><img src="../../../images/mappings-for-wealthbox-icon.svg" width="26" height="26" alt="" />Mappings for Wealthbox</a>
+      <ul>
+        <li><a href="../../../products/mappings-for-wealthbox/#features">Features</a></li>
+        <li><a href="../../../products/mappings-for-wealthbox/#compare">Free vs Pro</a></li>
+        <li><a href="../../../products/mappings-for-wealthbox/#pricing">Pricing</a></li>
+        <li><a href="../../../products/mappings-for-wealthbox/docs/" aria-current="page">Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 0;">
+        <span class="hero-badge">Documentation · Version 1.0.0</span>
+        <h1 class="text-balance">Mappings for Wealthbox documentation</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Everything you need to install the plugin, connect Wealthbox, map your Gravity Forms and extend it with code.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container docs-layout">
+      <nav class="docs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#requirements">Requirements and installation</a></li>
+          <li><a href="#connecting">Connecting to Wealthbox</a></li>
+          <li><a href="#mappings">Creating a mapping</a></li>
+          <li><a href="#fields">Fields and formatting</a></li>
+          <li><a href="#actions">Pro: sync actions and matching</a></li>
+          <li><a href="#custom-fields">Pro: custom fields</a></li>
+          <li><a href="#nested-forms">Pro: GP Nested Forms</a></li>
+          <li><a href="#logs">Pro: sync logs</a></li>
+          <li><a href="#developers">Developer reference</a></li>
+          <li><a href="#uninstall">Deactivating and uninstalling</a></li>
+          <li><a href="#troubleshooting">Troubleshooting and FAQ</a></li>
+          <li><a href="#changelog">Changelog and credits</a></li>
+        </ol>
+      </nav>
+
+      <div class="docs-content">
+
+        <section id="introduction" aria-labelledby="d-intro">
+          <h2 id="d-intro">Introduction</h2>
+          <p>Mappings for Wealthbox sends every Gravity Forms submission straight into Wealthbox CRM as a contact, with no Zapier, no CSV exports and no copy and paste. You pick a form, choose which Wealthbox field each form field goes to, and publish. From then on, each submission creates the contact in Wealthbox within seconds.</p>
+          <p>It is built for financial advisors, RIAs and the agencies that run their websites: firms that capture leads on WordPress and live in Wealthbox. The plugin comes in two parts:</p>
+          <ul>
+            <li><strong>Mappings for Wealthbox (free)</strong> creates new contacts from any Gravity Form using the standard Wealthbox contact fields.</li>
+            <li><strong>Mappings for Wealthbox Pro ($49, one time, one site)</strong> is an add-on that installs next to the free plugin. It adds custom fields, updating existing contacts, sync logs and GP Nested Forms support.</li>
+          </ul>
+          <p>See the <a href="../../../products/mappings-for-wealthbox/#compare">Free vs Pro comparison</a> for the full list.</p>
+        </section>
+
+        <section id="requirements" aria-labelledby="d-req">
+          <h2 id="d-req">Requirements and installation</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Requirement</th><th scope="col">Minimum</th></tr></thead>
+            <tbody>
+              <tr><td>WordPress</td><td>6.0</td></tr>
+              <tr><td>PHP</td><td>8.0</td></tr>
+              <tr><td>Gravity Forms</td><td>Active</td></tr>
+              <tr><td>Wealthbox</td><td>An API access token</td></tr>
+              <tr><td>GP Nested Forms (Pro, optional)</td><td>Active, only if you map nested fields</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Install the free plugin</h3>
+          <ol>
+            <li>In WordPress go to <strong>Plugins › Add New › Upload Plugin</strong>.</li>
+            <li>Upload <code>mappings-for-wealthbox.zip</code> and click <strong>Install Now</strong>.</li>
+            <li>Click <strong>Activate</strong>. A new <strong>Wealthbox</strong> menu appears in the admin sidebar.</li>
+          </ol>
+          <h3>Install Pro</h3>
+          <ol>
+            <li>Make sure the free plugin is installed and active. Pro is an add-on and will not run without it.</li>
+            <li>Upload <code>mappings-for-wealthbox-pro.zip</code> the same way and activate it.</li>
+            <li>Pro creates two database tables on activation, for the contact index and the sync logs. A <strong>Logs</strong> item appears under the Wealthbox menu.</li>
+          </ol>
+          <p>If the free plugin is missing, Pro shows a notice asking you to install and activate it, and does nothing else.</p>
+        </section>
+
+        <section id="connecting" aria-labelledby="d-conn">
+          <h2 id="d-conn">Connecting to Wealthbox</h2>
+          <p>The plugin talks to Wealthbox with one access token, saved under <strong>Wealthbox › Settings</strong>. The page has two tabs: <strong>General</strong> and <strong>Connection &amp; Cache</strong>.</p>
+          <h3>Get your access token</h3>
+          <ol>
+            <li>Log in to Wealthbox and open <strong>Settings › API Access</strong>.</li>
+            <li>Create a token and copy it.</li>
+          </ol>
+          <h3>General tab</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Setting</th><th scope="col">What it does</th><th scope="col">Default</th></tr></thead>
+            <tbody>
+              <tr><td>Access token</td><td>Sent with every request as the <code>ACCESS_TOKEN</code> header. Stored in a password field.</td><td>Empty</td></tr>
+              <tr><td>Base URL</td><td>The Wealthbox API address. Leave it unless Wealthbox tells you otherwise.</td><td><code>https://api.crmworkspace.com/v1</code></td></tr>
+              <tr><td>Document types (Pro)</td><td>Which Wealthbox record types to load custom fields for: Contact, Opportunity, Project.</td><td>Contact</td></tr>
+            </tbody>
+          </table></div>
+          <p>Paste the token, check the base URL and click <strong>Save Changes</strong>.</p>
+          <h3>Connection &amp; Cache tab</h3>
+          <ul>
+            <li><strong>Test connection</strong> sends one request to Wealthbox. You see a success message when it works, "Authentication failed (HTTP 401 or 403)" for a bad token, or the HTTP error for anything else. Save the token before you test.</li>
+            <li><strong>Custom field cache (Pro)</strong> shows how many custom fields are cached. It refreshes on its own every 3 hours. Click <strong>Clear cache &amp; re-fetch fields</strong> after adding or renaming a custom field in Wealthbox.</li>
+          </ul>
+          <p>Requests time out after 20 seconds.</p>
+        </section>
+
+        <section id="mappings" aria-labelledby="d-map">
+          <h2 id="d-map">Creating a mapping</h2>
+          <p>A mapping links one Gravity Form to Wealthbox. It is saved under <strong>Wealthbox › Mappings</strong> and only runs once it is published.</p>
+          <ol>
+            <li>Go to <strong>Wealthbox › Mappings › Add New</strong>.</li>
+            <li>Give it a title you will recognise, for example "Contact page form".</li>
+            <li>Choose the form under <strong>Gravity Form</strong>. The field table loads straight away.</li>
+            <li>(Pro) Choose the <strong>Action</strong> and, for update modes, the <strong>Match using</strong> field.</li>
+            <li>For each row, pick the Wealthbox field in the right column. Leave a row on <strong>Not mapped</strong> to skip it. The dropdowns are searchable.</li>
+            <li>Click <strong>Publish</strong>.</li>
+          </ol>
+          <h3>The field table</h3>
+          <ul>
+            <li>The left column lists every form field with its Gravity Forms key, for example <code>1.3</code>.</li>
+            <li>Fields with several inputs (Name, Address) appear once as the whole value, then once per sub input such as "Name, First" or "Address, City".</li>
+            <li>Checkbox and Multi Select fields appear once. All selected choices are sent together.</li>
+            <li>Page breaks, sections, HTML blocks and CAPTCHA are left out.</li>
+            <li>Nested Forms child fields carry a <strong>nested</strong> tag (Pro).</li>
+          </ul>
+          <h3>Hidden fields</h3>
+          <p>Hidden Gravity Forms fields such as user ID, UTM tags or tracking values are hidden from the table by default. Tick <strong>Show hidden fields</strong> to map them.</p>
+          <h3>Duplicate a mapping</h3>
+          <p>Hover a mapping in the list and click <strong>Duplicate</strong>. You get a draft copy with the same form, action, match settings and field map.</p>
+          <h3>One mapping per form</h3>
+          <p>If more than one published mapping points to the same form, only the most recently published one runs. Keep the others as drafts. The Mappings list has a sortable <strong>Gravity Form</strong> column so you can see which form each mapping uses.</p>
+        </section>
+
+        <section id="fields" aria-labelledby="d-fields">
+          <h2 id="d-fields">Wealthbox fields and value formatting</h2>
+          <p>The free plugin maps to nine standard Wealthbox contact fields. Pro adds every custom field you have in Wealthbox.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Dropdown label</th><th scope="col">Sent to Wealthbox as</th><th scope="col">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>First name</td><td><code>first_name</code></td><td></td></tr>
+              <tr><td>Last name</td><td><code>last_name</code></td><td></td></tr>
+              <tr><td>Middle name</td><td><code>middle_name</code></td><td></td></tr>
+              <tr><td>Nickname</td><td><code>nickname</code></td><td></td></tr>
+              <tr><td>Job title</td><td><code>job_title</code></td><td></td></tr>
+              <tr><td>Company name</td><td><code>company_name</code></td><td></td></tr>
+              <tr><td>Email address</td><td><code>email_addresses</code> item</td><td>Kind <code>Personal</code></td></tr>
+              <tr><td>Phone number</td><td><code>phone_numbers</code> item</td><td>Kind <code>Personal</code></td></tr>
+              <tr><td>Background information</td><td><code>background_info</code></td><td>Good for messages and notes</td></tr>
+            </tbody>
+          </table></div>
+          <p>If no first or last name is mapped or filled in, the contact is saved as <strong>Web Lead</strong>, because Wealthbox needs a name.</p>
+          <h3>How Gravity Forms values are sent</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Gravity Forms field</th><th scope="col">What Wealthbox receives</th></tr></thead>
+            <tbody>
+              <tr><td>Text, email, phone, dropdown and similar</td><td>The value as submitted</td></tr>
+              <tr><td>File Upload, single</td><td>The file URL</td></tr>
+              <tr><td>File Upload, multiple</td><td>One URL per line</td></tr>
+              <tr><td>Checkbox</td><td>Each ticked choice on its own line</td></tr>
+              <tr><td>Multi Select</td><td>Each selected choice on its own line</td></tr>
+              <tr><td>Consent</td><td>"Consent given" or "Consent NOT given", then the full consent text</td></tr>
+              <tr><td>Empty field</td><td>Nothing is sent for that field</td></tr>
+            </tbody>
+          </table></div>
+          <p>If you map a single sub input (for example only the consent checkbox <code>5.1</code>), the raw value of that input is sent instead.</p>
+        </section>
+
+        <section id="actions" aria-labelledby="d-actions">
+          <h2 id="d-actions">Pro: sync actions and contact matching</h2>
+          <p>Pro lets each mapping decide what happens when someone already in Wealthbox submits the form again. Pick it under <strong>Action</strong> on the mapping screen.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Action</th><th scope="col">Match found</th><th scope="col">No match found</th><th scope="col">Log status</th></tr></thead>
+            <tbody>
+              <tr><td>Create contact only</td><td>A new contact is created anyway</td><td>A new contact is created</td><td>created</td></tr>
+              <tr><td>Update contact only</td><td>That contact is updated</td><td>Nothing is sent</td><td>updated or skipped</td></tr>
+              <tr><td>Create and update</td><td>That contact is updated</td><td>A new contact is created</td><td>updated or created</td></tr>
+            </tbody>
+          </table></div>
+          <p>The free plugin always uses Create contact only. If you deactivate Pro, mappings set to an update action are skipped, not turned into creates, until Pro is active again.</p>
+          <h3>Match using</h3>
+          <ul>
+            <li><strong>The form field</strong> that holds the value, for example your Email field.</li>
+            <li><strong>The type</strong>, Email or Phone. Emails are trimmed and lowercased. Phone numbers keep only their digits, so "(555) 010-2233" and "5550102233" match.</li>
+          </ul>
+          <h3>How the match works</h3>
+          <p>Each time the plugin creates or updates a contact, it saves a SHA-256 fingerprint of that contact's email and phone, with the Wealthbox contact ID, in its own index table. The real email and phone are never stored there. On the next submission it fingerprints the match value and looks it up: one database lookup, no API call.</p>
+          <p class="docs-callout">The index only knows contacts the plugin itself created or updated. A contact already in Wealthbox before you installed Pro is not found yet, so Create and update makes a second record for that person. Matching existing Wealthbox contacts is planned for an update.</p>
+        </section>
+
+        <section id="custom-fields" aria-labelledby="d-custom">
+          <h2 id="d-custom">Pro: custom fields</h2>
+          <p>With Pro active, every Wealthbox contact custom field appears in the mapping dropdown under <strong>Custom fields</strong>, below the native fields.</p>
+          <h3>Auto matching</h3>
+          <p>When you load a form, Pro pre-selects a custom field for any form field whose label matches the custom field's name, ignoring capitals and extra spaces. "Annual Income" in Gravity Forms matches "annual income" in Wealthbox. Check the suggestions before you publish. A saved choice always wins.</p>
+          <h3>Name, email and phone in custom fields</h3>
+          <p>If you map a Gravity Forms Email, Phone or Name field to a custom field, Pro also fills the matching native field, so the contact always gets a real name, email and phone:</p>
+          <ul>
+            <li>Email field: also added as the contact's email address</li>
+            <li>Phone field: also added as the contact's phone number</li>
+            <li>Name, First (<code>x.3</code>): also set as first name</li>
+            <li>Name, Last (<code>x.6</code>): also set as last name</li>
+          </ul>
+          <h3>The cache</h3>
+          <p>Custom field definitions are fetched 100 at a time for each document type you selected in Settings, up to 5,000 fields, and cached for 3 hours so the mapping screen never waits on the API. An empty cache refills itself on the next page load. Only Contact custom fields appear in the mapping dropdown today.</p>
+        </section>
+
+        <section id="nested-forms" aria-labelledby="d-nested">
+          <h2 id="d-nested">Pro: GP Nested Forms</h2>
+          <p>Pro lets you map the fields inside a Gravity Perks Nested Forms field, for example several addresses, dependents or accounts entered on one form. Each child field appears as its own row, labelled "Parent field → Child field", with a key like <code>nested:12:3</code> (parent field 12, child field 3).</p>
+          <p>At submission, every child entry becomes one numbered line, labelled with the child field's name:</p>
+          <pre><code>Address-1: 12 High St, Porto, 4000-123, Portugal
+Address-2: 8 Rua Nova, Gaia, 4400-001, Portugal</code></pre>
+          <ul>
+            <li>Map the whole child field to get all its parts joined with commas, as above.</li>
+            <li>Map one sub input (<code>nested:12:3.3</code>) to get only that part per line.</li>
+            <li>Send nested rows to a text custom field or to Background information, because the result is several lines long.</li>
+            <li>Nested rows cannot be the <strong>Match using</strong> field.</li>
+          </ul>
+        </section>
+
+        <section id="logs" aria-labelledby="d-logs">
+          <h2 id="d-logs">Pro: sync logs</h2>
+          <p>Every submission on a mapped form writes one row to <strong>Wealthbox › Logs</strong>, so you can see exactly what was sent and what Wealthbox answered.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Column</th><th scope="col">Shows</th></tr></thead>
+            <tbody>
+              <tr><td>Time (UTC)</td><td>When the sync ran</td></tr>
+              <tr><td>Form / Entry</td><td>Gravity Forms form and entry IDs</td></tr>
+              <tr><td>Action</td><td>create, update or upsert</td></tr>
+              <tr><td>Status</td><td>created, updated, skipped or error, colour coded</td></tr>
+              <tr><td>HTTP</td><td>The response code from Wealthbox, 0 if the request never reached it</td></tr>
+              <tr><td>Contact ID</td><td>The Wealthbox contact ID, when there is one</td></tr>
+              <tr><td>Details</td><td>The message, the full request payload and the full response body</td></tr>
+            </tbody>
+          </table></div>
+          <p>Sort by time, form, entry, status or HTTP code, filter by a From and To date, and set rows per page under Screen Options. Logs hold submitted form data, so treat them as personal data. They are kept until you uninstall Pro; automatic clean up is planned for an update.</p>
+        </section>
+
+        <section id="developers" aria-labelledby="d-dev">
+          <h2 id="d-dev">Developer reference</h2>
+          <p>The free plugin is a small engine with hooks. Pro is built entirely on those same hooks, so you can extend it the same way.</p>
+          <h3>Free plugin hooks</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Hook</th><th scope="col">Type</th><th scope="col">Use it to</th></tr></thead>
+            <tbody>
+              <tr><td><code>wbm_request_args</code></td><td>filter</td><td>Change HTTP args (timeout, headers, retries)</td></tr>
+              <tr><td><code>wbm_contact_kind</code></td><td>filter</td><td>Change the email and phone kind (default <code>Personal</code>)</td></tr>
+              <tr><td><code>wbm_contact_payload</code></td><td>filter</td><td>Edit the contact payload before it is sent</td></tr>
+              <tr><td><code>wbm_native_fields</code></td><td>filter</td><td>Add native fields to the dropdown</td></tr>
+              <tr><td><code>wbm_resource</code></td><td>filter</td><td>Swap the resource handler</td></tr>
+              <tr><td><code>wbm_before_sync</code></td><td>action</td><td>Inspect the payload before the API call</td></tr>
+              <tr><td><code>wbm_after_sync</code></td><td>action</td><td>React after the sync</td></tr>
+              <tr><td><code>wbm_run_action</code></td><td>filter</td><td>Handle actions other than create</td></tr>
+              <tr><td><code>wbm_target_groups</code></td><td>filter</td><td>Add groups to the Wealthbox field dropdown</td></tr>
+              <tr><td><code>wbm_suggest_target</code></td><td>filter</td><td>Pre-select a target for a form field</td></tr>
+              <tr><td><code>wbm_map_target</code></td><td>filter</td><td>Handle targets that are not native fields</td></tr>
+              <tr><td><code>wbm_form_field_rows</code></td><td>filter</td><td>Add rows for a Nested Forms field</td></tr>
+              <tr><td><code>wbm_nested_value</code></td><td>filter</td><td>Resolve a nested key to a value</td></tr>
+              <tr><td><code>wbm_metabox_rows</code></td><td>action</td><td>Add rows to the mapping screen</td></tr>
+              <tr><td><code>wbm_save_mapping</code></td><td>action</td><td>Save those rows</td></tr>
+              <tr><td><code>wbm_settings_general_rows</code></td><td>action</td><td>Add rows to the General settings tab</td></tr>
+              <tr><td><code>wbm_settings_tools_sections</code></td><td>action</td><td>Add sections to the Connection tab</td></tr>
+              <tr><td><code>wbm_sanitize_settings</code></td><td>filter</td><td>Save extra settings keys</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Pro hooks</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Hook</th><th scope="col">Type</th><th scope="col">Use it to</th></tr></thead>
+            <tbody>
+              <tr><td><code>wbm_custom_fields</code></td><td>filter</td><td>Edit the custom field list before it is cached</td></tr>
+              <tr><td><code>wbm_use_api_lookup_fallback</code></td><td>filter</td><td>Turn on the API lookup when the index misses (off by default, experimental)</td></tr>
+              <tr><td><code>wbm_native_role</code></td><td>filter</td><td>Route a custom field mapping to first name, last name, email or phone</td></tr>
+              <tr><td><code>wbm_nested_line_format</code></td><td>filter</td><td>Change one line of nested output</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Example: tag every web lead</h3>
+          <pre><code>add_filter( 'wbm_contact_payload', function ( $payload, $entry, $form ) {
+    $payload['tags'] = [ 'Website lead' ];
+    return $payload;
+}, 10, 3 );</code></pre>
+          <h3>Where data is stored</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Item</th><th scope="col">Location</th><th scope="col">Owner</th></tr></thead>
+            <tbody>
+              <tr><td>Settings</td><td>Option <code>wbm_settings</code></td><td>Free</td></tr>
+              <tr><td>Mappings</td><td>Post type <code>wbm_mapping</code> and its <code>_wbm_*</code> meta</td><td>Free</td></tr>
+              <tr><td>Contact index</td><td>Table <code>{prefix}wb_contact_index</code></td><td>Pro</td></tr>
+              <tr><td>Sync logs</td><td>Table <code>{prefix}wb_logs</code></td><td>Pro</td></tr>
+              <tr><td>Custom field cache</td><td>Transient <code>wbm_custom_fields</code>, 3 hours</td><td>Pro</td></tr>
+            </tbody>
+          </table></div>
+          <p>The code uses the <code>MappingsForWealthbox</code> namespace (Pro: <code>MappingsForWealthbox\Pro</code>). The <code>Wealthbox_Resource</code> interface means support for more Wealthbox record types can be added as new classes, without changing the sync engine.</p>
+        </section>
+
+        <section id="uninstall" aria-labelledby="d-uninstall">
+          <h2 id="d-uninstall">Deactivating and uninstalling</h2>
+          <p>Deactivating never deletes anything. Deleting a plugin removes only that plugin's own data, and nothing in Wealthbox is ever deleted.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">You do this</th><th scope="col">What happens</th></tr></thead>
+            <tbody>
+              <tr><td>Deactivate Pro</td><td>Mappings, logs and the index stay. Create mappings keep working. Update mappings are skipped until Pro is back.</td></tr>
+              <tr><td>Delete Pro</td><td>Drops the index and log tables and the custom field cache. Mappings and settings stay.</td></tr>
+              <tr><td>Deactivate free</td><td>Nothing is synced. Pro stops too and shows a notice.</td></tr>
+              <tr><td>Delete free</td><td>Deletes the settings (your token) and every mapping.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="troubleshooting" aria-labelledby="d-trouble">
+          <h2 id="d-trouble">Troubleshooting and FAQ</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Problem</th><th scope="col">Likely cause</th><th scope="col">Fix</th></tr></thead>
+            <tbody>
+              <tr><td>Test connection says authentication failed</td><td>Wrong or expired token</td><td>Create a new token, paste it, save, test again</td></tr>
+              <tr><td>"Add a token and base URL first"</td><td>Settings not saved</td><td>Save before testing</td></tr>
+              <tr><td>No contact appears in Wealthbox</td><td>Mapping is a draft or points to another form</td><td>Publish it and check the Gravity Form column</td></tr>
+              <tr><td>Contact is called "Web Lead"</td><td>No first or last name mapped or filled in</td><td>Map Name, First and Name, Last</td></tr>
+              <tr><td>Custom fields missing (Pro)</td><td>Cache built before the token, or a new field</td><td>Clear cache &amp; re-fetch fields</td></tr>
+              <tr><td>Update only does nothing (Pro)</td><td>No match in the index, log shows skipped</td><td>Use Create and update, or check Match using</td></tr>
+              <tr><td>Log shows error, HTTP 0</td><td>Request never reached Wealthbox</td><td>Check the server can reach the base URL</td></tr>
+              <tr><td>Log shows error, HTTP 422</td><td>Wealthbox rejected a value</td><td>Read the response body in Details</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Known limitations</h3>
+          <ul>
+            <li>Update modes only find contacts the plugin created or updated itself.</li>
+            <li>Logs are not cleaned up automatically.</li>
+            <li>Only one published mapping per form is used.</li>
+            <li>Only Wealthbox Contacts are supported today.</li>
+          </ul>
+          <p>Questions the docs do not answer? <a href="../../../contact/">Contact me</a>.</p>
+        </section>
+
+        <section id="changelog" aria-labelledby="d-changelog">
+          <h2 id="d-changelog">Changelog and credits</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Version</th><th scope="col">Plugin</th><th scope="col">Changes</th></tr></thead>
+            <tbody>
+              <tr><td>1.0.0</td><td>Free</td><td>First release: native field mapping, create only sync, value formatting, duplicate mapping, test connection</td></tr>
+              <tr><td>1.0.0</td><td>Pro</td><td>First release: custom fields with auto matching, update and create and update, contact index, sync logs, GP Nested Forms</td></tr>
+            </tbody>
+          </table></div>
+          <p>Built by Samama Tahir. Licensed under GPL v2 or later. Wealthbox is a trademark of its owner and Gravity Forms is a trademark of Rocketgenius. This plugin is independent and not affiliated with either.</p>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../../">Home</a>
+          <a href="../../../services/">Services</a>
+          <a href="../../../about/">About</a>
+          <a href="../../../work/">Portfolio</a>
+          <a href="../../../products/">Products</a>
+          <a href="../../../faq/">FAQ</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../../services/web-development/">Web Development</a>
+          <a href="../../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../../services/marketing/">Marketing</a>
+          <a href="../../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.min.js?v=20261014d" defer></script>
+</body>
+</html>

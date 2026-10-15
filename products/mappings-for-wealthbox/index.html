@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Mappings for Wealthbox: Gravity Forms to Wealthbox CRM Plugin</title>
+<meta name="description" content="A WordPress plugin that sends every Gravity Forms submission into Wealthbox CRM as a contact. Free, or Pro for $49 once with custom fields, updates and logs." />
+<link rel="canonical" href="https://samamatahir.com/products/mappings-for-wealthbox/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/products/mappings-for-wealthbox/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/produtos/mappings-for-wealthbox/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/products/mappings-for-wealthbox/" />
+<link rel="icon" type="image/svg+xml" href="../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Mappings for Wealthbox: Gravity Forms to Wealthbox CRM Plugin" />
+<meta property="og:description" content="A WordPress plugin that sends every Gravity Forms submission into Wealthbox CRM as a contact. Free, or Pro for $49 once with custom fields, updates and logs." />
+<meta property="og:url" content="https://samamatahir.com/products/mappings-for-wealthbox/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Mappings for Wealthbox, a WordPress plugin by Samama Tahir" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mappings for Wealthbox: Gravity Forms to Wealthbox CRM Plugin" />
+<meta name="twitter:description" content="A WordPress plugin that sends every Gravity Forms submission into Wealthbox CRM as a contact. Free, or Pro for $49 once with custom fields, updates and logs." />
+<meta name="twitter:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../css/styles.min.css?v=20261015a" />
+<link rel="stylesheet" href="../../css/responsive.min.css?v=20261015c" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samamatahir.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://samamatahir.com/products/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mappings for Wealthbox",
+      "item": "https://samamatahir.com/products/mappings-for-wealthbox/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Mappings for Wealthbox",
+  "url": "https://samamatahir.com/products/mappings-for-wealthbox/",
+  "inLanguage": "en",
+  "description": "A WordPress plugin that sends every Gravity Forms submission into Wealthbox CRM as a contact. Free, or Pro for $49 once with custom fields, updates and logs.",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "WordPress plugin",
+  "operatingSystem": "WordPress 6.0+",
+  "softwareVersion": "1.0.0",
+  "image": "https://samamatahir.com/images/mappings-for-wealthbox-icon.svg",
+  "author": {
+      "@type": "Person",
+      "@id": "https://samamatahir.com/#person",
+      "name": "Samama Tahir",
+      "url": "https://samamatahir.com/"
+    },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "49",
+      "priceCurrency": "USD"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need Zapier or another automation tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The plugin talks to the Wealthbox API directly from your WordPress site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it update people who are already in my Wealthbox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro updates contacts the plugin has already created or updated. Matching contacts that were in Wealthbox before you installed it is coming in an update."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it send my old form entries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Only submissions made after you publish a mapping are sent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is my data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In your own WordPress database and in Wealthbox. Nothing passes through my servers. Pro keeps sync logs in your database and uses fingerprints, not raw emails, for matching."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many sites does one Pro licence cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One site per licence. Buy one for each site you run Pro on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this plugin made by Wealthbox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is an independent plugin built by Samama Tahir. It is not made or endorsed by Wealthbox."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../services/">
+            <span class="nav-star" aria-hidden="true">✦</span>Services
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+                <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+                <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+                <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+                <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+                <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+                <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+                <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+                <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+                <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+              </ul>
+              <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../work/">Work</a></li>
+        <li><a href="../../products/">Products</a></li>
+        <li><a href="../../faq/">FAQ</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <span class="is-active" aria-current="page">EN</span>
+        <a href="../../pt/produtos/mappings-for-wealthbox/" hreflang="pt-PT">PT</a>
+      </div>
+
+      <a href="../../contact/" class="btn btn-primary header-cta">Let's talk</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../services/"><span class="nav-star" aria-hidden="true">✦</span>Services</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../services/web-development/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Web Development</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/web-development/shopify-developer/">Shopify Development</a></li>
+              <li><a href="../../services/web-development/wordpress-developer/">WordPress Development</a></li>
+              <li><a href="../../services/web-development/online-store/">Online Stores</a></li>
+              <li><a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a></li>
+              <li><a href="../../web-developer-porto/">Web Developer in Porto</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../services/marketing/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../services/marketing/local-seo/">Local SEO</a></li>
+              <li><a href="../../services/marketing/seo-consultant/">SEO Consultant</a></li>
+              <li><a href="../../services/marketing/google-business-profile/">Google Business Profile</a></li>
+              <li><a href="../../services/marketing/google-ads/">Google Ads</a></li>
+              <li><a href="../../services/marketing/meta-ads/">Meta Ads</a></li>
+              <li><a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a></li>
+            </ul>
+            <a href="../../services/ai-automation/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>AI &amp; Automation</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../../products/">Products</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+      <li><a href="../../contact/" class="btn btn-primary btn-block">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../products/">Products</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Mappings for Wealthbox</span>
+    </div>
+  </nav>
+
+  <nav class="product-subnav" aria-label="Mappings for Wealthbox">
+    <div class="container">
+      <a href="../../products/mappings-for-wealthbox/" class="product-subnav-name"><img src="../../images/mappings-for-wealthbox-icon.svg" width="26" height="26" alt="" />Mappings for Wealthbox</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#compare">Free vs Pro</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="../../products/mappings-for-wealthbox/docs/">Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="section section--dark page-intro">
+    <div class="container split">
+      <div class="split-content">
+        <span class="hero-badge">WordPress plugin · Gravity Forms to Wealthbox CRM</span>
+        <h1 class="text-balance">Every Gravity Forms lead, straight into Wealthbox</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Mappings for Wealthbox turns each form submission into a Wealthbox contact the moment it arrives. No Zapier, no CSV exports, no copy and paste. Pick a form, match the fields, publish.</p>
+        <div class="hero-actions" style="margin-top: var(--space-3);">
+          <a href="#pricing" class="btn btn-primary">Download free</a>
+          <a href="#pricing" class="btn btn-secondary">Get Pro for $49</a>
+        </div>
+        <p style="font-size: 0.92rem; margin-top: var(--space-2);">One time payment. Works with WordPress 6.0+, PHP 8.0+ and Gravity Forms.</p>
+      </div>
+      <div class="wbm-demo" role="img" aria-label="Animation: a Gravity Forms entry passes through the plugin and becomes a Wealthbox contact">
+        <div class="wbm-form" aria-hidden="true">
+          <div class="wbm-form-title">Contact form</div>
+          <span class="wbm-field-label">Name</span>
+          <span class="wbm-field"><span class="wbm-type">Maria Costa</span></span>
+          <span class="wbm-field-label">Email</span>
+          <span class="wbm-field"><span class="wbm-type wbm-d1">maria@example.com</span></span>
+          <span class="wbm-field-label">Phone</span>
+          <span class="wbm-field"><span class="wbm-type wbm-d2">+351 900 000 000</span></span>
+          <span class="wbm-field-label">Annual income</span>
+          <span class="wbm-field"><span class="wbm-type wbm-d3">$150k to $250k</span></span>
+          <span class="wbm-submit">Send</span>
+        </div>
+        <div class="wbm-bridge" aria-hidden="true">
+          <span class="wbm-bridge-line"></span>
+          <img src="../../images/mappings-for-wealthbox-icon.svg" width="48" height="48" alt="" />
+          <span class="wbm-bridge-line"></span>
+        </div>
+        <div class="wbm-contact" aria-hidden="true">
+          <div class="wbm-contact-title">Wealthbox CRM <span>New contact</span></div>
+          <dl>
+            <div class="wbm-d4"><dt>First name</dt><dd>Maria</dd></div>
+            <div class="wbm-d5"><dt>Last name</dt><dd>Costa</dd></div>
+            <div class="wbm-d6"><dt>Email</dt><dd>maria@example.com</dd></div>
+            <div class="wbm-d7"><dt>Phone</dt><dd>+351 900 000 000</dd></div>
+            <div class="wbm-d8"><dt>Annual income</dt><dd>$150k to $250k</dd></div>
+          </dl>
+          <span class="wbm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Contact created</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why I built it -->
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why I Built It</span>
+        <h2 id="why-heading" class="text-balance">Your leads live on your website. Your business lives in Wealthbox.</h2>
+        <p>Gravity Forms is great at catching leads, but Wealthbox is where advisors actually work. Getting one into the other usually means paying for an automation service or copying entries by hand.</p>
+        <p style="margin-top: var(--space-2);">I built Mappings for Wealthbox to close that gap right inside WordPress. Pick a form, match the fields, and every new lead lands in Wealthbox on its own. Pro adds custom fields, contact updates, sync logs and nested forms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section--alt" id="how" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How It Works</span>
+        <h2 id="how-heading" class="text-balance">Three steps, no code</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step reveal">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Connect</h3>
+          <p>Paste your Wealthbox API token under Wealthbox, Settings, then click Test connection.</p>
+        </li>
+        <li class="process-step reveal">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Map</h3>
+          <p>Pick a Gravity Form. Choose the Wealthbox field for each form field from a searchable list.</p>
+        </li>
+        <li class="process-step reveal">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Publish</h3>
+          <p>Every new submission now creates the contact in Wealthbox.</p>
+        </li>
+        <li class="process-step reveal">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h3>Check (Pro)</h3>
+          <p>Returning people are updated, not duplicated, and every sync is in the log.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- See it work -->
+  <section class="section" aria-labelledby="demo-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">See It Work</span>
+        <h2 id="demo-heading" class="text-balance">Inside your WordPress dashboard</h2>
+        <p>Three screens do the work: the mapping screen, the contact matching and the sync log.</p>
+      </div>
+      <!-- TODO(Samama): replace these animated mockups with real screen recordings of the plugin -->
+      <div class="demo-grid">
+        <figure class="demo-card reveal">
+          <div class="demo-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Wealthbox › Mappings › Edit</span></div>
+          <div class="demo-screen" aria-hidden="true">
+            <div class="demo-row demo-row--head"><span>Gravity Forms field</span><span>Wealthbox field</span></div>
+            <div class="demo-row"><span>Name, First <code>1.3</code></span><span class="demo-select demo-in">First name</span></div>
+            <div class="demo-row"><span>Name, Last <code>1.6</code></span><span class="demo-select demo-in wbm-d1">Last name</span></div>
+            <div class="demo-row"><span>Email <code>2</code></span><span class="demo-select demo-in wbm-d2">Email address</span></div>
+            <div class="demo-row"><span>Message <code>4</code></span><span class="demo-select demo-in wbm-d3">Background information</span></div>
+            <div class="demo-row"><span>Annual income <code>7</code></span><span class="demo-in wbm-d4"><span class="demo-auto">Auto matched</span><span class="demo-select">Annual income</span></span></div>
+          </div>
+          <figcaption><strong>Map fields in a click.</strong> Pro pre-selects custom fields whose name matches the form label.</figcaption>
+        </figure>
+        <figure class="demo-card reveal">
+          <div class="demo-chrome" aria-hidden="true"><i></i><i></i><i></i><span>New submission · Create and update</span></div>
+          <div class="demo-screen" aria-hidden="true">
+            <div class="demo-note">Match using <strong>Email</strong>: maria@example.com</div>
+            <div class="demo-step demo-in wbm-d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Checking the private contact index</div>
+            <div class="demo-step demo-in wbm-d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>Found an existing contact</div>
+            <div class="demo-step demo-in wbm-d8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></svg>Sending the new details to Wealthbox</div>
+            <span class="demo-result"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f4c542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Updated, no duplicate</span>
+          </div>
+          <figcaption><strong>Update, do not duplicate.</strong> Pro matches returning people by email or phone.</figcaption>
+        </figure>
+        <figure class="demo-card reveal">
+          <div class="demo-chrome" aria-hidden="true"><i></i><i></i><i></i><span>Wealthbox › Logs</span></div>
+          <div class="demo-screen" aria-hidden="true">
+            <div class="demo-log demo-row--head"><span>Time</span><span>Status</span><span>HTTP</span><span>Action</span></div>
+            <div class="demo-log demo-log--in"><span>09:41</span><span><span class="log-status">created</span></span><span>201</span><span>upsert</span></div>
+            <div class="demo-log demo-log--in wbm-d2"><span>10:07</span><span><span class="log-status">updated</span></span><span>200</span><span>upsert</span></div>
+            <div class="demo-log demo-log--in wbm-d4"><span>11:22</span><span><span class="log-status log-status--skipped">skipped</span></span><span>0</span><span>update</span></div>
+            <div class="demo-log demo-log--in wbm-d6"><span>12:58</span><span><span class="log-status">created</span></span><span>201</span><span>create</span></div>
+          </div>
+          <figcaption><strong>Know what happened.</strong> Every sync is logged with the exact request and response.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="section section--dark" aria-labelledby="flow-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Flow</span>
+        <h2 id="flow-heading" class="text-balance">From submit button to CRM in seconds</h2>
+        <p>Everything runs inside your own WordPress site. No third party service sits in the middle.</p>
+      </div>
+      <div style="position: relative;">
+        <div class="flow-line" aria-hidden="true"><span></span></div>
+        <ol class="flow-steps">
+          <li class="flow-step reveal"><span class="flow-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3>Form submitted</h3><p>A visitor fills in any Gravity Form.</p></li>
+          <li class="flow-step reveal"><span class="flow-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6M4 12h6M4 18h6M14 6c4 0 3 6 6 6M14 18c4 0 3-6 6-6M14 12h6"/></svg></span><h3>Mapping applied</h3><p>Each field goes to its Wealthbox field.</p></li>
+          <li class="flow-step reveal"><span class="flow-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><h3>Contact matched</h3><p>Pro checks email or phone for a returning person.</p></li>
+          <li class="flow-step reveal"><span class="flow-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="8" r="4"/></svg></span><h3>Saved in Wealthbox</h3><p>Created new, or updated in place.</p></li>
+          <li class="flow-step reveal"><span class="flow-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h11v16H8zM5 8h3M5 12h3M5 16h3M11 9h5M11 13h5"/></svg></span><h3>Logged</h3><p>Pro records the result for you to check.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h2 id="features-heading" class="text-balance">Everything a form to CRM bridge should do</h2>
+        <p>The free plugin covers the basics. Pro handles the real world: custom fields, returning clients and proof of every sync.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal"><span class="pill">Free</span><h3>Any Gravity Form</h3><p>One mapping per form, as many forms as you like. Duplicate a mapping to reuse it.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free</span><h3>Standard contact fields</h3><p>First, last and middle name, nickname, job title, company, email, phone and background info.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free</span><h3>Smart value formatting</h3><p>File uploads become links. Checkboxes and multi selects arrive one per line. Consent keeps its full text.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free</span><h3>Hidden and tracking fields</h3><p>Map UTM tags, user IDs and other hidden fields with one toggle.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free</span><h3>One click connection test</h3><p>Know your token works before a single lead is sent.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free and Pro</span><h3>20+ developer hooks</h3><p>Filter the payload, add tags, change the email kind or plug in your own logic. All documented.</p></article>
+        <article class="feature-card feature-card--pro reveal"><span class="pill pill--pro">Pro</span><h3>Wealthbox custom fields</h3><p>Every custom field in your Wealthbox, auto matched to form labels and cached so the screen stays fast.</p></article>
+        <article class="feature-card feature-card--pro reveal"><span class="pill pill--pro">Pro</span><h3>Update, or create and update</h3><p>Match returning people by email or phone and update their record instead of making a new one.</p></article>
+        <article class="feature-card feature-card--pro reveal"><span class="pill pill--pro">Pro</span><h3>Private contact index</h3><p>Matching uses SHA-256 fingerprints, so no raw email or phone sits in the index. One fast lookup, no API call.</p></article>
+        <article class="feature-card feature-card--pro reveal"><span class="pill pill--pro">Pro</span><h3>Sync logs</h3><p>Status, HTTP code, contact ID, full request and response. Sort it and filter it by date.</p></article>
+        <article class="feature-card feature-card--pro reveal"><span class="pill pill--pro">Pro</span><h3>GP Nested Forms</h3><p>Map child entries like extra addresses or dependents. Each one arrives as its own numbered line.</p></article>
+        <article class="feature-card reveal"><span class="pill">Free and Pro</span><h3>Safe to remove</h3><p>Deactivating deletes nothing. The plugin never deletes contacts in Wealthbox.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free vs Pro -->
+  <section class="section section--alt" id="compare" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Free vs Pro</span>
+        <h2 id="compare-heading" class="text-balance">Start free. Upgrade when you need more.</h2>
+      </div>
+      <div class="compare-wrap reveal">
+        <table class="compare-table">
+          <thead><tr><th scope="col" style="text-align: left;">Feature</th><th scope="col">Free</th><th scope="col" class="col-pro">Pro · $49</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Map any Gravity Form to Wealthbox</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">9 standard contact fields</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Create new contacts</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">File, checkbox, multi select and consent formatting</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Hidden fields, duplicate mapping, connection test</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Developer hooks</th><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Wealthbox custom fields with auto matching</th><td><span class="compare-no">Not included</span></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Update only, or create and update</th><td><span class="compare-no">Not included</span></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Match contacts by email or phone</th><td><span class="compare-no">Not included</span></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">Sync logs with request and response</th><td><span class="compare-no">Not included</span></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+            <tr><th scope="row">GP Nested Forms support</th><td><span class="compare-no">Not included</span></td><td class="col-pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 12l5 5L20 7"/></svg></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2 id="pricing-heading" class="text-balance">Pay once. No subscription.</h2>
+        <p>The free plugin is free for good. Pro is a single payment per site.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card reveal">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <p>Create contacts from any Gravity Form.</p>
+          <ul class="check-list">
+            <li>9 standard contact fields</li>
+            <li>Unlimited forms and mappings</li>
+            <li>Value formatting and hidden fields</li>
+            <li>Developer hooks</li>
+          </ul>
+          <!-- TODO(Samama): point this at the free download (zip or WordPress.org) -->
+          <a href="mailto:hello@samamatahir.com?subject=Mappings%20for%20Wealthbox%20free%20download" class="btn btn-secondary">Download free</a>
+        </div>
+        <div class="price-card price-card--pro reveal">
+          <span class="pill pill--pro">Most useful</span>
+          <h3>Pro</h3>
+          <p class="price">$49 <small>one time</small></p>
+          <p>Everything in Free, plus the tools a busy practice needs. One site per licence.</p>
+          <ul class="check-list">
+            <li>Wealthbox custom fields</li>
+            <li>Update, or create and update</li>
+            <li>Email or phone matching</li>
+            <li>Sync logs</li>
+            <li>GP Nested Forms</li>
+          </ul>
+          <!-- TODO(Samama): point this at the Pro checkout -->
+          <a href="mailto:hello@samamatahir.com?subject=Mappings%20for%20Wealthbox%20Pro" class="btn btn-primary">Buy Pro for $49</a>
+        </div>
+      </div>
+      <div class="requirements">
+        <span><strong>WordPress</strong> 6.0+</span>
+        <span><strong>PHP</strong> 8.0+</span>
+        <span><strong>Gravity Forms</strong> required</span>
+        <span><strong>Wealthbox</strong> API token</span>
+        <span><strong>GP Nested Forms</strong> optional</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading" class="text-balance">Straight answers</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I need Zapier or another automation tool?</summary>
+          <p>No. The plugin talks to the Wealthbox API directly from your WordPress site.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will it update people who are already in my Wealthbox?</summary>
+          <p>Pro updates contacts the plugin has already created or updated. Matching contacts that were in Wealthbox before you installed it is coming in an update.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it send my old form entries?</summary>
+          <p>No. Only submissions made after you publish a mapping are sent.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where is my data stored?</summary>
+          <p>In your own WordPress database and in Wealthbox. Nothing passes through my servers. Pro keeps sync logs in your database and uses fingerprints, not raw emails, for matching.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many sites does one Pro licence cover?</summary>
+          <p>One site per licence. Buy one for each site you run Pro on.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this plugin made by Wealthbox?</summary>
+          <p>No. It is an independent plugin built by Samama Tahir. It is not made or endorsed by Wealthbox.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark final-cta" aria-labelledby="product-cta-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="product-cta-heading" class="text-balance">Your next lead should not wait in an inbox</h2>
+        <p>Install the free plugin in minutes. Upgrade to Pro when your forms grow up. Need a custom integration for your firm? I build those too.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary">Download free</a>
+        <a href="../../products/mappings-for-wealthbox/docs/" class="btn btn-secondary">Read the documentation</a>
+        <a href="../../contact/" class="btn btn-secondary">Let's talk</a>
+      </div>
+      <p class="product-disclaimer">Built by Samama Tahir. Wealthbox is a trademark of its owner and Gravity Forms is a trademark of Rocketgenius. This plugin is independent and not affiliated with either.</p>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Full-Stack Web Developer &amp; Digital Growth Specialist</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../../services/">Services</a>
+          <a href="../../about/">About</a>
+          <a href="../../work/">Portfolio</a>
+          <a href="../../products/">Products</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Web Development</p>
+        <div class="footer-links">
+          <a href="../../services/web-development/">Web Development</a>
+          <a href="../../services/web-development/shopify-developer/">Shopify Development</a>
+          <a href="../../services/web-development/wordpress-developer/">WordPress Development</a>
+          <a href="../../services/web-development/wordpress-developer/hire/">Hire a WordPress Developer</a>
+          <a href="../../services/web-development/online-store/">Online Stores</a>
+          <a href="../../services/web-development/custom-web-apps/">Custom Web Apps</a>
+          <a href="../../web-developer-porto/">Web Developer in Porto</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing &amp; Automation</p>
+        <div class="footer-links">
+          <a href="../../services/marketing/">Marketing</a>
+          <a href="../../services/marketing/local-seo/">Local SEO</a>
+          <a href="../../services/marketing/seo-consultant/">SEO Consultant</a>
+          <a href="../../services/marketing/google-business-profile/">Google Business Profile</a>
+          <a href="../../services/marketing/google-ads/">Google Ads</a>
+          <a href="../../services/marketing/meta-ads/">Meta Ads</a>
+          <a href="../../services/marketing/ga4-analytics/">GA4 and Analytics</a>
+          <a href="../../services/ai-automation/">AI &amp; Automation</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Social</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacy/" data-privacy-link>Privacy policy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js?v=20261014d" defer></script>
+</body>
+</html>

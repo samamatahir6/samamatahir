@@ -132,6 +132,24 @@ Portuguese pages use Portuguese slugs: `/pt/servicos/`, `/pt/servicos/criacao-de
 
 Two posts are rewrites of the old WordPress tutorials that were still indexed (Shopify customer accounts, the multi-level WordPress menu); the old URLs 301 to them in `.htaccess`, and `/our-blog/` and `/feed/` now point to the blog.
 
+### Products (October 2026)
+
+`/products/` (EN) and `/pt/produtos/` (PT) are a hub for plugins and tools built from client work, linked from the main menu (after Work / Portefólio), the mobile menu and the "Navigate" footer column on every page. Each product has a landing page and a docs page under its own folder:
+
+| EN | PT |
+|---|---|
+| `/products/` | `/pt/produtos/` |
+| `/products/mappings-for-wealthbox/` | `/pt/produtos/mappings-for-wealthbox/` |
+| `/products/mappings-for-wealthbox/docs/` | `/pt/produtos/mappings-for-wealthbox/documentacao/` |
+
+- Product pages carry a green product sub-menu (`.product-subnav`, sticky from 900px) under the breadcrumbs. Styles are the `PRODUCTS` section at the end of `css/styles.css` (hub cards, the hero demo `.wbm-*`, `.demo-card`, `.flow-steps`, `.feature-card`, `.compare-table`, `.price-card`, `.docs-*`) plus a block at the end of `css/responsive.css`.
+- Animations are CSS only and decorate real HTML text; `prefers-reduced-motion` shows every element in its final state. Scroll reveal (`.reveal`) only runs in browsers with scroll timelines.
+- Schema: `BreadcrumbList` everywhere, `CollectionPage` on the hubs, `SoftwareApplication` (Free and Pro offers) plus `FAQPage` on the landing pages, `TechArticle` on the docs.
+- Unlike service pages, product pages show prices (the product price is a fact, not a quote). Plugin menu and button names stay in English on the PT docs because the plugin admin is English.
+- Images: `images/mappings-for-wealthbox-icon.svg` (plugin icon) and `images/mappings-for-wealthbox-og.jpg` (1200x630 share image).
+- `TODO(Samama)` markers on the landing pages: the free download link, the Pro checkout link (both currently open an email to hello@samamatahir.com), and real screen recordings to replace the animated mockups.
+- To add a product: a card on both hubs, a `products/<slug>/` page pair (and `docs/` / `documentacao/`), then `python3 scripts/build-sitemap.py` and `python3 scripts/check-seo.py`.
+
 ### SEO scripts
 
 - `python3 scripts/build-sitemap.py` rebuilds `sitemap.xml` from every page's canonical and `hreflang` tags, with `lastmod` from the page's last git commit (today for uncommitted pages). Run it after adding or editing pages, before committing.

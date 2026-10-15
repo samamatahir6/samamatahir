@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Consent Mode v2: analytics stays off until the visitor accepts in the
+     cookie banner (main.js). A saved choice is applied before the tag loads.
+     gtag.js itself is only fetched after the first scroll, tap or key press,
+     or when the visitor accepts, so it never competes with the first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var stConsent = null;
+  try { stConsent = localStorage.getItem('st-consent'); } catch (e) {}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: stConsent === 'granted' ? 'granted' : 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-YJFSYZGMZ0');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    window.stLoadGtag = function () {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { removeEventListener(e, window.stLoadGtag, true); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJFSYZGMZ0';
+      document.head.appendChild(s);
+    };
+    events.forEach(function (e) { addEventListener(e, window.stLoadGtag, { capture: true, passive: true }); });
+  })();
+</script>
+<meta name="google-site-verification" content="oLhvVviP_3qNn2b8NzwVnnxUHcvkgvL6s7S6BkeYgJ4" />
+<title>Documentação do Mappings for Wealthbox | Instalação e Hooks</title>
+<meta name="description" content="Como instalar o Mappings for Wealthbox, ligar o token do Wealthbox, associar campos do Gravity Forms, usar as funções Pro e estender o plugin com hooks." />
+<link rel="canonical" href="https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/" />
+<link rel="alternate" hreflang="en" href="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<link rel="alternate" hreflang="pt-PT" href="https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/" />
+<link rel="alternate" hreflang="x-default" href="https://samamatahir.com/products/mappings-for-wealthbox/docs/" />
+<link rel="icon" type="image/svg+xml" href="../../../../icons/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b3b2a" />
+
+<meta property="og:title" content="Documentação do Mappings for Wealthbox | Instalação e Hooks" />
+<meta property="og:description" content="Como instalar o Mappings for Wealthbox, ligar o token do Wealthbox, associar campos do Gravity Forms, usar as funções Pro e estender o plugin com hooks." />
+<meta property="og:url" content="https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/" />
+<meta property="og:site_name" content="Samama Tahir" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Mappings for Wealthbox, a WordPress plugin by Samama Tahir" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Documentação do Mappings for Wealthbox | Instalação e Hooks" />
+<meta name="twitter:description" content="Como instalar o Mappings for Wealthbox, ligar o token do Wealthbox, associar campos do Gravity Forms, usar as funções Pro e estender o plugin com hooks." />
+<meta name="twitter:image" content="https://samamatahir.com/images/mappings-for-wealthbox-og.jpg" />
+
+<link rel="preload" href="../../../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" href="../../../../css/styles.min.css?v=20261015a" />
+<link rel="stylesheet" href="../../../../css/responsive.min.css?v=20261015c" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://samamatahir.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Produtos",
+      "item": "https://samamatahir.com/pt/produtos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mappings for Wealthbox",
+      "item": "https://samamatahir.com/pt/produtos/mappings-for-wealthbox/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Documentação",
+      "item": "https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Documentação do Mappings for Wealthbox",
+  "url": "https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/",
+  "inLanguage": "pt-PT",
+  "description": "Como instalar o Mappings for Wealthbox, ligar o token do Wealthbox, associar campos do Gravity Forms, usar as funções Pro e estender o plugin com hooks.",
+  "author": {
+      "@type": "Person",
+      "@id": "https://samamatahir.com/#person",
+      "name": "Samama Tahir",
+      "url": "https://samamatahir.com/"
+    },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Mappings for Wealthbox",
+    "url": "https://samamatahir.com/pt/produtos/mappings-for-wealthbox/"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <a href="../../../" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-name">Samama <span class="accent">Tahir</span></span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Principal">
+      <ul>
+        <li class="nav-dropdown">
+          <a href="../../../servicos/">
+            <span class="nav-star" aria-hidden="true">✦</span>Serviços
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown-menu nav-mega">
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+                <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+                <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+              </ul>
+            </li>
+            <li class="nav-mega-col">
+              <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+              <ul class="nav-mega-sub">
+                <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+                <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+              </ul>
+              <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../../sobre/">Sobre</a></li>
+        <li><a href="../../../portefolio/">Portefólio</a></li>
+        <li><a href="../../../produtos/">Produtos</a></li>
+        <li><a href="../../../faq/">FAQ</a></li>
+        <li><a href="../../../blog/">Blog</a></li>
+        <li><a href="../../../contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="lang-switch">
+        <a href="../../../../products/mappings-for-wealthbox/docs/" hreflang="en">EN</a>
+        <span class="is-active" aria-current="page">PT</span>
+      </div>
+
+      <a href="../../../contacto/" class="btn btn-primary header-cta">Vamos falar</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Alternar menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Móvel">
+    <ul>
+      <li class="mobile-nav-services">
+        <a href="../../../servicos/"><span class="nav-star" aria-hidden="true">✦</span>Serviços</a>
+        <ul class="mobile-nav-submenu nav-mega">
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/criacao-de-sites/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-green);"></span>Desenvolvimento Web</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a></li>
+              <li><a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a></li>
+              <li><a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a></li>
+            </ul>
+          </li>
+          <li class="nav-mega-col">
+            <a href="../../../../pt/servicos/marketing-digital/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-yellow);"></span>Marketing</a>
+            <ul class="nav-mega-sub">
+              <li><a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a></li>
+              <li><a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a></li>
+            </ul>
+            <a href="../../../../pt/servicos/automacao-ia/" class="nav-mega-hub"><span class="nav-dot" style="background-color: var(--color-red);"></span>IA e Automação</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../../sobre/">Sobre</a></li>
+      <li><a href="../../../portefolio/">Portefólio</a></li>
+      <li><a href="../../../produtos/">Produtos</a></li>
+      <li><a href="../../../faq/">FAQ</a></li>
+      <li><a href="../../../blog/">Blog</a></li>
+      <li><a href="../../../contacto/">Contacto</a></li>
+      <li><a href="../../../contacto/" class="btn btn-primary btn-block">Vamos falar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <nav class="breadcrumbs" aria-label="Localização">
+    <div class="container">
+      <a href="../../../" class="breadcrumb-home">
+        <svg class="breadcrumb-home-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../produtos/">Produtos</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="../../../produtos/mappings-for-wealthbox/">Mappings for Wealthbox</a>
+      <svg class="breadcrumb-sep" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="breadcrumb-current" aria-current="page">Documentação</span>
+    </div>
+  </nav>
+
+  <nav class="product-subnav" aria-label="Mappings for Wealthbox">
+    <div class="container">
+      <a href="../../../produtos/mappings-for-wealthbox/" class="product-subnav-name"><img src="../../../../images/mappings-for-wealthbox-icon.svg" width="26" height="26" alt="" />Mappings for Wealthbox</a>
+      <ul>
+        <li><a href="../../../produtos/mappings-for-wealthbox/#features">Funcionalidades</a></li>
+        <li><a href="../../../produtos/mappings-for-wealthbox/#compare">Grátis vs Pro</a></li>
+        <li><a href="../../../produtos/mappings-for-wealthbox/#pricing">Preço</a></li>
+        <li><a href="../../../produtos/mappings-for-wealthbox/documentacao/" aria-current="page">Documentação</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section section--dark page-intro">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 0;">
+        <span class="hero-badge">Documentação · Versão 1.0.0</span>
+        <h1 class="text-balance">Documentação do Mappings for Wealthbox</h1>
+        <p style="font-size: 1.15rem; margin-top: var(--space-3);">Tudo o que precisa para instalar o plugin, ligar o Wealthbox, associar os seus formulários do Gravity Forms e estender o plugin com código. Os nomes de menus e botões aparecem em inglês, como no plugin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container docs-layout">
+      <nav class="docs-toc" aria-label="Nesta página">
+        <p>Nesta página</p>
+        <ol>
+          <li><a href="#introducao">Introdução</a></li>
+          <li><a href="#requisitos">Requisitos e instalação</a></li>
+          <li><a href="#ligacao">Ligar ao Wealthbox</a></li>
+          <li><a href="#associacoes">Criar uma associação</a></li>
+          <li><a href="#campos">Campos e formatação</a></li>
+          <li><a href="#acoes">Pro: ações e correspondência</a></li>
+          <li><a href="#campos-personalizados">Pro: campos personalizados</a></li>
+          <li><a href="#nested-forms">Pro: GP Nested Forms</a></li>
+          <li><a href="#registos">Pro: registos de sincronização</a></li>
+          <li><a href="#programadores">Referência para programadores</a></li>
+          <li><a href="#desinstalar">Desativar e desinstalar</a></li>
+          <li><a href="#problemas">Resolução de problemas</a></li>
+          <li><a href="#versoes">Versões e créditos</a></li>
+        </ol>
+      </nav>
+
+      <div class="docs-content">
+
+        <section id="introducao" aria-labelledby="d-intro">
+          <h2 id="d-intro">Introdução</h2>
+          <p>O Mappings for Wealthbox envia cada submissão do Gravity Forms diretamente para o Wealthbox CRM como contacto, sem Zapier, sem exportar CSV e sem copiar e colar. Escolhe um formulário, define para que campo do Wealthbox vai cada campo do formulário e publica. A partir daí, cada submissão cria o contacto no Wealthbox em segundos.</p>
+          <p>Foi feito para consultores financeiros, RIAs e as agências que gerem os seus sites: empresas que recebem contactos no WordPress e trabalham no Wealthbox. O plugin tem duas partes:</p>
+          <ul>
+            <li><strong>Mappings for Wealthbox (grátis)</strong> cria contactos novos a partir de qualquer formulário do Gravity Forms, com os campos padrão de contacto do Wealthbox.</li>
+            <li><strong>Mappings for Wealthbox Pro ($49, pagamento único, um site)</strong> é um complemento instalado ao lado do plugin grátis. Acrescenta campos personalizados, atualização de contactos existentes, registos de sincronização e suporte para GP Nested Forms.</li>
+          </ul>
+          <p>Veja a <a href="../../../produtos/mappings-for-wealthbox/#compare">comparação Grátis vs Pro</a> para a lista completa.</p>
+        </section>
+
+        <section id="requisitos" aria-labelledby="d-req">
+          <h2 id="d-req">Requisitos e instalação</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Requisito</th><th scope="col">Mínimo</th></tr></thead>
+            <tbody>
+              <tr><td>WordPress</td><td>6.0</td></tr>
+              <tr><td>PHP</td><td>8.0</td></tr>
+              <tr><td>Gravity Forms</td><td>Ativo</td></tr>
+              <tr><td>Wealthbox</td><td>Um token de acesso à API</td></tr>
+              <tr><td>GP Nested Forms (Pro, opcional)</td><td>Ativo, só se associar campos aninhados</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Instalar o plugin grátis</h3>
+          <ol>
+            <li>No WordPress, vá a <strong>Plugins › Add New › Upload Plugin</strong>.</li>
+            <li>Carregue <code>mappings-for-wealthbox.zip</code> e clique em <strong>Install Now</strong>.</li>
+            <li>Clique em <strong>Activate</strong>. Aparece um novo menu <strong>Wealthbox</strong> na barra lateral.</li>
+          </ol>
+          <h3>Instalar o Pro</h3>
+          <ol>
+            <li>Confirme que o plugin grátis está instalado e ativo. O Pro é um complemento e não funciona sem ele.</li>
+            <li>Carregue <code>mappings-for-wealthbox-pro.zip</code> da mesma forma e ative-o.</li>
+            <li>Ao ativar, o Pro cria duas tabelas na base de dados, para o índice de contactos e os registos. Aparece o item <strong>Logs</strong> no menu Wealthbox.</li>
+          </ol>
+          <p>Se o plugin grátis não estiver ativo, o Pro mostra um aviso a pedir que o instale e ative, e não faz mais nada.</p>
+        </section>
+
+        <section id="ligacao" aria-labelledby="d-conn">
+          <h2 id="d-conn">Ligar ao Wealthbox</h2>
+          <p>O plugin comunica com o Wealthbox através de um token de acesso, guardado em <strong>Wealthbox › Settings</strong>. A página tem dois separadores: <strong>General</strong> e <strong>Connection &amp; Cache</strong>.</p>
+          <h3>Obter o token de acesso</h3>
+          <ol>
+            <li>Entre no Wealthbox e abra <strong>Settings › API Access</strong>.</li>
+            <li>Crie um token e copie-o.</li>
+          </ol>
+          <h3>Separador General</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Definição</th><th scope="col">O que faz</th><th scope="col">Predefinição</th></tr></thead>
+            <tbody>
+              <tr><td>Access token</td><td>É enviado em cada pedido no cabeçalho <code>ACCESS_TOKEN</code>. Fica num campo de palavra-passe.</td><td>Vazio</td></tr>
+              <tr><td>Base URL</td><td>O endereço da API do Wealthbox. Não mude, salvo indicação do Wealthbox.</td><td><code>https://api.crmworkspace.com/v1</code></td></tr>
+              <tr><td>Document types (Pro)</td><td>Para que tipos de registo carregar campos personalizados: Contact, Opportunity, Project.</td><td>Contact</td></tr>
+            </tbody>
+          </table></div>
+          <p>Cole o token, confirme o Base URL e clique em <strong>Save Changes</strong>.</p>
+          <h3>Separador Connection &amp; Cache</h3>
+          <ul>
+            <li><strong>Test connection</strong> envia um pedido ao Wealthbox. Vê uma mensagem de sucesso quando funciona, "Authentication failed (HTTP 401 ou 403)" se o token estiver errado, ou o erro HTTP noutros casos. Guarde o token antes de testar.</li>
+            <li><strong>Custom field cache (Pro)</strong> mostra quantos campos personalizados estão em cache. Atualiza sozinha a cada 3 horas. Clique em <strong>Clear cache &amp; re-fetch fields</strong> depois de criar ou renomear um campo no Wealthbox.</li>
+          </ul>
+          <p>Os pedidos expiram ao fim de 20 segundos.</p>
+        </section>
+
+        <section id="associacoes" aria-labelledby="d-map">
+          <h2 id="d-map">Criar uma associação</h2>
+          <p>Uma associação (mapping) liga um formulário do Gravity Forms ao Wealthbox. Fica em <strong>Wealthbox › Mappings</strong> e só funciona depois de publicada.</p>
+          <ol>
+            <li>Vá a <strong>Wealthbox › Mappings › Add New</strong>.</li>
+            <li>Dê-lhe um título fácil de reconhecer, por exemplo "Formulário de contacto".</li>
+            <li>Escolha o formulário em <strong>Gravity Form</strong>. A tabela de campos carrega de imediato.</li>
+            <li>(Pro) Escolha a <strong>Action</strong> e, nos modos de atualização, o campo <strong>Match using</strong>.</li>
+            <li>Em cada linha, escolha o campo do Wealthbox na coluna da direita. Deixe em <strong>Not mapped</strong> para ignorar. As listas têm pesquisa.</li>
+            <li>Clique em <strong>Publish</strong>.</li>
+          </ol>
+          <h3>A tabela de campos</h3>
+          <ul>
+            <li>A coluna da esquerda lista cada campo do formulário com a sua chave do Gravity Forms, por exemplo <code>1.3</code>.</li>
+            <li>Campos com várias partes (Nome, Morada) aparecem uma vez com o valor completo e depois uma vez por parte, como "Name, First" ou "Address, City".</li>
+            <li>Caixas de seleção e Multi Select aparecem uma vez. Todas as escolhas são enviadas juntas.</li>
+            <li>Quebras de página, secções, blocos HTML e CAPTCHA ficam de fora.</li>
+            <li>Os campos filhos do Nested Forms têm a etiqueta <strong>nested</strong> (Pro).</li>
+          </ul>
+          <h3>Campos ocultos</h3>
+          <p>Campos ocultos do Gravity Forms, como ID de utilizador, UTM ou valores de tracking, ficam escondidos por defeito. Marque <strong>Show hidden fields</strong> para os associar.</p>
+          <h3>Duplicar uma associação</h3>
+          <p>Passe o rato sobre uma associação na lista e clique em <strong>Duplicate</strong>. Fica com uma cópia em rascunho com o mesmo formulário, ação, correspondência e campos.</p>
+          <h3>Uma associação por formulário</h3>
+          <p>Se houver mais do que uma associação publicada para o mesmo formulário, só a publicada mais recentemente funciona. Mantenha as outras em rascunho. A lista tem a coluna <strong>Gravity Form</strong>, que pode ordenar.</p>
+        </section>
+
+        <section id="campos" aria-labelledby="d-fields">
+          <h2 id="d-fields">Campos do Wealthbox e formatação de valores</h2>
+          <p>O plugin grátis associa a nove campos padrão de contacto do Wealthbox. O Pro acrescenta todos os seus campos personalizados.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Na lista</th><th scope="col">Enviado ao Wealthbox como</th><th scope="col">Notas</th></tr></thead>
+            <tbody>
+              <tr><td>First name</td><td><code>first_name</code></td><td>Nome próprio</td></tr>
+              <tr><td>Last name</td><td><code>last_name</code></td><td>Apelido</td></tr>
+              <tr><td>Middle name</td><td><code>middle_name</code></td><td>Nome do meio</td></tr>
+              <tr><td>Nickname</td><td><code>nickname</code></td><td>Alcunha</td></tr>
+              <tr><td>Job title</td><td><code>job_title</code></td><td>Cargo</td></tr>
+              <tr><td>Company name</td><td><code>company_name</code></td><td>Empresa</td></tr>
+              <tr><td>Email address</td><td>item de <code>email_addresses</code></td><td>Tipo <code>Personal</code></td></tr>
+              <tr><td>Phone number</td><td>item de <code>phone_numbers</code></td><td>Tipo <code>Personal</code></td></tr>
+              <tr><td>Background information</td><td><code>background_info</code></td><td>Bom para mensagens e notas</td></tr>
+            </tbody>
+          </table></div>
+          <p>Se não houver nome próprio nem apelido, o contacto fica com o nome <strong>Web Lead</strong>, porque o Wealthbox exige um nome.</p>
+          <h3>Como os valores são enviados</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Campo do Gravity Forms</th><th scope="col">O que o Wealthbox recebe</th></tr></thead>
+            <tbody>
+              <tr><td>Texto, email, telefone, lista e semelhantes</td><td>O valor tal como foi enviado</td></tr>
+              <tr><td>File Upload, um ficheiro</td><td>O URL do ficheiro</td></tr>
+              <tr><td>File Upload, vários ficheiros</td><td>Um URL por linha</td></tr>
+              <tr><td>Checkbox</td><td>Cada opção marcada na sua linha</td></tr>
+              <tr><td>Multi Select</td><td>Cada opção escolhida na sua linha</td></tr>
+              <tr><td>Consent</td><td>"Consent given" ou "Consent NOT given", seguido do texto completo do consentimento</td></tr>
+              <tr><td>Campo vazio</td><td>Nada é enviado para esse campo</td></tr>
+            </tbody>
+          </table></div>
+          <p>Se associar apenas uma parte de um campo (por exemplo só a caixa de consentimento <code>5.1</code>), é enviado o valor bruto dessa parte.</p>
+        </section>
+
+        <section id="acoes" aria-labelledby="d-actions">
+          <h2 id="d-actions">Pro: ações de sincronização e correspondência</h2>
+          <p>O Pro permite que cada associação decida o que acontece quando alguém que já está no Wealthbox volta a enviar o formulário. Escolha em <strong>Action</strong> no ecrã da associação.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Action</th><th scope="col">Encontra correspondência</th><th scope="col">Sem correspondência</th><th scope="col">Estado no registo</th></tr></thead>
+            <tbody>
+              <tr><td>Create contact only</td><td>Cria um contacto novo na mesma</td><td>Cria um contacto novo</td><td>created</td></tr>
+              <tr><td>Update contact only</td><td>Atualiza esse contacto</td><td>Não envia nada</td><td>updated ou skipped</td></tr>
+              <tr><td>Create and update</td><td>Atualiza esse contacto</td><td>Cria um contacto novo</td><td>updated ou created</td></tr>
+            </tbody>
+          </table></div>
+          <p>O plugin grátis usa sempre Create contact only. Se desativar o Pro, as associações com ações de atualização são ignoradas, não passam a criar contactos, até o Pro voltar a estar ativo.</p>
+          <h3>Match using</h3>
+          <ul>
+            <li><strong>O campo do formulário</strong> com o valor, por exemplo o seu campo de email.</li>
+            <li><strong>O tipo</strong>, Email ou Phone. Os emails ficam sem espaços e em minúsculas. Os telefones ficam só com os dígitos, por isso "(555) 010-2233" e "5550102233" correspondem.</li>
+          </ul>
+          <h3>Como funciona a correspondência</h3>
+          <p>Sempre que o plugin cria ou atualiza um contacto, guarda uma impressão SHA-256 do email e do telefone, com o ID do contacto no Wealthbox, numa tabela própria. O email e o telefone reais nunca ficam lá guardados. Na submissão seguinte, calcula a impressão do valor e procura-a: uma pesquisa na base de dados, sem chamada à API.</p>
+          <p class="docs-callout">O índice só conhece contactos que o próprio plugin criou ou atualizou. Um contacto que já estava no Wealthbox antes de instalar o Pro ainda não é encontrado, por isso Create and update cria um segundo registo para essa pessoa. A correspondência com contactos existentes está prevista numa atualização.</p>
+        </section>
+
+        <section id="campos-personalizados" aria-labelledby="d-custom">
+          <h2 id="d-custom">Pro: campos personalizados</h2>
+          <p>Com o Pro ativo, todos os campos personalizados de contacto do Wealthbox aparecem na lista em <strong>Custom fields</strong>, abaixo dos campos padrão.</p>
+          <h3>Associação automática</h3>
+          <p>Ao carregar um formulário, o Pro pré-seleciona um campo personalizado para cada campo cujo rótulo coincida com o nome do campo personalizado, ignorando maiúsculas e espaços extra. Confirme as sugestões antes de publicar. Uma escolha guardada tem sempre prioridade.</p>
+          <h3>Nome, email e telefone em campos personalizados</h3>
+          <p>Se associar um campo Email, Phone ou Name do Gravity Forms a um campo personalizado, o Pro preenche também o campo padrão correspondente, para o contacto ter sempre nome, email e telefone:</p>
+          <ul>
+            <li>Campo Email: também é adicionado como email do contacto</li>
+            <li>Campo Phone: também é adicionado como telefone do contacto</li>
+            <li>Name, First (<code>x.3</code>): também fica como nome próprio</li>
+            <li>Name, Last (<code>x.6</code>): também fica como apelido</li>
+          </ul>
+          <h3>A cache</h3>
+          <p>As definições dos campos personalizados são obtidas 100 de cada vez para cada tipo de documento escolhido nas definições, até 5.000 campos, e ficam em cache durante 3 horas, para o ecrã nunca esperar pela API. Uma cache vazia volta a encher no carregamento seguinte. Por agora, só os campos de Contact aparecem na lista.</p>
+        </section>
+
+        <section id="nested-forms" aria-labelledby="d-nested">
+          <h2 id="d-nested">Pro: GP Nested Forms</h2>
+          <p>O Pro permite associar os campos dentro de um campo Gravity Perks Nested Forms, por exemplo várias moradas, dependentes ou contas num só formulário. Cada campo filho aparece na sua linha, como "Campo pai → Campo filho", com uma chave como <code>nested:12:3</code> (campo pai 12, campo filho 3).</p>
+          <p>Na submissão, cada entrada filha passa a ser uma linha numerada, com o nome do campo filho:</p>
+          <pre><code>Morada-1: Rua Alta 12, Porto, 4000-123, Portugal
+Morada-2: Rua Nova 8, Gaia, 4400-001, Portugal</code></pre>
+          <ul>
+            <li>Associe o campo filho completo para receber todas as partes separadas por vírgulas, como acima.</li>
+            <li>Associe uma parte (<code>nested:12:3.3</code>) para receber só essa parte em cada linha.</li>
+            <li>Envie linhas aninhadas para um campo personalizado de texto ou para Background information, porque o resultado tem várias linhas.</li>
+            <li>As linhas aninhadas não podem ser o campo <strong>Match using</strong>.</li>
+          </ul>
+        </section>
+
+        <section id="registos" aria-labelledby="d-logs">
+          <h2 id="d-logs">Pro: registos de sincronização</h2>
+          <p>Cada submissão num formulário associado escreve uma linha em <strong>Wealthbox › Logs</strong>, para ver exatamente o que foi enviado e o que o Wealthbox respondeu.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Coluna</th><th scope="col">Mostra</th></tr></thead>
+            <tbody>
+              <tr><td>Time (UTC)</td><td>Quando a sincronização correu</td></tr>
+              <tr><td>Form / Entry</td><td>IDs do formulário e da entrada no Gravity Forms</td></tr>
+              <tr><td>Action</td><td>create, update ou upsert</td></tr>
+              <tr><td>Status</td><td>created, updated, skipped ou error, com cores</td></tr>
+              <tr><td>HTTP</td><td>O código de resposta do Wealthbox, 0 se o pedido não chegou</td></tr>
+              <tr><td>Contact ID</td><td>O ID do contacto no Wealthbox, quando existe</td></tr>
+              <tr><td>Details</td><td>A mensagem, os dados enviados e a resposta completa</td></tr>
+            </tbody>
+          </table></div>
+          <p>Ordene por data, formulário, entrada, estado ou código HTTP, filtre por datas e defina linhas por página em Screen Options. Os registos contêm dados dos formulários, por isso trate-os como dados pessoais. Ficam guardados até desinstalar o Pro; a limpeza automática está prevista numa atualização.</p>
+        </section>
+
+        <section id="programadores" aria-labelledby="d-dev">
+          <h2 id="d-dev">Referência para programadores</h2>
+          <p>O plugin grátis é um pequeno motor com hooks. O Pro foi feito inteiramente com esses hooks, por isso pode estendê-lo da mesma forma.</p>
+          <h3>Hooks do plugin grátis</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Hook</th><th scope="col">Tipo</th><th scope="col">Serve para</th></tr></thead>
+            <tbody>
+              <tr><td><code>wbm_request_args</code></td><td>filter</td><td>Mudar os argumentos HTTP (timeout, cabeçalhos, tentativas)</td></tr>
+              <tr><td><code>wbm_contact_kind</code></td><td>filter</td><td>Mudar o tipo de email e telefone (predefinição <code>Personal</code>)</td></tr>
+              <tr><td><code>wbm_contact_payload</code></td><td>filter</td><td>Editar os dados do contacto antes do envio</td></tr>
+              <tr><td><code>wbm_native_fields</code></td><td>filter</td><td>Acrescentar campos padrão à lista</td></tr>
+              <tr><td><code>wbm_resource</code></td><td>filter</td><td>Trocar o handler de recurso</td></tr>
+              <tr><td><code>wbm_before_sync</code></td><td>action</td><td>Inspecionar os dados antes da chamada à API</td></tr>
+              <tr><td><code>wbm_after_sync</code></td><td>action</td><td>Reagir depois da sincronização</td></tr>
+              <tr><td><code>wbm_run_action</code></td><td>filter</td><td>Tratar ações além de create</td></tr>
+              <tr><td><code>wbm_target_groups</code></td><td>filter</td><td>Acrescentar grupos à lista de campos do Wealthbox</td></tr>
+              <tr><td><code>wbm_suggest_target</code></td><td>filter</td><td>Pré-selecionar um destino para um campo</td></tr>
+              <tr><td><code>wbm_map_target</code></td><td>filter</td><td>Tratar destinos que não são campos padrão</td></tr>
+              <tr><td><code>wbm_form_field_rows</code></td><td>filter</td><td>Acrescentar linhas para um campo Nested Forms</td></tr>
+              <tr><td><code>wbm_nested_value</code></td><td>filter</td><td>Converter uma chave aninhada num valor</td></tr>
+              <tr><td><code>wbm_metabox_rows</code></td><td>action</td><td>Acrescentar linhas ao ecrã da associação</td></tr>
+              <tr><td><code>wbm_save_mapping</code></td><td>action</td><td>Guardar essas linhas</td></tr>
+              <tr><td><code>wbm_settings_general_rows</code></td><td>action</td><td>Acrescentar linhas ao separador General</td></tr>
+              <tr><td><code>wbm_settings_tools_sections</code></td><td>action</td><td>Acrescentar secções ao separador Connection</td></tr>
+              <tr><td><code>wbm_sanitize_settings</code></td><td>filter</td><td>Guardar chaves de definições extra</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Hooks do Pro</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Hook</th><th scope="col">Tipo</th><th scope="col">Serve para</th></tr></thead>
+            <tbody>
+              <tr><td><code>wbm_custom_fields</code></td><td>filter</td><td>Editar a lista de campos personalizados antes de ir para a cache</td></tr>
+              <tr><td><code>wbm_use_api_lookup_fallback</code></td><td>filter</td><td>Ativar a pesquisa na API quando o índice falha (desligado por defeito, experimental)</td></tr>
+              <tr><td><code>wbm_native_role</code></td><td>filter</td><td>Encaminhar um campo personalizado para nome, apelido, email ou telefone</td></tr>
+              <tr><td><code>wbm_nested_line_format</code></td><td>filter</td><td>Mudar uma linha do resultado aninhado</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Exemplo: etiquetar cada contacto do site</h3>
+          <pre><code>add_filter( 'wbm_contact_payload', function ( $payload, $entry, $form ) {
+    $payload['tags'] = [ 'Website lead' ];
+    return $payload;
+}, 10, 3 );</code></pre>
+          <h3>Onde ficam os dados</h3>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Item</th><th scope="col">Local</th><th scope="col">Plugin</th></tr></thead>
+            <tbody>
+              <tr><td>Definições</td><td>Opção <code>wbm_settings</code></td><td>Grátis</td></tr>
+              <tr><td>Associações</td><td>Post type <code>wbm_mapping</code> e a sua meta <code>_wbm_*</code></td><td>Grátis</td></tr>
+              <tr><td>Índice de contactos</td><td>Tabela <code>{prefix}wb_contact_index</code></td><td>Pro</td></tr>
+              <tr><td>Registos</td><td>Tabela <code>{prefix}wb_logs</code></td><td>Pro</td></tr>
+              <tr><td>Cache de campos</td><td>Transient <code>wbm_custom_fields</code>, 3 horas</td><td>Pro</td></tr>
+            </tbody>
+          </table></div>
+          <p>O código usa o namespace <code>MappingsForWealthbox</code> (Pro: <code>MappingsForWealthbox\Pro</code>). A interface <code>Wealthbox_Resource</code> permite acrescentar outros tipos de registo do Wealthbox como novas classes, sem mexer no motor de sincronização.</p>
+        </section>
+
+        <section id="desinstalar" aria-labelledby="d-uninstall">
+          <h2 id="d-uninstall">Desativar e desinstalar</h2>
+          <p>Desativar nunca apaga nada. Apagar um plugin remove só os dados desse plugin, e nada no Wealthbox é apagado.</p>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Se fizer isto</th><th scope="col">Acontece isto</th></tr></thead>
+            <tbody>
+              <tr><td>Desativar o Pro</td><td>Associações, registos e índice ficam. As associações de criação continuam a funcionar. As de atualização são ignoradas até o Pro voltar.</td></tr>
+              <tr><td>Apagar o Pro</td><td>Remove as tabelas do índice e dos registos e a cache de campos. Associações e definições ficam.</td></tr>
+              <tr><td>Desativar o grátis</td><td>Nada é sincronizado. O Pro também para e mostra um aviso.</td></tr>
+              <tr><td>Apagar o grátis</td><td>Apaga as definições (o seu token) e todas as associações.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="problemas" aria-labelledby="d-trouble">
+          <h2 id="d-trouble">Resolução de problemas e perguntas</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Problema</th><th scope="col">Causa provável</th><th scope="col">Solução</th></tr></thead>
+            <tbody>
+              <tr><td>Test connection diz que a autenticação falhou</td><td>Token errado ou expirado</td><td>Crie um token novo, cole, guarde e teste de novo</td></tr>
+              <tr><td>"Add a token and base URL first"</td><td>Definições não guardadas</td><td>Guarde antes de testar</td></tr>
+              <tr><td>Nenhum contacto aparece no Wealthbox</td><td>Associação em rascunho ou noutro formulário</td><td>Publique e confirme a coluna Gravity Form</td></tr>
+              <tr><td>O contacto chama-se "Web Lead"</td><td>Sem nome próprio nem apelido</td><td>Associe Name, First e Name, Last</td></tr>
+              <tr><td>Faltam campos personalizados (Pro)</td><td>Cache criada antes do token, ou campo novo</td><td>Clear cache &amp; re-fetch fields</td></tr>
+              <tr><td>Update only não faz nada (Pro)</td><td>Sem correspondência no índice, registo diz skipped</td><td>Use Create and update, ou confirme Match using</td></tr>
+              <tr><td>Registo com erro, HTTP 0</td><td>O pedido não chegou ao Wealthbox</td><td>Confirme que o servidor chega ao Base URL</td></tr>
+              <tr><td>Registo com erro, HTTP 422</td><td>O Wealthbox rejeitou um valor</td><td>Leia a resposta em Details</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Limitações conhecidas</h3>
+          <ul>
+            <li>Os modos de atualização só encontram contactos que o plugin criou ou atualizou.</li>
+            <li>Os registos não são limpos automaticamente.</li>
+            <li>Só é usada uma associação publicada por formulário.</li>
+            <li>Por agora, só são suportados contactos do Wealthbox.</li>
+          </ul>
+          <p>Tem uma dúvida que a documentação não responde? <a href="../../../contacto/">Fale comigo</a>.</p>
+        </section>
+
+        <section id="versoes" aria-labelledby="d-changelog">
+          <h2 id="d-changelog">Versões e créditos</h2>
+          <div class="docs-table-wrap"><table class="docs-table">
+            <thead><tr><th scope="col">Versão</th><th scope="col">Plugin</th><th scope="col">Alterações</th></tr></thead>
+            <tbody>
+              <tr><td>1.0.0</td><td>Grátis</td><td>Primeira versão: associação de campos padrão, sincronização só de criação, formatação de valores, duplicar associação, teste de ligação</td></tr>
+              <tr><td>1.0.0</td><td>Pro</td><td>Primeira versão: campos personalizados com associação automática, atualizar e criar e atualizar, índice de contactos, registos, GP Nested Forms</td></tr>
+            </tbody>
+          </table></div>
+          <p>Criado por Samama Tahir. Licença GPL v2 ou posterior. Wealthbox é uma marca do respetivo proprietário e Gravity Forms é uma marca da Rocketgenius. Este plugin é independente e não tem ligação a nenhuma delas.</p>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Samama Tahir</p>
+        <p style="margin-top: 0.5rem;">Programador Web Full-Stack &amp; Especialista em Crescimento Digital</p>
+        <p style="margin-top: 0.5rem;">Porto, Portugal</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navegação</p>
+        <div class="footer-links">
+          <a href="../../../">Início</a>
+          <a href="../../../servicos/">Serviços</a>
+          <a href="../../../sobre/">Sobre</a>
+          <a href="../../../portefolio/">Portefólio</a>
+          <a href="../../../produtos/">Produtos</a>
+          <a href="../../../faq/">FAQ</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../../../" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Desenvolvimento Web</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/criacao-de-sites/">Desenvolvimento Web</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/programador-shopify/">Programador Shopify</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/">Sites WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/wordpress/contratar/">Contratar Programador WordPress</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/criar-loja-online/">Criar Loja Online</a>
+          <a href="../../../../pt/servicos/criacao-de-sites/aplicacoes-web/">Aplicações Web</a>
+          <a href="../../../../pt/criacao-de-sites-porto/">Criação de Sites no Porto</a>
+          <a href="../../../../pt/criacao-de-sites-vila-nova-de-gaia/">Criação de Sites em Gaia</a>
+        </div>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Marketing e Automação</p>
+        <div class="footer-links">
+          <a href="../../../../pt/servicos/marketing-digital/">SEO Local e Marketing</a>
+          <a href="../../../../pt/servicos/marketing-digital/consultor-seo/">Consultor SEO</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-meu-negocio/">Google Meu Negócio</a>
+          <a href="../../../../pt/servicos/marketing-digital/google-ads/">Google Ads</a>
+          <a href="../../../../pt/servicos/marketing-digital/anuncios-facebook-instagram/">Anúncios Facebook e Instagram</a>
+          <a href="../../../../pt/servicos/marketing-digital/ga4-analytics/">GA4 e Analítica</a>
+          <a href="../../../../pt/servicos/automacao-ia/">IA e Automação</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:hello@samamatahir.com">hello@samamatahir.com</a>
+          <a href="tel:+351932426753">+351 932 426 753</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Redes Sociais</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/samama-tahir" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Samama Tahir. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Informação legal">
+        <a href="../../../../pt/privacidade/" data-privacy-link>Política de privacidade</a>
+        <button type="button" data-cookie-settings>Definições de cookies</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../../js/main.min.js?v=20261014d" defer></script>
+</body>
+</html>

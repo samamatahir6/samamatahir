@@ -29,6 +29,12 @@ Pricing is not listed on the site. Every project gets a written fixed quote afte
 
 - [Portfolio and case studies](https://samamatahir.com/work/): OROS (Shopify 1.0 to 2.0 migration), Fore Fathers (Shopify 2.0 with WordPress for content), Daytrip (custom Shopify 2.0 theme from Figma, Section Rendering API), a custom WordPress plugin connecting Gravity Forms to Advyzon and Wealthbox, and Those Coffee People (performance, QuickBooks integration, technical SEO).
 
+## Products
+
+- [Products](https://samamatahir.com/products/): plugins and tools Samama Tahir built from client work.
+- [Mappings for Wealthbox](https://samamatahir.com/products/mappings-for-wealthbox/): WordPress plugin by Samama Tahir that sends Gravity Forms submissions into Wealthbox CRM as contacts. Free version (standard contact fields, create only) and Pro for $49 one time per site (custom fields, update or create and update by email or phone, sync logs, GP Nested Forms). Independent, not made by Wealthbox.
+- [Mappings for Wealthbox documentation](https://samamatahir.com/products/mappings-for-wealthbox/docs/): installation, Wealthbox connection, field mapping, Pro features and developer hooks.
+
 ## About
 
 - [About Samama Tahir](https://samamatahir.com/about/): background, experience and education (Bachelor's, Computer Engineering, Mirpur University of Science and Technology, 2013 to 2017, and Master's, Computer Engineering (Digital System Design), University of Engineering and Technology, Taxila, 2018 to 2021).
@@ -64,6 +70,8 @@ Pricing is not listed on the site. Every project gets a written fixed quote afte
 - [Página inicial em português](https://samamatahir.com/pt/)
 - [Sobre mim](https://samamatahir.com/pt/sobre/)
 - [Portefólio](https://samamatahir.com/pt/portefolio/)
+- [Produtos](https://samamatahir.com/pt/produtos/)
+- [Mappings for Wealthbox](https://samamatahir.com/pt/produtos/mappings-for-wealthbox/) ([documentação](https://samamatahir.com/pt/produtos/mappings-for-wealthbox/documentacao/))
 - [Perguntas frequentes](https://samamatahir.com/pt/faq/)
 - [Contacto](https://samamatahir.com/pt/contacto/)
 - [Criação de sites](https://samamatahir.com/pt/servicos/criacao-de-sites/)
