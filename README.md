@@ -147,7 +147,8 @@ Two posts are rewrites of the old WordPress tutorials that were still indexed (S
 - Schema: `BreadcrumbList` everywhere, `CollectionPage` on the hubs, `SoftwareApplication` (Free and Pro offers) plus `FAQPage` on the landing pages, `TechArticle` on the docs.
 - Unlike service pages, product pages show prices (the product price is a fact, not a quote). Plugin menu and button names stay in English on the PT docs because the plugin admin is English.
 - Images: `images/mappings-for-wealthbox-icon.svg` (plugin icon) and `images/mappings-for-wealthbox-og.jpg` (1200x630 share image).
-- `TODO(Samama)` markers on the landing pages: the free download link, the Pro checkout link (both currently open an email to hello@samamatahir.com), and real screen recordings to replace the animated mockups.
+- The free plugin zip is served from `downloads/mappings-for-wealthbox.zip` (the Download free buttons link to it). Replace that file to ship a new free version; never put the Pro zip in this repo, it would be publicly downloadable.
+- `TODO(Samama)` markers on the landing pages: the Pro checkout link (currently opens an email to hello@samamatahir.com) and real screen recordings to replace the animated mockups.
 - To add a product: a card on both hubs, a `products/<slug>/` page pair (and `docs/` / `documentacao/`), then `python3 scripts/build-sitemap.py` and `python3 scripts/check-seo.py`.
 
 ### SEO scripts
