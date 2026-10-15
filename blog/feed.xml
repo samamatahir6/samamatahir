@@ -6,48 +6,48 @@
     <atom:link href="https://samamatahir.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides on web development, SEO, ecommerce and analytics.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0000</lastBuildDate>
-    <item>
-      <title>How to hire a WordPress developer: a practical checklist</title>
-      <link>https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/</link>
-      <guid isPermaLink="true">https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
-      <description>How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well.</description>
-    </item>
-    <item>
-      <title>Ecommerce website development cost: what really drives it</title>
-      <link>https://samamatahir.com/blog/ecommerce-website-development-cost/</link>
-      <guid isPermaLink="true">https://samamatahir.com/blog/ecommerce-website-development-cost/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
-      <description>What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly.</description>
-    </item>
-    <item>
-      <title>GA4 setup guide: a step-by-step checklist</title>
-      <link>https://samamatahir.com/blog/ga4-setup-guide/</link>
-      <guid isPermaLink="true">https://samamatahir.com/blog/ga4-setup-guide/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
-      <description>A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing.</description>
-    </item>
+    <lastBuildDate>Sun, 04 Oct 2026 09:00:00 +0000</lastBuildDate>
     <item>
       <title>How much does a Shopify expert cost?</title>
       <link>https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/</link>
       <guid isPermaLink="true">https://samamatahir.com/blog/how-much-does-a-shopify-expert-cost/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 09:00:00 +0000</pubDate>
       <description>How much a Shopify expert costs depends on the type of work, the pricing model and who you hire. What drives the cost and how to get a fair quote.</description>
     </item>
     <item>
       <title>Understanding Shopify customer accounts: what changed in the new architecture</title>
       <link>https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/</link>
       <guid isPermaLink="true">https://samamatahir.com/blog/shopify-customer-accounts-new-architecture/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Sep 2026 09:00:00 +0000</pubDate>
       <description>Classic vs new Shopify customer accounts: passwordless sign-in, hosted account pages, UI extensions, what changes in your theme and a checklist before switching.</description>
+    </item>
+    <item>
+      <title>How to hire a WordPress developer: a practical checklist</title>
+      <link>https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/</link>
+      <guid isPermaLink="true">https://samamatahir.com/blog/how-to-hire-a-wordpress-developer/</guid>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0000</pubDate>
+      <description>How to hire a WordPress developer: where to look, what to ask, red flags, how to compare quotes and how to set up the project so it goes well.</description>
     </item>
     <item>
       <title>Mobile-friendly multi-level WordPress menu with a custom walker and jQuery</title>
       <link>https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/</link>
       <guid isPermaLink="true">https://samamatahir.com/blog/wordpress-mobile-multi-level-menu-walker-jquery/</guid>
-      <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Sep 2026 09:00:00 +0000</pubDate>
       <description>Build a mobile-friendly multi-level WordPress menu with a custom Walker_Nav_Menu class and jQuery: accessible toggles, one submenu per level, no plugin.</description>
+    </item>
+    <item>
+      <title>Ecommerce website development cost: what really drives it</title>
+      <link>https://samamatahir.com/blog/ecommerce-website-development-cost/</link>
+      <guid isPermaLink="true">https://samamatahir.com/blog/ecommerce-website-development-cost/</guid>
+      <pubDate>Sat, 29 Aug 2026 09:00:00 +0000</pubDate>
+      <description>What decides ecommerce website development cost: platform, catalogue, design, integrations, migration and the running costs after launch, explained honestly.</description>
+    </item>
+    <item>
+      <title>GA4 setup guide: a step-by-step checklist</title>
+      <link>https://samamatahir.com/blog/ga4-setup-guide/</link>
+      <guid isPermaLink="true">https://samamatahir.com/blog/ga4-setup-guide/</guid>
+      <pubDate>Sat, 13 Jun 2026 09:00:00 +0000</pubDate>
+      <description>A practical GA4 setup guide: property and data stream, Google Tag Manager, consent mode, key events, ecommerce tracking, filters, links and testing.</description>
     </item>
   </channel>
 </rss>

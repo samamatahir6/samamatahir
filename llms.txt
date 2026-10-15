@@ -62,6 +62,10 @@ Pricing is not listed on the site. Every project gets a written fixed quote afte
 ## Portuguese
 
 - [Página inicial em português](https://samamatahir.com/pt/)
+- [Sobre mim](https://samamatahir.com/pt/sobre/)
+- [Portefólio](https://samamatahir.com/pt/portefolio/)
+- [Perguntas frequentes](https://samamatahir.com/pt/faq/)
+- [Contacto](https://samamatahir.com/pt/contacto/)
 - [Criação de sites](https://samamatahir.com/pt/servicos/criacao-de-sites/)
 - [Programador Shopify](https://samamatahir.com/pt/servicos/criacao-de-sites/programador-shopify/)
 - [Criação de sites WordPress](https://samamatahir.com/pt/servicos/criacao-de-sites/wordpress/)
